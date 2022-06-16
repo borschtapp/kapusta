@@ -1,0 +1,51 @@
+{
+  "name": "Monster cupcakes",
+  "image": [
+    "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-405483_12-cee017a.jpg"
+  ],
+  "author": {
+    "name": "Good Food team"
+  },
+  "description": "\u003cp\u003eLet your little monsters do their worst, decorating these spooky Halloween treats\u003c/p\u003e",
+  "cookTime": 15,
+  "totalTime": 50,
+  "keywords": " Josh Eagleton, 30-60 minutes, 400 kcal or less, Biscuit recipes, Cup cakes, Cupcake, Frosting, Good Food, Halloween recipes, Icing, Kids recipes, Party recipes, Sweet, Sweet recipe, Sweet recipes, Sweets, Vanilla extract, Spooky recipes",
+  "recipeYield": 12,
+  "recipeCategory": "Treat",
+  "recipeCuisine": "British",
+  "nutrition": {
+    "calories": "389 calories",
+    "carbohydrateContent": "53 grams carbohydrates",
+    "fatContent": "19 grams fat",
+    "fiberContent": "1 grams fiber",
+    "proteinContent": "5 grams protein",
+    "saturatedFatContent": "9 grams saturated fat",
+    "sodiumContent": "0.3 milligram of sodium",
+    "sugarContent": "36 grams sugar"
+  },
+  "recipeIngredient": [
+    "250g self-raising flour",
+    "25g cocoa powder",
+    "175g light muscovado sugar",
+    "85g unsalted butter, melted",
+    "5 tbsp vegetable or sunflower oil",
+    "150g pot fat-free natural yogurt",
+    "1 tsp vanilla extract",
+    "3 large eggs",
+    "85g unsalted butter, softened",
+    "1 tbsp milk",
+    "\u0026frac12; tsp vanilla extract",
+    "200g icing sugar, sifted",
+    "food colourings(optional)",
+    "sweetsand sprinkles, to decorate"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "\u003cp\u003eHeat oven to 190C/170C fan/gas 5 and line a 12-hole muffin tin with deep cake cases. Put all the cake ingredients into a large bowl and beat together with electric hand beaters until smooth. Spoon the mix into the cases, then bake for 20 mins until risen and a skewer inserted into the middle comes out dry. Cool completely on a rack. \u003ci\u003eCan be made up to 3 days ahead and kept in an airtight container, or frozen for up to 1 month.\u003c/i\u003e\u003c/p\u003e"
+    },
+    {
+      "text": "\u003cp\u003eFor the frosting, work the butter, milk and vanilla into the icing sugar until creamy and pale. Colour with food colouring, if using, then create your own gruesome monster faces using sweets and sprinkles.\u003c/p\u003e"
+    }
+  ],
+  "url": "https://www.bbcgoodfood.com/recipes/monster-cupcakes"
+}

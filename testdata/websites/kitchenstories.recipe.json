@@ -1,0 +1,47 @@
+{
+  "name": "Special strawberry jam with matcha",
+  "image": [
+    "https://images.kitchenstories.io/wagtailOriginalImages/R2630-photo-final-1.jpg"
+  ],
+  "author": {
+    "name": "Christian Ruß"
+  },
+  "description": "This recipe gives homemade strawberry jam an exciting update: Matcha!",
+  "cookTime": 20,
+  "totalTime": 80,
+  "keywords": "Brand Content,easter,vegetarian,valentines day,vegan,sweet,berries,gluten free,crowd pleaser,prepare ahead,pescetarian,comfort food,brunch,breakfast,lactose free,alcohol free,Meatless,neff-large-appliance,mothers-day,sauces and dips,spring,summer,base,next125-mustard,cooking-confidence,2022-05",
+  "recipeCategory": "Jams \u0026 Marmalades",
+  "recipeCuisine": "International",
+  "nutrition": {
+    "calories": "359 cal",
+    "servingSize": "1 Servings",
+    "carbohydrateContent": "91 g",
+    "fatContent": "1 g",
+    "proteinContent": "2 g"
+  },
+  "recipeIngredient": [
+    "1.75 lbs strawberries",
+    "1.5 cups jam sugar",
+    "1 tsp matcha powder",
+    "0.33 cup water"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Place a small plate in the freezer. Wash the strawberries and cut them into quarters. In a large pot, combine the jam sugar and strawberries, stirring until well combined. Let that sit for approx. 1 hr."
+    },
+    {
+      "text": "In the meantime, mix the matcha powder with half of the water in a small bowl to make a paste. Gradually stir in the remaining water until everything is well mixed and dissolved. Set aside."
+    },
+    {
+      "text": "After the strawberries have rested and there's some juice in the pot, set the pot over medium heat and bring to a simmer. Cook for approx. 5 min., then add the matcha to the pot and continue cooking for approx. 1 min."
+    },
+    {
+      "text": "To test whether the jam will set up once it's cooled, place a small spoonful of the hot jam on the \r\n plate from the freezer and hold the plate at an angle. If the mass becomes solid after a short time and you can swipe your finger through the jam leaving an unconnected gap, the test is passed and the jam is ready; if not, continue cooking and repeating the test. Pour the still hot jam into sterilized preserving jars, seal, and let cool. Enjoy!"
+    }
+  ],
+  "aggregateRating": {
+    "ratingValue": 1,
+    "ratingCount": 2
+  },
+  "url": "https://www.kitchenstories.com/en/recipes/special-strawberry-jam-with-matcha"
+}

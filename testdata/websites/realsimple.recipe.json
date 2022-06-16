@@ -1,0 +1,42 @@
+{
+  "name": "Vanilla Cheesecake",
+  "image": [
+    "https://cdn-image.realsimple.com/sites/default/files/styles/rs_horizontal_image_4/public/ginger-graham-crust.jpg?itok=jWOGxjyX",
+    "https://cdn-image.realsimple.com/sites/default/files/styles/rs_medium_image/public/ginger-graham-crust.jpg?itok=DX05C236"
+  ],
+  "author": {
+    "name": "Frank Mentasana"
+  },
+  "totalTime": 540,
+  "recipeYield": 9,
+  "nutrition": {
+    "calories": "787",
+    "carbohydrateContent": "64 g",
+    "cholesterolContent": "250 mg",
+    "fatContent": "55 g",
+    "fiberContent": "1 g",
+    "proteinContent": "13 mg",
+    "saturatedFatContent": "33 g",
+    "sodiumContent": "463 mg"
+  },
+  "recipeIngredient": [
+    "3 8-ounce packages cream cheese, at room temperature",
+    "4  eggs",
+    "1 1/4 cups sugar",
+    "2 teaspoons pure vanilla extract",
+    "1  prebaked Ginger Graham Cracker Crust",
+    "1 cup sour cream"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Make the Ginger Graham Cracker Crust. Preheat oven to 325° F. In a large mixing bowl, beat the cream cheese until smooth, about 1 minute. Beat in the eggs one at a time. Add 1 cup of the sugar and 1 teaspoon of the vanilla and mix until well combined. Pour the batter into the crust and bake until set, 45 to 50 minutes. In a small bowl, whisk together the sour cream and the remaining sugar and vanilla. Pour the mixture over the cheesecake, spreading it to the edge. Bake 5 minutes. Cool and refrigerate overnight before serving."
+    }
+  ],
+  "datePublished": "2005-03-15T14:11:00Z",
+  "aggregateRating": {
+    "ratingValue": 4,
+    "reviewCount": 3
+  },
+  "url": "https://www.realsimple.com/food-recipes/browse-all-recipes/vanilla-cheesecake",
+  "siteName": "Real Simple"
+}

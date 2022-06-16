@@ -1,0 +1,67 @@
+{
+  "name": "Soft Gingerbread Cookies",
+  "image": [
+    "https://www.tastesoflizzyt.com/wp-content/uploads/2017/11/soft-baked-molasses-cookies-2.jpg",
+    "https://www.tastesoflizzyt.com/wp-content/uploads/2017/11/soft-baked-molasses-cookies-4.jpg"
+  ],
+  "author": {
+    "name": "Lizzy T"
+  },
+  "description": "Soft Gingerbread Cookies have the taste of gingerbread cookies, but are soft and thick. Roll the dough balls in sugar for the perfect sweetness!",
+  "cookTime": 15,
+  "totalTime": 27,
+  "keywords": "christmas cookies, cookies without eggs, easy cookies, egg free cookies, gingerbread cookies",
+  "recipeYield": 60,
+  "recipeCategory": "Dessert",
+  "recipeCuisine": "American",
+  "nutrition": {
+    "calories": "111 kcal",
+    "servingSize": "1 serving",
+    "carbohydrateContent": "18 g",
+    "fatContent": "3 g",
+    "proteinContent": "1 g",
+    "sodiumContent": "119 mg",
+    "sugarContent": "9 g"
+  },
+  "recipeIngredient": [
+    "1 cup shortening",
+    "1 cup brown sugar (packed)",
+    "1 cup molasses",
+    "1 cup buttermilk",
+    "5 1/2 cups flour",
+    "4 teaspoons baking soda",
+    "1 teaspoon ginger",
+    "3/4 teaspoon cinnamon",
+    "1/4 teaspoon nutmeg",
+    "1/4 teaspoon cloves",
+    "1 teaspoons salt",
+    "1/2 cup extra sugar for rolling dough"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "In a large bowl, cream together the shortening, brown sugar, molasses and buttermilk."
+    },
+    {
+      "text": "\u0026nbsp;In a separate bowl, sift together the flour, baking soda, ginger, cinnamon, nutmeg, cloves and salt.\u0026nbsp;"
+    },
+    {
+      "text": "Add the dry ingredients to the creamed sugar mixture and mix well.\u0026nbsp;"
+    },
+    {
+      "text": "Roll the dough into balls and then roll the balls in sugar."
+    },
+    {
+      "text": "Place the cookie dough balls on an ungreased cookie sheet and bake at 350 degrees for 11-12 minutes."
+    },
+    {
+      "text": "Allow the cookies to cool on a wire rack and then store in an airtight container."
+    }
+  ],
+  "datePublished": "2017-11-09T01:57:35Z",
+  "aggregateRating": {
+    "ratingValue": 5,
+    "ratingCount": 2
+  },
+  "url": "https://www.tastesoflizzyt.com/soft-baked-gingerbread-cookies/",
+  "siteName": "Tastes of Lizzy T"
+}

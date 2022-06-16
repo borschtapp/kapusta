@@ -1,0 +1,25 @@
+{
+  "name": "Granola",
+  "image": [
+    "http://elanaspantry.com/wp-content/uploads/2009/07/granola.jpg",
+    "http://elanaspantry.com/granola/elanaspantry_files/granola.jpg"
+  ],
+  "description": "This Paleo breakfast cereal recipe for a healthy gluten free Granola is made with almonds, macadamia nuts, pumpkin seeds and raisins.",
+  "recipeIngredient": [
+    "2 cups almonds",
+    "1 cup macadamia nuts",
+    "1 cup pumpkin seeds\n",
+    "1 cup raisins\n",
+    "1 tablespoon vanilla extract",
+    "½ teaspoon ground cinnamon",
+    "½ teaspoon celtic sea salt"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Place nuts and seeds in a large bowl, cover with water and soak overnight"
+    }
+  ],
+  "url": "http://elanaspantry.com/granola/",
+  "siteName": "Elana's Pantry",
+  "language": "en_US"
+}

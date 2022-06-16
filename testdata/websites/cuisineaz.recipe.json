@@ -1,0 +1,35 @@
+{
+  "name": "Filet de saumon au four",
+  "image": [
+    "https://img.cuisineaz.com/610x610/2014-02-24/i78436-filet-de-saumon-au-four.jpeg",
+    "https://img.cuisineaz.com/610x610/2014-02-24/i78436-filet-de-saumon-au-four.jpeg"
+  ],
+  "author": {
+    "name": "CuisineAZ.com"
+  },
+  "description": "Toujours savoureux, toujours excellent, le filet de saumon au four est le succès assuré. Sain, bon pour la santé, plein d'omégas 3, il est juste parfait ! Et avec lui, pas besoin de fioritures, il se suffit à lui-même : vous cuisez le saumon tout simplement au four, avec un filet d'huile d'olive, de l'origan, du sel, du poivre, et c'est tout ! Un délice légèrement croustillant sur le dessus, et carrément fondant à l'intérieur, servi avec une salade verte bien assaisonnée, et éventuellement du riz basmati... Miam !",
+  "cookTime": 5,
+  "totalTime": 15,
+  "recipeYield": 4,
+  "recipeCategory": "Viandes",
+  "recipeCuisine": "french",
+  "nutrition": {
+    "calories": "339 calories"
+  },
+  "recipeIngredient": [
+    "600 g de filet de saumon",
+    "30 ml de huile d'olive",
+    "4 g de origan séché",
+    "sel, poivre du moulin"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Préchauffez le four à th.7 (210°C). Coupez le filet en pavés de saumon de même taille, correspondant au nombre de parts désirées, et déposez-les sur une plaque huilée ou dans un plat à four. Arrosez-les d'huile d'olive à leur tour. Salez et poivrez à votre convenance et parsemez d'origan."
+    }
+  ],
+  "aggregateRating": {
+    "reviewCount": 15
+  },
+  "url": "https://www.cuisineaz.com/recettes/filet-de-saumon-au-four-63049.aspx",
+  "siteName": "Cuisine AZ"
+}

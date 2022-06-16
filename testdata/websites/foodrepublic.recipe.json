@@ -1,0 +1,32 @@
+{
+  "name": "Dutch White Asparagus Recipe",
+  "image": [
+    "http://i2.wp.com/www.foodrepublic.com/wp-content/uploads/2013/04/dutchasparagus.jpg?fit=1200%2C1200",
+    "http://i2.wp.com/www.foodrepublic.com/wp-content/uploads/2013/04/dutchasparagus.jpg?w=700"
+  ],
+  "description": "\u003cp\u003eOne of the great things about spring menus is all the tender, fresh green vegetable dishes. Longstanding Midtown dining spot \u003ca href=\"http://www.michaelsnewyork.com/\" target=\"_blank\"\u003eMichael's New York\u003c/a\u003e, owned by restaurateur Michael McCarty, boasts a Dutch recipe we had to try: citrus-steamed Dutch white asparagus (they actually do a mix of white and green) with a wine-spiked butter sauce, a runny poached egg and a little Parmesan cheese. A little prosciutto never hurt anyone, either. \u003c/p\u003e ",
+  "recipeYield": 4,
+  "recipeIngredient": [
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t12\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tspears\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\tDutch white asparagus\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t1/2\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\teach\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\tMeyer lemon, orange and grapefruit\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t2\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tcups\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\twater, for steaming\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t1\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tcup\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\tgrated Parmesan cheese\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t1/2\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tcup\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\tChardonnay\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t1/2\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tcup\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\twhite wine vinegar\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t2\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tsprigs\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\tfresh thyme\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t1/2\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tcup\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\tshallots, minced\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\tsmall chunk of Parmesan rind\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t4\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\ttablespoons\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\tunsalted butter, chilled and cut into small cubes\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t4\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\tfresh eggs, poached (see instructions)\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t",
+    "\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t4\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tslices\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\tprosciutto\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "\n\t\t\tFor the Dutch white asparagus:  \tAfter\n peeling and trimming the asparagus, steam it in citrus water — water\nwith Meyer lemon, orange and grapefruit slices — until fork tender.  For the beurre blanc sauce:  \tIn a pot add the Chardonnay, white wine vinegar, thyme, shallots and chunk of Parmesan rind; reduce about a quarter. \tRemove from heat and slowly whisk in cubes of butter until sauce is thick and glossy.  To plate:  \tPour 2 tablespoons of beurre blanc on a plate, top it with a poached egg, steamed white asparagus, prosciutto and grated Parmesan.  More recipes with asparagus on Food Republic:  \tSpring Asparagus Soup Recipe \tGoat Cheese And Asparagus Macaroni Salad Recipe \tRoasted Asparagus \u0026 Scrambled Eggs Recipe  \t\t"
+    }
+  ],
+  "datePublished": "2013-04-16T16:01:24Z",
+  "url": "http://www.foodrepublic.com/recipes/dutch-white-asparagus-recipe/",
+  "siteName": "Food Republic",
+  "language": "en_us"
+}

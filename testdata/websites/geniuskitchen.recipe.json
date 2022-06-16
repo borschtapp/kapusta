@@ -1,0 +1,70 @@
+{
+  "name": "Quiche Lorraine Cups",
+  "image": [
+    "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/19/17/0/U4luIVT7QGyCun9REDLV_DSC04899-2.jpg",
+    "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/img/recipes/19/17/0/U4luIVT7QGyCun9REDLV_DSC04899-2.jpg"
+  ],
+  "author": {
+    "name": "Bergy"
+  },
+  "description": "Simple yet elegant - this is a make over of the old standard gourmet recipe. Serve with fresh fruit salad.",
+  "cookTime": 15,
+  "totalTime": 40,
+  "keywords": "Breakfast,Lunch/Snacks,Pork,Cheese,Egg,Eggs/Dairy,Meat,Canadian,North American,\u003c 60 Mins,Oven,Time To Make,Easy",
+  "recipeYield": 12,
+  "recipeCategory": "Savory Pies",
+  "nutrition": {
+    "calories": "152.2",
+    "carbohydrateContent": "5",
+    "cholesterolContent": "87.9",
+    "fatContent": "10.5",
+    "fiberContent": "0.1",
+    "proteinContent": "9.2",
+    "saturatedFatContent": "5.5",
+    "sodiumContent": "219.5",
+    "sugarContent": "0.3"
+  },
+  "recipeIngredient": [
+    "12      cooked crepes (, see \u003ca href=\"https://www.geniuskitchen.com/recipe/all-purpose-dinner-crepes-batter-19104\"\u003eAll Purpose Dinner Crepes Batter\u003c/a\u003e)",
+    "4   slices    bacon, cooked crisp \u0026amp,crumbled ",
+    "1   cup    swiss cheese, grated ",
+    "2   tablespoons    flour",
+    "1/4  teaspoon    salt",
+    "2       eggs",
+    "1   cup    milk"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Lightly grease a 12 muffin pan or 12 custard cups."
+    },
+    {
+      "text": "Line each with a crepe, fluting them."
+    },
+    {
+      "text": "Sprinkle bacon into the crepes."
+    },
+    {
+      "text": "Divide the cheese between the crepes."
+    },
+    {
+      "text": "Mix together the flour, salt."
+    },
+    {
+      "text": "Mix the beaten eggs and milk, add to the flour."
+    },
+    {
+      "text": "Blend well and pour into the crepes on top of the cheese."
+    },
+    {
+      "text": "Bake in 350F oven for 15-20 minutes or until firm."
+    },
+    {
+      "text": "Cool 5 minutes before removing from pan."
+    }
+  ],
+  "aggregateRating": {
+    "ratingValue": 5,
+    "reviewCount": 4
+  },
+  "url": "true"
+}

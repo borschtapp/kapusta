@@ -1,0 +1,39 @@
+{
+  "name": "Chili com carne",
+  "image": [
+    "https://d36rz30b5p7lsd.cloudfront.net/591/studio/assets/v1565775565060_2131722181/heinzbrasil-logo.png",
+    "https://d36rz30b5p7lsd.cloudfront.net/heinzbrasilbr/recipes/img/1e1fccb2d38d8b3e3611aa5c99706523.jpeg"
+  ],
+  "author": {
+    "name": "Kraft Heinz"
+  },
+  "nutrition": {
+    "fatContent": "0 g",
+    "fiberContent": "0 g",
+    "proteinContent": "0 g",
+    "saturatedFatContent": "0 g",
+    "sugarContent": "0 g",
+    "transFatContent": "0 g"
+  },
+  "recipeIngredient": [
+    " 1 kg de carne mo\u0026#xED;da ",
+    "1 cebola picada ",
+    "1 piment\u0026#xE3;o vermelho cortado em cubos ",
+    "1 piment\u0026#xE3;o verde cortado em cubos ",
+    "100 g de manteiga ",
+    "50 ml azeite ",
+    "20 g de especiarias mexicanas (piment\u0026#xE3;o, cominho, coentro...) ",
+    "100 ml de caf\u0026#xE9; forte ",
+    "150 g de milho crocante, escorrido ",
+    "200 g de feij\u0026#xE3;o lavado e escorrido (feij\u0026#xE3;o vermelho da Am\u0026#xE9;rica do Sul) ",
+    "2 tomates grandes cortados em cubos ",
+    "400 ml de\u0026#xA0;Ketchup Heinz ",
+    "200 g de queijo gruy\u0026#xE8;re ralado fininho "
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Modo de preparoFrite a carne, a cebola e os pimentões na manteiga com o azeite, mexendo bem. Despeje as especiarias mexicanas e o café. Adicione o milho, o feijão, os tomates picados e o Ketchup Heinz. Cozinhe por 5 minutos. Sirva com um bom pedaço de pão e gruyère."
+    }
+  ],
+  "url": "https://www.heinzbrasil.com.br/recipe/100149100002/chili-com-carne"
+}

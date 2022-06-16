@@ -1,0 +1,41 @@
+{
+  "name": "Chicken Marsala",
+  "image": [
+    "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2009/4/10/1/FO1D47_24021_s4x3.jpg.rend.hgtvcom.616.462.suffix/1431766598136.jpeg",
+    "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2009/4/10/1/FO1D47_24021_s4x3.jpg.rend.hgtvcom.406.305.suffix/1431766598136.jpeg"
+  ],
+  "author": {
+    "name": "Tyler Florence",
+    "url": "https://www.foodnetwork.com/profiles/talent/tyler-florence"
+  },
+  "description": "For an Italian favorite, try Tyler Florence's Chicken Marsala recipe, a flavorful meal of mushrooms, prosciutto and Marsala wine over tender chicken.",
+  "keywords": "italian,fried-chicken,meat,prosciutto,poultry,vegetables,mushroom,chicken,frying",
+  "recipeYield": 4,
+  "recipeCategory": "main-dish",
+  "recipeCuisine": "european",
+  "recipeIngredient": [
+    "4 skinless, boneless, chicken breasts (about 1 1/2 pounds)",
+    "All-purpose flour, for dredging",
+    "Kosher salt and freshly ground black pepper",
+    "1/4 cup extra-virgin olive oil",
+    "4 ounces prosciutto, thinly sliced",
+    "8 ounces crimini or porcini mushrooms, stemmed and halved",
+    "1/2 cup sweet Marsala wine",
+    "1/2 cup chicken stock",
+    "2 tablespoon unsalted butter",
+    "1/4 cup chopped flat-leaf parsley"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Put the chicken breasts side by side on a cutting board and lay a piece of plastic wrap over them; pound with a flat meat mallet, until they are about 1/4-inch thick. Put some flour in a shallow platter and season with a fair amount of salt and pepper; mix with a fork to distribute evenly."
+    }
+  ],
+  "dateModified": "2016-06-24T10:43:21.222-04:00",
+  "datePublished": "2015-07-22T10:03:50.021-04:00",
+  "aggregateRating": {
+    "ratingValue": 4.8,
+    "reviewCount": 638
+  },
+  "url": "https://www.foodnetwork.com/recipes/tyler-florence/chicken-marsala-recipe-1951778",
+  "siteName": "Food Network"
+}

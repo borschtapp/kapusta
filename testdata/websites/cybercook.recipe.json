@@ -1,0 +1,69 @@
+{
+  "name": "Strogonoff de Frango",
+  "image": [
+    "https://img.cybercook.com.br/imagens/receitas/644/strogonoff-de-frango-1.jpg",
+    "https://img.cybercook.com.br/imagens/receitas/644/strogonoff-de-frango-1.jpg"
+  ],
+  "author": {
+    "name": "Leticia Obo Andreghetti"
+  },
+  "description": "Receita de Strogonoff de Frango Simples. Aprenda esta deliciosa receita de strogonoff fácil de fazer e ótima para almoço ou jantar. Acesse já e saiba como!",
+  "cookTime": 30,
+  "totalTime": 30,
+  "keywords": "Sal,Receitas de Strogonoff,Receitas com Caldo,Peito de Frango,Creme de Leite,Caldo de Galinha,Russa,Cozinha Internacional,Receitas Salgadas,Frango,Aves,Pratos principais,Receitas de Frango Xadrez",
+  "recipeYield": 4,
+  "recipeCategory": "Aves",
+  "nutrition": {
+    "calories": "485"
+  },
+  "recipeIngredient": [
+    "200 gr de molho de tomate",
+    "1 unidade de cebola picada",
+    "2 dentes de alho",
+    "1 lata de creme de leite sem soro",
+    "600 gr de peito de frango sem osso",
+    "2 colheres (sopa) de óleo de soja",
+    "sal a gosto",
+    "pimenta-do-reino branca a gosto",
+    "100 gr de champignon em conserva"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Primeiro corte o frango em cubinhos."
+    },
+    {
+      "text": "Em uma panela média, coloque o óleo, a cebola e espere dourar."
+    },
+    {
+      "text": "Depois coloque o frango o tablete de caldo de galinha e o sal a gosto, aqueça até o ponto de fritura."
+    },
+    {
+      "text": "Mexa bem e tampe meia panela para que crie água, espere."
+    },
+    {
+      "text": "Sumir a água e começar a fritura."
+    },
+    {
+      "text": "Quando o frango já tiver dourado, acrescente o molho de tomate."
+    },
+    {
+      "text": "Depois coloque a lata de creme de leite e mexa até espalhar, com a mesma lata encha de água."
+    },
+    {
+      "text": "Mexa mais uma vez até misturar e deixe levantar fervura."
+    },
+    {
+      "text": "Acrescente o oregano e pronto."
+    },
+    {
+      "text": "O strogonoff está pronto para ser servido."
+    }
+  ],
+  "aggregateRating": {
+    "ratingValue": 4,
+    "reviewCount": 91
+  },
+  "url": "https://cybercook.com.br/receitas/aves/strogonoff-de-frango-16644",
+  "siteName": "CyberCook",
+  "language": "pt_BR"
+}

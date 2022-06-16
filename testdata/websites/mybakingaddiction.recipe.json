@@ -1,0 +1,67 @@
+{
+  "name": "Chocolate Coconut Zucchini Bread",
+  "image": [
+    "https://www.mybakingaddiction.com/wp-content/uploads/2016/08/chocolate-coconut-zucchini-bread-1-of-11-1-600x900.jpg",
+    "https://www.mybakingaddiction.com/wp-content/uploads/2016/08/chocolate-coconut-zucchini-bread-1-of-11-1-720x720.jpg"
+  ],
+  "author": {
+    "name": "Jamie"
+  },
+  "description": "Chocolate Coconut Zucchini Bread is quick, delicious, and the perfect use for garden zucchini. Enjoy a slice with your morning coffee, or serve it up for dessert.",
+  "cookTime": 15,
+  "totalTime": 75,
+  "keywords": " Bread, Chocolate, Coconut, Summer Recipes, Zucchini",
+  "recipeYield": 2,
+  "recipeCategory": "Bread",
+  "nutrition": {
+    "calories": "246 calories",
+    "servingSize": "1 slice"
+  },
+  "recipeIngredient": [
+    "2 1/2 cups all-purpose flour",
+    "1/2 cup unsweetened cocoa powder",
+    "1 teaspoon salt",
+    "1 teaspoon baking soda",
+    "1/2 teaspoon baking powder",
+    "1 teaspoon ground cinnamon",
+    "1 cup CRISCO® Organic Refined Coconut Oil, melted",
+    "2/3 cup granulated sugar",
+    "2/3 cup light brown sugar",
+    "1/2 cup sour cream",
+    "3 large eggs",
+    "2 teaspoons pure vanilla extract",
+    "2 1/2 cups grated zucchini",
+    "1 cup semi-sweet chocolate chips",
+    "3/4 cup shredded sweetened coconut"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Preheat oven to 350Â°F. Spray two 8x4-inch loaf pans with PillsburyÂ® BakingÂ Spray with Flour."
+    },
+    {
+      "text": "In a medium bowl, sift together the flour, cocoa, salt, baking soda, baking powderÂ and cinnamon."
+    },
+    {
+      "text": "In a large bowl with an electric mixer, mix the coconut oil and sugars untilÂ combined. Mix in the sour cream. Add in the eggs and vanilla and mix untilÂ thoroughly incorporated."
+    },
+    {
+      "text": "Slowly add dry ingredients to wet ingredients and mix until just combined."
+    },
+    {
+      "text": "Â Add in the zucchini and mix for about 1 minute, or until the batter is moistenedÂ and the zucchini is evenly incorporated into the batter. Stir in the chocolate chipsÂ and shredded coconut."
+    },
+    {
+      "text": "Spread the batter into the prepared pans and bake in preheatedÂ oven for 55-60Â minutes, or until a toothpick inserted into the center comes out clean."
+    },
+    {
+      "text": "Cool bread in pan for 1/2 hour. Remove bread to a wire rack to cool completely."
+    }
+  ],
+  "aggregateRating": {
+    "ratingValue": 4.4,
+    "reviewCount": 5
+  },
+  "url": "https://www.mybakingaddiction.com/chocolate-coconut-zucchini-bread/",
+  "siteName": "My Baking Addiction",
+  "language": "en_US"
+}

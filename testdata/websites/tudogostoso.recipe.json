@@ -1,0 +1,43 @@
+{
+  "name": "Caipirinha - Original",
+  "image": [
+    "https://img.itdg.com.br/images/recipes/000/128/825/319875/319875_original.jpg",
+    "https://img.itdg.com.br/tdg/images/recipes/000/128/825/319875/319875_original.jpg"
+  ],
+  "author": {
+    "name": "Daniela Belizario"
+  },
+  "description": "Receita de Caipirinha - Original. Enviada por Daniela Belizario e demora apenas 5 minutos.",
+  "cookTime": 5,
+  "totalTime": 5,
+  "keywords": "receita de caipirinha - original",
+  "recipeYield": 1,
+  "recipeCategory": "Bebidas",
+  "nutrition": {},
+  "recipeIngredient": [
+    "1 lim\u0026atilde;o grande",
+    "2 colheres de a\u0026ccedil;\u0026uacute;car",
+    "gelo a gosto",
+    "cacha\u0026ccedil;a"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Pegue o lim\u0026atilde;o coloque-o na horizontal e retire as duas pontas, vire-o na vertical e corte-o ao meio, retire os meio (parte branca) do lim\u0026atilde;o e fatie."
+    },
+    {
+      "text": "Coloque o lim\u0026atilde;o fatiado e duas colheres bem cheias de a\u0026ccedil;\u0026uacute;car dentro de um copo pr\u0026oacute;prio para a bebida e com um socador esprema at\u0026eacute; que saia todo o suco do lim\u0026atilde;o."
+    },
+    {
+      "text": "Coloque pedras de gelo at\u0026eacute; quase encher o copo (aproximadamente 12 pedras pequenas de gelo) e encha o copo com a cacha\u0026ccedil;a."
+    },
+    {
+      "text": "Mexa bem com uma colher ou coloque em uma coqueteleira e sirva-se!"
+    }
+  ],
+  "aggregateRating": {
+    "ratingValue": 4.5,
+    "reviewCount": 19
+  },
+  "url": "https://www.tudogostoso.com.br/receita/128825-caipirinha-original.html",
+  "siteName": "TudoGostoso"
+}

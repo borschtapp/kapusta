@@ -1,0 +1,32 @@
+{
+  "name": "Mizeria",
+  "image": [
+    "//static.kuchnia-domowa.pl/images/content/548/mizeria.jpg",
+    "http://static.kuchnia-domowa.pl/images/content/548/mizeria.jpg"
+  ],
+  "author": {
+    "name": "Kuchnia Domowa"
+  },
+  "description": "Lekka surówka do obiadu ze świeżego ogórka, śmietany lub jogurtu oraz koperku. Bardzo prosta, idealnie nadająca się do wielu dań obiadowych. Mizeria najsmaczniejsza jest z ziemniakami najlepiej młodymi i jakimś mięsem np. kotletem mielonym lub schabowym.\nMy najbardziej lubimy kremową mizerię z miękkimi, cienkimi plasterkami ogórka doprawioną nie tylko solą i pieprzem, ale również (aby była słodko- winna) sokiem z cytryny i cukrem. A jak u Ciebie przygotowuje się mizerię?",
+  "totalTime": 30,
+  "recipeYield": 4,
+  "recipeCategory": "Dodatki do dań",
+  "recipeCuisine": "Polska",
+  "recipeIngredient": [
+    "600 g świeżych ogórków gruntowych (lub długich, szklarniowych)*",
+    "300 g gęstej, kwaśnej śmietany 18% lub jogurtu typu greckiego",
+    "1 łyżeczka soli",
+    "1 łyżka soku z cytryny (lub niepełna łyżka octu jabłkowego)",
+    "1 łyżeczka cukru",
+    "czarny pieprz mielony",
+    "1 łyżka drobno posiekanego koperku"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "\nOgórki umyć, osuszyć, obrać i pokroić w jak najcieńsze plasterki.\nPlasterki umieścić w misce i posypać 1 łyżeczką soli. Wymieszać i pozostawić na ok. 15 minut.\nW międzyczasie śmietanę przełożyć do miseczki. Przyprawić sokiem z cytryny, cukrem, pieprzem i posiekanym koperkiem. Wymieszać.\nPo 15 minutach odlać wodę, którą puściły ogórki. (Lekko je odcisnąć, ale nie za mocno, aby mizeria nie wyszła za sucha).\nDodać przygotowaną śmietanę i wymieszać.\n\n\nUwaga:\n*Używając świeżych, sezonowych ogórków, wybierzcie nieduże, aby nie miały za dużych pestek, które są twarde. Z dużych, przerośniętych ogórków polecam wykroić środek.\n\n"
+    }
+  ],
+  "url": "https://www.kuchnia-domowa.pl/przepisy/dodatki-do-dan/548-mizeria",
+  "siteName": "Kuchnia Domowa",
+  "language": "pl-PL"
+}

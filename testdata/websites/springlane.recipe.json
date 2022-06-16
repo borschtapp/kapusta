@@ -1,0 +1,35 @@
+{
+  "name": "Tiramisu ohne Ei und ohne Alkohol \u0026#8211; Dolci für alle!",
+  "image": [
+    "https://www.springlane.de/magazin/wp-content/uploads/2016/04/Tiramisu-ohne-Ei-und-OHNE-AMARETTO_featured.jpg",
+    "https://www.springlane.de/magazin/wp-content/uploads/2017/01/Tiramisu-ohne-Ei-und-ohne-Amaretto_15.jpg"
+  ],
+  "author": {
+    "name": "Springlane"
+  },
+  "description": "Diese Version des italienischen Klassikers kommt ohne Ei und ohne Alkohol dafür, dafür aber mit einer Extraportion Sahne.",
+  "cookTime": 20,
+  "totalTime": 260,
+  "recipeYield": 6,
+  "recipeCategory": "Awareness",
+  "recipeCuisine": "Italien",
+  "recipeIngredient": [
+    "500 g Mascarpone",
+    "400 ml Sahne",
+    "100 g Puderzucker",
+    "150 ml Espresso",
+    "280 g L\u0026ouml;ffelbiskuit",
+    "Kakaopulver"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Sahne steif schlagen und mit Mascarpone und Puderzucker verrühren. Espresso kochen und abkühlen lassen."
+    },
+    {
+      "text": "Hälfte der Löffelbiskuits in die Auflaufform geben. 75 ml Espresso darüberträufeln. Hälfte der Creme auf den Löffelbiskuits verstreichen. Restliche Löffelbiskuits, Espresso und Creme daraufgeben, mindestens 4 Stunden kaltstellen. Vor dem Servieren mit Kakaopulver bestäuben."
+    }
+  ],
+  "url": "https://www.springlane.de/magazin/rezeptideen/tiramisu-ohne-ei-und-ohne-alkohol/",
+  "siteName": "Springlane",
+  "language": "de_DE"
+}

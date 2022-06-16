@@ -7,6 +7,7 @@ import (
 	duration "github.com/channelmeter/iso8601duration"
 
 	"borscht.app/kapusta/microdata"
+	"borscht.app/kapusta/model"
 	"borscht.app/kapusta/utils"
 )
 
@@ -75,4 +76,22 @@ func getPropertyDuration(item *microdata.Item, key string) (time.Duration, bool)
 	}
 
 	return 0, false
+}
+
+func parseInstructionSteps(item *microdata.Item) model.Step {
+	var instr model.Step
+	if val, ok := getPropertyString(item, "text", "description"); ok {
+		instr.Text = val
+	}
+	if val, ok := getPropertyString(item, "name"); ok && val != instr.Text {
+		instr.Name = val
+	}
+	if val, ok := getPropertyStringOrChild(item, "image", "url"); ok {
+		instr.Image = val
+	}
+	if val, ok := getPropertyString(item, "url"); ok {
+		instr.Url = val
+	}
+
+	return instr
 }

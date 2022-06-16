@@ -115,20 +115,8 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 	if nested, ok := p.Schema.GetNested("recipeInstructions"); ok {
 		for _, item := range nested.Items {
 			if item.IsOfType("http://schema.org/HowToStep", "HowToStep") {
-				var instr model.InstructionStep
-				if val, ok := getPropertyString(item, "text"); ok {
-					instr.Text = val
-				}
-				if val, ok := getPropertyString(item, "name"); ok && val != instr.Text {
-					instr.Name = val
-				}
-				if val, ok := getPropertyStringOrChild(item, "image", "url"); ok {
-					instr.Image = val
-				}
-				if val, ok := getPropertyString(item, "url"); ok && val != instr.Text {
-					instr.Url = val
-				}
-				r.Instructions = append(r.Instructions, &model.Instruction{InstructionStep: instr})
+				var step = parseInstructionSteps(item)
+				r.Instructions = append(r.Instructions, &model.Instruction{Step: step})
 			} else if item.IsOfType("http://schema.org/HowToSection", "HowToSection") {
 				var section model.Instruction
 				if name, ok := getPropertyString(item, "name"); ok {
@@ -137,37 +125,16 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 
 				if nested, ok := item.GetNested("itemListElement"); ok {
 					for _, item := range nested.Items {
-						var instr model.InstructionStep
-						if val, ok := getPropertyString(item, "image"); ok {
-							instr.Image = val
-						}
-						if val, ok := getPropertyString(item, "name"); ok {
-							instr.Name = val
-						}
-						if val, ok := getPropertyString(item, "description"); ok {
-							instr.Text = val
-						}
-						if val, ok := getPropertyString(item, "url"); ok {
-							instr.Url = val
-						}
-						section.Steps = append(section.Steps, &instr)
+						var step = parseInstructionSteps(item)
+						section.Steps = append(section.Steps, &step)
 					}
 				}
 				r.Instructions = append(r.Instructions, &section)
 			} else if item.IsOfType("http://schema.org/ItemList", "ItemList") {
 				if nested, ok := item.GetNested("itemListElement"); ok {
 					for _, item := range nested.Items {
-						var instr model.InstructionStep
-						if val, ok := getPropertyString(item, "image"); ok {
-							instr.Image = val
-						}
-						if val, ok := getPropertyString(item, "name"); ok {
-							instr.Name = val
-						}
-						if val, ok := getPropertyString(item, "description"); ok {
-							instr.Text = val
-						}
-						r.Instructions = append(r.Instructions, &model.Instruction{InstructionStep: instr})
+						var step = parseInstructionSteps(item)
+						r.Instructions = append(r.Instructions, &model.Instruction{Step: step})
 					}
 				}
 			} else {
@@ -175,7 +142,7 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 			}
 		}
 	} else if val, ok := getPropertyString(p.Schema, "recipeInstructions"); ok {
-		r.Instructions = append(r.Instructions, &model.Instruction{InstructionStep: model.InstructionStep{Text: val}})
+		r.Instructions = append(r.Instructions, &model.Instruction{Step: model.Step{Text: val}})
 	}
 
 	if item, ok := p.Schema.GetNestedItem("aggregateRating"); ok {

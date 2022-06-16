@@ -3,11 +3,13 @@ package parser
 import (
 	"errors"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/jaytaylor/html2text"
 	"golang.org/x/net/html"
 	"golang.org/x/net/html/charset"
 
@@ -23,11 +25,14 @@ type Options struct {
 
 type InputData struct {
 	Url      string
+	Text     string
 	Headers  *http.Header
 	RootNode *html.Node
 	Document *goquery.Document
 	Schema   *microdata.Item
 }
+
+var html2textOptions = html2text.Options{PrettyTables: false, OmitLinks: true}
 
 func FileInput(fileName string, options Options) (*InputData, error) {
 	file, err := os.Open(fileName)
@@ -37,59 +42,29 @@ func FileInput(fileName string, options Options) (*InputData, error) {
 	defer file.Close()
 
 	contentType, err := getContentType(file)
-	if err != nil {
-		return nil, errors.New("unable to detect content type: " + err.Error())
-	}
-
-	if strings.HasPrefix(contentType, "text/html") {
+	if err == nil && strings.HasPrefix(contentType, "text/html") {
 		root, err := html.Parse(file)
 		if err != nil {
 			return nil, errors.New("unable to parse html tree: " + err.Error())
 		}
 
-		url := "file://" + fileName
+		url := "file://" + strings.ReplaceAll(fileName, "\\", "/")
 		return NodeInput(root, url, options)
 	} else {
-		return &InputData{}, nil
-	}
-}
-
-func NodeInput(root *html.Node, url string, options Options) (i *InputData, err error) {
-	var doc *goquery.Document
-	if !options.SkipDocument {
-		doc = goquery.NewDocumentFromNode(root)
-
-		if !options.SkipUrl {
-			if val, ok := doc.Find("link[rel='canonical']").Attr("href"); ok {
-				url = val
-			} else if val, ok := doc.Find("meta[property='og:url']").Attr("content"); ok {
-				url = val
-			}
-		}
-	}
-
-	var schema *microdata.Item
-	if !options.SkipSchema {
-		data, err := microdata.ParseNode(root, url)
+		content, err := html2text.FromReader(file, html2textOptions)
 		if err != nil {
-			return nil, errors.New("unable to parse microdata on the page: " + err.Error())
+			return nil, errors.New("failed to convert html to text: " + err.Error())
 		}
 
-		schema = data.GetFirstOfType("http://schema.org/Recipe", "Recipe")
-		if schema == nil {
-			return nil, errors.New("no embedded recipe Schema found")
-		}
+		return &InputData{
+			Text: content,
+		}, nil
 	}
-
-	return &InputData{
-		Url:      url,
-		RootNode: root,
-		Document: doc,
-		Schema:   schema,
-	}, nil
 }
 
 func UrlInput(url string, options Options) (*InputData, error) {
+	options.SkipUrl = true
+
 	resp, err := http.Get(url)
 	if err != nil {
 		return nil, errors.New("request to the url failed: " + err.Error())
@@ -111,7 +86,6 @@ func UrlInput(url string, options Options) (*InputData, error) {
 		return nil, errors.New("unable to parse html tree: " + err.Error())
 	}
 
-	options.SkipUrl = true
 	input, err := NodeInput(root, url, options)
 	if err != nil {
 		return nil, err
@@ -119,6 +93,50 @@ func UrlInput(url string, options Options) (*InputData, error) {
 
 	input.Headers = &resp.Header
 	return input, nil
+}
+
+func NodeInput(root *html.Node, url string, options Options) (i *InputData, err error) {
+	var doc *goquery.Document
+	if !options.SkipDocument {
+		doc = goquery.NewDocumentFromNode(root)
+
+		if !options.SkipUrl {
+			if val, ok := doc.Find("link[rel='canonical']").Attr("href"); ok {
+				url = val
+			} else if val, ok := doc.Find("meta[property='og:url']").Attr("content"); ok {
+				url = val
+			}
+		}
+	}
+
+	var content string
+	if !options.SkipText {
+		content, err = html2text.FromHTMLNode(root, html2textOptions)
+		if err != nil {
+			log.Println("failed to convert html to text: " + err.Error())
+		}
+	}
+
+	var schema *microdata.Item
+	if !options.SkipSchema {
+		data, err := microdata.ParseNode(root, url)
+		if err != nil {
+			log.Println("unable to parse microdata on the page: " + err.Error())
+		} else {
+			schema = data.GetFirstOfType("http://schema.org/Recipe", "Recipe")
+			if schema == nil {
+				log.Println("no embedded recipe schema found on: " + url)
+			}
+		}
+	}
+
+	return &InputData{
+		Url:      url,
+		Text:     content,
+		RootNode: root,
+		Document: doc,
+		Schema:   schema,
+	}, nil
 }
 
 func getContentType(file *os.File) (string, error) {

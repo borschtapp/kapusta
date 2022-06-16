@@ -1,0 +1,38 @@
+{
+  "name": "Granola",
+  "image": [
+    "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/7/26/1/EA1E06_granola_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371599882741.jpeg",
+    "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/7/26/1/EA1E06_granola_s4x3.jpg.rend.hgtvcom.406.305.suffix/1371599882741.jpeg"
+  ],
+  "author": {
+    "name": "Alton Brown",
+    "url": "https://www.foodnetwork.com/profiles/talent/alton-brown"
+  },
+  "description": "Homemade granola couldn't be easier with Alton Brown's recipe from Good Eats on Food Network. Maple syrup sweetens this healthy melange of oats and nuts.",
+  "recipeYield": 6,
+  "recipeCuisine": "american",
+  "recipeIngredient": [
+    "3 cups rolled oats",
+    "1 cup slivered almonds",
+    "1 cup cashews",
+    "3/4 cup shredded sweet coconut",
+    "1/4 cup plus 2 tablespoons dark brown sugar",
+    "1/4 cup plus 2 tablespoons maple syrup",
+    "1/4 cup vegetable oil",
+    "3/4 teaspoon salt",
+    "1 cup raisins"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Preheat oven to 250 degrees F."
+    }
+  ],
+  "dateModified": "2014-05-12T14:29:20.958-04:00",
+  "datePublished": "2015-05-09T19:54:10.815-04:00",
+  "aggregateRating": {
+    "ratingValue": 4.9,
+    "reviewCount": 491
+  },
+  "url": "https://www.foodnetwork.com/recipes/alton-brown/granola-recipe-1939521",
+  "siteName": "Food Network"
+}

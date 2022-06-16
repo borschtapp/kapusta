@@ -1,0 +1,47 @@
+{
+  "name": "Homemade Eggnog",
+  "image": [
+    "https://www.tasteofhome.com/wp-content/uploads/2018/05/Homemade-Eggnog_EXPS_MCMZ16_3630_C07_13_5b.jpg",
+    "https://tmbidigitalassetsazure.blob.core.windows.net/secure/RMS/attachments/37/1200x1200/Homemade-Eggnog_EXPS_MCMZ16_3630_C07_13_5b.jpg"
+  ],
+  "author": {
+    "name": "Taste of Home"
+  },
+  "description": "Once, I asked my mother how to make eggnog, and she showed me this recipe. After just one taste, folks will know this homemade holiday treat came from the kitchen, not from the store. \u0026mdash;Pat Waymire, Yellow Springs, Ohio",
+  "cookTime": 15,
+  "totalTime": 45,
+  "recipeYield": 12,
+  "recipeCategory": "New Year's Recipes",
+  "nutrition": {
+    "calories": " 411 calories",
+    "carbohydrateContent": "35g carbohydrate (35g sugars",
+    "cholesterolContent": "247mg cholesterol",
+    "fatContent": "25g fat (14g saturated fat)",
+    "fiberContent": "0 fiber)",
+    "proteinContent": "13g protein. ",
+    "sodiumContent": "251mg sodium"
+  },
+  "recipeIngredient": [
+    "12 large eggs",
+    "1-1/2 cups sugar",
+    "1/2 teaspoon salt",
+    "8 cups whole milk, divided ",
+    "2 tablespoons vanilla extract",
+    "1 teaspoon ground nutmeg",
+    "2 cups heavy whipping cream",
+    "Additional nutmeg, optional"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "In a heavy saucepan, whisk together eggs, sugar and salt. Gradually add 4 cups milk; cook and stir over low heat until a thermometer reads 160\u0026deg;-170\u0026deg;, about 30-35 minutes. Do not allow to boil. Immediately transfer to a large bowl., Stir in vanilla, nutmeg and remaining milk. Place bowl in an ice-water bath, stirring until milk mixture is cool. (If mixture separates, process in a blender until smooth.) Refrigerate, covered, until cold, at least 3 hours., To serve, beat cream until soft peaks form. Whisk gently into cooled milk mixture. If desired, sprinkle with additional nutmeg before serving."
+    }
+  ],
+  "aggregateRating": {
+    "ratingValue": 4.82,
+    "ratingCount": 17,
+    "reviewCount": 16
+  },
+  "url": "https://www.tasteofhome.com/recipes/homemade-eggnog/",
+  "siteName": "Taste of Home",
+  "language": "en_US"
+}

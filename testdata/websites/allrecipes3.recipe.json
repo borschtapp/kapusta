@@ -1,0 +1,43 @@
+{
+  "name": "Good Old Fashioned Pancakes",
+  "image": [
+    "https://images.media-allrecipes.com/userphotos/560x315/4948036.jpg",
+    "https://images.media-allrecipes.com/userphotos/560x315/4948036.jpg"
+  ],
+  "author": {
+    "name": "dakota kelly"
+  },
+  "description": "\"This is a great recipe that I found in my Grandma's recipe book. Judging from the weathered look of this recipe card, this was a family favorite.\"        ",
+  "cookTime": 5,
+  "totalTime": 20,
+  "recipeYield": 8,
+  "recipeCategory": "Breakfast and Brunch",
+  "nutrition": {
+    "calories": "158 calories;",
+    "carbohydrateContent": "21.7",
+    "cholesterolContent": "38 ",
+    "fatContent": "5.9 ",
+    "proteinContent": "4.5 ",
+    "sodiumContent": "504 "
+  },
+  "recipeIngredient": [
+    "1 1/2 cups all-purpose flour",
+    "3 1/2 teaspoons baking powder",
+    "1 teaspoon salt",
+    "1 tablespoon white sugar",
+    "1 1/4 cups milk",
+    "1 egg",
+    "3 tablespoons butter, melted"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "\n                        \n                            In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.\n                            \n                        \n                        \n                            Heat a lightly oiled griddle or frying pan over medium high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.\n                            \n                        \n            "
+    }
+  ],
+  "aggregateRating": {
+    "ratingValue": 4.58,
+    "reviewCount": 10755
+  },
+  "url": "https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/",
+  "siteName": "Allrecipes"
+}

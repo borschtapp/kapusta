@@ -1,0 +1,75 @@
+{
+  "name": "Creamy Homemade Baked Mac and Cheese",
+  "image": [
+    "https://www.thechunkychef.com/wp-content/uploads/2018/02/Ultimate-Creamy-Baked-Mac-and-Cheese-feat.jpg",
+    "https://www.thechunkychef.com/wp-content/uploads/2016/12/Family-Favorite-Baked-Mac-and-Cheese-17.jpg"
+  ],
+  "author": {
+    "name": "The Chunky Chef"
+  },
+  "description": "This baked mac and cheese is a family favorite recipe, loved by children and adults. My version uses a combination of cheeses for a gloriously cheesy dish!",
+  "cookTime": 20,
+  "totalTime": 35,
+  "keywords": "mac and cheese, macaroni and cheese",
+  "recipeYield": 8,
+  "recipeCategory": "Main Course",
+  "recipeCuisine": "American",
+  "nutrition": {
+    "calories": "665 kcal",
+    "servingSize": "1 serving",
+    "carbohydrateContent": "43 g",
+    "cholesterolContent": "126 mg",
+    "fatContent": "41 g",
+    "fiberContent": "1 g",
+    "proteinContent": "28 g",
+    "saturatedFatContent": "25 g",
+    "sodiumContent": "700 mg",
+    "sugarContent": "3 g"
+  },
+  "recipeIngredient": [
+    "1 lb. dried elbow pasta",
+    "1/2 cup unsalted butter (1 stick)",
+    "1/2 cup all purpose flour",
+    "1 1/2 cups whole milk",
+    "2 1/2 cups half and half",
+    "4 cups grated medium sharp cheddar cheese (divided)",
+    "2 cups grated Gruyere cheese (divided)",
+    "1/2 Tbsp. salt",
+    "1/2 tsp. black pepper",
+    "1/4 tsp. paprika"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "Preheat oven to 325 degrees F and grease a 3 qt baking dish (9x13\"). \u0026nbsp;Set aside."
+    },
+    {
+      "text": "Bring a large pot of salted water to a boil. \u0026nbsp;When boiling, add dried pasta and cook 1 minute less than the package directs for al dente. \u0026nbsp;Drain and drizzle with a little bit of olive oil to keep from sticking."
+    },
+    {
+      "text": "While water is coming up to a boil, grate cheeses and toss together to mix, then divide into three piles. \u0026nbsp;Approximately 3 cups for the sauce, 1 1/2 cups for the inner layer, and 1 1/2 cups for the topping."
+    },
+    {
+      "text": "Melt butter in a large saucepan over MED heat. \u0026nbsp;Sprinkle in flour and whisk to combine. \u0026nbsp;Mixture will look like very wet sand. \u0026nbsp;Cook for approximately 1 minute, whisking often. \u0026nbsp;Slowly pour in about 2 cups or so of the milk/half and half, while whisking constantly, until smooth. \u0026nbsp;Slowly pour in the remaining milk/half and half, while whisking constantly, until combined and smooth."
+    },
+    {
+      "text": "Continue to heat over MED heat, whisking very often, until thickened to a very thick consistency. \u0026nbsp;It should almost be the consistency of a semi thinned out condensed soup."
+    },
+    {
+      "text": "Stir in spices and 1 1/2 cups of the cheeses, stirring to melt and combine. \u0026nbsp;Stir in another 1 1/2 cups of cheese, and stir until completely melted and smooth."
+    },
+    {
+      "text": "In a large mixing bowl, combine drained pasta with cheese sauce, stirring to combine fully. \u0026nbsp;Pour half of the pasta mixture into the prepared baking dish. \u0026nbsp;Top with 1 1/2 cups of grated cheeses, then top that with the remaining pasta mixture."
+    },
+    {
+      "text": "Sprinkle the top with the last 1 1/2 cups of cheese and bake for 15 minutes, until cheesy is bubbly and lightly golden brown. \u0026nbsp;"
+    }
+  ],
+  "datePublished": "2018-02-01T21:49:54Z",
+  "aggregateRating": {
+    "ratingValue": 4.99,
+    "ratingCount": 171
+  },
+  "url": "https://www.thechunkychef.com/family-favorite-baked-mac-and-cheese/",
+  "siteName": "The Chunky Chef",
+  "language": "en_US"
+}

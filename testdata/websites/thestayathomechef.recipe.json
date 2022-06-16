@@ -1,0 +1,61 @@
+{
+  "name": "Perfect Pancakes",
+  "image": [
+    "https://thestayathomechef.com/wp-content/uploads/2018/03/Perfect-Pancakes-4-e1520987577263.jpg",
+    "https://thestayathomechef.com/wp-content/uploads/2018/03/Perfect-Pancakes-5-1-e1520988239625.jpg"
+  ],
+  "author": {
+    "name": "Rachel Farnsworth"
+  },
+  "description": "The Perfect Homemade Pancake Recipe is easy to make with ingredients you probably already have on hand. This recipe can easily be turned into a pancake mix or into buttermilk pancakes as well. It's the perfect versatile all-in one recipe.",
+  "cookTime": 5,
+  "totalTime": 20,
+  "recipeYield": 12,
+  "nutrition": {
+    "calories": "122 kcal",
+    "servingSize": "1 serving",
+    "carbohydrateContent": "15 g",
+    "cholesterolContent": "39 mg",
+    "fatContent": "5 g",
+    "proteinContent": "3 g",
+    "saturatedFatContent": "3 g",
+    "sodiumContent": "254 mg",
+    "sugarContent": "3 g"
+  },
+  "recipeIngredient": [
+    "1 1/2 cups all-purpose flour",
+    "2 tablespoons sugar",
+    "2 teaspoons baking powder",
+    "1 teaspoon baking soda",
+    "1/2 teaspoon salt",
+    "1 cup milk or buttermilk",
+    "2  large eggs",
+    "1/4 cup melted butter"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "In a large mixing bowl, sift together flour, sugar baking powder, baking soda, and salt."
+    },
+    {
+      "text": "Whisk in milk, eggs, and melted butter just until combined."
+    },
+    {
+      "text": "Preheat a flat griddle over medium-high heat."
+    },
+    {
+      "text": "Scoop 1/4 cup of pancake batter onto griddle. Let pancakes cook until bubbles form before flipping."
+    },
+    {
+      "text": "Cook other side until golden brown. Serve hot with syrup."
+    }
+  ],
+  "dateModified": "2018-12-17T12:57:36Z",
+  "datePublished": "2018-03-14T08:30:24Z",
+  "aggregateRating": {
+    "ratingValue": 4.81,
+    "ratingCount": 36
+  },
+  "url": "https://thestayathomechef.com/pancake-recipe/",
+  "siteName": "thestayathomechef.com",
+  "language": "en_US"
+}

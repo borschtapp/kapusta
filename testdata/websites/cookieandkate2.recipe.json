@@ -1,0 +1,53 @@
+{
+  "name": "Easy Refried Beans",
+  "image": [
+    "https://cookieandkate.com/images/2018/04/quick-refried-beans-recipe-1.jpg",
+    "https://cookieandkate.com/images/2018/04/quick-refried-beans-recipe-1-225x225.jpg"
+  ],
+  "author": {
+    "name": "Cookie and Kate"
+  },
+  "description": "These refried beans are delicious and so easy to make. This refried bean recipe is quick, too—use canned beans and they're ready in 25 minutes! Plus, these beans are healthy, vegan and gluten free. Recipe yields 4 servings.",
+  "cookTime": 10,
+  "totalTime": 25,
+  "keywords": "refried beans",
+  "recipeYield": 4,
+  "recipeCategory": "Side Dish",
+  "recipeCuisine": "Mexican",
+  "nutrition": {
+    "calories": "194",
+    "carbohydrateContent": "29.7 g",
+    "cholesterolContent": "0 mg",
+    "fatContent": "4.9 g",
+    "fiberContent": "0.5 g",
+    "proteinContent": "9.5 g",
+    "saturatedFatContent": "0.5 g",
+    "sodiumContent": "425.9 mg",
+    "sugarContent": "1 g",
+    "transFatContent": "0 g"
+  },
+  "recipeIngredient": [
+    "1 tablespoon extra-virgin olive oil",
+    "1/2 cup finely chopped yellow or white onion (about 1/2 small onion)",
+    "1/4 teaspoon fine sea salt",
+    "2 cloves garlic, pressed or minced",
+    "1/2 teaspoon chili powder",
+    "1/4 teaspoon ground cumin",
+    "2 cans (15 ounces each) pinto beans, rinsed and drained, or 3 cups cooked pinto beans",
+    "1/2 cup water",
+    "2 tablespoons chopped fresh cilantro",
+    "1 tablespoon lime juice (about 1/2 medium lime), to taste"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "In a medium saucepan over medium heat, warm the olive oil until shimmering. Add the onions and salt. Cook, stirring occasionally, until the onions have softened and are turning translucent, about 5 to 8 minutes."
+    }
+  ],
+  "aggregateRating": {
+    "ratingValue": 4.9,
+    "reviewCount": 39
+  },
+  "url": "https://cookieandkate.com/2018/easy-refried-beans-recipe/",
+  "siteName": "Cookie and Kate",
+  "language": "en_US"
+}

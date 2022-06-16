@@ -15,8 +15,6 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 	if len(r.Url) == 0 {
 		if val, ok := p.Document.Find("meta[property='og:url']").Attr("content"); ok {
 			r.Url = val
-		} else if val, ok := p.Document.Find("link[rel='canonical']").Attr("href"); ok {
-			r.Url = val
 		}
 	}
 

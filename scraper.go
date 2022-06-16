@@ -9,8 +9,9 @@ import (
 	"borscht.app/kapusta/parser/schema"
 )
 
-func scrape(input *parser.InputData) (*model.Recipe, error) {
+func Scrape(input *parser.InputData) (*model.Recipe, error) {
 	recipe := &model.Recipe{}
+	recipe.Url = input.Url
 
 	// fill recipe with OpenGraph metadata
 	err := opengraph.Parse(input, recipe)
@@ -34,7 +35,7 @@ func ScrapeFile(fileName string) (*model.Recipe, error) {
 		return nil, err
 	}
 
-	return scrape(input)
+	return Scrape(input)
 }
 
 // ScrapeUrl retrieves and parses a recipe from the url
@@ -44,5 +45,5 @@ func ScrapeUrl(url string) (*model.Recipe, error) {
 		return nil, err
 	}
 
-	return scrape(input)
+	return Scrape(input)
 }

@@ -101,9 +101,11 @@ func NodeInput(root *html.Node, url string, options Options) (i *InputData, err 
 		doc = goquery.NewDocumentFromNode(root)
 
 		if !options.SkipUrl {
-			if val, ok := doc.Find("link[rel='canonical']").Attr("href"); ok {
+			if val, ok := doc.Find("meta[property='og:url']").Attr("content"); ok {
 				url = val
-			} else if val, ok := doc.Find("meta[property='og:url']").Attr("content"); ok {
+			} else if val, ok := doc.Find("link[rel='canonical']").Attr("href"); ok {
+				url = val
+			} else if val, ok := doc.Find("link[rel='alternate']").Attr("href"); ok {
 				url = val
 			}
 		}

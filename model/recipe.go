@@ -14,7 +14,7 @@ type Author struct {
 	Url         string `json:"url,omitempty"`
 }
 
-type InstructionStep struct {
+type Step struct {
 	Name  string `json:"name,omitempty"`
 	Text  string `json:"text,omitempty"`
 	Url   string `json:"url,omitempty"`
@@ -22,8 +22,8 @@ type InstructionStep struct {
 }
 
 type Instruction struct {
-	InstructionStep
-	Steps []*InstructionStep `json:"steps,omitempty"`
+	Step
+	Steps []*Step `json:"itemListElement,omitempty"`
 }
 
 // TODO: parse numbers and convert

@@ -46,9 +46,13 @@
     },
     {
       "name": "To frost the cake",
-      "steps": [
-        {},
-        {}
+      "itemListElement": [
+        {
+          "text": "About 1 hour before serving, remove cakes from freezer. If the cakes are puffed up at the top slice off the top to even them out and make it flat to layer the cakes.\u0026nbsp;"
+        },
+        {
+          "text": "Dap a small amount of frosting under the first cake on the plate so it won't wiggle as you ice it then add a spoonful on top of the cake to place the second layer on top. Frost gently around the sides of the cake and on top. \u0026nbsp;Top the cake with a few fresh cherries.\u0026nbsp;"
+        }
       ]
     }
   ],

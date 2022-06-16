@@ -45,67 +45,107 @@
   "recipeInstructions": [
     {
       "name": "Preheat",
-      "steps": [
-        {},
-        {}
+      "itemListElement": [
+        {
+          "text": "Preheat the oven to 425F."
+        },
+        {
+          "text": "Line sheet pan with foil."
+        }
       ]
     },
     {
       "name": "Sear Tofu",
-      "steps": [
-        {},
-        {},
-        {},
-        {}
+      "itemListElement": [
+        {
+          "text": "Drain, pat dry \u0026 prepare tofu."
+        },
+        {
+          "text": "Heat pan on high heat for 2 minutes."
+        },
+        {
+          "text": "Cook for 7 min or until golden brown on all sides, seasoning half way."
+        },
+        {
+          "text": "Remove from pan."
+        }
       ]
     },
     {
       "name": "Bake Broccoli",
-      "steps": [
-        {},
-        {}
+      "itemListElement": [
+        {
+          "text": "Toss broccoli with oil \u0026 salt."
+        },
+        {
+          "text": "Bake for 22 minutes."
+        }
       ]
     },
     {
       "name": "Simmer Carrots \u0026 Ginger ",
-      "steps": [
-        {},
-        {},
-        {}
+      "itemListElement": [
+        {
+          "text": "Prepare ingredients. "
+        },
+        {
+          "text": "Pre-heat pan. Add all ingredients; cover with water. "
+        },
+        {
+          "text": "Cook until soft, about 5 minutes. "
+        }
       ]
     },
     {
       "name": "Blend Dressing Ingredients ",
-      "steps": [
-        {},
-        {},
-        {},
-        {}
+      "itemListElement": [
+        {
+          "text": "Transfer carrot-ginger mixture to blender. "
+        },
+        {
+          "text": "Add orange juice/zest, miso, sesame oil, honey, rice vinegar."
+        },
+        {
+          "text": "Blend until smooth."
+        },
+        {
+          "text": "Let cool in fridge for 10 minutes. Fold in chives \u0026 season."
+        }
       ]
     },
     {
       "name": "Flavor Beets",
-      "steps": [
-        {}
+      "itemListElement": [
+        {
+          "text": "Toss beets in oil. Season with salt, pepper \u0026 parsley. "
+        }
       ]
     },
     {
       "name": "Toast Sunflower Seeds ",
-      "steps": [
-        {},
-        {}
+      "itemListElement": [
+        {
+          "text": "Combine ingredients. "
+        },
+        {
+          "text": "Toast in oven for 5 - 7 min or until golden brown."
+        }
       ]
     },
     {
       "name": "Mixed Greens",
-      "steps": [
-        {}
+      "itemListElement": [
+        {
+          "text": "Wash greens \u0026 dry. "
+        }
       ]
     },
     {
       "name": "Serve and Enjoy!",
-      "steps": [
-        {}
+      "itemListElement": [
+        {
+          "text": "Pair with your favorite music!"
+        }
       ]
     }
   ],

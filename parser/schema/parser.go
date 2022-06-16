@@ -112,11 +112,7 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 		r.Language = val.(string)
 	}
 
-	if ingredients, ok := p.Schema.GetProperties("recipeIngredient"); ok {
-		for _, v := range ingredients {
-			r.Ingredients = append(r.Ingredients, v.(string))
-		}
-	} else if ingredients, ok := p.Schema.GetProperties("ingredients"); ok {
+	if ingredients, ok := p.Schema.GetProperties("recipeIngredient", "ingredients"); ok {
 		for _, v := range ingredients {
 			r.Ingredients = append(r.Ingredients, v.(string))
 		}
@@ -158,7 +154,7 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 		r.AggregateRating = &rating
 	}
 
-	if item, ok := p.Schema.GetNestedItem("author"); ok {
+	if item, ok := p.Schema.GetNestedItem("author", "creator"); ok {
 		var author model.Author
 		if val, ok := item.GetProperty("name"); ok {
 			author.Name = val.(string)
@@ -175,21 +171,6 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 		r.Author = &author
 	} else if val, ok := p.Schema.GetProperty("author"); ok {
 		r.Author = &model.Author{Name: val.(string)}
-	} else if item, ok := p.Schema.GetNestedItem("creator"); ok {
-		var author model.Author
-		if val, ok := item.GetProperty("name"); ok {
-			author.Name = val.(string)
-		}
-		if val, ok := item.GetProperty("jobTitle"); ok {
-			author.JobTitle = val.(string)
-		}
-		if val, ok := item.GetProperty("description"); ok {
-			author.Description = val.(string)
-		}
-		if val, ok := item.GetProperty("url"); ok {
-			author.Url = val.(string)
-		}
-		r.Author = &author
 	}
 
 	if val, ok := p.Schema.GetProperty("recipeCuisine"); ok {

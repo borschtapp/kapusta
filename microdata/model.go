@@ -52,13 +52,13 @@ func (i *Item) addType(value string) {
 }
 
 // addProperty adds the property, value pair to the properties map. It appends to any existing property.
-func (i *Item) addProperty(property string, value interface{}) {
-	i.Properties[property] = append(i.Properties[property], value)
+func (i *Item) addProperty(key string, value interface{}) {
+	i.Properties[key] = append(i.Properties[key], value)
 }
 
 // addItem adds the property, value pair to the properties map. It appends to any existing property.
-func (i *Item) addItem(property string, value *Item) {
-	i.Properties[property] = append(i.Properties[property], value)
+func (i *Item) addItem(key string, value *Item) {
+	i.Properties[key] = append(i.Properties[key], value)
 }
 
 func (i *Item) IsOfType(itemType ...string) bool {
@@ -72,38 +72,49 @@ func (i *Item) IsOfType(itemType ...string) bool {
 	return false
 }
 
-func (i *Item) GetProperty(property string) (val interface{}, ok bool) {
-	if arr, ok := i.GetProperties(property); ok {
-		if len(arr) > 1 {
-			log.Printf("Probably unexpected behaviour, more values of '%s' available", property)
-		}
+func (i *Item) GetProperty(keys ...string) (val interface{}, ok bool) {
+	for _, key := range keys {
+		if arr, ok := i.GetProperties(key); ok {
+			if len(arr) > 1 {
+				log.Printf("Probably unexpected behaviour, more values of '%s' available", key)
+			}
 
-		return arr[0], true
+			return arr[0], true
+		}
 	}
 	return
 }
 
-func (i *Item) GetProperties(property string) (arr []interface{}, ok bool) {
-	for _, v := range i.Properties[property] {
-		arr = append(arr, v)
-	}
-	return arr, len(arr) > 0
-}
-
-func (i *Item) GetNestedItem(property string) (val *Item, ok bool) {
-	if data, ok := i.GetNested(property); ok {
-		if len(data.Items) > 1 {
-			log.Printf("Probably unexpected behaviour, more values of '%s' available", property)
+func (i *Item) GetProperties(keys ...string) (arr []interface{}, ok bool) {
+	for _, key := range keys {
+		for _, v := range i.Properties[key] {
+			arr = append(arr, v)
 		}
 
-		return data.Items[0], true
+		if len(arr) > 0 {
+			return arr, true
+		}
+	}
+
+	return arr, false
+}
+
+func (i *Item) GetNestedItem(keys ...string) (val *Item, ok bool) {
+	for _, key := range keys {
+		if data, ok := i.GetNested(key); ok {
+			if len(data.Items) > 1 {
+				log.Printf("Probably unexpected behaviour, more values of '%s' available", keys)
+			}
+
+			return data.Items[0], true
+		}
 	}
 	return
 }
 
-func (i *Item) GetNested(property string) (data Microdata, ok bool) {
+func (i *Item) GetNested(key string) (data Microdata, ok bool) {
 	var arr []*Item
-	for _, v := range i.Properties[property] {
+	for _, v := range i.Properties[key] {
 		switch v.(type) {
 		case *Item:
 			arr = append(arr, v.(*Item))

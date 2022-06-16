@@ -86,7 +86,12 @@ func (p *parser) readJsonItem(item *Item, mi interface{}) {
 		}
 
 		if m["@type"] != nil {
-			item.addType(m["@type"].(string))
+			p.readType(item, m["@type"])
+		}
+
+		// sometimes they forget about @ char :/
+		if m["type"] != nil {
+			p.readType(item, m["type"])
 		}
 
 		for k, v := range m {
@@ -94,6 +99,19 @@ func (p *parser) readJsonItem(item *Item, mi interface{}) {
 		}
 	default:
 		log.Printf("Unexpected property type: %T\n", t)
+	}
+}
+
+func (p *parser) readType(item *Item, val interface{}) {
+	switch vt := val.(type) {
+	case []interface{}:
+		for _, sv := range vt {
+			item.addType(sv.(string))
+		}
+	case string:
+		item.addType(val.(string))
+	default:
+		log.Printf("Unexpected value of type '%T' used for @type\n", val)
 	}
 }
 

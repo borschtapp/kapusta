@@ -1,8 +1,8 @@
 package schema
 
 import (
+	"errors"
 	"fmt"
-	"log"
 	"strings"
 	"time"
 
@@ -16,36 +16,30 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 		return nil
 	}
 
-	if val, ok := p.Schema.GetProperty("url"); ok {
-		r.Url = val.(string)
-	} else if val, ok := p.Schema.GetProperty("mainEntityOfPage"); ok {
-		r.Url = val.(string)
+	if val, ok := getPropertyString(p.Schema, "url"); ok {
+		r.Url = val
+	} else if val, ok := getPropertyStringOrChild(p.Schema, "mainEntityOfPage", "@id"); ok {
+		r.Url = val
 	}
 
-	if val, ok := p.Schema.GetProperty("name"); ok {
-		r.Name = val.(string)
+	if val, ok := getPropertyString(p.Schema, "name"); ok {
+		r.Name = val
 	}
 
-	if val, ok := p.Schema.GetProperty("recipeCategory"); ok {
-		r.Category = val.(string)
+	if val, ok := getPropertyString(p.Schema, "recipeCategory"); ok {
+		r.Category = val
 	}
 
-	if val, ok := p.Schema.GetProperty("totalTime"); ok {
-		if val, ok := utils.GetDurationMinutes(val.(string)); ok {
-			r.TotalTime = val
-		}
+	if val, ok := getPropertyDuration(p.Schema, "totalTime"); ok {
+		r.TotalTime = int(val.Minutes())
 	}
 
-	if val, ok := p.Schema.GetProperty("cookTime"); ok {
-		if val, ok := utils.GetDurationMinutes(val.(string)); ok {
-			r.CookTime = val
-		}
+	if val, ok := getPropertyDuration(p.Schema, "cookTime"); ok {
+		r.CookTime = int(val.Minutes())
 	}
 
-	if val, ok := p.Schema.GetProperty("prepTime"); ok {
-		if val, ok := utils.GetDurationMinutes(val.(string)); ok {
-			r.PrepTime = val
-		}
+	if val, ok := getPropertyDuration(p.Schema, "prepTime"); ok {
+		r.CookTime = int(val.Minutes())
 	}
 
 	if val, ok := p.Schema.GetProperty("recipeYield"); ok {
@@ -57,18 +51,18 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 		case float64:
 			r.Yield = int(val.(float64))
 		default:
-			log.Printf("Unable to parse recipeYield: %v", val)
+			return errors.New("unable to parse recipeYield: " + fmt.Sprint(val))
 		}
 	}
 
 	if nested, ok := p.Schema.GetNested("image"); ok {
 		for _, item := range nested.Items {
-			if val, ok := item.GetProperty("url"); ok {
-				r.Image = append(r.Image, val.(string))
+			if val, ok := getPropertyString(item, "url"); ok {
+				r.Image = append(r.Image, val)
 			}
 		}
-	} else if val, ok := p.Schema.GetProperty("image"); ok {
-		r.Image = append(r.Image, val.(string))
+	} else if val, ok := getPropertyString(p.Schema, "image"); ok {
+		r.Image = append(r.Image, val)
 	}
 
 	if item, ok := p.Schema.GetNestedItem("nutrition"); ok {
@@ -106,79 +100,123 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 		r.Nutrition = &nutrition
 	}
 
-	if val, ok := p.Schema.GetProperty("inLanguage"); ok {
-		r.Language = val.(string)
-	} else if val, ok := p.Schema.GetProperty("language"); ok {
-		r.Language = val.(string)
+	if val, ok := getPropertyString(p.Schema, "inLanguage", "language"); ok {
+		r.Language = val
 	}
 
 	if ingredients, ok := p.Schema.GetProperties("recipeIngredient", "ingredients"); ok {
-		for _, v := range ingredients {
-			r.Ingredients = append(r.Ingredients, v.(string))
+		for _, val := range ingredients {
+			if text, ok := getStringOrChild(val, "name"); ok {
+				r.Ingredients = append(r.Ingredients, text)
+			}
 		}
 	}
 
 	if nested, ok := p.Schema.GetNested("recipeInstructions"); ok {
 		for _, item := range nested.Items {
-			var instr model.Instruction
-			if item.IsOfType("HowToStep") {
-				if val, ok := item.GetProperty("text"); ok {
-					instr.Text = val.(string)
+			if item.IsOfType("http://schema.org/HowToStep", "HowToStep") {
+				var instr model.InstructionStep
+				if val, ok := getPropertyString(item, "text"); ok {
+					instr.Text = val
 				}
-				if val, ok := item.GetProperty("name"); ok && val != instr.Text {
-					instr.Name = val.(string)
+				if val, ok := getPropertyString(item, "name"); ok && val != instr.Text {
+					instr.Name = val
 				}
-				if val, ok := item.GetProperty("image"); ok {
-					instr.Image = val.(string)
+				if val, ok := getPropertyStringOrChild(item, "image", "url"); ok {
+					instr.Image = val
+				}
+				if val, ok := getPropertyString(item, "url"); ok && val != instr.Text {
+					instr.Url = val
+				}
+				r.Instructions = append(r.Instructions, &model.Instruction{InstructionStep: instr})
+			} else if item.IsOfType("http://schema.org/HowToSection", "HowToSection") {
+				var section model.Instruction
+				if name, ok := getPropertyString(item, "name"); ok {
+					section.Name = name
+				}
+
+				if nested, ok := item.GetNested("itemListElement"); ok {
+					for _, item := range nested.Items {
+						var instr model.InstructionStep
+						if val, ok := getPropertyString(item, "image"); ok {
+							instr.Image = val
+						}
+						if val, ok := getPropertyString(item, "name"); ok {
+							instr.Name = val
+						}
+						if val, ok := getPropertyString(item, "description"); ok {
+							instr.Text = val
+						}
+						if val, ok := getPropertyString(item, "url"); ok {
+							instr.Url = val
+						}
+						section.Steps = append(section.Steps, &instr)
+					}
+				}
+				r.Instructions = append(r.Instructions, &section)
+			} else if item.IsOfType("http://schema.org/ItemList", "ItemList") {
+				if nested, ok := item.GetNested("itemListElement"); ok {
+					for _, item := range nested.Items {
+						var instr model.InstructionStep
+						if val, ok := getPropertyString(item, "image"); ok {
+							instr.Image = val
+						}
+						if val, ok := getPropertyString(item, "name"); ok {
+							instr.Name = val
+						}
+						if val, ok := getPropertyString(item, "description"); ok {
+							instr.Text = val
+						}
+						r.Instructions = append(r.Instructions, &model.Instruction{InstructionStep: instr})
+					}
 				}
 			} else {
-				log.Println("Unknown instruction type:", item.Types)
+				return errors.New("unknown instruction type: " + fmt.Sprint(item.Types))
 			}
-			r.Instructions = append(r.Instructions, &instr)
 		}
-	} else if val, ok := p.Schema.GetProperty("recipeInstructions"); ok {
-		r.Instructions = append(r.Instructions, &model.Instruction{Text: val.(string)})
+	} else if val, ok := getPropertyString(p.Schema, "recipeInstructions"); ok {
+		r.Instructions = append(r.Instructions, &model.Instruction{InstructionStep: model.InstructionStep{Text: val}})
 	}
 
 	if item, ok := p.Schema.GetNestedItem("aggregateRating"); ok {
 		var rating model.Rating
-		if val, ok := item.GetProperty("ratingValue"); ok {
-			rating.RatingValue = val.(float64)
+		if val, ok := getPropertyFloat(item, "ratingValue"); ok {
+			rating.RatingValue = val
 		}
-		if val, ok := item.GetProperty("ratingCount"); ok {
-			rating.RatingCount = val.(int)
+		if val, ok := getPropertyInt(item, "ratingCount"); ok {
+			rating.RatingCount = val
 		}
-		if val, ok := item.GetProperty("reviewCount"); ok {
-			rating.ReviewCount = val.(int)
+		if val, ok := getPropertyInt(item, "reviewCount"); ok {
+			rating.ReviewCount = val
 		}
 		r.AggregateRating = &rating
 	}
 
 	if item, ok := p.Schema.GetNestedItem("author", "creator"); ok {
 		var author model.Author
-		if val, ok := item.GetProperty("name"); ok {
-			author.Name = val.(string)
+		if val, ok := getPropertyString(item, "name"); ok {
+			author.Name = val
 		}
-		if val, ok := item.GetProperty("jobTitle"); ok {
-			author.JobTitle = val.(string)
+		if val, ok := getPropertyString(item, "jobTitle"); ok {
+			author.JobTitle = val
 		}
-		if val, ok := item.GetProperty("description"); ok {
-			author.Description = val.(string)
+		if val, ok := getPropertyString(item, "description"); ok {
+			author.Description = val
 		}
-		if val, ok := item.GetProperty("url"); ok {
-			author.Url = val.(string)
+		if val, ok := getPropertyString(item, "url"); ok {
+			author.Url = val
 		}
 		r.Author = &author
-	} else if val, ok := p.Schema.GetProperty("author"); ok {
-		r.Author = &model.Author{Name: val.(string)}
+	} else if val, ok := getPropertyString(p.Schema, "author"); ok {
+		r.Author = &model.Author{Name: val}
 	}
 
-	if val, ok := p.Schema.GetProperty("recipeCuisine"); ok {
-		r.Cuisine = val.(string)
+	if val, ok := getPropertyString(p.Schema, "recipeCuisine"); ok {
+		r.Cuisine = val
 	}
 
-	if val, ok := p.Schema.GetProperty("description"); ok {
-		r.Description = strings.Trim(val.(string), "\n")
+	if val, ok := getPropertyString(p.Schema, "description"); ok {
+		r.Description = strings.Trim(val, "\n")
 	}
 
 	if keywords, ok := p.Schema.GetProperties("keywords"); ok {
@@ -189,14 +227,14 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 		r.Keywords = strings.Join(arr, ", ")
 	}
 
-	if val, ok := p.Schema.GetProperty("datePublished"); ok {
-		if val, err := time.Parse(time.RFC3339, val.(string)); err == nil {
+	if val, ok := getPropertyString(p.Schema, "datePublished"); ok {
+		if val, err := time.Parse(time.RFC3339, val); err == nil {
 			r.DatePublished = &val
 		}
 	}
 
-	if val, ok := p.Schema.GetProperty("dateModified"); ok {
-		if val, err := time.Parse(time.RFC3339, val.(string)); err == nil {
+	if val, ok := getPropertyString(p.Schema, "dateModified"); ok {
+		if val, err := time.Parse(time.RFC3339, val); err == nil {
 			r.DateModified = &val
 		}
 	}

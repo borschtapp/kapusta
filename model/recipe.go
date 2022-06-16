@@ -14,11 +14,16 @@ type Author struct {
 	Url         string `json:"url,omitempty"`
 }
 
-type Instruction struct {
+type InstructionStep struct {
 	Name  string `json:"name,omitempty"`
 	Text  string `json:"text,omitempty"`
 	Url   string `json:"url,omitempty"`
 	Image string `json:"image,omitempty"`
+}
+
+type Instruction struct {
+	InstructionStep
+	Steps []*InstructionStep `json:"steps,omitempty"`
 }
 
 // TODO: parse numbers and convert
@@ -38,7 +43,7 @@ type Nutrition struct {
 }
 
 type Rating struct {
-	RatingValue float64 `json:"ratingValue,omitempty"`
+	RatingValue float32 `json:"ratingValue,omitempty"`
 	RatingCount int     `json:"ratingCount,omitempty"`
 	ReviewCount int     `json:"reviewCount,omitempty"`
 }

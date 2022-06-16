@@ -1,0 +1,200 @@
+units:
+  cup:
+    - cups
+    - cup
+    - c.
+    - c
+  fluid_ounce:
+    - fl. oz.
+    - fl oz
+    - fluid ounce
+    - fluid ounces
+  gallon:
+    - gal
+    - gal.
+    - gallon
+    - gallons
+  ounce:
+    - oz
+    - oz.
+    - ounce
+    - ounces
+  pint:
+    - pt
+    - pt.
+    - pts
+    - pint
+    - pints
+  pound:
+    - lb
+    - lb.
+    - lbs
+    - lbs.
+    - pound
+    - pounds
+  quart:
+    - qt
+    - qt.
+    - qts
+    - qts.
+    - quart
+    - quarts
+  tablespoon:
+    - tbsp.
+    - tbsp
+    - T
+    - T.
+    - tablespoon
+    - tablespoons
+    - tbs.
+    - tbs
+    - tbl
+    - tbls
+    - tbspn
+    - tblsp
+    - tbsps
+  teaspoon:
+    - tsp.
+    - tsp
+    - t
+    - t.
+    - teaspoon
+    - teaspoons
+    - tsps
+    - tspn
+  gram:
+    - g
+    - g.
+    - gr
+    - gr.
+    - gram
+    - grams
+    - gramme
+    - grammes
+  kilogram:
+    - kg
+    - kg.
+    - kilogram
+    - kilograms
+    - kilogramme
+    - kilogrammes
+  liter:
+    - l
+    - l.
+    - liter
+    - liters
+    - litre
+    - litres
+  milligram:
+    - mg
+    - mg.
+    - milligram
+    - milligrams
+    - milligramme
+    - milligrammes
+  milliliter:
+    - ml
+    - ml.
+    - milliliter
+    - milliliters
+    - millilitre
+    - millilitres
+  pinch:
+    - pinch
+    - pinches
+  dash:
+    - dash
+    - dashes
+  touch:
+    - touch
+    - touches
+  handful:
+    - handful
+    - handfuls
+  stick:
+    - stick
+    - sticks
+  clove:
+    - cloves
+    - clove
+  can:
+    - cans
+    - can
+    - canned
+  inch:
+    - in
+    - in.
+    - inches
+    - inch
+    - inches
+  size_suffix:
+    - half
+    - small
+    - medium
+    - large
+  unconvertible:
+    - bunch
+    - bunches
+    - sprig
+    - sprigs
+    - bottle
+    - bottles
+    - packet
+    - packets
+    - to taste
+    - slice
+    - slices
+    - bag
+    - bags
+    - box
+    - boxes
+    - package
+    - packages
+    - pkg
+    - pkgs
+    - piece
+    - pieces
+    - pcs
+    - pcs.
+    - batch
+
+quantityBetween:
+  - to
+
+numbers:
+  zero: 0
+  half: 0.5
+  a: 1
+  an: 1
+  one: 1
+  two: 2
+  three: 3
+  four: 4
+  five: 5
+  six: 6
+  seven: 7
+  eight: 8
+  nine: 9
+  ten: 10
+  eleven: 11
+  twelve: 12
+  thirteen: 13
+  fourteen: 14
+  fifteen: 15
+  sixteen: 16
+  seventeen: 17
+  eighteen: 18
+  nineteen: 19
+  twenty: 20
+  thirty: 30
+  forty: 40
+  fifty: 50
+  sixty: 60
+  seventy: 70
+  eighty: 80
+  ninety: 90
+  hundred: 100
+  thousand: 1000
+  million: 1000000
+  billion: 1000000000
+  trillion: 1000000000000

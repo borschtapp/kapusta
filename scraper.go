@@ -7,7 +7,20 @@ import (
 	"borscht.app/kapusta/parser"
 	"borscht.app/kapusta/parser/opengraph"
 	"borscht.app/kapusta/parser/schema"
+	"borscht.app/kapusta/parser/website"
+	"borscht.app/kapusta/utils"
 )
+
+// Scraper defines a function that fill a recipe from the input data
+type Scraper = func(p *parser.InputData, r *model.Recipe) error
+
+var scrapers = map[string]Scraper{
+	"marleyspoon": website.ParseMarleySpoon,
+}
+
+func RegisterScraper(hostname string, fn func(p *parser.InputData, r *model.Recipe) error) {
+	scrapers[hostname] = fn
+}
 
 func Scrape(input *parser.InputData) (*model.Recipe, error) {
 	recipe := &model.Recipe{}
@@ -23,6 +36,15 @@ func Scrape(input *parser.InputData) (*model.Recipe, error) {
 	err = schema.Parse(input, recipe)
 	if err != nil {
 		return nil, errors.New("schema error: " + err.Error())
+	}
+
+	alias := utils.ParserAlias(input.Url)
+	// fill recipe according to the alias parser implementation
+	if aliasParser, ok := scrapers[alias]; ok {
+		err := aliasParser(input, recipe)
+		if err != nil {
+			return nil, errors.New("alias parser error: " + err.Error())
+		}
 	}
 
 	return recipe, nil

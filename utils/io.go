@@ -1,37 +1,43 @@
 package utils
 
 import (
-	"fmt"
+	"errors"
 	"io/ioutil"
 	"net/http"
 )
 
-func ReadFile(fileName string) (string, error) {
-	bs, err := ioutil.ReadFile(fileName)
-
+func ReadUrl(url string, accept string, headers map[string]string) ([]byte, error) {
+	client := http.Client{}
+	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		return "", err
+		return nil, errors.New("could not create request: " + err.Error())
 	}
 
-	return string(bs), nil
-}
+	req.Header.Set("Accept", accept)
+	if headers != nil {
+		for k, v := range headers {
+			req.Header.Set(k, v)
+		}
+	}
 
-func ReadUrl(url string) (string, error) {
-	resp, err := http.Get(url)
+	res, err := client.Do(req)
 	if err != nil {
-		return "", err
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusOK {
-		return "", fmt.Errorf("the website responded with: %s", resp.Status)
+		return nil, errors.New("could not send request: " + err.Error())
 	}
 
-	// reads html as a slice of bytes
-	html, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return "", err
+	if res.Body != nil {
+		defer res.Body.Close()
+		body, readErr := ioutil.ReadAll(res.Body)
+		if readErr != nil {
+			return nil, errors.New("could not read response body: " + err.Error())
+		}
+
+		if res.StatusCode != 200 {
+			return nil, errors.New("invalid status " + res.Status + ": " + string(body))
+		}
+
+		return body, nil
 	}
 
-	return string(html), nil
+	return nil, errors.New("response body is nil")
 }

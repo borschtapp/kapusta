@@ -7,11 +7,10 @@ import (
 	"time"
 
 	"borscht.app/kapusta/model"
-	"borscht.app/kapusta/parser"
 	"borscht.app/kapusta/utils"
 )
 
-func Parse(p *parser.InputData, r *model.Recipe) error {
+func Parse(p *model.InputData, r *model.Recipe) error {
 	if p.Schema == nil {
 		return nil
 	}
@@ -23,11 +22,11 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 	}
 
 	if val, ok := getPropertyString(p.Schema, "name"); ok {
-		r.Name = val
+		r.Name = utils.CleanupInline(val)
 	}
 
 	if val, ok := getPropertyString(p.Schema, "recipeCategory"); ok {
-		r.Category = val
+		r.Category = utils.CleanupInline(val)
 	}
 
 	if val, ok := getPropertyDuration(p.Schema, "totalTime"); ok {
@@ -107,7 +106,7 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 	if ingredients, ok := p.Schema.GetProperties("recipeIngredient", "ingredients"); ok {
 		for _, val := range ingredients {
 			if text, ok := getStringOrChild(val, "name"); ok {
-				r.Ingredients = append(r.Ingredients, text)
+				r.Ingredients = append(r.Ingredients, utils.CleanupInline(text))
 			}
 		}
 	}
@@ -120,7 +119,7 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 			} else if item.IsOfType("http://schema.org/HowToSection", "HowToSection") {
 				var section model.Instruction
 				if name, ok := getPropertyString(item, "name"); ok {
-					section.Name = name
+					section.Name = utils.CleanupInline(name)
 				}
 
 				if nested, ok := item.GetNested("itemListElement"); ok {
@@ -142,7 +141,9 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 			}
 		}
 	} else if val, ok := getPropertyString(p.Schema, "recipeInstructions"); ok {
-		r.Instructions = append(r.Instructions, &model.Instruction{Step: model.Step{Text: val}})
+		for _, step := range utils.SplitParagraphs(val) {
+			r.Instructions = append(r.Instructions, &model.Instruction{Step: model.Step{Text: step}})
+		}
 	}
 
 	if item, ok := p.Schema.GetNestedItem("aggregateRating"); ok {
@@ -162,34 +163,34 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 	if item, ok := p.Schema.GetNestedItem("author", "creator"); ok {
 		var author model.Author
 		if val, ok := getPropertyString(item, "name"); ok {
-			author.Name = val
+			author.Name = utils.CleanupInline(val)
 		}
 		if val, ok := getPropertyString(item, "jobTitle"); ok {
-			author.JobTitle = val
+			author.JobTitle = utils.CleanupInline(val)
 		}
 		if val, ok := getPropertyString(item, "description"); ok {
-			author.Description = val
+			author.Description = utils.CleanupInline(val)
 		}
 		if val, ok := getPropertyString(item, "url"); ok {
 			author.Url = val
 		}
 		r.Author = &author
 	} else if val, ok := getPropertyString(p.Schema, "author"); ok {
-		r.Author = &model.Author{Name: val}
+		r.Author = &model.Author{Name: utils.CleanupInline(val)}
 	}
 
 	if val, ok := getPropertyString(p.Schema, "recipeCuisine"); ok {
-		r.Cuisine = val
+		r.Cuisine = utils.CleanupInline(val)
 	}
 
 	if val, ok := getPropertyString(p.Schema, "description"); ok {
-		r.Description = strings.Trim(val, "\n")
+		r.Description = utils.CleanupInline(val)
 	}
 
 	if keywords, ok := p.Schema.GetProperties("keywords"); ok {
 		var arr []string
 		for _, v := range keywords {
-			arr = append(arr, v.(string))
+			arr = append(arr, utils.CleanupInline(v.(string)))
 		}
 		r.Keywords = strings.Join(arr, ", ")
 	}

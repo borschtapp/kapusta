@@ -1,4 +1,4 @@
-package parser
+package scraper
 
 import (
 	"errors"
@@ -14,27 +14,12 @@ import (
 	"golang.org/x/net/html/charset"
 
 	"borscht.app/kapusta/microdata"
+	"borscht.app/kapusta/model"
 )
-
-type Options struct {
-	SkipUrl      bool
-	SkipText     bool
-	SkipDocument bool
-	SkipSchema   bool
-}
-
-type InputData struct {
-	Url      string
-	Text     string
-	Headers  *http.Header
-	RootNode *html.Node
-	Document *goquery.Document
-	Schema   *microdata.Item
-}
 
 var html2textOptions = html2text.Options{PrettyTables: false, OmitLinks: true}
 
-func FileInput(fileName string, options Options) (*InputData, error) {
+func ScrapeFile(fileName string, options model.Options) (*model.InputData, error) {
 	file, err := os.Open(fileName)
 	if err != nil {
 		return nil, errors.New("unable to read the file: " + err.Error())
@@ -49,20 +34,20 @@ func FileInput(fileName string, options Options) (*InputData, error) {
 		}
 
 		url := "file://" + strings.ReplaceAll(fileName, "\\", "/")
-		return NodeInput(root, url, options)
+		return ScrapeNode(root, url, options)
 	} else {
 		content, err := html2text.FromReader(file, html2textOptions)
 		if err != nil {
 			return nil, errors.New("failed to convert html to text: " + err.Error())
 		}
 
-		return &InputData{
+		return &model.InputData{
 			Text: content,
 		}, nil
 	}
 }
 
-func UrlInput(url string, options Options) (*InputData, error) {
+func ScrapeUrl(url string, options model.Options) (*model.InputData, error) {
 	options.SkipUrl = true
 
 	resp, err := http.Get(url)
@@ -86,7 +71,7 @@ func UrlInput(url string, options Options) (*InputData, error) {
 		return nil, errors.New("unable to parse html tree: " + err.Error())
 	}
 
-	input, err := NodeInput(root, url, options)
+	input, err := ScrapeNode(root, url, options)
 	if err != nil {
 		return nil, err
 	}
@@ -95,7 +80,7 @@ func UrlInput(url string, options Options) (*InputData, error) {
 	return input, nil
 }
 
-func NodeInput(root *html.Node, url string, options Options) (i *InputData, err error) {
+func ScrapeNode(root *html.Node, url string, options model.Options) (i *model.InputData, err error) {
 	var doc *goquery.Document
 	if !options.SkipDocument {
 		doc = goquery.NewDocumentFromNode(root)
@@ -132,7 +117,7 @@ func NodeInput(root *html.Node, url string, options Options) (i *InputData, err 
 		}
 	}
 
-	return &InputData{
+	return &model.InputData{
 		Url:      url,
 		Text:     content,
 		RootNode: root,

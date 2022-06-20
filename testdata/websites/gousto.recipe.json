@@ -8,7 +8,7 @@
     "name": "Gousto",
     "url": "https://gousto.co.uk/cookbook/creamy-pork-tagliatelle"
   },
-  "description": "A rich and typical Italian feast!  Tagliatelle are served in a creamy mushroom sauce, topped by oven-baked pork fillets. The combination will melt in your mouth.",
+  "description": "A rich and typical Italian feast! Tagliatelle are served in a creamy mushroom sauce, topped by oven-baked pork fillets. The combination will melt in your mouth.",
   "totalTime": 35,
   "recipeYield": 2,
   "recipeCategory": "Italian",
@@ -24,7 +24,7 @@
   },
   "recipeIngredient": [
     "10g fresh parsley",
-    "1/2 beef stock cube ",
+    "1/2 beef stock cube",
     "1 pot of double cream (227ml)",
     "200g linguine",
     "2 British pork loin steaks",
@@ -35,7 +35,10 @@
   ],
   "recipeInstructions": [
     {
-      "text": "Preheat the oven to 200\u0026deg;C/ 180\u0026deg;C (fan)/ 400\u0026deg;F/ Gas 6\n\r\nBoil a kettle (used in steps 3 \u0026amp; 5)\n"
+      "text": "Preheat the oven to 200°C/ 180°C (fan)/ 400°F/ Gas 6"
+    },
+    {
+      "text": "Boil a kettle (used in steps 3 \u0026 5)"
     }
   ],
   "aggregateRating": {

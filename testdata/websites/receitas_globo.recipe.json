@@ -7,7 +7,7 @@
   "author": {
     "name": "Alm3"
   },
-  "description": " Com oito ingredientes você faz esta receita clássica de strogonoff: um prato que pode ser servido em qualquer ocasião. Creme de Leite, champignon, ketchup, mostarda, molho de tomate, caldo de galinha, óleo e peito de frango se misturam e dão todo o sabor que você merece. Confira o passo a passo: ",
+  "description": "Com oito ingredientes você faz esta receita clássica de strogonoff: um prato que pode ser servido em qualquer ocasião. Creme de Leite, champignon, ketchup, mostarda, molho de tomate, caldo de galinha, óleo e peito de frango se misturam e dão todo o sabor que você merece. Confira o passo a passo:",
   "totalTime": 50,
   "keywords": "receitas de strogonoff, receitas com frango, almoço, jantar, natal, reveillon, ano-novo",
   "recipeYield": 8,
@@ -21,12 +21,12 @@
     "2 colheres de sopa de molho de tomate",
     "2 colheres de sopa de ketchup",
     "2 colheres de sopa de mostarda",
-    " Champignon",
-    " Batata palha e arroz branco para acompanhar"
+    "Champignon",
+    "Batata palha e arroz branco para acompanhar"
   ],
   "recipeInstructions": [
     {
-      "text": " 1. Em uma panela a fogo médio, acrescente o óleo e o caldo de galinha e, dissolva o caldo. Logo em seguida coloque o frango picado em cubos na panela e deixe cozinhar, sempre dando uma olhadinha para não queimar. "
+      "text": "1. Em uma panela a fogo médio, acrescente o óleo e o caldo de galinha e, dissolva o caldo. Logo em seguida coloque o frango picado em cubos na panela e deixe cozinhar, sempre dando uma olhadinha para não queimar."
     }
   ],
   "dateModified": "2020-10-15T17:49:51.393Z",

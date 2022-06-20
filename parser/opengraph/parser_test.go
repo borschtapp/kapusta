@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"borscht.app/kapusta/model"
-	"borscht.app/kapusta/parser"
+	"borscht.app/kapusta/scraper"
 )
 
 func TestParser(t *testing.T) {
@@ -15,7 +15,7 @@ func TestParser(t *testing.T) {
 	// recipeUrl := "https://www.allrecipes.com/recipe/231175/my-favorite-sloppy-joes/"
 	recipeUrl := "https://www.hellofresh.com/recipes/uk-stir-fried-chinese-beef-5845b40b2e69d7259304d962"
 
-	input, err := parser.UrlInput(recipeUrl, parser.Options{})
+	input, err := scraper.ScrapeUrl(recipeUrl, model.Options{})
 	assert.Nil(t, err)
 
 	recipe := &model.Recipe{}

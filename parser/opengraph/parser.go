@@ -4,10 +4,10 @@ import (
 	"strings"
 
 	"borscht.app/kapusta/model"
-	"borscht.app/kapusta/parser"
+	"borscht.app/kapusta/utils"
 )
 
-func Parse(p *parser.InputData, r *model.Recipe) error {
+func Parse(p *model.InputData, r *model.Recipe) error {
 	if p.Document == nil {
 		return nil
 	}
@@ -20,15 +20,15 @@ func Parse(p *parser.InputData, r *model.Recipe) error {
 
 	if len(r.Name) == 0 {
 		if val, ok := p.Document.Find("meta[property='og:name']").Attr("content"); ok {
-			r.Name = val
+			r.Name = utils.CleanupInline(val)
 		} else if val, ok := p.Document.Find("meta[property='og:title']").Attr("content"); ok {
-			r.Name = val
+			r.Name = utils.CleanupInline(val)
 		}
 	}
 
 	if len(r.Description) == 0 {
 		if val, ok := p.Document.Find("meta[property='og:description']").Attr("content"); ok {
-			r.Description = val
+			r.Description = utils.Cleanup(val)
 		}
 	}
 

@@ -8,27 +8,39 @@
   "recipeYield": 3,
   "recipeIngredient": [
     "COOKIE",
-    " Crisco® Original No-Stick Cooking Spray",
-    "1 cup  Crisco® Butter Flavor All-Vegetable Shortening",
-    " OR 1 stick  Crisco® Baking Sticks Butter Flavor All-Vegetable Shortening",
+    "Crisco® Original No-Stick Cooking Spray",
+    "1 cup Crisco® Butter Flavor All-Vegetable Shortening",
+    "OR 1 stick Crisco® Baking Sticks Butter Flavor All-Vegetable Shortening",
     "3/4 cup firmly packed brown sugar",
     "1/2 cup granulated sugar",
-    "1/2 cup  Jif® Creamy Peanut Butter",
-    "1  large egg",
+    "1/2 cup Jif® Creamy Peanut Butter",
+    "1 large egg",
     "1 teaspoon vanilla extract",
-    "2 cups   Pillsbury BEST™ All Purpose Flour",
+    "2 cups Pillsbury BEST™ All Purpose Flour",
     "1 teaspoon baking soda",
     "1/2 teaspoon salt",
-    "40 to 45  chocolate-covered miniature peanut butter cups",
+    "40 to 45 chocolate-covered miniature peanut butter cups",
     "GLAZE",
-    "1 teaspoon  Crisco® Butter Flavor All-Vegetable Shortening",
-    " OR 1 teaspoon  Crisco® Baking Sticks Butter Flavor All-Vegetable Shortening",
+    "1 teaspoon Crisco® Butter Flavor All-Vegetable Shortening",
+    "OR 1 teaspoon Crisco® Baking Sticks Butter Flavor All-Vegetable Shortening",
     "1 cup (6 oz. pkg.) semi-sweet chocolate chips",
-    "2 tablespoons  Jif® Creamy Peanut Butter"
+    "2 tablespoons Jif® Creamy Peanut Butter"
   ],
   "recipeInstructions": [
     {
-      "text": "\n                HEAT oven to 375ºF. Coat baking sheets lightly with no-stick cooking spray.\n\n                COMBINE shortening, brown sugar, granulated sugar\nand peanut butter in bowl of electric mixer; beat at medium speed until\nwell blended. Beat in egg and vanilla.\n\n                COMBINE flour, baking soda and salt in medium bowl.\nMix into shortening mixture at low speed until just blended. Form\nrounded teaspoonfuls of dough around each peanut butter cup. Enclose\nentirely. Place 2 inches apart on baking sheet.\n\n                BAKE 8 to 10 minutes, or until cookies are just browned. Remove immediately to cooling rack.\n                COMBINE shortening, chocolate chips and peanut\nbutter in microwave-safe measuring cup. Microwave on MEDIUM (50% power) 1\n minute. Stir. Repeat until smooth.\n\n                DIP cookie tops in chocolate. Let stand until chocolate is set.\n            "
+      "text": "HEAT oven to 375ºF. Coat baking sheets lightly with no-stick cooking spray."
+    },
+    {
+      "text": "COMBINE shortening, brown sugar, granulated sugar and peanut butter in bowl of electric mixer; beat at medium speed until well blended. Beat in egg and vanilla."
+    },
+    {
+      "text": "COMBINE flour, baking soda and salt in medium bowl. Mix into shortening mixture at low speed until just blended. Form rounded teaspoonfuls of dough around each peanut butter cup. Enclose entirely. Place 2 inches apart on baking sheet."
+    },
+    {
+      "text": "BAKE 8 to 10 minutes, or until cookies are just browned. Remove immediately to cooling rack. COMBINE shortening, chocolate chips and peanut butter in microwave-safe measuring cup. Microwave on MEDIUM (50% power) 1 minute. Stir. Repeat until smooth."
+    },
+    {
+      "text": "DIP cookie tops in chocolate. Let stand until chocolate is set."
     }
   ],
   "aggregateRating": {

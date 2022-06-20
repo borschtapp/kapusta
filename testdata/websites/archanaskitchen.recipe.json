@@ -7,31 +7,31 @@
   "author": {
     "name": "Archana's Kitchen"
   },
-  "description": "              Classic Greek salad Recipe is a\n must try salad if you love vegetables. The salad is a simple assortment\n of fresh and crunchy vegetables and lettuce which is tossed in a tangy\nand citrus dressing. The salad is then sprinkled with a light and creamy\n feta cheese in order to balance the flavor. Olives are also one of the\nkey ingredient in Greek Cooking. Olives are added as a whole in the\nsalad or it can also be halved.\nNormally this salad is considered as a breakfast or lunch dish for\nGreek Farmers were they always consume fresh in what they grow.\nServe the Classic Greek salad Recipe as a Party Appetizer followed by a Vegan Moussaka to relish a Greek Meal. \nIf you are looking for Greek dishes here are some : \n\nGreek Style Briami Recipe (Simple Vegetable Stew Recipe)\nGreek Style Grilled Pita Pizza Recipe \nGreek Style Vegan Moussaka Recipe\n\n           ",
+  "description": "Classic Greek salad Recipe is a must try salad if you love vegetables. The salad is a simple assortment of fresh and crunchy vegetables and lettuce which is tossed in a tangy and citrus dressing. The salad is then sprinkled with a light and creamy feta cheese in order to balance the flavor. Olives are also one of the key ingredient in Greek Cooking. Olives are added as a whole in the salad or it can also be halved. Normally this salad is considered as a breakfast or lunch dish for Greek Farmers were they always consume fresh in what they grow. Serve the Classic Greek salad Recipe as a Party Appetizer followed by a Vegan Moussaka to relish a Greek Meal. If you are looking for Greek dishes here are some : Greek Style Briami Recipe (Simple Vegetable Stew Recipe) Greek Style Grilled Pita Pizza Recipe Greek Style Vegan Moussaka Recipe",
   "cookTime": 30,
   "totalTime": 30,
-  "keywords": "Appetizer, Vegetarian, \n\t\t\t\t\t\n\t\t\t\t\t\tTomato Recipes\t\t\t\t\t\n\t\t\t\t, \n\t\t\t\t\t\n\t\t\t\t\t\tParty Starter \u0026 Appetizer Recipes\t\t\t\t\t\n\t\t\t\t, \n\t\t\t\t\t\n\t\t\t\t\t\tOlive Recipes\t\t\t\t\t\n\t\t\t\t, \n\t\t\t\t\t\n\t\t\t\t\t\tCucumber Recipes\t\t\t\t\t\n\t\t\t\t, \n\t\t\t\t\t\n\t\t\t\t\t\tBell Peppers Recipes\t\t\t\t\t\n\t\t\t\t, \n\t\t\t\t\t\n\t\t\t\t\t\tFeta Cheese Recipes\t\t\t\t\t\n\t\t\t\t",
+  "keywords": "Appetizer, Vegetarian, Tomato Recipes, Party Starter \u0026 Appetizer Recipes, Olive Recipes, Cucumber Recipes, Bell Peppers Recipes, Feta Cheese Recipes",
   "recipeYield": 4,
   "recipeCuisine": "Greek",
   "recipeIngredient": [
-    "\n\t\t\t\t\t\t\t \t\t4 tablespoons Extra Virgin Olive Oil\t\t\t\t\t\t\t \t\t\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\t4 tablespoons Lemon juice\t\t\t\t\t\t\t \t\t\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\tSalt and Pepper\t\t\t\t\t\t\t \t\t, to taste\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\t1 cup Iceberg lettuce\t\t\t\t\t\t\t \t\t, washed thoroughly and drained\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\t2 Tomatoes\t\t\t\t\t\t\t \t\t, cut into chunks\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\t1 English Cucumber\t\t\t\t\t\t\t \t\t, chopped\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\t1 Red onion\t\t\t\t\t\t\t \t\t, sliced\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\t1/2 cup Kalmatta olives\t\t\t\t\t\t\t \t\t\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\t100 grams Feta Cheese\t\t\t\t\t\t\t \t\t, crumbled\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\t2 sprig Parsley leaves\t\t\t\t\t\t\t \t\t, chopped (optional)\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\t1/2 cup Kalmatta olives\t\t\t\t\t\t\t \t\t\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\t100 grams Feta Cheese\t\t\t\t\t\t\t \t\t, crumbled\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\t2 sprig Parsley leaves\t\t\t\t\t\t\t \t\t, chopped\t\t\t\t\t\t\t \t",
-    "\n\t\t\t\t\t\t\t \t\tSalt and Pepper\t\t\t\t\t\t\t \t\t, to taste\t\t\t\t\t\t\t \t"
+    "4 tablespoons Extra Virgin Olive Oil",
+    "4 tablespoons Lemon juice",
+    "Salt and Pepper, to taste",
+    "1 cup Iceberg lettuce, washed thoroughly and drained",
+    "2 Tomatoes, cut into chunks",
+    "1 English Cucumber, chopped",
+    "1 Red onion, sliced",
+    "1/2 cup Kalmatta olives",
+    "100 grams Feta Cheese, crumbled",
+    "2 sprig Parsley leaves, chopped (optional)",
+    "1/2 cup Kalmatta olives",
+    "100 grams Feta Cheese, crumbled",
+    "2 sprig Parsley leaves, chopped",
+    "Salt and Pepper, to taste"
   ],
   "recipeInstructions": [
     {
-      "text": "We begin making the\nClassic Greek salad Recipe by washing the lettuce thoroughly and\ndraining off any excess water. Tear them into bite size pieces and keep\nit aside."
+      "text": "We begin making the Classic Greek salad Recipe by washing the lettuce thoroughly and draining off any excess water. Tear them into bite size pieces and keep it aside."
     }
   ],
   "aggregateRating": {

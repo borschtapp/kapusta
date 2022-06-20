@@ -7,7 +7,7 @@
   "author": {
     "name": "OneShyOfABunch"
   },
-  "description": "\"You can keep the batter covered in the fridge for up to a week. Just be sure to whisk well before using again. You may also use whole wheat flour for this recipe.\"        ",
+  "description": "You can keep the batter covered in the fridge for up to a week. Just be sure to whisk well before using again. You may also use whole wheat flour for this recipe.",
   "cookTime": 5,
   "totalTime": 20,
   "recipeYield": 6,
@@ -32,7 +32,10 @@
   ],
   "recipeInstructions": [
     {
-      "text": "\n                        \n                            Preheat waffle iron. Beat eggs in large bowl with hand beater until fluffy.  Beat in flour, milk, vegetable oil, sugar, baking powder, salt and vanilla,  just until smooth.\n                            \n                        \n                        \n                            Spray preheated waffle iron with non-stick cooking spray. Pour mix onto hot waffle iron. Cook until golden brown. Serve hot.\n                            \n                        \n            "
+      "text": "Preheat waffle iron. Beat eggs in large bowl with hand beater until fluffy. Beat in flour, milk, vegetable oil, sugar, baking powder, salt and vanilla, just until smooth."
+    },
+    {
+      "text": "Spray preheated waffle iron with non-stick cooking spray. Pour mix onto hot waffle iron. Cook until golden brown. Serve hot."
     }
   ],
   "aggregateRating": {

@@ -81,10 +81,10 @@ func getPropertyDuration(item *microdata.Item, key string) (time.Duration, bool)
 func parseInstructionSteps(item *microdata.Item) model.Step {
 	var instr model.Step
 	if val, ok := getPropertyString(item, "text", "description"); ok {
-		instr.Text = val
+		instr.Text = utils.Cleanup(val)
 	}
 	if val, ok := getPropertyString(item, "name"); ok && val != instr.Text {
-		instr.Name = val
+		instr.Name = utils.CleanupInline(val)
 	}
 	if val, ok := getPropertyStringOrChild(item, "image", "url"); ok {
 		instr.Image = val

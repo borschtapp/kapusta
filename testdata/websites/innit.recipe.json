@@ -24,9 +24,9 @@
     "unsaturatedFatContent": "55 g"
   },
   "recipeIngredient": [
-    "2  Carrots",
+    "2 Carrots",
     "1 piece Fresh Ginger",
-    "1/2  Orange",
+    "1/2 Orange",
     "1 Tbsp Fresh Chives",
     "2 cups Broccoli",
     "1 lb Precooked Beets",
@@ -83,24 +83,24 @@
       ]
     },
     {
-      "name": "Simmer Carrots \u0026 Ginger ",
+      "name": "Simmer Carrots \u0026 Ginger",
       "itemListElement": [
         {
-          "text": "Prepare ingredients. "
+          "text": "Prepare ingredients."
         },
         {
-          "text": "Pre-heat pan. Add all ingredients; cover with water. "
+          "text": "Pre-heat pan. Add all ingredients; cover with water."
         },
         {
-          "text": "Cook until soft, about 5 minutes. "
+          "text": "Cook until soft, about 5 minutes."
         }
       ]
     },
     {
-      "name": "Blend Dressing Ingredients ",
+      "name": "Blend Dressing Ingredients",
       "itemListElement": [
         {
-          "text": "Transfer carrot-ginger mixture to blender. "
+          "text": "Transfer carrot-ginger mixture to blender."
         },
         {
           "text": "Add orange juice/zest, miso, sesame oil, honey, rice vinegar."
@@ -117,15 +117,15 @@
       "name": "Flavor Beets",
       "itemListElement": [
         {
-          "text": "Toss beets in oil. Season with salt, pepper \u0026 parsley. "
+          "text": "Toss beets in oil. Season with salt, pepper \u0026 parsley."
         }
       ]
     },
     {
-      "name": "Toast Sunflower Seeds ",
+      "name": "Toast Sunflower Seeds",
       "itemListElement": [
         {
-          "text": "Combine ingredients. "
+          "text": "Combine ingredients."
         },
         {
           "text": "Toast in oven for 5 - 7 min or until golden brown."
@@ -136,7 +136,7 @@
       "name": "Mixed Greens",
       "itemListElement": [
         {
-          "text": "Wash greens \u0026 dry. "
+          "text": "Wash greens \u0026 dry."
         }
       ]
     },

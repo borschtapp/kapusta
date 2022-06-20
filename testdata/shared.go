@@ -50,11 +50,13 @@ func AssertRecipeAlias(t *testing.T, recipe *model.Recipe, alias string) {
 	}
 }
 
-func MockRequests(t *testing.T) {
-	if _, ok := os.LookupEnv("RECIPE_ONLINE"); ok {
-		return // skip mocking
+func OptionallyMockRequests(t *testing.T) {
+	if _, ok := os.LookupEnv("RECIPE_OFFLINE"); ok {
+		MockRequests(t)
 	}
+}
 
+func MockRequests(t *testing.T) {
 	httpmock.Activate()
 
 	httpmock.RegisterNoResponder(func(req *http.Request) (*http.Response, error) {

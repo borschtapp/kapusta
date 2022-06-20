@@ -9,7 +9,6 @@ import (
 	"github.com/PuerkitoBio/goquery"
 
 	"borscht.app/kapusta/model"
-	"borscht.app/kapusta/parser"
 	"borscht.app/kapusta/utils"
 )
 
@@ -92,7 +91,7 @@ type MarleySpoonData struct {
 	CookingTip interface{} `json:"cooking_tip,omitempty"`
 }
 
-func ParseMarleySpoon(p *parser.InputData, r *model.Recipe) error {
+func ParseMarleySpoon(p *model.InputData, r *model.Recipe) error {
 	if p.Document != nil {
 		apiUrl, apiToken, err := findApiParams(p.Document, p.Url)
 		if err != nil {

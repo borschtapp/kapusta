@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
 	"fmt"
 	"log"
@@ -25,12 +24,7 @@ func main() {
 			log.Fatal("Unable to scrape target: " + err.Error())
 		}
 
-		b, err := json.MarshalIndent(recipe, "", "  ")
-		if err != nil {
-			log.Fatal("Unable to output in json" + err.Error())
-		}
-
-		fmt.Println(string(b))
+		fmt.Println(recipe)
 	default:
 		flag.Usage()
 		os.Exit(1)

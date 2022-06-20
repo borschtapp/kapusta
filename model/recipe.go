@@ -1,6 +1,7 @@
 package model
 
 import (
+	"encoding/json"
 	"time"
 )
 
@@ -85,4 +86,12 @@ type Recipe struct {
 	Language  string   `json:"language,omitempty"`
 	Footnotes []string `json:"footnotes,omitempty"`
 	Links     []string `json:"links,omitempty"`
+}
+
+func (b *Recipe) String() string {
+	data, err := json.MarshalIndent(b, "", "  ")
+	if err != nil {
+		return "Unable to output in json: " + err.Error()
+	}
+	return string(data)
 }

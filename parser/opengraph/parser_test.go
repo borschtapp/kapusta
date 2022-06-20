@@ -1,7 +1,6 @@
 package opengraph
 
 import (
-	"encoding/json"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -22,7 +21,6 @@ func TestParser(t *testing.T) {
 	recipe := &model.Recipe{}
 	assert.Nil(t, Parse(input, recipe))
 
-	b, err := json.MarshalIndent(recipe, "", "  ")
 	assert.Equal(t, `{
   "name": "Rapid Stir-Fried Beef Recipe | HelloFresh",
   "image": [
@@ -32,5 +30,5 @@ func TestParser(t *testing.T) {
   "url": "https://www.hellofresh.com/recipes/uk-stir-fried-chinese-beef-5845b40b2e69d7259304d962",
   "siteName": "HelloFresh",
   "language": "en_US"
-}`, string(b))
+}`, recipe.String())
 }

@@ -1,7 +1,6 @@
 package schema
 
 import (
-	"encoding/json"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -22,7 +21,6 @@ func TestParser(t *testing.T) {
 	recipe := &model.Recipe{}
 	assert.Nil(t, Parse(input, recipe))
 
-	b, err := json.MarshalIndent(recipe, "", "  ")
 	assert.Equal(t, `{
   "name": "Rapid Stir-Fried Beef and Broccoli",
   "image": [
@@ -86,5 +84,5 @@ func TestParser(t *testing.T) {
     }
   ],
   "datePublished": "2016-12-05T18:38:03Z"
-}`, string(b))
+}`, recipe.String())
 }

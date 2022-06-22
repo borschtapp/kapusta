@@ -19,7 +19,9 @@ func main() {
 
 	switch len(flag.Args()) {
 	case 1:
-		recipe, err := kapusta.ScrapeUrl(flag.Args()[0])
+		recipeUrl := flag.Args()[0]
+
+		recipe, err := kapusta.ScrapeUrl(recipeUrl)
 		if err != nil {
 			log.Fatal("Unable to scrape target: " + err.Error())
 		}

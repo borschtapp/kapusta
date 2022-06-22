@@ -1,9 +1,48 @@
 {
-  "name": "Ricetta Pesce spada al miele millefiori, pomodorini e patatine novelle",
+  "name": "Pesce spada al miele millefiori, pomodorini e patatine novelle",
   "image": [
+    "https://www.cucchiaio.it/content/cucchiaio/it/ricette/2017/10/pesce-spada-al-miele-millefiori-pomodorini-e-patatine-novelle/jcr:content/header-par/image-single.img10.jpg/1610381008015.jpg",
     "https://www.cucchiaio.it/content/cucchiaio/it/ricette/2017/10/pesce-spada-al-miele-millefiori-pomodorini-e-patatine-novelle/jcr:content/header-par/image-single.img10.jpg/1610381008015.jpg"
   ],
-  "description": "Il pesce spada al miele millefiori, pomodorini e patatine novelle è un secondo piatto facile da realizzare, originale e sfizioso. Una ricetta sana e leggera che vi conquisterà.",
+  "author": {
+    "name": "Il Cucchiaio d'Argento"
+  },
+  "description": "Quella del pesce spada al miele millefiori, pomodorini e patatine novelle è la ricetta originale di un secondo piatto sano e leggero. Un abbinamento inusuale che conquista grazie alla freschezza dei sapori ben equilibrati e alla facilità di esecuzione.",
+  "keywords": "Pesce spada al miele millefiori, pomodorini e patatine novelle,ricette,secondi",
+  "recipeCategory": "Secondi",
+  "recipeIngredient": [
+    "4 fette di pesce spada di circa 200 g l'una",
+    "20 patatine novelle",
+    "1 spicchio d'aglio",
+    "1 grappolo di pomodorini",
+    "2 cucchiai di pinoli tostati",
+    "4-5 cucchiaini di miele millefiori",
+    "1 bicchiere di aceto di vino",
+    "foglioline di mirto",
+    "prezzemolo",
+    "erba cipollina",
+    "olio extravergine di oliva",
+    "sale",
+    "pepe"
+  ],
+  "recipeInstructions": [
+    {
+      "text": "1. Iniziate la preparazione del pesce spada al miele millefiori, pomodorini e patatine novelle mettendo a marinare le fette di pesce. Poggiatele su un piatto, aggiungete alcune foglie di mirto, l'aglio a fettine, un giro d'olio e lasciatele marinare per dieci minuti. In un tegame scaldate tre cucchiai d'olio, adagiatevi le fette di pesce spada e cuocetele per circa 2 minuti per lato o comunque fino a quando si forma una crosticina. Trasferitele su una teglia e passatele per circa 5 minuti in forno a 200°. Sfornatele e fatele riposare al caldo per una decina di minuti."
+    },
+    {
+      "text": "2. Intanto tagliate a cubetti i pomodorini, cospargeteli con un po' di sale, un pizzico di pepe, prezzemolo ed erba cipollina tritati finemente. Preparate la salsina al miele: in una casseruola scaldate l'aceto facendolo ridurre di un quarto, aggiungete il miele millefiori e assaggiate per controllarne il sapore, se troppo agro aggiungete altro miele. Lasciate raffreddare."
+    },
+    {
+      "text": "3. Infine, incorporate il tutto ai pomodori, mescolate bene, aggiungete olio, pinoli, regolate di sale e fate riposare.\nSbollentate le patatine in acqua salata, asciugatele e insaporitele in una padella con un filo d’olio."
+    },
+    {
+      "text": "4. Disponete le fette di pesce spada sul piatto da portata: completate con le patatine e cospargete su tutto la salsina al miele."
+    }
+  ],
+  "aggregateRating": {
+    "ratingValue": 5,
+    "ratingCount": 3
+  },
   "url": "https://www.cucchiaio.it/ricetta/pesce-spada-al-miele-millefiori-pomodorini-e-patatine-novelle/",
   "siteName": "Il Cucchiaio d'Argento",
   "language": "it_IT"

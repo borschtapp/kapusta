@@ -9,6 +9,8 @@ import (
 
 	"golang.org/x/net/html"
 	"golang.org/x/net/html/atom"
+
+	"borscht.app/kapusta/jsonc"
 )
 
 type parser struct {
@@ -58,8 +60,9 @@ func (p *parser) parse() (*Microdata, error) {
 
 	for _, node := range jsonLdNodes {
 		if node.FirstChild != nil {
+			jsonText := jsonc.ToJSON([]byte(node.FirstChild.Data))
 			var jsonMap interface{}
-			err := json.Unmarshal([]byte(node.FirstChild.Data), &jsonMap)
+			err := json.Unmarshal(jsonText, &jsonMap)
 			if err == nil {
 				p.readJsonItem(nil, jsonMap)
 			} else {

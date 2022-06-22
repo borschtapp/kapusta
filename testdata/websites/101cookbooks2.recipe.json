@@ -1,10 +1,21 @@
 {
-  "name": "Coconut Broccoli Soup Recipe - 101 Cookbooks",
+  "name": "Coconut Broccoli Soup",
   "image": [
-    "https://images.101cookbooks.com/coconut_broccoli_soup.jpg?w=680"
+    "https://images.101cookbooks.com/coconut_broccoli_soup.jpg?w=680",
+    "https://images.101cookbooks.com/coconut_broccoli_soup.jpg?w=680\u0026auto=format"
   ],
+  "author": {
+    "name": "Heidi Swanson"
+  },
   "description": "Lunch at the studio today involved broccoli soup heated on a new hotplate - a simple broccoli and spinach affair made with a coconut milk broth, topped with good stuff like pan-fried tofu croutons, toasted almonds, and shredded scallions.",
-  "url": "https://www.101cookbooks.com/archives/coconut-broccoli-soup-recipe.html",
+  "cookTime": 10,
+  "totalTime": 20,
+  "keywords": "almonds, broccoli, coconut milk, spinach, tofu",
+  "recipeCategory": "90+ Soup Recipes",
+  "recipeIngredient": [
+    ""
+  ],
+  "url": "true",
   "siteName": "101 Cookbooks",
   "language": "en_US"
 }

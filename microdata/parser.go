@@ -7,10 +7,9 @@ import (
 	"net/url"
 	"strings"
 
+	"github.com/astappiev/jsonc"
 	"golang.org/x/net/html"
 	"golang.org/x/net/html/atom"
-
-	"borscht.app/kapusta/jsonc"
 )
 
 type parser struct {

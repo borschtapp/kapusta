@@ -7,7 +7,9 @@
   "author": {},
   "description": "This crunchy sweet salad is perfectly balanced with salty Parmesan cheese for a satisfying bite. Serve this up with your favorite protein or have it as a side salad this Autumn – it’s a great way to use up those apple picking apples!  Brussels Sprouts and Apple Salad with Parmesan I’m always looking for good …",
   "cookTime": 15,
-  "keywords": "Brussels Sprouts and Apple Salad with Parmesan",
+  "keywords": [
+    "Brussels Sprouts and Apple Salad with Parmesan"
+  ],
   "recipeIngredient": [
     "3 tablespoons extra virgin olive oil",
     "3 tablespoons apple cider vinegar",

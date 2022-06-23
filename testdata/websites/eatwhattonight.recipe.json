@@ -9,10 +9,17 @@
   },
   "cookTime": 30,
   "totalTime": 45,
-  "keywords": "Chicken, Ginger",
+  "keywords": [
+    "Chicken",
+    "Ginger"
+  ],
   "recipeYield": 2,
-  "recipeCategory": "Main",
-  "recipeCuisine": "Chinese",
+  "recipeCategory": [
+    "Main"
+  ],
+  "recipeCuisine": [
+    "Chinese"
+  ],
   "nutrition": {},
   "recipeIngredient": [
     "180g boneless chicken, diced (marinate with 2 tsp light soya sauce, 1/2 tsp sugar and pinch of pepper for 30mins)⁣",

@@ -1,16 +1,37 @@
 {
   "name": "Red Wine-Braised Short Ribs With Cashew Cauliflower Mash Recipe by Tasty",
   "image": [
-    "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/236025.jpg",
     "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/236025.jpg"
   ],
   "author": {
     "name": "Crystal Hatch"
   },
   "description": "Here's what you need: bone in beef short ribs, kosher salt, kosher salt, freshly ground black pepper, avocado oil, large white onion, celery stalks, tomato paste, all purpose flour, dry red wine, garlic, small rainbow carrots, fresh thyme, low sodium beef broth, cauliflower, raw cashews, garlic, fresh parsley",
-  "keywords": "braised short ribs, cashew cauliflower mash, cauliflower mash, creamy cauliflower mash, dinner recipe, gluten free, gluten free recipe, goodful - recipe, healthy - goodful, healthy recipe, low carb cauliflower mash, low carb mash, low-carb, red wine, red wine braised short ribs, red wine braiser recipe, short ribs, short ribs recipe, tasty - recipe",
+  "keywords": [
+    "braised short ribs",
+    "cashew cauliflower mash",
+    "cauliflower mash",
+    "creamy cauliflower mash",
+    "dinner recipe",
+    "gluten free",
+    "gluten free recipe",
+    "goodful - recipe",
+    "healthy - goodful",
+    "healthy recipe",
+    "low carb cauliflower mash",
+    "low carb mash",
+    "low-carb",
+    "red wine",
+    "red wine braised short ribs",
+    "red wine braiser recipe",
+    "short ribs",
+    "short ribs recipe",
+    "tasty - recipe"
+  ],
   "recipeYield": 4,
-  "recipeCategory": "Dinner",
+  "recipeCategory": [
+    "Dinner"
+  ],
   "nutrition": {
     "calories": "1181 calories",
     "carbohydrateContent": "79 grams",

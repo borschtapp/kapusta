@@ -10,8 +10,16 @@
   "cookTime": 10,
   "totalTime": 22,
   "recipeYield": 8,
-  "recipeCategory": "Vegan, Frozen Dessert (Banana Soft Serve, Ice Cream, Sorbet)",
-  "recipeCuisine": "Vegan, Canadian",
+  "recipeCategory": [
+    "Vegan",
+    "Frozen Dessert (Banana Soft Serve",
+    "Ice Cream",
+    "Sorbet)"
+  ],
+  "recipeCuisine": [
+    "Vegan",
+    "Canadian"
+  ],
   "nutrition": {
     "calories": "365 calories",
     "servingSize": "1/2-cup",

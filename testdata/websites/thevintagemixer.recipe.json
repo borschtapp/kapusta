@@ -9,8 +9,15 @@
   "description": "This cute Cherry Cake for a baby's first birthday is gluten free, sugar free and paleo making it perfectly healthy for any baby.",
   "cookTime": 15,
   "totalTime": 35,
-  "recipeCategory": "Dessert",
-  "recipeCuisine": "American",
+  "recipeCategory": [
+    "Dessert"
+  ],
+  "recipeCuisine": [
+    "American",
+    "Gluten Free",
+    "Paleo",
+    "Sugar Free"
+  ],
   "recipeIngredient": [
     "2 tablespoons coconut flour, (+1 teaspoon)",
     "1/4 cup almond flour",

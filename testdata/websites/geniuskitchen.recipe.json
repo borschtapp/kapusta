@@ -10,9 +10,25 @@
   "description": "Simple yet elegant - this is a make over of the old standard gourmet recipe. Serve with fresh fruit salad.",
   "cookTime": 15,
   "totalTime": 40,
-  "keywords": "Breakfast,Lunch/Snacks,Pork,Cheese,Egg,Eggs/Dairy,Meat,Canadian,North American,\u003c 60 Mins,Oven,Time To Make,Easy",
+  "keywords": [
+    "Breakfast",
+    "Lunch/Snacks",
+    "Pork",
+    "Cheese",
+    "Egg",
+    "Eggs/Dairy",
+    "Meat",
+    "Canadian",
+    "North American",
+    "\u003c 60 Mins",
+    "Oven",
+    "Time To Make",
+    "Easy"
+  ],
   "recipeYield": 12,
-  "recipeCategory": "Savory Pies",
+  "recipeCategory": [
+    "Savory Pies"
+  ],
   "nutrition": {
     "calories": "152.2",
     "carbohydrateContent": "5",

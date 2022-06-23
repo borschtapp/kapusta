@@ -1,7 +1,6 @@
 {
   "name": "Pete's Scratch Pancakes",
   "image": [
-    "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/51/70/nwoyHKPSAWTjjpcSL5gs_scratch-pancakes-7.jpg",
     "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/51/70/nwoyHKPSAWTjjpcSL5gs_scratch-pancakes-7.jpg"
   ],
   "author": {
@@ -10,9 +9,18 @@
   "description": "It was the Fall of 1987 when Pete Nyhus walked into our office, just to visit. We started talking about breakfast, and he reached into a wastepaper basket and pulled out a scrap of teletype paper. He wrote out this recipe, and my family has never used pre-mix since.",
   "cookTime": 15,
   "totalTime": 20,
-  "keywords": "High Calcium,High In...,Brunch,\u003c 30 Mins,Time To Make,Easy",
+  "keywords": [
+    "High Calcium",
+    "High In...",
+    "Brunch",
+    "\u003c 30 Mins",
+    "Time To Make",
+    "Easy"
+  ],
   "recipeYield": 9,
-  "recipeCategory": "Breakfast",
+  "recipeCategory": [
+    "Breakfast"
+  ],
   "nutrition": {
     "calories": "209.6",
     "carbohydrateContent": "28.1",

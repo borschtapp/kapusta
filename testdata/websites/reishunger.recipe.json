@@ -1,7 +1,6 @@
 {
   "name": "Crispy Tofu Bowl",
   "image": [
-    "https://www.reishunger.de/upload/123/17835/crispy-tofu-bowl.jpg",
     "https://www.reishunger.de/upload/123/17835/crispy-tofu-bowl.jpg"
   ],
   "author": {
@@ -10,7 +9,9 @@
   "description": "Einfach, lecker und schnell gemacht. Und super wenn man Reste verwerten will.",
   "totalTime": 60,
   "recipeYield": 2,
-  "recipeCategory": "Hauptgericht",
+  "recipeCategory": [
+    "Hauptgericht"
+  ],
   "recipeIngredient": [
     "200 gr Bio Basmati Reis",
     "50 ml Erdnuss Sauce",

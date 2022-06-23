@@ -8,7 +8,9 @@
     "name": "gunilla von heland"
   },
   "totalTime": 20,
-  "keywords": "sections/recept",
+  "keywords": [
+    "sections/recept"
+  ],
   "recipeYield": 12,
   "recipeIngredient": [
     "2.5 dl vatten",

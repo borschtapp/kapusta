@@ -11,8 +11,12 @@
   "cookTime": 130,
   "totalTime": 150,
   "recipeYield": 4,
-  "recipeCategory": "Water Bath Canning",
-  "recipeCuisine": "Condiment",
+  "recipeCategory": [
+    "Water Bath Canning"
+  ],
+  "recipeCuisine": [
+    "Condiment"
+  ],
   "recipeIngredient": [
     "2 cups zucchini, diced (about 3 medium)",
     "1 cup onion, diced (about 1 medium)",

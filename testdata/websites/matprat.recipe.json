@@ -9,10 +9,26 @@
   },
   "description": "Butter chicken – eller murgh makhani som retten heter på indisk – er en av de mest kjente indiske curryrettene. Hovedingrediens er er kylling marinert i yoghurt og krydder. Vi bruker kyllingfilet eller lårfilet, som er mørt og saftig. Basmatiris eller ferske nanbrød serveres til.",
   "cookTime": 80,
-  "keywords": "Butter chicken, smørkylling, kylling, murgh makhani, curry, gurkemeie, indisk, indisk gryte, basmatiris, koriander",
+  "keywords": [
+    "Butter chicken",
+    "smørkylling",
+    "kylling",
+    "murgh makhani",
+    "curry",
+    "gurkemeie",
+    "indisk",
+    "indisk gryte",
+    "basmatiris",
+    "koriander"
+  ],
   "recipeYield": 6,
-  "recipeCategory": "Kyllingfilet",
-  "recipeCuisine": "Internasjonal",
+  "recipeCategory": [
+    "Kyllingfilet",
+    "Gryter"
+  ],
+  "recipeCuisine": [
+    "Internasjonal"
+  ],
   "recipeIngredient": [
     "1 stk kylling (ca. 1300 g)",
     "4 båter hvitløk",

@@ -11,8 +11,16 @@
   "cookTime": 20,
   "totalTime": 260,
   "recipeYield": 6,
-  "recipeCategory": "Awareness",
-  "recipeCuisine": "Italien",
+  "recipeCategory": [
+    "Awareness",
+    "Dessert",
+    "Espressomaschinen",
+    "Recipe",
+    "Sweet Treats"
+  ],
+  "recipeCuisine": [
+    "Italien"
+  ],
   "recipeIngredient": [
     "500 g Mascarpone",
     "400 ml Sahne",

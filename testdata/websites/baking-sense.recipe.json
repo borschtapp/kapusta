@@ -11,7 +11,9 @@
   "cookTime": 20,
   "totalTime": 60,
   "recipeYield": 12,
-  "recipeCategory": "Cakes/Cupcakes Recipes",
+  "recipeCategory": [
+    "Cakes/Cupcakes Recipes"
+  ],
   "nutrition": {
     "calories": "9 calories"
   },

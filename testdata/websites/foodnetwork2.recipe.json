@@ -10,7 +10,9 @@
   },
   "description": "Homemade granola couldn't be easier with Alton Brown's recipe from Good Eats on Food Network. Maple syrup sweetens this healthy melange of oats and nuts.",
   "recipeYield": 6,
-  "recipeCuisine": "american",
+  "recipeCuisine": [
+    "american"
+  ],
   "recipeIngredient": [
     "3 cups rolled oats",
     "1 cup slivered almonds",

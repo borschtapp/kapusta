@@ -1,7 +1,6 @@
 {
   "name": "Thai Style Pork Stir-Fry with Veggie Rice",
   "image": [
-    "https://img.hellofresh.com/f_auto,fl_lossy,h_640,q_auto,w_1200/hellofresh_s3/image/thai-style-pork-stir-fry-wk-49-d2765576.jpg",
     "https://img.hellofresh.com/f_auto,fl_lossy,h_640,q_auto,w_1200/hellofresh_s3/image/thai-style-pork-stir-fry-wk-49-d2765576.jpg"
   ],
   "author": {
@@ -9,10 +8,18 @@
   },
   "description": "Tonight’s twenty minute recipe is an explosion of fresh flavours and one that you’ll be coming back to time and time again. Stir fried pork is coated in a glossy marinate of ginger, honey, soy sauce, ketjap manis and fresh lime juice and served over a warm and nourishing rice salad. For added texture and flavour, finish off with chopped peanuts, spring a onions and a good squeeze of lime.",
   "totalTime": 35,
-  "keywords": "No Gluten Containing Ingredients, Not Suitable for Coeliacs, Under 750 calories",
+  "keywords": [
+    "No Gluten Containing Ingredients",
+    "Not Suitable for Coeliacs",
+    "Under 750 calories"
+  ],
   "recipeYield": 2,
-  "recipeCategory": "main course",
-  "recipeCuisine": "Thai",
+  "recipeCategory": [
+    "main course"
+  ],
+  "recipeCuisine": [
+    "Thai"
+  ],
   "nutrition": {
     "calories": "668 kcal",
     "servingSize": "360",

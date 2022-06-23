@@ -9,7 +9,9 @@
   },
   "description": "An easy to prepare vegetarian taco that is full of black beans, avocado, goat cheese, and a lovely honey-lime drizzle.",
   "recipeYield": 2,
-  "recipeCategory": "Vegetarian Main Course",
+  "recipeCategory": [
+    "Vegetarian Main Course"
+  ],
   "recipeIngredient": [
     "1 tablespoon coriander seeds",
     "½ tablespoon cumin seeds",

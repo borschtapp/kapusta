@@ -9,7 +9,11 @@
   },
   "description": "Ground beef and cauliflower combine to create a hearty weeknight casserole that both kids and adults will love. Serve with tortilla chips and sour cream.",
   "totalTime": 30,
-  "recipeCategory": "Healthy Recipes",
+  "recipeCategory": [
+    "Healthy Recipes",
+    "Healthy Main Dish Recipes",
+    "Healthy Casserole Recipes"
+  ],
   "nutrition": {
     "calories": "351 calories",
     "carbohydrateContent": "11 g",

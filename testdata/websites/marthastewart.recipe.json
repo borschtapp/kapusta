@@ -10,7 +10,13 @@
   "description": "Whenever you make breaded and fried chicken, it disappears almost immediately. Try our foolproof three-step method for perfect results every time, then turn it into Chicken Parmesan or serve over salad.",
   "cookTime": 25,
   "totalTime": 25,
-  "recipeCategory": "Food \u0026 Cooking",
+  "recipeCategory": [
+    "Food \u0026 Cooking",
+    "Recipes by Ingredient",
+    "Meat \u0026 Poultry Recipes",
+    "Chicken Recipes",
+    "Chicken Breast Recipes"
+  ],
   "nutrition": {
     "calories": "658 g",
     "fatContent": "37 g",

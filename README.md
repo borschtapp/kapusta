@@ -18,6 +18,14 @@ _Note:_ Of course, this is WIP, and I'm still learning how to use Go. Found it f
 go get borscht.app/kapusta
 ```
 
+## Features
+- [x] The `Recipe` struct (object) returned by the library is defined by https://schema.org/Recipe
+- [x] Removes empty, duplicate values on the fly
+- [x] Fast, extremely fast
+
+### TODO list
+- [ ] add more website parsers
+
 ## Usage
 
 ### Scrape recipe from web

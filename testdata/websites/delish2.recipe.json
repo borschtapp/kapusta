@@ -10,10 +10,23 @@
   "description": "Looking for the perfect Baileys cheesecake recipe? This Baileys Cheesecake from Delish.com is the best.",
   "cookTime": 25,
   "totalTime": 25,
-  "keywords": "baileys cheesecake, chocolate ganache cheesecake, baileys desserts, st patricks day desserts, st patricks day cheesecake, boozy cheesecake recipes, cheesecake recipes",
+  "keywords": [
+    "baileys cheesecake",
+    "chocolate ganache cheesecake",
+    "baileys desserts",
+    "st patricks day desserts",
+    "st patricks day cheesecake",
+    "boozy cheesecake recipes",
+    "cheesecake recipes"
+  ],
   "recipeYield": 10,
-  "recipeCategory": "St. Patrick's Day",
-  "recipeCuisine": "American",
+  "recipeCategory": [
+    "St. Patrick's Day",
+    "dessert"
+  ],
+  "recipeCuisine": [
+    "American"
+  ],
   "recipeIngredient": [
     "26 \u003cp\u003eOreo cookies\u003c/p\u003e",
     "4 tbsp. \u003cp\u003ebutter, melted, plus more for pan\u003c/p\u003e",

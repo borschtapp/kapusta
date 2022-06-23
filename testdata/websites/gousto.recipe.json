@@ -1,7 +1,6 @@
 {
   "name": "Creamy Pork Tagliatelle",
   "image": [
-    "https://production-media.gousto.co.uk/cms/mood-image/83.CreamyPorkTagliatelle.jpg",
     "https://production-media.gousto.co.uk/cms/mood-image/83.CreamyPorkTagliatelle.jpg"
   ],
   "author": {
@@ -11,8 +10,12 @@
   "description": "A rich and typical Italian feast! Tagliatelle are served in a creamy mushroom sauce, topped by oven-baked pork fillets. The combination will melt in your mouth.",
   "totalTime": 35,
   "recipeYield": 2,
-  "recipeCategory": "Italian",
-  "recipeCuisine": "Italian",
+  "recipeCategory": [
+    "Italian"
+  ],
+  "recipeCuisine": [
+    "Italian"
+  ],
   "nutrition": {
     "calories": "1157 calories",
     "carbohydrateContent": "79.87",

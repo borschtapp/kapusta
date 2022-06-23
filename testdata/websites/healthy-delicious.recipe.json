@@ -11,8 +11,12 @@
   "cookTime": 15,
   "totalTime": 60,
   "recipeYield": 10,
-  "recipeCategory": "Healthy Weekend Recipes",
-  "recipeCuisine": "Southwest",
+  "recipeCategory": [
+    "Healthy Weekend Recipes"
+  ],
+  "recipeCuisine": [
+    "Southwest"
+  ],
   "nutrition": {
     "calories": "227 kcal",
     "servingSize": "1 g",

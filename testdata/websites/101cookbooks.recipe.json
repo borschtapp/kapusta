@@ -10,10 +10,17 @@
   "description": "The citrus gin cocktail you want to be drinking.",
   "cookTime": 5,
   "totalTime": 15,
-  "keywords": "citrus, gin",
+  "keywords": [
+    "citrus",
+    "gin"
+  ],
   "recipeYield": 1,
-  "recipeCategory": "Drinks",
-  "recipeCuisine": "Cocktail",
+  "recipeCategory": [
+    "Drinks"
+  ],
+  "recipeCuisine": [
+    "Cocktail"
+  ],
   "recipeIngredient": [
     "2 cups / 480 ml water",
     "1 cup / 6.5 oz / 185 g sugar",

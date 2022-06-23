@@ -8,7 +8,9 @@
   "cookTime": 15,
   "totalTime": 30,
   "recipeYield": 24,
-  "recipeCategory": "Appetizers",
+  "recipeCategory": [
+    "Appetizers"
+  ],
   "recipeIngredient": [
     "Cooking spray, for pan",
     "1 cup panko bread crumbs",

@@ -10,9 +10,16 @@
   "description": "Who doesn’t love a good old-fashioned patty melt? Here's the easiest way to make one at home that's beyond delicious.",
   "cookTime": 10,
   "totalTime": 35,
-  "keywords": "Recipes, Cooking, Food",
+  "keywords": [
+    "Recipes",
+    "Cooking",
+    "Food"
+  ],
   "recipeYield": 4,
-  "recipeCategory": "main dish",
+  "recipeCategory": [
+    "main dish",
+    "meat"
+  ],
   "recipeIngredient": [
     "1 stick butter",
     "1 whole large onion, halved and sliced",

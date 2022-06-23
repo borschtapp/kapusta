@@ -9,10 +9,34 @@
   },
   "description": "Stuffed with fragrant garlicky ricotta, Parmesan, and savory beef, this baked manicotti is creamy, cheesy, meaty, and the perfect cozy weekend dinner.",
   "cookTime": 25,
-  "keywords": "alcohol free, casserole, children, dairy, fish free, meat, meat dish, pasta, pasta dish, peanut free, pork free, shellfish free, tree nut free, winter",
+  "keywords": [
+    "alcohol free",
+    "casserole",
+    "children",
+    "dairy",
+    "fish free",
+    "meat",
+    "meat dish",
+    "pasta",
+    "pasta dish",
+    "peanut free",
+    "pork free",
+    "shellfish free",
+    "tree nut free",
+    "winter"
+  ],
   "recipeYield": 6,
-  "recipeCategory": "Main Dish",
-  "recipeCuisine": "Europe",
+  "recipeCategory": [
+    "Main Dish",
+    "Dinner",
+    "Casserole",
+    "Meat Dish",
+    "Pasta Dish"
+  ],
+  "recipeCuisine": [
+    "Europe",
+    "Italian"
+  ],
   "nutrition": {
     "calories": "554",
     "servingSize": "8",

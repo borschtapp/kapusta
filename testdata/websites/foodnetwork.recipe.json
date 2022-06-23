@@ -9,10 +9,24 @@
     "url": "https://www.foodnetwork.com/profiles/talent/tyler-florence"
   },
   "description": "For an Italian favorite, try Tyler Florence's Chicken Marsala recipe, a flavorful meal of mushrooms, prosciutto and Marsala wine over tender chicken.",
-  "keywords": "italian,fried-chicken,meat,prosciutto,poultry,vegetables,mushroom,chicken,frying",
+  "keywords": [
+    "italian",
+    "fried-chicken",
+    "meat",
+    "prosciutto",
+    "poultry",
+    "vegetables",
+    "mushroom",
+    "chicken",
+    "frying"
+  ],
   "recipeYield": 4,
-  "recipeCategory": "main-dish",
-  "recipeCuisine": "european",
+  "recipeCategory": [
+    "main-dish"
+  ],
+  "recipeCuisine": [
+    "european"
+  ],
   "recipeIngredient": [
     "4 skinless, boneless, chicken breasts (about 1 1/2 pounds)",
     "All-purpose flour, for dredging",

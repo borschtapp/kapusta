@@ -9,10 +9,21 @@
   },
   "description": "In the Lone Star state, smoked sausage is as central to barbecue as brisket. There is no standard recipe, but natural casing (the guts) always hold the ground meat mixture. My favorite blend leans more on pork than beef and includes lots of black pepper. IMPORTANT: Before you get started, read our article on The Science of Sausage Making.",
   "cookTime": 45,
-  "keywords": "Sausage, smoked sausage, brisket, brisket sausage",
+  "keywords": [
+    "Sausage",
+    "smoked sausage",
+    "brisket",
+    "brisket sausage"
+  ],
   "recipeYield": 2,
-  "recipeCategory": "entree",
-  "recipeCuisine": "American",
+  "recipeCategory": [
+    "entree",
+    "main course",
+    "barbecue"
+  ],
+  "recipeCuisine": [
+    "American"
+  ],
   "recipeIngredient": [
     "2 teaspoons whole black peppercorns",
     "2 teaspoons fresh ground black pepper",

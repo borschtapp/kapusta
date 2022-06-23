@@ -10,10 +10,16 @@
   "description": "We turned the classic, cream-filled French pastry into an oh-so-easy bar! With a flaky crescent base, a layer of silky vanilla pudding and a topping of rich chocolate ganache, this is a special dessert that’s guaranteed to impress.",
   "cookTime": 15,
   "totalTime": 290,
-  "keywords": "éclair bars",
+  "keywords": [
+    "éclair bars"
+  ],
   "recipeYield": 24,
-  "recipeCategory": "Dessert",
-  "recipeCuisine": "French",
+  "recipeCategory": [
+    "Dessert"
+  ],
+  "recipeCuisine": [
+    "French"
+  ],
   "nutrition": {
     "calories": "180 ",
     "servingSize": "1 Bar",

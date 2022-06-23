@@ -10,10 +10,18 @@
   "description": "This baked mac and cheese is a family favorite recipe, loved by children and adults. My version uses a combination of cheeses for a gloriously cheesy dish!",
   "cookTime": 20,
   "totalTime": 35,
-  "keywords": "mac and cheese, macaroni and cheese",
+  "keywords": [
+    "mac and cheese",
+    "macaroni and cheese"
+  ],
   "recipeYield": 8,
-  "recipeCategory": "Main Course",
-  "recipeCuisine": "American",
+  "recipeCategory": [
+    "Main Course",
+    "Side Dish"
+  ],
+  "recipeCuisine": [
+    "American"
+  ],
   "nutrition": {
     "calories": "665 kcal",
     "servingSize": "1 serving",

@@ -10,7 +10,10 @@
   "description": "Kolaches are beloved in Texas, but we believe they deserve more widespread attention. Our savory spin on this classic Czech pastry is filled with a combo of smoky Conecuh sausage and sharp Cheddar cheese. Serve with coffee and a fruit salad for a simple yet satisfying breakfast. Leftover kolaches can be reheated in the microwave, but they're best when served fresh out of the oven and still warm.",
   "totalTime": 180,
   "recipeYield": 20,
-  "recipeCategory": "food",
+  "recipeCategory": [
+    "food",
+    "Breakfast"
+  ],
   "recipeIngredient": [
     "1 cup whole milk",
     "3/4 cup salted butter, divided",

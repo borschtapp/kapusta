@@ -1,7 +1,6 @@
 {
   "name": "Waffles I",
   "image": [
-    "https://images.media-allrecipes.com/userphotos/560x315/3875444.jpg",
     "https://images.media-allrecipes.com/userphotos/560x315/3875444.jpg"
   ],
   "author": {
@@ -11,7 +10,10 @@
   "cookTime": 5,
   "totalTime": 20,
   "recipeYield": 6,
-  "recipeCategory": "Breakfast and Brunch",
+  "recipeCategory": [
+    "Breakfast and Brunch",
+    "Waffles"
+  ],
   "nutrition": {
     "calories": "382 calories;",
     "carbohydrateContent": "38",

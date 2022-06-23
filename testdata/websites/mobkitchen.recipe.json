@@ -10,10 +10,23 @@
   },
   "description": "This Indian snack is oozing with molten cheese and chilli garlicky goodness. They will be demolished in seconds, I can promise you that. Seema x",
   "totalTime": 30,
-  "keywords": "chilli cheese paratha, indian cheese paratha, indian paratha recipe, cheese paratha recipe, chilli cheese paratha recipe, cheesy paratha recipe",
+  "keywords": [
+    "chilli cheese paratha",
+    "indian cheese paratha",
+    "indian paratha recipe",
+    "cheese paratha recipe",
+    "chilli cheese paratha recipe",
+    "cheesy paratha recipe"
+  ],
   "recipeYield": 4,
-  "recipeCategory": "Munchies, Comfort, Speedy",
-  "recipeCuisine": "Indian",
+  "recipeCategory": [
+    "Munchies",
+    "Comfort",
+    "Speedy"
+  ],
+  "recipeCuisine": [
+    "Indian"
+  ],
   "nutrition": {
     "servingSize": "4"
   },

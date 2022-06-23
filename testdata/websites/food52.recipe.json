@@ -10,10 +10,20 @@
   },
   "description": "These sticky, oven-roasted wings—with pomegranate molasses, warm spices, and toasted walnuts—are inspired by fesenjan, a Northern Iranian stew.",
   "cookTime": 1440,
-  "keywords": "Pomegranate, Walnut, Game Day, Roast, Chicken",
+  "keywords": [
+    "Pomegranate",
+    "Walnut",
+    "Game Day",
+    "Roast",
+    "Chicken"
+  ],
   "recipeYield": 2,
-  "recipeCategory": "Dinner",
-  "recipeCuisine": "American",
+  "recipeCategory": [
+    "Dinner"
+  ],
+  "recipeCuisine": [
+    "American"
+  ],
   "recipeIngredient": [
     "2 to 2 1/4 pounds chicken wings",
     "1 tablespoon kosher salt",

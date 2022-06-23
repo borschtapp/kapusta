@@ -10,10 +10,16 @@
   "description": "Chicken Korma is a traditional Indian dish that's light and flavorful almond curry made with tomato paste, plenty of spices and cream thats buttery and completely delicious.",
   "cookTime": 20,
   "totalTime": 45,
-  "keywords": "Indian Chicken Korma",
+  "keywords": [
+    "Indian Chicken Korma"
+  ],
   "recipeYield": 4,
-  "recipeCategory": "Main Course",
-  "recipeCuisine": "Indian",
+  "recipeCategory": [
+    "Main Course"
+  ],
+  "recipeCuisine": [
+    "Indian"
+  ],
   "nutrition": {
     "calories": "682 kcal",
     "servingSize": "1 serving",

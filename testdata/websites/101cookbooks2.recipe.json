@@ -10,10 +10,15 @@
   "description": "Lunch at the studio today involved broccoli soup heated on a new hotplate - a simple broccoli and spinach affair made with a coconut milk broth, topped with good stuff like pan-fried tofu croutons, toasted almonds, and shredded scallions.",
   "cookTime": 10,
   "totalTime": 20,
-  "keywords": "almonds, broccoli, coconut milk, spinach, tofu",
-  "recipeCategory": "90+ Soup Recipes",
-  "recipeIngredient": [
-    ""
+  "keywords": [
+    "almonds",
+    "broccoli",
+    "coconut milk",
+    "spinach",
+    "tofu"
+  ],
+  "recipeCategory": [
+    "90+ Soup Recipes"
   ],
   "url": "true",
   "siteName": "101 Cookbooks",

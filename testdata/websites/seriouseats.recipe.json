@@ -14,10 +14,22 @@
   },
   "description": "A buttery, flaky, tender, and easy pie dough recipe that requires no special equipment, ingredients, or training.",
   "totalTime": 150,
-  "keywords": "Bake, crust, holiday, pastry, pie",
+  "keywords": [
+    "Bake",
+    "crust",
+    "holiday",
+    "pastry",
+    "pie"
+  ],
   "recipeYield": 20,
-  "recipeCategory": "Dessert",
-  "recipeCuisine": "American",
+  "recipeCategory": [
+    "Dessert",
+    "Pastry",
+    "Pies"
+  ],
+  "recipeCuisine": [
+    "American"
+  ],
   "nutrition": {
     "calories": "125 kcal",
     "servingSize": "Makes 2 single- or 1 double-crusted 9-inch pie (regular or deep-dish)",

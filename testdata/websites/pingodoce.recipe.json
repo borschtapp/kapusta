@@ -6,7 +6,13 @@
   "description": "Malandrinho, como se quer, saboroso e fresco, graças aos coentros e à hortelã, este arroz de tamboril vai deliciá-lo. Siga a receita e impressione lá em casa.",
   "cookTime": 60,
   "totalTime": 60,
-  "keywords": "arroz, camarão, marisco, peixe, pimento",
+  "keywords": [
+    "arroz",
+    "camarão",
+    "marisco",
+    "peixe",
+    "pimento"
+  ],
   "recipeYield": 4,
   "nutrition": {
     "calories": "761 calories"

@@ -9,10 +9,33 @@
   "description": "\u003cp\u003eLet your little monsters do their worst, decorating these spooky Halloween treats\u003c/p\u003e",
   "cookTime": 15,
   "totalTime": 50,
-  "keywords": "Josh Eagleton, 30-60 minutes, 400 kcal or less, Biscuit recipes, Cup cakes, Cupcake, Frosting, Good Food, Halloween recipes, Icing, Kids recipes, Party recipes, Sweet, Sweet recipe, Sweet recipes, Sweets, Vanilla extract, Spooky recipes",
+  "keywords": [
+    "Josh Eagleton",
+    "30-60 minutes",
+    "400 kcal or less",
+    "Biscuit recipes",
+    "Cup cakes",
+    "Cupcake",
+    "Frosting",
+    "Good Food",
+    "Halloween recipes",
+    "Icing",
+    "Kids recipes",
+    "Party recipes",
+    "Sweet",
+    "Sweet recipe",
+    "Sweet recipes",
+    "Sweets",
+    "Vanilla extract",
+    "Spooky recipes"
+  ],
   "recipeYield": 12,
-  "recipeCategory": "Treat",
-  "recipeCuisine": "British",
+  "recipeCategory": [
+    "Treat"
+  ],
+  "recipeCuisine": [
+    "British"
+  ],
   "nutrition": {
     "calories": "389 calories",
     "carbohydrateContent": "53 grams carbohydrates",

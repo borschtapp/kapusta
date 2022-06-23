@@ -11,7 +11,9 @@
   "cookTime": 10,
   "totalTime": 40,
   "recipeYield": 20,
-  "recipeCategory": "Dessert",
+  "recipeCategory": [
+    "Dessert"
+  ],
   "recipeIngredient": [
     "butter (ghee, or shortening for greasing the pan)",
     "3 cups almond flour",

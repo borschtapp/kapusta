@@ -10,7 +10,11 @@
   "description": "Infused with layers of heat from Scotch bonnet chiles and fresh ginger, Kwame Onwuachi’s pepper shrimp are inspired by a beloved Jamaican street food. Deveining the shrimp but leaving the shell on helps protect against overcooking. Onwuachi fell in love with this recipe when traveling in Jamaica.",
   "totalTime": 20,
   "recipeYield": 4,
-  "recipeCategory": "Seafood Recipes",
+  "recipeCategory": [
+    "Seafood Recipes",
+    "Shellfish Recipes",
+    "Shrimp"
+  ],
   "recipeIngredient": [
     "1/2 cup unsalted butter (4 ounces)",
     "5 large garlic cloves, minced",

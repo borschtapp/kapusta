@@ -11,8 +11,12 @@
   "cookTime": 5,
   "totalTime": 20,
   "recipeYield": 2,
-  "recipeCategory": "30-Minute Meals",
-  "recipeCuisine": "Salad",
+  "recipeCategory": [
+    "30-Minute Meals"
+  ],
+  "recipeCuisine": [
+    "Salad"
+  ],
   "nutrition": {
     "calories": "4245 calories",
     "servingSize": "1",

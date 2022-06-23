@@ -10,9 +10,13 @@
   "description": "Receita de Caipirinha - Original. Enviada por Daniela Belizario e demora apenas 5 minutos.",
   "cookTime": 5,
   "totalTime": 5,
-  "keywords": "receita de caipirinha - original",
+  "keywords": [
+    "receita de caipirinha - original"
+  ],
   "recipeYield": 1,
-  "recipeCategory": "Bebidas",
+  "recipeCategory": [
+    "Bebidas"
+  ],
   "nutrition": {},
   "recipeIngredient": [
     "1 limão grande",

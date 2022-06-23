@@ -10,9 +10,19 @@
   "description": "You have got to try these homemade licorice caramels! Each bite is a creamy explosion of caramel with a subtle, delicious licorice tingle. They are delicious.",
   "cookTime": 10,
   "totalTime": 150,
-  "keywords": "anise extract, butter, corn syrup, food coloring, granulated sugar, sweetened condensed milk, vanilla extract",
+  "keywords": [
+    "anise extract",
+    "butter",
+    "corn syrup",
+    "food coloring",
+    "granulated sugar",
+    "sweetened condensed milk",
+    "vanilla extract"
+  ],
   "recipeYield": 8,
-  "recipeCategory": "Candy",
+  "recipeCategory": [
+    "Candy"
+  ],
   "nutrition": {
     "calories": "0 calories",
     "carbohydrateContent": "0 grams carbohydrates",

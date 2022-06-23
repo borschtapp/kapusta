@@ -11,9 +11,18 @@
   "description": "Unser beliebtes Rezept für Gemüsepfanne mit Hähnchen, Zuckerschoten und Brokkoli und mehr als 65.000 weitere kostenlose Rezepte auf LECKER.de.",
   "cookTime": 25,
   "totalTime": 25,
-  "keywords": "low carb,Mittag,Abendbrot,salzig,Sonstiges,Fleisch \u0026 Geflügel",
+  "keywords": [
+    "low carb",
+    "Mittag",
+    "Abendbrot",
+    "salzig",
+    "Sonstiges",
+    "Fleisch \u0026 Geflügel"
+  ],
   "recipeYield": 4,
-  "recipeCategory": "Hauptgericht",
+  "recipeCategory": [
+    "Hauptgericht"
+  ],
   "nutrition": {
     "calories": "260",
     "servingSize": "1 Portion",

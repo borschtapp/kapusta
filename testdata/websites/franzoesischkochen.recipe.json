@@ -1,14 +1,17 @@
 {
   "name": "Tourte mit Feigen und Confit de canard",
   "image": [
-    "https://www.franzoesischkochen.de/wp-content/uploads/2020/09/Tourte-confit-de-canard.jpg",
     "https://www.franzoesischkochen.de/wp-content/uploads/2020/09/Tourte-confit-de-canard.jpg"
   ],
   "author": {},
   "description": "Tourte mit Feigen und Confit de canard",
   "cookTime": 60,
-  "recipeCategory": "Fleisch",
-  "recipeCuisine": "French",
+  "recipeCategory": [
+    "Fleisch"
+  ],
+  "recipeCuisine": [
+    "French"
+  ],
   "recipeIngredient": [
     "4-5 Feigen",
     "1 Confit de Canard (Brust bei mir oder 2 Keulen)",

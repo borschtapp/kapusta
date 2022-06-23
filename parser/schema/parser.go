@@ -3,7 +3,6 @@ package schema
 import (
 	"errors"
 	"fmt"
-	"strings"
 	"time"
 
 	"borscht.app/kapusta/model"
@@ -25,8 +24,8 @@ func Parse(p *model.InputData, r *model.Recipe) error {
 		r.Name = utils.CleanupInline(val)
 	}
 
-	if val, ok := getPropertyString(p.Schema, "recipeCategory"); ok {
-		r.Category = utils.CleanupInline(val)
+	if values, ok := p.Schema.GetProperties("recipeCategory"); ok {
+		r.Category = getPropertiesArray(values)
 	}
 
 	if val, ok := getPropertyDuration(p.Schema, "totalTime"); ok {
@@ -57,11 +56,11 @@ func Parse(p *model.InputData, r *model.Recipe) error {
 	if nested, ok := p.Schema.GetNested("image"); ok {
 		for _, item := range nested.Items {
 			if val, ok := getPropertyString(item, "url"); ok {
-				r.Image = append(r.Image, val)
+				r.Image = utils.AppendUnique(r.Image, val)
 			}
 		}
 	} else if val, ok := getPropertyString(p.Schema, "image"); ok {
-		r.Image = append(r.Image, val)
+		r.Image = utils.AppendUnique(r.Image, val)
 	}
 
 	if item, ok := p.Schema.GetNestedItem("nutrition"); ok {
@@ -106,7 +105,10 @@ func Parse(p *model.InputData, r *model.Recipe) error {
 	if ingredients, ok := p.Schema.GetProperties("recipeIngredient", "ingredients"); ok {
 		for _, val := range ingredients {
 			if text, ok := getStringOrChild(val, "name"); ok {
-				r.Ingredients = append(r.Ingredients, utils.CleanupInline(text))
+				text = utils.CleanupInline(text)
+				if len(text) != 0 {
+					r.Ingredients = append(r.Ingredients, text)
+				}
 			}
 		}
 	}
@@ -179,20 +181,16 @@ func Parse(p *model.InputData, r *model.Recipe) error {
 		r.Author = &model.Author{Name: utils.CleanupInline(val)}
 	}
 
-	if val, ok := getPropertyString(p.Schema, "recipeCuisine"); ok {
-		r.Cuisine = utils.CleanupInline(val)
+	if values, ok := p.Schema.GetProperties("recipeCuisine"); ok {
+		r.Cuisine = getPropertiesArray(values)
 	}
 
 	if val, ok := getPropertyString(p.Schema, "description"); ok {
 		r.Description = utils.CleanupInline(val)
 	}
 
-	if keywords, ok := p.Schema.GetProperties("keywords"); ok {
-		var arr []string
-		for _, v := range keywords {
-			arr = append(arr, utils.CleanupInline(v.(string)))
-		}
-		r.Keywords = strings.Join(arr, ", ")
+	if values, ok := p.Schema.GetProperties("keywords"); ok {
+		r.Keywords = getPropertiesArray(values)
 	}
 
 	if val, ok := getPropertyString(p.Schema, "datePublished"); ok {

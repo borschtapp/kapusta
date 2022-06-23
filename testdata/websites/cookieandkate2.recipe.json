@@ -10,10 +10,16 @@
   "description": "These refried beans are delicious and so easy to make. This refried bean recipe is quick, too—use canned beans and they're ready in 25 minutes! Plus, these beans are healthy, vegan and gluten free. Recipe yields 4 servings.",
   "cookTime": 10,
   "totalTime": 25,
-  "keywords": "refried beans",
+  "keywords": [
+    "refried beans"
+  ],
   "recipeYield": 4,
-  "recipeCategory": "Side Dish",
-  "recipeCuisine": "Mexican",
+  "recipeCategory": [
+    "Side Dish"
+  ],
+  "recipeCuisine": [
+    "Mexican"
+  ],
   "nutrition": {
     "calories": "194",
     "carbohydrateContent": "29.7 g",

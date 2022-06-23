@@ -10,10 +10,20 @@
   "description": "Soft Gingerbread Cookies have the taste of gingerbread cookies, but are soft and thick. Roll the dough balls in sugar for the perfect sweetness!",
   "cookTime": 15,
   "totalTime": 27,
-  "keywords": "christmas cookies, cookies without eggs, easy cookies, egg free cookies, gingerbread cookies",
+  "keywords": [
+    "christmas cookies",
+    "cookies without eggs",
+    "easy cookies",
+    "egg free cookies",
+    "gingerbread cookies"
+  ],
   "recipeYield": 60,
-  "recipeCategory": "Dessert",
-  "recipeCuisine": "American",
+  "recipeCategory": [
+    "Dessert"
+  ],
+  "recipeCuisine": [
+    "American"
+  ],
   "nutrition": {
     "calories": "111 kcal",
     "servingSize": "1 serving",

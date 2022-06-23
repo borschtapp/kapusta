@@ -9,10 +9,16 @@
   },
   "description": "En god og rask oppskrift på en kylling tikka masala. Dette er en rett med små smakseksplosjoner som sender tankene til India.",
   "totalTime": 30,
-  "keywords": "kylling",
+  "keywords": [
+    "kylling"
+  ],
   "recipeYield": 4,
-  "recipeCategory": "middag",
-  "recipeCuisine": "indisk",
+  "recipeCategory": [
+    "middag"
+  ],
+  "recipeCuisine": [
+    "indisk"
+  ],
   "recipeIngredient": [
     "4 dl basmatiris",
     "400 g kyllingfileter",

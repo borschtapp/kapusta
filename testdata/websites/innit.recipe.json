@@ -10,7 +10,9 @@
   "cookTime": 2,
   "totalTime": 51,
   "recipeYield": 4,
-  "recipeCategory": "Salads",
+  "recipeCategory": [
+    "Salads"
+  ],
   "nutrition": {
     "calories": "830 kcal",
     "carbohydrateContent": "34 g",

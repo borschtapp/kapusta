@@ -2,6 +2,7 @@ package schema
 
 import (
 	"log"
+	"strings"
 	"time"
 
 	duration "github.com/channelmeter/iso8601duration"
@@ -63,6 +64,33 @@ func getPropertyFloat(item *microdata.Item, key ...string) (float32, bool) {
 	}
 
 	return 0, false
+}
+
+func getPropertiesArray(values []interface{}) []string {
+	var arr []string
+	for _, v := range values {
+		if text, ok := v.(string); ok {
+			text = utils.CleanupInline(text)
+			if text != "" {
+				arr = append(arr, text)
+			}
+		} else {
+			log.Printf("unable to retrieve `string` value of `%v` in (%v)\n", v, values)
+		}
+	}
+
+	if len(arr) == 1 && strings.Contains(arr[0], ",") {
+		split := strings.Split(arr[0], ",")
+		arr = nil
+		for _, text := range split {
+			text = strings.TrimSpace(text)
+			if text != "" {
+				arr = append(arr, text)
+			}
+		}
+	}
+
+	return utils.Deduplicate(arr)
 }
 
 func getPropertyDuration(item *microdata.Item, key string) (time.Duration, bool) {

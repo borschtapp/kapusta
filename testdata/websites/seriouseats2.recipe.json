@@ -15,8 +15,13 @@
   "description": "When you need some clams but all you got is cans.",
   "totalTime": 20,
   "recipeYield": 4,
-  "recipeCategory": "Quick and Easy",
-  "recipeCuisine": "American",
+  "recipeCategory": [
+    "Quick and Easy",
+    "Quick Dinners"
+  ],
+  "recipeCuisine": [
+    "American"
+  ],
   "nutrition": {
     "calories": "442 kcal",
     "servingSize": "Serves 4",

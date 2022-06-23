@@ -1,7 +1,6 @@
 {
   "name": "Filet de saumon au four",
   "image": [
-    "https://img.cuisineaz.com/610x610/2014-02-24/i78436-filet-de-saumon-au-four.jpeg",
     "https://img.cuisineaz.com/610x610/2014-02-24/i78436-filet-de-saumon-au-four.jpeg"
   ],
   "author": {
@@ -11,8 +10,12 @@
   "cookTime": 5,
   "totalTime": 15,
   "recipeYield": 4,
-  "recipeCategory": "Viandes",
-  "recipeCuisine": "french",
+  "recipeCategory": [
+    "Viandes"
+  ],
+  "recipeCuisine": [
+    "french"
+  ],
   "nutrition": {
     "calories": "339 calories"
   },

@@ -10,8 +10,12 @@
   "description": "Lekka surówka do obiadu ze świeżego ogórka, śmietany lub jogurtu oraz koperku. Bardzo prosta, idealnie nadająca się do wielu dań obiadowych. Mizeria najsmaczniejsza jest z ziemniakami najlepiej młodymi i jakimś mięsem np. kotletem mielonym lub schabowym. My najbardziej lubimy kremową mizerię z miękkimi, cienkimi plasterkami ogórka doprawioną nie tylko solą i pieprzem, ale również (aby była słodko- winna) sokiem z cytryny i cukrem. A jak u Ciebie przygotowuje się mizerię?",
   "totalTime": 30,
   "recipeYield": 4,
-  "recipeCategory": "Dodatki do dań",
-  "recipeCuisine": "Polska",
+  "recipeCategory": [
+    "Dodatki do dań"
+  ],
+  "recipeCuisine": [
+    "Polska"
+  ],
   "recipeIngredient": [
     "600 g świeżych ogórków gruntowych (lub długich, szklarniowych)*",
     "300 g gęstej, kwaśnej śmietany 18% lub jogurtu typu greckiego",

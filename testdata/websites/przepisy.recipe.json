@@ -1,7 +1,6 @@
 {
   "name": "Placki ziemniaczane",
   "image": [
-    "https://s3.przepisy.pl/przepisy3ii/img/variants/670x0/placki-ziemniaczane.jpg",
     "https://s3.przepisy.pl/przepisy3ii/img/variants/670x0/placki-ziemniaczane.jpg"
   ],
   "author": {
@@ -10,8 +9,17 @@
   "description": "Jedni zajadają się plackami ziemniaczanymi posypanymi cukrem, inni muszą mieć do nich gęstą śmietanę, a jeszcze inni najbardziej lubią placki polane mięsnym gulaszem. Niezależnie od tego, z jakim dodatkiem wolisz je jeść, poznaj naszą wersję przyrządzania tych przysmaków. Ziemniaków nie musisz trzeć jak w pierwotnym przepisie na drobnej tarce, wystarczy, że zatrzesz je grubych oczkach. Aby się nie rozpadły podczas smażenia do masy ziemniaczanej dodaj jajko i odrobinę mąki. Ich postrzępione brzegi nie tylko pięknie się prezentują, ale też genialnie smakują i chrupią. Najlepsze placki ziemniaczane to te usmażone na złoto, których chrupiąca, lekko przypieczona skórka skrywa miękki delikatny środek. Jeśli lubisz eksperymentować, do masy oprócz czosnku, dorzuć ulubione zioła lub drobno pokrojone warzywa, np.: szpinak, paprykę chili lub cebulę, a będą wtedy aromatyczne i kolorowe.",
   "cookTime": 40,
   "totalTime": 40,
-  "keywords": "Na co dzień, Ziemniaki, Warzywa, Jajka, Łagodne, Bez mięsa",
-  "recipeCategory": "Placki ziemniaczane",
+  "keywords": [
+    "Na co dzień",
+    "Ziemniaki",
+    "Warzywa",
+    "Jajka",
+    "Łagodne",
+    "Bez mięsa"
+  ],
+  "recipeCategory": [
+    "Placki ziemniaczane"
+  ],
   "recipeIngredient": [
     "jajka",
     "Gałka muszkatołowa z Indonezji Knorr",

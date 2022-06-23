@@ -11,8 +11,13 @@
   "cookTime": 20,
   "totalTime": 40,
   "recipeYield": 4,
-  "recipeCategory": "Dinner",
-  "recipeCuisine": "Europe, German",
+  "recipeCategory": [
+    "Dinner"
+  ],
+  "recipeCuisine": [
+    "Europe",
+    "German"
+  ],
   "nutrition": {
     "calories": " 228 calories",
     "carbohydrateContent": "18g carbohydrate (8g sugars",

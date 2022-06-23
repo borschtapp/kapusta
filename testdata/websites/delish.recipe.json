@@ -10,9 +10,22 @@
   "description": "Master the art of the Pumpkin Roll with this recipe from Delish.com.",
   "cookTime": 30,
   "totalTime": 60,
-  "keywords": "pumpkin roll, pumpkin desserts, fall desserts, swiss roll, cream cheese frosting, thanksgiving desserts, pumpkin cake,",
+  "keywords": [
+    "pumpkin roll",
+    "pumpkin desserts",
+    "fall desserts",
+    "swiss roll",
+    "cream cheese frosting",
+    "thanksgiving desserts",
+    "pumpkin cake"
+  ],
   "recipeYield": 8,
-  "recipeCategory": "autumn",
+  "recipeCategory": [
+    "autumn",
+    "Thanksgiving",
+    "baking",
+    "dessert"
+  ],
   "recipeIngredient": [
     "\u003cp\u003eCooking spray\u003c/p\u003e",
     "1 c. \u003cp\u003egranulated sugar\u003c/p\u003e",

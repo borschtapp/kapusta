@@ -11,7 +11,9 @@
   "cookTime": 20,
   "totalTime": 60,
   "recipeYield": 8,
-  "recipeCategory": "Side Dish",
+  "recipeCategory": [
+    "Side Dish"
+  ],
   "nutrition": {
     "calories": "100",
     "carbohydrateContent": "8",

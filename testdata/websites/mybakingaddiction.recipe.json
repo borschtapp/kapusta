@@ -10,9 +10,17 @@
   "description": "Chocolate Coconut Zucchini Bread is quick, delicious, and the perfect use for garden zucchini. Enjoy a slice with your morning coffee, or serve it up for dessert.",
   "cookTime": 15,
   "totalTime": 75,
-  "keywords": "Bread, Chocolate, Coconut, Summer Recipes, Zucchini",
+  "keywords": [
+    "Bread",
+    "Chocolate",
+    "Coconut",
+    "Summer Recipes",
+    "Zucchini"
+  ],
   "recipeYield": 2,
-  "recipeCategory": "Bread",
+  "recipeCategory": [
+    "Bread"
+  ],
   "nutrition": {
     "calories": "246 calories",
     "servingSize": "1 slice"

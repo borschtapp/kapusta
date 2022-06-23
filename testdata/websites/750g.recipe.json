@@ -9,9 +9,14 @@
   },
   "description": "La petite salade détox parfaite pour un déjeuner vitaminé au coeur de l'hiver",
   "cookTime": 20,
-  "keywords": "salade de carottes,salade de carottes cuites",
+  "keywords": [
+    "salade de carottes",
+    "salade de carottes cuites"
+  ],
   "recipeYield": 6,
-  "recipeCategory": "Salades",
+  "recipeCategory": [
+    "Salades"
+  ],
   "recipeIngredient": [
     "500g de carottes",
     "3 jus d'orange",

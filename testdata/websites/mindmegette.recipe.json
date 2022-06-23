@@ -1,7 +1,6 @@
 {
   "name": "Tepsis krumpli céklával és répával Recept képpel - Mindmegette.hu - Receptek",
   "image": [
-    "https://www.mindmegette.hu/images/283/O/tepsis-ceklas.jpg",
     "https://www.mindmegette.hu/images/283/O/tepsis-ceklas.jpg"
   ],
   "author": {
@@ -9,8 +8,26 @@
   },
   "description": "Egy finom Tepsis krumpli céklával és répával ebédre vagy vacsorára? Tepsis krumpli céklával és répával Receptek a Mindmegette.hu Recept gyűjteményében!",
   "cookTime": 45,
-  "keywords": "Tepsis krumpli céklával és répával, vegetáriánus, klasszikus, ebéd-vacsora otthonra, átlagos, egyszerű, 45 perc, egytálétel, köret, krumplis, tepsis, céklás, burgonya, rozmaringos - MME",
-  "recipeCategory": "egytálétel,köret",
+  "keywords": [
+    "Tepsis krumpli céklával és répával",
+    "vegetáriánus",
+    "klasszikus",
+    "ebéd-vacsora otthonra",
+    "átlagos",
+    "egyszerű",
+    "45 perc",
+    "egytálétel",
+    "köret",
+    "krumplis",
+    "tepsis",
+    "céklás",
+    "burgonya",
+    "rozmaringos - MME"
+  ],
+  "recipeCategory": [
+    "egytálétel",
+    "köret"
+  ],
   "recipeIngredient": [
     "6 db burgonya",
     "2 db cékla",

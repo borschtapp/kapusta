@@ -10,9 +10,23 @@
   "description": "Hackbraten supersaftig - saftiger Hackbraten mit viel Soße. Über 1110 Bewertungen und für lecker befunden. Mit ► Portionsrechner ► Kochbuch ► Video-Tipps!",
   "cookTime": 40,
   "totalTime": 40,
-  "keywords": "Fleisch, Hauptspeise, Rind, Saucen, Schwein, Braten, Resteverwertung, Gluten, Lactose, ketogen, Low Carb",
+  "keywords": [
+    "Fleisch",
+    "Hauptspeise",
+    "Rind",
+    "Saucen",
+    "Schwein",
+    "Braten",
+    "Resteverwertung",
+    "Gluten",
+    "Lactose",
+    "ketogen",
+    "Low Carb"
+  ],
   "recipeYield": 4,
-  "recipeCategory": "Saucen",
+  "recipeCategory": [
+    "Saucen"
+  ],
   "nutrition": {
     "calories": "731 kcal",
     "servingSize": "1",

@@ -7,10 +7,19 @@
   "author": {},
   "description": "How to make a Roasted Mushroom and Bacon Dutch Baby. Serve a savory German pancake for brunch.",
   "totalTime": 70,
-  "keywords": "American, Mother's Day, brunch",
+  "keywords": [
+    "American",
+    "Mother's Day",
+    "brunch"
+  ],
   "recipeYield": 4,
-  "recipeCategory": "brunch",
-  "recipeCuisine": "American",
+  "recipeCategory": [
+    "brunch",
+    "Mother's Day"
+  ],
+  "recipeCuisine": [
+    "American"
+  ],
   "recipeIngredient": [
     "1 lb. \u003cp\u003emixed mushrooms (such as cremini, beech, or shiitake), roughly chopped 4 slices bacon, sliced\u003c/p\u003e",
     "3 \u003cp\u003elarge eggs\u003c/p\u003e",

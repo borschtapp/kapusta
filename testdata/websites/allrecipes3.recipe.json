@@ -1,7 +1,6 @@
 {
   "name": "Good Old Fashioned Pancakes",
   "image": [
-    "https://images.media-allrecipes.com/userphotos/560x315/4948036.jpg",
     "https://images.media-allrecipes.com/userphotos/560x315/4948036.jpg"
   ],
   "author": {
@@ -11,7 +10,10 @@
   "cookTime": 5,
   "totalTime": 20,
   "recipeYield": 8,
-  "recipeCategory": "Breakfast and Brunch",
+  "recipeCategory": [
+    "Breakfast and Brunch",
+    "Pancakes"
+  ],
   "nutrition": {
     "calories": "158 calories;",
     "carbohydrateContent": "21.7",

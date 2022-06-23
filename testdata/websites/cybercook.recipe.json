@@ -1,7 +1,6 @@
 {
   "name": "Strogonoff de Frango",
   "image": [
-    "https://img.cybercook.com.br/imagens/receitas/644/strogonoff-de-frango-1.jpg",
     "https://img.cybercook.com.br/imagens/receitas/644/strogonoff-de-frango-1.jpg"
   ],
   "author": {
@@ -10,9 +9,25 @@
   "description": "Receita de Strogonoff de Frango Simples. Aprenda esta deliciosa receita de strogonoff fácil de fazer e ótima para almoço ou jantar. Acesse já e saiba como!",
   "cookTime": 30,
   "totalTime": 30,
-  "keywords": "Sal,Receitas de Strogonoff,Receitas com Caldo,Peito de Frango,Creme de Leite,Caldo de Galinha,Russa,Cozinha Internacional,Receitas Salgadas,Frango,Aves,Pratos principais,Receitas de Frango Xadrez",
+  "keywords": [
+    "Sal",
+    "Receitas de Strogonoff",
+    "Receitas com Caldo",
+    "Peito de Frango",
+    "Creme de Leite",
+    "Caldo de Galinha",
+    "Russa",
+    "Cozinha Internacional",
+    "Receitas Salgadas",
+    "Frango",
+    "Aves",
+    "Pratos principais",
+    "Receitas de Frango Xadrez"
+  ],
   "recipeYield": 4,
-  "recipeCategory": "Aves",
+  "recipeCategory": [
+    "Aves"
+  ],
   "nutrition": {
     "calories": "485"
   },

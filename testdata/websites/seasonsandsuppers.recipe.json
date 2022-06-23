@@ -1,7 +1,6 @@
 {
   "name": "Authentic Canadian Poutine",
   "image": [
-    "https://www.seasonsandsuppers.ca/wp-content/uploads/2014/01/new-poutine-1.jpg",
     "https://www.seasonsandsuppers.ca/wp-content/uploads/2014/01/new-poutine-1.jpg"
   ],
   "author": {
@@ -10,10 +9,20 @@
   "description": "Authentic Canadian Poutine featuring deep-fried fries, poutine gravy and white cheddar cheese curds all tossed together. Do be careful with deep frying. A proper deep fryer is recommended.",
   "cookTime": 30,
   "totalTime": 60,
-  "keywords": "authentic Canadian poutine, how to make poutine, poutine gravy recipe",
+  "keywords": [
+    "authentic Canadian poutine",
+    "how to make poutine",
+    "poutine gravy recipe"
+  ],
   "recipeYield": 3,
-  "recipeCategory": "Main Course",
-  "recipeCuisine": "American",
+  "recipeCategory": [
+    "Main Course",
+    "Snack"
+  ],
+  "recipeCuisine": [
+    "American",
+    "Canadian"
+  ],
   "nutrition": {
     "calories": "528 kcal",
     "servingSize": "1 serving",

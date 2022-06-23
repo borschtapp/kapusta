@@ -1,15 +1,21 @@
 {
   "name": "Pesce spada al miele millefiori, pomodorini e patatine novelle",
   "image": [
-    "https://www.cucchiaio.it/content/cucchiaio/it/ricette/2017/10/pesce-spada-al-miele-millefiori-pomodorini-e-patatine-novelle/jcr:content/header-par/image-single.img10.jpg/1610381008015.jpg",
     "https://www.cucchiaio.it/content/cucchiaio/it/ricette/2017/10/pesce-spada-al-miele-millefiori-pomodorini-e-patatine-novelle/jcr:content/header-par/image-single.img10.jpg/1610381008015.jpg"
   ],
   "author": {
     "name": "Il Cucchiaio d'Argento"
   },
   "description": "Quella del pesce spada al miele millefiori, pomodorini e patatine novelle è la ricetta originale di un secondo piatto sano e leggero. Un abbinamento inusuale che conquista grazie alla freschezza dei sapori ben equilibrati e alla facilità di esecuzione.",
-  "keywords": "Pesce spada al miele millefiori, pomodorini e patatine novelle,ricette,secondi",
-  "recipeCategory": "Secondi",
+  "keywords": [
+    "Pesce spada al miele millefiori",
+    "pomodorini e patatine novelle",
+    "ricette",
+    "secondi"
+  ],
+  "recipeCategory": [
+    "Secondi"
+  ],
   "recipeIngredient": [
     "4 fette di pesce spada di circa 200 g l'una",
     "20 patatine novelle",

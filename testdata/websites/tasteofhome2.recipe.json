@@ -11,7 +11,11 @@
   "cookTime": 15,
   "totalTime": 45,
   "recipeYield": 12,
-  "recipeCategory": "New Year's Recipes",
+  "recipeCategory": [
+    "New Year's Recipes",
+    "Taste of Home Magazine Recipes",
+    "Potluck Recipes"
+  ],
   "nutrition": {
     "calories": " 411 calories",
     "carbohydrateContent": "35g carbohydrate (35g sugars",

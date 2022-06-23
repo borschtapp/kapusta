@@ -1,7 +1,6 @@
 {
   "name": "World's Best Lasagna",
   "image": [
-    "https://images.media-allrecipes.com/userphotos/560x315/3359675.jpg",
     "https://images.media-allrecipes.com/userphotos/560x315/3359675.jpg"
   ],
   "author": {
@@ -11,8 +10,15 @@
   "cookTime": 30,
   "totalTime": 195,
   "recipeYield": 12,
-  "recipeCategory": "World Cuisine",
-  "recipeCuisine": "European",
+  "recipeCategory": [
+    "World Cuisine",
+    "European",
+    "Italian"
+  ],
+  "recipeCuisine": [
+    "European",
+    "Italian"
+  ],
   "nutrition": {
     "calories": "448 calories;",
     "carbohydrateContent": "36.5",

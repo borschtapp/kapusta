@@ -10,7 +10,10 @@
   "cookTime": 10,
   "totalTime": 30,
   "recipeYield": 4,
-  "recipeCategory": "Kylling",
+  "recipeCategory": [
+    "Kylling",
+    "One pot"
+  ],
   "nutrition": {},
   "recipeIngredient": [
     "300 g kyllingekebab",

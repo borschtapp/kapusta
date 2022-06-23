@@ -69,10 +69,10 @@ type Recipe struct {
 	PrepTime        int            `json:"prepTime,omitempty"`
 	CookTime        int            `json:"cookTime,omitempty"`
 	TotalTime       int            `json:"totalTime,omitempty"`
-	Keywords        string         `json:"keywords,omitempty"`
+	Keywords        []string       `json:"keywords,omitempty"`
 	Yield           int            `json:"recipeYield,omitempty"`
-	Category        string         `json:"recipeCategory,omitempty"`
-	Cuisine         string         `json:"recipeCuisine,omitempty"`
+	Category        []string       `json:"recipeCategory,omitempty"`
+	Cuisine         []string       `json:"recipeCuisine,omitempty"`
 	Nutrition       *Nutrition     `json:"nutrition,omitempty"`
 	Ingredients     []string       `json:"recipeIngredient,omitempty"`
 	Instructions    []*Instruction `json:"recipeInstructions,omitempty"`

@@ -10,10 +10,22 @@
   "description": "Our No-Knead Herb Focaccia is impossibly easy. And impossibly delicious. It'll leave you scratching your head and wondering how so few ingredients and such little effort can produce something so exquisitely satisfying. But, don't take our word for it -- bake some up tonight. ",
   "cookTime": 25,
   "totalTime": 720,
-  "keywords": "white meat free, nut free, contains gluten, red meat free, shellfish free, dairy free, pescatarian",
+  "keywords": [
+    "white meat free",
+    "nut free",
+    "contains gluten",
+    "red meat free",
+    "shellfish free",
+    "dairy free",
+    "pescatarian"
+  ],
   "recipeYield": 24,
-  "recipeCategory": "Bread",
-  "recipeCuisine": "Italian",
+  "recipeCategory": [
+    "Bread"
+  ],
+  "recipeCuisine": [
+    "Italian"
+  ],
   "nutrition": {
     "calories": "2 calories",
     "servingSize": "1 1 Serving (21g)",

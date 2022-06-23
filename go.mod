@@ -10,6 +10,7 @@ require (
 	github.com/jarcoal/httpmock v1.2.0
 	github.com/jaytaylor/html2text v0.0.0-20211105163654-bc68cce691ba
 	github.com/stretchr/testify v1.7.4
+	golang.org/x/exp v0.0.0-20220613132600-b0d781184e0d
 	golang.org/x/net v0.0.0-20220622184535-263ec571b305
 )
 

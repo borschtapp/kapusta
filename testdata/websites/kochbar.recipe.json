@@ -9,10 +9,33 @@
   },
   "description": "Eine gut gewürztes Ragout als Zwischenmahlzeit oder mit Baquettebrot eine vollständige Mahlzeit.",
   "cookTime": 30,
-  "keywords": "Ligurisches Hühnerragout mit Zucchini – Spezzatino con zucchine, Hühnerbrust, ohne Knochen, Knoblauchzehen, frisch, Zitronensaft",
+  "keywords": [
+    "Ligurisches Hühnerragout mit Zucchini – Spezzatino con zucchine",
+    "Hühnerbrust",
+    "ohne Knochen",
+    "Knoblauchzehen",
+    "frisch",
+    "Zitronensaft"
+  ],
   "recipeYield": 2,
-  "recipeCategory": "Mittagstisch",
-  "recipeCuisine": "Europa",
+  "recipeCategory": [
+    "Mittagstisch",
+    "Beilagen",
+    "Fleisch",
+    "Geflügel",
+    "gegart",
+    "Europa",
+    "Italien",
+    "Hauptspeise",
+    "festlich",
+    "preiswerte",
+    "braten",
+    "marinieren",
+    "pfannenrühren"
+  ],
+  "recipeCuisine": [
+    "Europa"
+  ],
   "nutrition": {
     "calories": "0 kcal",
     "servingSize": "100 g",

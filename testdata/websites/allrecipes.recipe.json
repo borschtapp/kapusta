@@ -11,7 +11,11 @@
   "cookTime": 15,
   "totalTime": 40,
   "recipeYield": 2,
-  "recipeCategory": "World Cuisine Recipes",
+  "recipeCategory": [
+    "World Cuisine Recipes",
+    "European",
+    "Italian"
+  ],
   "nutrition": {
     "calories": "551.4 calories",
     "carbohydrateContent": "54.4 g",

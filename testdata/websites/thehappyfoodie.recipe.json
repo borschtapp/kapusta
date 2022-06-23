@@ -1,7 +1,6 @@
 {
   "name": "Poulet rôti au vin rouge (Roast Red Wine Chicken)",
   "image": [
-    "https://thehappyfoodie.co.uk/wp-content/uploads/2021/08/9780718177478_roast_red_wine_chicken_s900x0_c3840x2243_l0x1385.jpg",
     "https://thehappyfoodie.co.uk/wp-content/uploads/2021/08/9780718177478_roast_red_wine_chicken_s900x0_c3840x2243_l0x1385.jpg"
   ],
   "author": {
@@ -12,8 +11,13 @@
   "cookTime": 30,
   "totalTime": 90,
   "recipeYield": 4,
-  "recipeCategory": "Dinner, Main Course",
-  "recipeCuisine": "French",
+  "recipeCategory": [
+    "Dinner",
+    "Main Course"
+  ],
+  "recipeCuisine": [
+    "French"
+  ],
   "recipeIngredient": [
     "Chicken"
   ],

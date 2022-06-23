@@ -111,9 +111,6 @@ func ScrapeNode(root *html.Node, url string, options model.Options) (i *model.In
 			log.Println("unable to parse microdata on the page: " + err.Error())
 		} else {
 			schema = data.GetFirstOfType("http://schema.org/Recipe", "Recipe")
-			if schema == nil {
-				log.Println("no embedded recipe schema found on: " + url)
-			}
 		}
 	}
 

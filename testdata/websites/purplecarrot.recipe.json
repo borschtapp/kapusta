@@ -1,7 +1,8 @@
 {
   "name": "Roasted Cauliflower Lentil Bowl with Avocado \u0026 Curried Balsamic Vinaigrette",
   "image": [
-    "https://images.purplecarrot.com/uploads/product/image/1357/_1400_700_Vegan_TB12_RoastedCauli_Hero-4-fcfead9e8b8f0df11875ae6baae25ab0.jpg"
+    "https://images.purplecarrot.com/uploads/product/image/1357/_1400_700_Vegan_TB12_RoastedCauli_Hero-4-fcfead9e8b8f0df11875ae6baae25ab0.jpg",
+    "https://images.purplecarrot.com/uploads/product/archive_image/1357/small_x2_Vegan_TB12_RoastedCauli_Thumb-5-63c923518b986a583a334bf86f4da18f.jpg"
   ],
   "author": {
     "name": "Purple Carrot"
@@ -31,6 +32,21 @@
   "recipeInstructions": [
     {
       "text": "1 - Start the lentils."
+    },
+    {
+      "text": "2 - Roast the cauliflower ."
+    },
+    {
+      "text": "3 - Prepare the toppings."
+    },
+    {
+      "text": "4 - Make the curried balsamic vinaigrette."
+    },
+    {
+      "text": "5 - Make the salad."
+    },
+    {
+      "text": "6 - Serve."
     }
   ],
   "datePublished": "2020-05-13T06:56:11.845-04:00",

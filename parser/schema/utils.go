@@ -66,38 +66,46 @@ func getPropertyFloat(item *microdata.Item, key ...string) (float32, bool) {
 	return 0, false
 }
 
-func getPropertiesArray(values []interface{}) []string {
-	var arr []string
-	for _, v := range values {
-		if text, ok := v.(string); ok {
-			text = utils.CleanupInline(text)
-			if text != "" {
-				arr = append(arr, text)
-			}
-		} else {
-			log.Printf("unable to retrieve `string` value of `%v` in (%v)\n", v, values)
-		}
-	}
-
-	if len(arr) == 1 && strings.Contains(arr[0], ",") {
-		split := strings.Split(arr[0], ",")
-		arr = nil
-		for _, text := range split {
-			text = strings.TrimSpace(text)
-			if text != "" {
-				arr = append(arr, text)
+func getPropertiesArray(item *microdata.Item, keys ...string) ([]string, bool) {
+	if values, ok := item.GetProperties(keys...); ok {
+		var arr []string
+		for _, val := range values {
+			if val, ok := val.(string); ok && val != "" {
+				arr = append(arr, val)
 			}
 		}
+
+		return arr, len(arr) != 0
 	}
 
-	return utils.Deduplicate(arr)
+	return nil, false
+}
+
+func getPropertiesKeywords(item *microdata.Item, keys ...string) ([]string, bool) {
+	if values, ok := getPropertiesArray(item, keys...); ok {
+		var arr []string
+
+		if len(values) == 1 && strings.Contains(values[0], ",") {
+			values = strings.Split(values[0], ",")
+		}
+
+		for _, text := range values {
+			if text := utils.CleanupInline(text); text != "" {
+				arr = append(arr, text)
+			}
+		}
+
+		return utils.Deduplicate(arr), len(arr) != 0
+	}
+
+	return nil, false
 }
 
 func getPropertyDuration(item *microdata.Item, key string) (time.Duration, bool) {
-	if val, ok := getPropertyStringOrChild(item, key, "maxValue", "minValue"); ok {
+	if val, ok := getPropertyStringOrChild(item, key, "maxValue", "minValue"); ok && val != "" {
 		d, err := duration.FromString(val)
 		if err != nil {
-			log.Printf("unable to parse duration `%s` in (%v)\n", val, item)
+			log.Printf("unable to parse duration `%s`: %s\n", val, err.Error())
 		} else {
 			return d.ToDuration(), true
 		}

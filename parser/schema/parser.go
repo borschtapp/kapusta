@@ -24,8 +24,8 @@ func Parse(p *model.InputData, r *model.Recipe) error {
 		r.Name = utils.CleanupInline(val)
 	}
 
-	if values, ok := p.Schema.GetProperties("recipeCategory"); ok {
-		r.Category = getPropertiesArray(values)
+	if values, ok := getPropertiesKeywords(p.Schema, "recipeCategory"); ok {
+		r.Category = values
 	}
 
 	if val, ok := getPropertyDuration(p.Schema, "totalTime"); ok {
@@ -59,8 +59,10 @@ func Parse(p *model.InputData, r *model.Recipe) error {
 				r.Image = utils.AppendUnique(r.Image, val)
 			}
 		}
-	} else if val, ok := getPropertyString(p.Schema, "image"); ok {
-		r.Image = utils.AppendUnique(r.Image, val)
+	} else if values, ok := getPropertiesArray(p.Schema, "image"); ok {
+		for _, val := range values {
+			r.Image = utils.AppendUnique(r.Image, val)
+		}
 	}
 
 	if item, ok := p.Schema.GetNestedItem("nutrition"); ok {
@@ -142,8 +144,16 @@ func Parse(p *model.InputData, r *model.Recipe) error {
 				return errors.New("unknown instruction type: " + fmt.Sprint(item.Types))
 			}
 		}
-	} else if val, ok := getPropertyString(p.Schema, "recipeInstructions"); ok {
-		for _, step := range utils.SplitParagraphs(val) {
+	} else if values, ok := getPropertiesArray(p.Schema, "recipeInstructions"); ok {
+		if len(values) == 1 {
+			values = utils.SplitParagraphs(values[0])
+		} else {
+			for i, val := range values {
+				values[i] = utils.CleanupInline(val)
+			}
+		}
+
+		for _, step := range values {
 			r.Instructions = append(r.Instructions, &model.Instruction{Step: model.Step{Text: step}})
 		}
 	}
@@ -181,16 +191,16 @@ func Parse(p *model.InputData, r *model.Recipe) error {
 		r.Author = &model.Author{Name: utils.CleanupInline(val)}
 	}
 
-	if values, ok := p.Schema.GetProperties("recipeCuisine"); ok {
-		r.Cuisine = getPropertiesArray(values)
+	if values, ok := getPropertiesKeywords(p.Schema, "recipeCuisine"); ok {
+		r.Cuisine = values
 	}
 
 	if val, ok := getPropertyString(p.Schema, "description"); ok {
 		r.Description = utils.CleanupInline(val)
 	}
 
-	if values, ok := p.Schema.GetProperties("keywords"); ok {
-		r.Keywords = getPropertiesArray(values)
+	if values, ok := getPropertiesKeywords(p.Schema, "keywords"); ok {
+		r.Keywords = values
 	}
 
 	if val, ok := getPropertyString(p.Schema, "datePublished"); ok {

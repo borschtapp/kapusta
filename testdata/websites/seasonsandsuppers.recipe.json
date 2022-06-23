@@ -1,7 +1,10 @@
 {
   "name": "Authentic Canadian Poutine",
   "image": [
-    "https://www.seasonsandsuppers.ca/wp-content/uploads/2014/01/new-poutine-1.jpg"
+    "https://www.seasonsandsuppers.ca/wp-content/uploads/2014/01/new-poutine-1.jpg",
+    "https://www.seasonsandsuppers.ca/wp-content/uploads/2014/01/new-poutine-1-500x500.jpg",
+    "https://www.seasonsandsuppers.ca/wp-content/uploads/2014/01/new-poutine-1-500x375.jpg",
+    "https://www.seasonsandsuppers.ca/wp-content/uploads/2014/01/new-poutine-1-480x270.jpg"
   ],
   "author": {
     "name": "Jennifer"

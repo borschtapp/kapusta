@@ -35,7 +35,7 @@ func Parse(p *model.InputData, r *model.Recipe) error {
 	if len(r.Image) == 0 {
 		// TODO: parse array of images
 		if val, ok := p.Document.Find("meta[property='og:image']").Attr("content"); ok {
-			r.Image = append(r.Image, val)
+			r.Image = utils.AppendUnique(r.Image, val)
 		}
 	}
 

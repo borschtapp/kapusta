@@ -4,11 +4,11 @@ go 1.18
 
 require (
 	github.com/PuerkitoBio/goquery v1.8.0
-	github.com/astappiev/jsonc v1.0.0
-	github.com/channelmeter/iso8601duration v0.0.0-20150204201828-8da3af7a2a61
+	github.com/astappiev/jsonc v1.0.1
 	github.com/gofiber/fiber/v2 v2.34.1
 	github.com/jarcoal/httpmock v1.2.0
 	github.com/jaytaylor/html2text v0.0.0-20211105163654-bc68cce691ba
+	github.com/sosodev/duration v1.0.1
 	github.com/stretchr/testify v1.7.4
 	golang.org/x/exp v0.0.0-20220613132600-b0d781184e0d
 	golang.org/x/net v0.0.0-20220622184535-263ec571b305

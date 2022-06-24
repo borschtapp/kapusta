@@ -15,6 +15,16 @@ import (
 	"borscht.app/kapusta/utils"
 )
 
+func TestSingleWebsite(t *testing.T) {
+	testdata.MockRequests(t)
+
+	var website = "mobkitchen"
+	recipe, err := ScrapeFile(testdata.WebsitesDir + website + testdata.WebsiteExt)
+	assert.NoError(t, err)
+
+	testdata.AssertRecipeAlias(t, recipe, website)
+}
+
 func TestTestdataWebsites(t *testing.T) {
 	testdata.MockRequests(t)
 

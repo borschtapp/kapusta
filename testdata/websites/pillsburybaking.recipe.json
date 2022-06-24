@@ -5,6 +5,8 @@
     "http://www.pillsburybaking.com/recipes/pillsburybaking_files/PhotoImage.png"
   ],
   "description": "From Pillsbury™ Baking",
+  "cookTime": 30,
+  "totalTime": 75,
   "recipeYield": 3,
   "recipeIngredient": [
     "COOKIE",

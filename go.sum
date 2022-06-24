@@ -4,10 +4,8 @@ github.com/andybalholm/brotli v1.0.4 h1:V7DdXeJtZscaqfNuAdSRuRFzuiKlHSC/Zh3zl9qY
 github.com/andybalholm/brotli v1.0.4/go.mod h1:fO7iG3H7G2nSZ7m0zPUDn85XEX2GTukHGRSepvi9Eig=
 github.com/andybalholm/cascadia v1.3.1 h1:nhxRkql1kdYCc8Snf7D5/D3spOX+dBgjA6u8x004T2c=
 github.com/andybalholm/cascadia v1.3.1/go.mod h1:R4bJ1UQfqADjvDa4P6HZHLh/3OxWWEqc0Sk8XGwHqvA=
-github.com/astappiev/jsonc v1.0.0 h1:4L2Xnmb3Af513BBkvqq8kFkoVGSJGvxlcj8HrR0AKnk=
-github.com/astappiev/jsonc v1.0.0/go.mod h1:zU11FzaCdNWmKQk6qAzDuLv4mOnLrZ/AI5I66VKQVCA=
-github.com/channelmeter/iso8601duration v0.0.0-20150204201828-8da3af7a2a61 h1:o64h9XF42kVEUuhuer2ehqrlX8rZmvQSU0+Vpj1rF6Q=
-github.com/channelmeter/iso8601duration v0.0.0-20150204201828-8da3af7a2a61/go.mod h1:Rp8e0DCtEKwXFOC6JPJQVTz8tuGoGvw6Xfexggh/ed0=
+github.com/astappiev/jsonc v1.0.1 h1:Z80r20f9Wf5Gg96qHMqXBYWcUAko3uHnVLSYV320/ew=
+github.com/astappiev/jsonc v1.0.1/go.mod h1:zU11FzaCdNWmKQk6qAzDuLv4mOnLrZ/AI5I66VKQVCA=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
@@ -37,6 +35,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/rivo/uniseg v0.2.0 h1:S1pD9weZBuJdFmowNwbpi7BJ8TNftyUImj/0WQi72jY=
 github.com/rivo/uniseg v0.2.0/go.mod h1:J6wj4VEh+S6ZtnVlnTBMWIodfgj8LQOQFoIToxlJtxc=
+github.com/sosodev/duration v1.0.1 h1:qovz/BFb6kp30KZ4/AYZvB5Z6zANmeQja5l6W9X1w68=
+github.com/sosodev/duration v1.0.1/go.mod h1:RQIBBX0+fMLc/D9+Jb/fwvVmo0eZvDDEERAikUR6SDg=
 github.com/ssor/bom v0.0.0-20170718123548-6386211fdfcf h1:pvbZ0lM0XWPBqUKqFU8cmavspvIl9nulOYwdy6IFRRo=
 github.com/ssor/bom v0.0.0-20170718123548-6386211fdfcf/go.mod h1:RJID2RhlZKId02nZ62WenDCkgHFerpIOmW0iT7GKmXM=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=

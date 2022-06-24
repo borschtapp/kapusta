@@ -9,6 +9,7 @@
     "name": "Brdr. Price"
   },
   "description": "Sprød mørdejsbund, et lag smægtende, blød karamel og endelig et lag chokolade. Disse kagesnitter er svære at holde fingrene fra! Del dem med dine kære, eller spis dem allesammen selv og tag konsekvensen med badevægten senere…",
+  "totalTime": 120,
   "recipeYield": 8,
   "recipeIngredient": [
     "130 g mel",

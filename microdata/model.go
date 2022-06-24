@@ -1,9 +1,5 @@
 package microdata
 
-import (
-	"log"
-)
-
 type Microdata struct {
 	Items []*Item `json:"items"`
 }
@@ -75,10 +71,6 @@ func (i *Item) IsOfType(itemType ...string) bool {
 func (i *Item) GetProperty(keys ...string) (val interface{}, ok bool) {
 	for _, key := range keys {
 		if arr, ok := i.GetProperties(key); ok {
-			if len(arr) > 1 {
-				log.Printf("Probably unexpected behaviour, more values of '%s' available", key)
-			}
-
 			return arr[0], true
 		}
 	}
@@ -102,10 +94,6 @@ func (i *Item) GetProperties(keys ...string) (arr []interface{}, ok bool) {
 func (i *Item) GetNestedItem(keys ...string) (val *Item, ok bool) {
 	for _, key := range keys {
 		if data, ok := i.GetNested(key); ok {
-			if len(data.Items) > 1 {
-				log.Printf("Probably unexpected behaviour, more values of '%s' available", keys)
-			}
-
 			return data.Items[0], true
 		}
 	}

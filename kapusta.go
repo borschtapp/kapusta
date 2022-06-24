@@ -15,6 +15,7 @@ type Parser = func(p *model.InputData, r *model.Recipe) error
 
 var parsers = map[string]Parser{
 	"marleyspoon": website.ParseMarleySpoon,
+	"fitmencook":  website.ParseFitMenCook,
 }
 
 func RegisterParser(hostname string, fn Parser) {

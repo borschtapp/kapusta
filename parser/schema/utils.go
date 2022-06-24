@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	duration "github.com/channelmeter/iso8601duration"
+	"github.com/sosodev/duration"
 
 	"borscht.app/kapusta/microdata"
 	"borscht.app/kapusta/model"
@@ -103,11 +103,12 @@ func getPropertiesKeywords(item *microdata.Item, keys ...string) ([]string, bool
 
 func getPropertyDuration(item *microdata.Item, key string) (time.Duration, bool) {
 	if val, ok := getPropertyStringOrChild(item, key, "maxValue", "minValue"); ok && val != "" {
-		d, err := duration.FromString(val)
-		if err != nil {
-			log.Printf("unable to parse duration `%s`: %s\n", val, err.Error())
+		if d, err := duration.Parse(utils.RemoveSpaces(val)); err == nil {
+			return d.ToTimeDuration(), true
+		} else if val, ok := utils.ParseDuration(val); ok {
+			return val, true
 		} else {
-			return d.ToDuration(), true
+			log.Printf("unable to parse duration `%s`: %s\n", val, err.Error())
 		}
 	}
 
@@ -116,7 +117,9 @@ func getPropertyDuration(item *microdata.Item, key string) (time.Duration, bool)
 
 func parseInstructionSteps(item *microdata.Item) model.Step {
 	var instr model.Step
-	if val, ok := getPropertyString(item, "text", "description"); ok {
+	if val, ok := getPropertyStringOrChild(item, "text", "result"); ok {
+		instr.Text = utils.Cleanup(val)
+	} else if val, ok := getPropertyString(item, "description"); ok {
 		instr.Text = utils.Cleanup(val)
 	}
 	if val, ok := getPropertyString(item, "name"); ok && val != instr.Text {

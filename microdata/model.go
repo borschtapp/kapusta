@@ -110,3 +110,20 @@ func (i *Item) GetNested(key string) (data Microdata, ok bool) {
 	}
 	return Microdata{Items: arr}, len(arr) > 0
 }
+
+func (i *Item) CountPaths(prefix string, paths *map[string]int) {
+	for key, val := range i.Properties {
+		if current, ok := (*paths)[prefix+key]; ok {
+			(*paths)[prefix+key] = current + 1
+		} else {
+			(*paths)[prefix+key] = 1
+		}
+
+		for _, vv := range val {
+			switch vv.(type) {
+			case *Item:
+				vv.(*Item).CountPaths(prefix+key+".", paths)
+			}
+		}
+	}
+}

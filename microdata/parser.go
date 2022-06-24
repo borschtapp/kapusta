@@ -31,12 +31,12 @@ func newParser(root *html.Node, baseURL *url.URL) (*parser, error) {
 
 // parse returns the microdata from the parser's node tree.
 func (p *parser) parse() (*Microdata, error) {
-	toplevelNodes := []*html.Node{}
-	jsonLdNodes := []*html.Node{}
+	var toplevelNodes []*html.Node
+	var jsonNodes []*html.Node
 
 	walkNodes(p.tree, func(n *html.Node) {
 		if n.DataAtom == atom.Script && checkAttr("type", "application/ld+json", n) {
-			jsonLdNodes = append(jsonLdNodes, n)
+			jsonNodes = append(jsonNodes, n)
 		}
 
 		if _, ok := getAttr("itemscope", n); ok {
@@ -57,7 +57,7 @@ func (p *parser) parse() (*Microdata, error) {
 		p.readItem(item, node, true)
 	}
 
-	for _, node := range jsonLdNodes {
+	for _, node := range jsonNodes {
 		if node.FirstChild != nil {
 			jsonText := jsonc.ToJSON([]byte(node.FirstChild.Data))
 			var jsonMap interface{}
@@ -74,7 +74,7 @@ func (p *parser) parse() (*Microdata, error) {
 }
 
 func (p *parser) readJsonItem(item *Item, mi interface{}) {
-	switch t := mi.(type) {
+	switch mi.(type) {
 	case []interface{}: // assume this is array of items
 		for _, i := range mi.([]interface{}) {
 			p.readJsonItem(item, i)
@@ -99,8 +99,6 @@ func (p *parser) readJsonItem(item *Item, mi interface{}) {
 		for k, v := range m {
 			p.readJsonProp(item, k, v)
 		}
-	default:
-		log.Printf("Unexpected property type: %T\n", t)
 	}
 }
 
@@ -108,12 +106,10 @@ func (p *parser) readType(item *Item, val interface{}) {
 	switch vt := val.(type) {
 	case []interface{}:
 		for _, sv := range vt {
-			item.addType(sv.(string))
+			p.readType(item, sv)
 		}
 	case string:
 		item.addType(val.(string))
-	default:
-		log.Printf("Unexpected value of type '%T' used for @type\n", val)
 	}
 }
 
@@ -132,12 +128,9 @@ func (p *parser) readJsonProp(item *Item, key string, value interface{}) {
 		newItem := NewItem()
 		item.addItem(key, newItem)
 		p.readJsonItem(newItem, value)
-	case string, int, float64, bool:
-		item.addProperty(key, value)
 	case nil:
 	default:
 		item.addProperty(key, value)
-		log.Printf("Key '%s' is of a type '%T', I don't know how to handle it...\n", key, value)
 	}
 }
 

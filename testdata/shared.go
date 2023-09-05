@@ -5,10 +5,6 @@ import (
 	"runtime"
 )
 
-var HtmlExt = ".html"
-var JsonExt = ".json"
-var NewExt = ".new"
-
 var TestdataDir = currentPath() + "/"
 
 func currentPath() string {

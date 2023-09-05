@@ -19,7 +19,12 @@ func isFraction(r rune) bool {
 
 // isAlphaNumeric reports whether r is an alphabetic, digit, or underscore.
 func isAlphaNumeric(r rune) bool {
-	return r == '_' || r == '-' || r == ',' || unicode.IsLetter(r) || unicode.IsDigit(r)
+	switch r {
+	case '™', '®':
+		return true
+	default:
+		return unicode.IsLetter(r) || unicode.IsDigit(r) || unicode.IsPunct(r)
+	}
 }
 
 func lexInsideAction(l *Lexer) stateFn {
@@ -32,12 +37,8 @@ func lexInsideAction(l *Lexer) stateFn {
 			l.emit(itemEOF)
 		case isSpace(r):
 			l.ignore()
-		case r == '|':
-			l.emit(itemPipe)
-		case r == '"':
-			return lexQuote
-		case r == '`':
-			return lexRawQuote
+		case r == '/' || r == '|':
+			l.emit(itemSep)
 		case r == '(':
 			return lexBracket
 		case r == '+' || r == '-' || '0' <= r && r <= '9':
@@ -67,10 +68,6 @@ func lexNumber(l *Lexer) stateFn {
 	if l.accept(".") {
 		l.acceptRun(digits)
 	}
-	if l.accept("eE") {
-		l.accept("+-")
-		l.acceptRun("0123456789")
-	}
 	if l.accept("/") || l.accept(utils.Fractions) {
 		return lexFractions
 	}
@@ -80,10 +77,6 @@ func lexNumber(l *Lexer) stateFn {
 		l.scan()
 		l.emit(itemIdentifierRange)
 		return lexInsideAction
-	}
-	if isAlphaNumeric(l.peek()) {
-		l.scan()
-		return l.errorf("bad number syntax: %q", l.input[l.start:l.pos])
 	}
 	l.emit(itemNumber)
 	return lexInsideAction
@@ -97,43 +90,8 @@ func lexFractions(l *Lexer) stateFn {
 	if l.accept("/") {
 		l.acceptRun(digits)
 	}
-
-	if isAlphaNumeric(l.peek()) {
-		l.scan()
-		return l.errorf("bad fraction syntax: %q", l.input[l.start:l.pos])
-	}
 	l.emit(itemNumberFraction)
 	return lexInsideAction
-}
-
-func lexQuote(l *Lexer) stateFn {
-	for {
-		switch l.scan() {
-		case '\\':
-			if r := l.scan(); r != eof && r != '\n' {
-				break
-			}
-			fallthrough
-		case eof, '\n':
-			return l.errorf("unterminated quoted string")
-		case '"':
-			l.emit(itemString)
-			return lexInsideAction
-		}
-	}
-}
-
-// lexRawQuote scans a raw quoted string.
-func lexRawQuote(l *Lexer) stateFn {
-	for {
-		switch l.scan() {
-		case eof:
-			return l.errorf("unterminated raw quoted string")
-		case '`':
-			l.emit(itemRawString)
-			return lexInsideAction
-		}
-	}
 }
 
 // lexBracket scans a string in bracket.

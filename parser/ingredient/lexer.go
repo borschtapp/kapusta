@@ -34,20 +34,16 @@ func (it tokenType) String() string {
 	switch it {
 	case itemIdentifier:
 		return "IDENT"
+	case itemComment:
+		return "COMMENT"
 	case itemNumber:
 		return "NUMBER"
 	case itemNumberFraction:
 		return "FRACTION"
-	case itemPipe:
-		return "PIPE"
-	case itemRawString:
-		return "RawString"
-	case itemString:
-		return "STRING"
+	case itemSep:
+		return "SEPARATOR"
 	case itemUnit:
 		return "UNIT"
-	case itemComment:
-		return "COMMENT"
 	default:
 		return fmt.Sprintf("Unknown [%d]", it)
 	}
@@ -58,13 +54,12 @@ const (
 	itemError tokenType = iota // error occurred; value is text of error
 	itemEOF
 	itemIdentifier
-	itemIdentifierRange
+	itemIdentifierSkip
+	itemComment
 	itemNumber
 	itemNumberFraction
-	itemPipe
-	itemRawString
-	itemComment
-	itemString
+	itemIdentifierRange
+	itemSep
 	itemUnit
 )
 

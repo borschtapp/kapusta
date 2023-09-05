@@ -1,11 +1,10 @@
 package ingredient
 
 import (
+	"github.com/borschtapp/kapusta/model"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-
-	"github.com/borschtapp/krip/model"
 )
 
 func TestParse(t *testing.T) {

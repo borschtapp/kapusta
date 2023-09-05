@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/borschtapp/krip/model"
+	"github.com/borschtapp/kapusta/model"
 	"github.com/borschtapp/krip/utils"
 )
 

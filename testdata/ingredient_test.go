@@ -3,7 +3,7 @@ package testdata
 import (
 	"bufio"
 	"github.com/borschtapp/kapusta"
-	"github.com/borschtapp/krip/model"
+	"github.com/borschtapp/kapusta/model"
 	"github.com/stretchr/testify/assert"
 	"log"
 	"os"

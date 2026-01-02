@@ -14,7 +14,7 @@ func isSpace(r rune) bool {
 
 // isFraction reports whether r is a fraction number.
 func isFraction(r rune) bool {
-	return strings.IndexAny(string(r), utils.Fractions) >= 0
+	return strings.ContainsAny(string(r), utils.Fractions)
 }
 
 // isAlphaNumeric reports whether r is an alphabetic, digit, or underscore.

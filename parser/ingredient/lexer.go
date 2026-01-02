@@ -3,9 +3,10 @@ package ingredient
 import (
 	"errors"
 	"fmt"
-	"github.com/borschtapp/kapusta/dictionary"
 	"strings"
 	"unicode/utf8"
+
+	"github.com/borschtapp/kapusta/dictionary"
 )
 
 type Token struct {
@@ -94,11 +95,15 @@ func Lex(input string, lang string) *Lexer {
 // Next returns the next Token from the input. The Lexer has to be drained
 // (all items received until itemEOF or itemError) - otherwise the Lexer goroutine will leak.
 func (l *Lexer) Next() (Token, error, bool) {
-	tok := <-l.items
+	tok, ok := <-l.items
+	if !ok {
+		return Token{Type: itemEOF}, nil, true
+	}
 
-	if tok.Type == itemEOF {
+	switch tok.Type {
+	case itemEOF:
 		return tok, nil, true
-	} else if tok.Type == itemError {
+	case itemError:
 		return tok, errors.New(tok.Lexeme), false
 	}
 	return tok, nil, false
@@ -106,13 +111,14 @@ func (l *Lexer) Next() (Token, error, bool) {
 
 // run runs the lexer - should be run in a separate goroutine.
 func (l *Lexer) run(err error) {
+	defer close(l.items)
 	if err != nil {
 		l.errorf("%v", err)
+		return
 	}
 	for state := lexInsideAction; state != nil; {
 		state = state(l)
 	}
-	close(l.items) // no more tokens will be delivered
 }
 
 func (l *Lexer) emit(t tokenType) {
@@ -157,7 +163,7 @@ func (l *Lexer) errorf(format string, args ...interface{}) stateFn {
 
 // accept consumes the next rune if it's from the valid set.
 func (l *Lexer) accept(valid string) bool {
-	if strings.IndexRune(valid, l.scan()) >= 0 {
+	if strings.ContainsRune(valid, l.scan()) {
 		return true
 	}
 	l.backup()
@@ -166,7 +172,7 @@ func (l *Lexer) accept(valid string) bool {
 
 // acceptRun consumes a run of runes from the valid set.
 func (l *Lexer) acceptRun(valid string) {
-	for strings.IndexRune(valid, l.scan()) >= 0 {
+	for strings.ContainsRune(valid, l.scan()) {
 	}
 	l.backup()
 }

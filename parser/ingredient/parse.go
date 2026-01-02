@@ -23,7 +23,8 @@ func Parse(str string, lang string) (*model.Ingredient, error) {
 			return nil, fmt.Errorf("failed to parse ingredient: %v", err)
 		}
 
-		if tok.Type == itemNumber {
+		switch tok.Type {
+		case itemNumber:
 			if ingredient.Quantity == 0 {
 				if val, err := utils.ParseFloat(tok.Lexeme); err == nil {
 					ingredient.Quantity = val
@@ -41,7 +42,7 @@ func Parse(str string, lang string) (*model.Ingredient, error) {
 			} else {
 				tok.Type = itemIdentifierSkip
 			}
-		} else if tok.Type == itemNumberFraction {
+		case itemNumberFraction:
 			if ingredient.Quantity == 0 || prevTokType == itemNumber {
 				if val, err := utils.ParseFraction(tok.Lexeme); err == nil {
 					ingredient.Quantity += val
@@ -61,17 +62,18 @@ func Parse(str string, lang string) (*model.Ingredient, error) {
 			}
 		}
 
-		if tok.Type == itemIdentifier || tok.Type == itemIdentifierSkip || (tok.Type == itemUnit && text != "") {
+		switch {
+		case tok.Type == itemIdentifier || tok.Type == itemIdentifierSkip || (tok.Type == itemUnit && text != ""):
 			if text != "" && prevTokType != itemIdentifierSkip {
 				text += " "
 			}
 			text += tok.Lexeme
-		} else if tok.Type == itemUnit && !secondQuantity {
+		case tok.Type == itemUnit && !secondQuantity:
 			if unit != "" {
 				unit += " "
 			}
 			unit += tok.Lexeme
-		} else if tok.Type == itemComment {
+		case tok.Type == itemComment:
 			ingredient.Annotation = tok.Lexeme
 		}
 

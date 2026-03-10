@@ -15,23 +15,23 @@ type Dict struct {
 }
 
 func (d Dict) FindUnit(str string) (string, bool) {
-	for _, variants := range d.Units {
+	for key, variants := range d.Units {
 		for _, variant := range variants {
 			if strings.EqualFold(variant, str) {
-				return variant, true
+				return key, true
 			}
 		}
 	}
 	return "", false
 }
 
-func (d Dict) FindNumber(str string) (string, bool) {
-	for key := range d.Numbers {
+func (d Dict) FindNumber(str string) (float64, bool) {
+	for key, val := range d.Numbers {
 		if strings.EqualFold(key, str) {
-			return key, true
+			return val, true
 		}
 	}
-	return "", false
+	return 0, false
 }
 
 func (d Dict) FindQuantityBetween(str string) (string, bool) {

@@ -7,24 +7,14 @@ import (
 	"github.com/borschtapp/krip/utils"
 )
 
-// isSpace reports whether r is a space character.
-func isSpace(r rune) bool {
-	return r == ' ' || r == '\t' || r == '\r' || r == '\n'
-}
-
 // isFraction reports whether r is a fraction number.
 func isFraction(r rune) bool {
-	return strings.ContainsAny(string(r), utils.Fractions)
+	return strings.ContainsRune(utils.Fractions, r)
 }
 
-// isAlphaNumeric reports whether r is an alphabetic, digit, or underscore.
+// isAlphaNumeric reports whether r is a letter, digit, mark, punctuation, or symbol character.
 func isAlphaNumeric(r rune) bool {
-	switch r {
-	case '™', '®':
-		return true
-	default:
-		return unicode.IsLetter(r) || unicode.IsDigit(r) || unicode.IsPunct(r)
-	}
+	return unicode.IsLetter(r) || unicode.IsDigit(r) || unicode.IsMark(r) || unicode.IsPunct(r) || unicode.IsSymbol(r)
 }
 
 func lexInsideAction(l *Lexer) stateFn {
@@ -35,13 +25,21 @@ func lexInsideAction(l *Lexer) stateFn {
 		switch r := l.scan(); {
 		case r == eof || r == '\n':
 			l.emit(itemEOF)
-		case isSpace(r):
+		case unicode.IsSpace(r):
 			l.ignore()
 		case r == '/' || r == '|':
 			l.emit(itemSep)
 		case r == '(':
 			return lexBracket
-		case r == '+' || r == '-' || '0' <= r && r <= '9':
+		case r == '+' || r == '-':
+			n := l.peek()
+			if (n >= '0' && n <= '9') || n == '.' {
+				l.backup()
+				return lexNumber
+			}
+			l.backup()
+			return lexIdentifier
+		case '0' <= r && r <= '9':
 			l.backup()
 			return lexNumber
 		case isFraction(r):
@@ -73,12 +71,15 @@ func lexNumber(l *Lexer) stateFn {
 	}
 	if l.accept("-") { // range, like :from-:to
 		l.backup()
-		l.emit(itemNumber)
+		val, _ := utils.ParseFloat(l.input[l.start:l.pos])
+		l.emitValue(itemNumber, "", val)
 		l.scan()
 		l.emit(itemIdentifierRange)
 		return lexInsideAction
 	}
-	l.emit(itemNumber)
+
+	val, _ := utils.ParseFloat(l.input[l.start:l.pos])
+	l.emitValue(itemNumber, "", val)
 	return lexInsideAction
 }
 
@@ -90,7 +91,9 @@ func lexFractions(l *Lexer) stateFn {
 	if l.accept("/") {
 		l.acceptRun(digits)
 	}
-	l.emit(itemNumberFraction)
+
+	val, _ := utils.ParseFraction(l.input[l.start:l.pos])
+	l.emitValue(itemNumberFraction, "", val)
 	return lexInsideAction
 }
 
@@ -131,8 +134,10 @@ func lexIdentifier(l *Lexer) stateFn {
 	l.backup()
 
 	ident := l.input[l.start:l.pos]
-	if _, ok := l.dict.FindUnit(ident); ok {
-		l.emit(itemUnit)
+	if unitCode, ok := l.dict.FindUnit(ident); ok {
+		l.emitValue(itemUnit, unitCode, 0)
+	} else if val, ok := l.dict.FindNumber(ident); ok {
+		l.emitValue(itemNumber, "", val)
 	} else if _, ok := l.dict.FindQuantityBetween(ident); l.prev == itemNumber && ok {
 		l.emit(itemIdentifierRange)
 	} else {

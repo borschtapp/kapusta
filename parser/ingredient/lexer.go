@@ -12,6 +12,8 @@ import (
 type Token struct {
 	Type        tokenType
 	Lexeme      string
+	Code        string
+	Value       float64
 	StartColumn int
 	EndColumn   int
 }
@@ -105,8 +107,9 @@ func (l *Lexer) Next() (Token, error, bool) {
 		return tok, nil, true
 	case itemError:
 		return tok, errors.New(tok.Lexeme), false
+	default:
+		return tok, nil, false
 	}
-	return tok, nil, false
 }
 
 // run runs the lexer - should be run in a separate goroutine.
@@ -122,7 +125,18 @@ func (l *Lexer) run(err error) {
 }
 
 func (l *Lexer) emit(t tokenType) {
-	l.items <- Token{t, l.input[l.start:l.pos], l.start, l.pos}
+	l.emitValue(t, "", 0)
+}
+
+func (l *Lexer) emitValue(t tokenType, code string, val float64) {
+	l.items <- Token{
+		Type:        t,
+		Lexeme:      l.input[l.start:l.pos],
+		Code:        code,
+		Value:       val,
+		StartColumn: l.start,
+		EndColumn:   l.pos,
+	}
 	l.start = l.pos
 	l.prev = t
 }
@@ -157,7 +171,12 @@ func (l *Lexer) peek() rune {
 
 // errorf returns an error token and terminates the scan by passing back a nil pointer that will be the next state.
 func (l *Lexer) errorf(format string, args ...interface{}) stateFn {
-	l.items <- Token{itemError, fmt.Sprintf(format, args...), l.start, l.pos}
+	l.items <- Token{
+		Type:        itemError,
+		Lexeme:      fmt.Sprintf(format, args...),
+		StartColumn: l.start,
+		EndColumn:   l.pos,
+	}
 	return nil
 }
 

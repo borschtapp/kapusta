@@ -8,6 +8,7 @@ type Ingredient struct {
 	Amount      float64 `json:"amount,omitempty"`
 	MaxAmount   float64 `json:"maxAmount,omitempty"`
 	Unit        string  `json:"unit,omitempty"`
+	UnitCode    string  `json:"unitCode,omitempty"`
 	Name        string  `json:"name,omitempty"`
 	Description string  `json:"description,omitempty"`
 }

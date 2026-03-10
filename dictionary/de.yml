@@ -1,0 +1,234 @@
+units:
+  cup:
+    - tasse
+    - tassen
+    - c.
+    - c
+    - becher
+    - bechern
+  fluid_ounce:
+    - fl. oz.
+    - fl oz
+    - flüssigunze
+    - flüssigunzen
+  gallon:
+    - gal
+    - gal.
+    - gallone
+    - gallonen
+  ounce:
+    - oz
+    - oz.
+    - unze
+    - unzen
+  pint:
+    - pt
+    - pt.
+    - pinte
+    - pinten
+  pound:
+    - lb
+    - lb.
+    - lbs
+    - pfund
+  quart:
+    - qt
+    - qt.
+    - qts
+    - quart
+    - quarte
+  tablespoon:
+    - el.
+    - el
+    - EL
+    - esslöffel
+    - essloeffel
+    - esslöffeln
+    - essl
+    - essl.
+  teaspoon:
+    - tl.
+    - tl
+    - TL
+    - teelöffel
+    - teeloeffel
+    - teelöffeln
+  gram:
+    - g
+    - g.
+    - gr
+    - gr.
+    - gramm
+  kilogram:
+    - kg
+    - kg.
+    - kilogramm
+    - kilo
+  liter:
+    - l
+    - l.
+    - liter
+    - litern
+  milligram:
+    - mg
+    - mg.
+    - milligramm
+  milliliter:
+    - ml
+    - ml.
+    - milliliter
+  pinch:
+    - prise
+    - prisen
+    - msp.
+    - msp
+    - messerspitze
+  dash:
+    - schuss
+    - spritzer
+  touch:
+    - hauch
+    - spur
+  handful:
+    - handvoll
+  stick:
+    - stange
+    - stangen
+  clove:
+    - zehe
+    - zehen
+    - knoblauchzehe
+    - knoblauchzehen
+  can:
+    - dose
+    - dosen
+    - büchse
+    - buechse
+  inch:
+    - in
+    - in.
+    - zoll
+  bunch:
+    - bund
+    - bunde
+    - bündel
+  bottle:
+    - flasche
+    - flaschen
+  glass:
+    - glas
+    - gläser
+  slice:
+    - scheibe
+    - scheiben
+  bulb:
+    - knolle
+    - knollen
+  pack:
+    - packung
+    - packungen
+    - pck
+    - pck.
+    - päckchen
+    - paeckchen
+    - pkg
+  piece:
+    - stück
+    - stücke
+    - stk
+    - stk.
+    - stueck
+    - stc.
+    - stck.
+  drop:
+    - tropfen
+  sprig:
+    - zweig
+    - zweige
+  size_suffix:
+    - klein
+    - kleiner
+    - kleine
+    - kleines
+    - mittel
+    - mittlerer
+    - mittlere
+    - mittleres
+    - groß
+    - gross
+    - großer
+    - große
+    - großes
+    - grosser
+    - grosse
+    - grosses
+  unconvertible:
+    - nach geschmack
+    - beutel
+    - tüte
+    - tuete
+    - box
+    - schachtel
+    - portion
+    - portionen
+    - tube
+    - tuben
+    - würfel
+
+quantityBetween:
+  - bis
+
+numbers:
+  null: 0
+  halb: 0.5
+  halbe: 0.5
+  halber: 0.5
+  halbes: 0.5
+  einhalb: 0.5
+  ein: 1
+  eine: 1
+  einen: 1
+  einem: 1
+  einer: 1
+  eines: 1
+  eins: 1
+  zwei: 2
+  drei: 3
+  vier: 4
+  fünf: 5
+  fuenf: 5
+  sechs: 6
+  sieben: 7
+  acht: 8
+  neun: 9
+  zehn: 10
+  elf: 11
+  zwölf: 12
+  zwoelf: 12
+  dutzend: 12
+  dreizehn: 13
+  vierzehn: 14
+  fünfzehn: 15
+  fuenfzehn: 15
+  sechzehn: 16
+  siebzehn: 17
+  achtzehn: 18
+  neunzehn: 19
+  zwanzig: 20
+  einundzwanzig: 21
+  dreißig: 30
+  dreissig: 30
+  einunddreißig: 31
+  vierzig: 40
+  einundvierzig: 41
+  fünfzig: 50
+  fuenfzig: 50
+  sechzig: 60
+  siebzig: 70
+  achtzig: 80
+  neunzig: 90
+  hundert: 100
+  tausend: 1000
+  million: 1000000
+  milliarde: 1000000000
+  billion: 1000000000000

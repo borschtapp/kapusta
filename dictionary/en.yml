@@ -121,6 +121,42 @@ units:
     - cans
     - can
     - canned
+  bunch:
+    - bunch
+    - bunches
+  bottle:
+    - bottle
+    - bottles
+  glass:
+    - glass
+    - glasses
+  slice:
+    - slice
+    - slices
+  bulb:
+    - bulb
+    - bulbs
+  pack:
+    - pack
+    - package
+    - packet
+    - packages
+    - packets
+    - pkg
+    - pkg.
+  piece:
+    - piece
+    - pieces
+    - pc
+    - pc.
+    - pcs
+    - pcs.
+  drop:
+    - drop
+    - drops
+  sprig:
+    - sprig
+    - sprigs
   inch:
     - in
     - in.
@@ -128,34 +164,15 @@ units:
     - inch
     - inches
   size_suffix:
-    - half
     - small
     - medium
     - large
   unconvertible:
-    - bunch
-    - bunches
-    - sprig
-    - sprigs
-    - bottle
-    - bottles
-    - packet
-    - packets
     - to taste
-    - slice
-    - slices
     - bag
     - bags
     - box
     - boxes
-    - package
-    - packages
-    - pkg
-    - pkgs
-    - piece
-    - pieces
-    - pcs
-    - pcs.
     - batch
 
 quantityBetween:

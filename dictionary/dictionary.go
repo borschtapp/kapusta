@@ -45,7 +45,6 @@ func (d Dict) FindQuantityBetween(str string) (string, bool) {
 
 //go:embed *.yml
 var fs embed.FS
-var languages []string
 var dictMap = make(map[string]*Dict)
 
 // Called at package initialization
@@ -69,7 +68,6 @@ func init() {
 
 		lang := strings.Split(file.Name(), ".")[0]
 		dictMap[lang] = &dict
-		languages = append(languages, lang)
 	}
 }
 
@@ -84,22 +82,4 @@ func ForLang(lang string) (*Dict, error) {
 	}
 
 	return dict, nil
-}
-
-func HasDictionary(lang string) bool {
-	if lang == "" {
-		return false
-	}
-
-	for _, l := range languages {
-		if l == lang || l == lang[:2] {
-			return true
-		}
-	}
-
-	return false
-}
-
-func Default() *Dict {
-	return dictMap["en"]
 }

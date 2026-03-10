@@ -5,18 +5,17 @@ import (
 )
 
 type Ingredient struct {
-	Quantity    float64 `json:"quantity,omitempty"`
-	QuantityMax float64 `json:"quantityMax,omitempty"`
+	Amount      float64 `json:"amount,omitempty"`
+	MaxAmount   float64 `json:"maxAmount,omitempty"`
 	Unit        string  `json:"unit,omitempty"`
-
-	Ingredient string `json:"ingredient,omitempty"`
-	Annotation string `json:"annotation,omitempty"`
+	Name        string  `json:"name,omitempty"`
+	Description string  `json:"description,omitempty"`
 }
 
 func (r *Ingredient) String() (s string) {
-	s += utils.FormatFraction(r.Quantity)
-	if r.QuantityMax > 0 {
-		s += "-" + utils.FormatFraction(r.QuantityMax)
+	s += utils.FormatFraction(r.Amount)
+	if r.MaxAmount > 0 {
+		s += "-" + utils.FormatFraction(r.MaxAmount)
 	}
 
 	if r.Unit == "" {
@@ -25,10 +24,10 @@ func (r *Ingredient) String() (s string) {
 		s += " " + r.Unit
 	}
 
-	s += " " + r.Ingredient
+	s += " " + r.Name
 
-	if len(r.Annotation) > 0 {
-		s += " (" + r.Annotation + ")"
+	if len(r.Description) > 0 {
+		s += " (" + r.Description + ")"
 	}
 	return s
 }

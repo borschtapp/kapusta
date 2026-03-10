@@ -25,15 +25,15 @@ func Parse(str string, lang string) (*model.Ingredient, error) {
 
 		switch tok.Type {
 		case itemNumber:
-			if ingredient.Quantity == 0 {
+			if ingredient.Amount == 0 {
 				if val, err := utils.ParseFloat(tok.Lexeme); err == nil {
-					ingredient.Quantity = val
+					ingredient.Amount = val
 				} else {
 					tok.Type = itemIdentifier
 				}
 			} else if prevTokType == itemIdentifierRange {
 				if val, err := utils.ParseFloat(tok.Lexeme); err == nil {
-					ingredient.QuantityMax = val
+					ingredient.MaxAmount = val
 				} else {
 					return nil, fmt.Errorf("failed to parse ingredient amount: %v", err)
 				}
@@ -43,15 +43,15 @@ func Parse(str string, lang string) (*model.Ingredient, error) {
 				tok.Type = itemIdentifierSkip
 			}
 		case itemNumberFraction:
-			if ingredient.Quantity == 0 || prevTokType == itemNumber {
+			if ingredient.Amount == 0 || prevTokType == itemNumber {
 				if val, err := utils.ParseFraction(tok.Lexeme); err == nil {
-					ingredient.Quantity += val
+					ingredient.Amount += val
 				} else {
 					tok.Type = itemIdentifier
 				}
 			} else if prevTokType == itemIdentifierRange {
 				if val, err := utils.ParseFraction(tok.Lexeme); err == nil {
-					ingredient.QuantityMax = val
+					ingredient.MaxAmount = val
 				} else {
 					return nil, fmt.Errorf("failed to parse ingredient amount: %v", err)
 				}
@@ -74,20 +74,20 @@ func Parse(str string, lang string) (*model.Ingredient, error) {
 			}
 			unit += tok.Lexeme
 		case tok.Type == itemComment:
-			ingredient.Annotation = tok.Lexeme
+			ingredient.Description = tok.Lexeme
 		}
 
 		prevTokType = tok.Type
 	}
 
 	// split text if it contains comma
-	if strings.Contains(text, ",") && ingredient.Annotation == "" {
+	if strings.Contains(text, ",") && ingredient.Description == "" {
 		split := strings.SplitN(text, ",", 2)
 		text = strings.TrimSpace(split[0])
-		ingredient.Annotation = strings.TrimSpace(split[1])
+		ingredient.Description = strings.TrimSpace(split[1])
 	}
 
 	ingredient.Unit = unit
-	ingredient.Ingredient = text
+	ingredient.Name = text
 	return &ingredient, nil
 }

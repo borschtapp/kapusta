@@ -1,9 +1,9 @@
 module github.com/borschtapp/kapusta
 
-go 1.25.0
+go 1.26.0
 
 require (
-	github.com/borschtapp/krip v0.14.0
+	github.com/borschtapp/krip v0.15.3
 	github.com/stretchr/testify v1.11.1
 	gopkg.in/yaml.v3 v3.0.1
 )
@@ -15,6 +15,6 @@ require (
 	github.com/kr/pretty v0.3.1 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.27 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/sosodev/duration v1.3.1 // indirect
-	golang.org/x/net v0.49.0 // indirect
+	github.com/sosodev/duration v1.4.0 // indirect
+	golang.org/x/net v0.51.0 // indirect
 )

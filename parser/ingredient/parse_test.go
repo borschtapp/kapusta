@@ -1,6 +1,8 @@
 package ingredient
 
 import (
+	"bufio"
+	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -157,4 +159,27 @@ func TestParsePlusAsSeparator(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Equal(t, float64(0), ing.Amount)
 	assert.Equal(t, "salt + pepper to taste", ing.Name)
+}
+
+func TestParseTestdataIngredients(t *testing.T) {
+	t.Parallel()
+
+	file, err := os.Open("../../testdata/ingredients.txt")
+	if err != nil {
+		t.Fatalf("failed to open test data file: %v", err)
+	}
+	defer func() { _ = file.Close() }()
+
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := scanner.Text()
+		t.Run(line, func(t *testing.T) {
+			_, err := Parse(line, "en")
+			assert.NoError(t, err)
+		})
+	}
+
+	if err := scanner.Err(); err != nil {
+		t.Errorf("scanner error: %v", err)
+	}
 }

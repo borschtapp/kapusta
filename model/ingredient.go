@@ -27,7 +27,7 @@ func (r *Ingredient) String() (s string) {
 
 	s += " " + r.Name
 
-	if len(r.Description) > 0 {
+	if r.Description != "" {
 		s += " (" + r.Description + ")"
 	}
 	return s

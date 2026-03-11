@@ -123,7 +123,7 @@ func lexBracket(l *Lexer) stateFn {
 	}
 }
 
-// lexIdentifier scans an alphanumeric.
+// lexIdentifier scans an alphanumeric word and classifies it as a unit, number, range keyword, or plain identifier.
 func lexIdentifier(l *Lexer) stateFn {
 	// Advance as long as the current rune is alphanumeric
 	for isAlphaNumeric(l.scan()) {
@@ -133,10 +133,14 @@ func lexIdentifier(l *Lexer) stateFn {
 	// so back up to the last alphanumeric rune and emit the current item.
 	l.backup()
 
+	if variant, code, ok := l.dict.FindUnit(l.input[l.start:]); ok {
+		l.pos = l.start + len(variant)
+		l.emitValue(itemUnit, code, 0)
+		return lexInsideAction
+	}
+
 	ident := l.input[l.start:l.pos]
-	if unitCode, ok := l.dict.FindUnit(ident); ok {
-		l.emitValue(itemUnit, unitCode, 0)
-	} else if val, ok := l.dict.FindNumber(ident); ok {
+	if val, ok := l.dict.FindNumber(ident); ok {
 		l.emitValue(itemNumber, "", val)
 	} else if _, ok := l.dict.FindQuantityBetween(ident); l.prev == itemNumber && ok {
 		l.emit(itemIdentifierRange)

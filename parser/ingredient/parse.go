@@ -14,7 +14,7 @@ func Parse(str string, lang string) (*model.Ingredient, error) {
 	l := Lex(str, lang)
 
 	var unit, unitCode, text string
-	secondQuantity := false // as of now, we ignore second quantity
+	secondQuantity := false // as of now, we ignore the second quantity
 	var prevTokType tokenType
 	ingredient := model.Ingredient{}
 	for tok, err, eof := l.Next(); !eof; tok, err, eof = l.Next() {

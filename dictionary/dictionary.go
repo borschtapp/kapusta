@@ -2,8 +2,10 @@ package dictionary
 
 import (
 	"embed"
-	"errors"
+	"fmt"
 	"strings"
+	"unicode"
+	"unicode/utf8"
 
 	"gopkg.in/yaml.v3"
 )
@@ -12,20 +14,84 @@ type Dict struct {
 	Units           map[string][]string `yaml:"units"`
 	QuantityBetween []string            `yaml:"quantityBetween"`
 	Numbers         map[string]float64  `yaml:"numbers"`
+
+	// Internal trie for efficient unit lookup
+	trie *trieNode
 }
 
-func (d Dict) FindUnit(str string) (string, bool) {
-	for key, variants := range d.Units {
-		for _, variant := range variants {
-			if strings.EqualFold(variant, str) {
-				return key, true
+type trieNode struct {
+	children map[rune]*trieNode
+	isEnd    bool
+	code     string
+}
+
+func (d *Dict) buildTrie() {
+	d.trie = &trieNode{children: make(map[rune]*trieNode)}
+	for code, variants := range d.Units {
+		for _, v := range variants {
+			d.insert(v, code)
+		}
+	}
+}
+
+func (d *Dict) insert(str, code string) {
+	node := d.trie
+	for _, r := range str {
+		r = unicode.ToLower(r)
+		if node.children == nil {
+			node.children = make(map[rune]*trieNode)
+		}
+		if node.children[r] == nil {
+			node.children[r] = &trieNode{}
+		}
+		node = node.children[r]
+	}
+	node.isEnd = true
+	node.code = code
+}
+
+func (d *Dict) FindUnit(input string) (variant string, code string, ok bool) {
+	if d.trie == nil {
+		return "", "", false
+	}
+
+	node := d.trie
+	pos := 0
+	matchLen := 0
+
+	// Iterate through input
+	for pos < len(input) {
+		r, w := utf8.DecodeRuneInString(input[pos:])
+		lowerR := unicode.ToLower(r)
+
+		if node.children == nil {
+			break
+		}
+		next := node.children[lowerR]
+		if next == nil {
+			break
+		}
+		node = next
+		pos += w
+
+		if node.isEnd {
+			// Check that the match ends on a word boundary.
+			r, _ := utf8.DecodeRuneInString(input[pos:])
+			if pos == len(input) || (!unicode.IsLetter(r) && !unicode.IsDigit(r)) {
+				matchLen = pos
+				code = node.code
+				ok = true
 			}
 		}
 	}
-	return "", false
+
+	if ok {
+		variant = input[:matchLen]
+	}
+	return
 }
 
-func (d Dict) FindNumber(str string) (float64, bool) {
+func (d *Dict) FindNumber(str string) (float64, bool) {
 	for key, val := range d.Numbers {
 		if strings.EqualFold(key, str) {
 			return val, true
@@ -34,7 +100,7 @@ func (d Dict) FindNumber(str string) (float64, bool) {
 	return 0, false
 }
 
-func (d Dict) FindQuantityBetween(str string) (string, bool) {
+func (d *Dict) FindQuantityBetween(str string) (string, bool) {
 	for _, val := range d.QuantityBetween {
 		if strings.EqualFold(val, str) {
 			return val, true
@@ -66,6 +132,8 @@ func init() {
 			panic(err)
 		}
 
+		dict.buildTrie()
+
 		lang := strings.Split(file.Name(), ".")[0]
 		dictMap[lang] = &dict
 	}
@@ -78,7 +146,7 @@ func ForLang(lang string) (*Dict, error) {
 	}
 
 	if dict == nil {
-		return nil, errors.New("no dictionary for language `" + lang + "`")
+		return nil, fmt.Errorf("no dictionary for language %q", lang)
 	}
 
 	return dict, nil

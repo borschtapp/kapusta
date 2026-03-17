@@ -1,13 +1,11 @@
+//go:generate go run ./cmd/gen
 package dictionary
 
 import (
-	"embed"
 	"fmt"
 	"strings"
 	"unicode"
 	"unicode/utf8"
-
-	"gopkg.in/yaml.v3"
 )
 
 type Dict struct {
@@ -107,36 +105,6 @@ func (d *Dict) FindQuantityBetween(str string) (string, bool) {
 		}
 	}
 	return "", false
-}
-
-//go:embed *.yml
-var fs embed.FS
-var dictMap = make(map[string]*Dict)
-
-// Called at package initialization
-func init() {
-	files, err := fs.ReadDir(".")
-	if err != nil {
-		panic(err)
-	}
-
-	for _, file := range files {
-		data, err := fs.ReadFile(file.Name())
-		if err != nil {
-			panic(err)
-		}
-
-		var dict Dict
-		err = yaml.Unmarshal(data, &dict)
-		if err != nil {
-			panic(err)
-		}
-
-		dict.buildTrie()
-
-		lang := strings.Split(file.Name(), ".")[0]
-		dictMap[lang] = &dict
-	}
 }
 
 func ForLang(lang string) (*Dict, error) {

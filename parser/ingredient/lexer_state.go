@@ -4,12 +4,12 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/borschtapp/krip/utils"
+	"github.com/borschtapp/kapusta/parser/util"
 )
 
 // isFraction reports whether r is a fraction number.
 func isFraction(r rune) bool {
-	return strings.ContainsRune(utils.Fractions, r)
+	return strings.ContainsRune(util.Fractions, r)
 }
 
 // isAlphaNumeric reports whether r is a letter, digit, mark, punctuation, or symbol character.
@@ -66,19 +66,19 @@ func lexNumber(l *Lexer) stateFn {
 	if l.accept(".") {
 		l.acceptRun(digits)
 	}
-	if l.accept("/") || l.accept(utils.Fractions) {
+	if l.accept("/") || l.accept(util.Fractions) {
 		return lexFractions
 	}
 	if l.accept("-") { // range, like :from-:to
 		l.backup()
-		val, _ := utils.ParseFloat(l.input[l.start:l.pos])
+		val, _ := util.ParseFloat(l.input[l.start:l.pos])
 		l.emitValue(itemNumber, "", val)
 		l.scan()
 		l.emit(itemIdentifierRange)
 		return lexInsideAction
 	}
 
-	val, _ := utils.ParseFloat(l.input[l.start:l.pos])
+	val, _ := util.ParseFloat(l.input[l.start:l.pos])
 	l.emitValue(itemNumber, "", val)
 	return lexInsideAction
 }
@@ -86,13 +86,13 @@ func lexNumber(l *Lexer) stateFn {
 func lexFractions(l *Lexer) stateFn {
 	digits := "0123456789"
 	l.acceptRun(digits)
-	l.accept(utils.Fractions)
+	l.accept(util.Fractions)
 
 	if l.accept("/") {
 		l.acceptRun(digits)
 	}
 
-	val, _ := utils.ParseFraction(l.input[l.start:l.pos])
+	val, _ := util.ParseFraction(l.input[l.start:l.pos])
 	l.emitValue(itemNumberFraction, "", val)
 	return lexInsideAction
 }

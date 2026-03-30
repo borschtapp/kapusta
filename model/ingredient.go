@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/borschtapp/krip/utils"
+	"github.com/borschtapp/kapusta/parser/util"
 )
 
 type Ingredient struct {
@@ -14,9 +14,9 @@ type Ingredient struct {
 }
 
 func (r *Ingredient) String() (s string) {
-	s += utils.FormatFraction(r.Amount)
+	s += util.FormatFraction(r.Amount)
 	if r.MaxAmount > 0 {
-		s += "-" + utils.FormatFraction(r.MaxAmount)
+		s += "-" + util.FormatFraction(r.MaxAmount)
 	}
 
 	if r.Unit == "" {

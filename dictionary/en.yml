@@ -1,45 +1,126 @@
 units:
-  cup:
-    - cups
-    - cup
-    - c.
-    - c
-  fluid_ounce:
+  # imperial units
+  fl-oz:
     - fl. oz.
     - fl oz
     - fluid ounce
     - fluid ounces
-  gallon:
+  gal:
     - gal
     - gal.
     - gallon
     - gallons
-  ounce:
+  oz:
     - oz
     - oz.
     - ounce
     - ounces
-  pint:
+  pt:
     - pt
     - pt.
     - pts
     - pint
     - pints
-  pound:
+  lb:
     - lb
     - lb.
     - lbs
     - lbs.
     - pound
     - pounds
-  quart:
+  qt:
     - qt
     - qt.
     - qts
     - qts.
     - quart
     - quarts
-  tablespoon:
+  in:
+    - in.
+    - inch
+    - inches
+  ft:
+    - ft
+    - ft.
+    - feet
+    - foot
+
+  # metric units
+  g:
+    - g
+    - g.
+    - gram
+    - grams
+    - gramme
+    - grammes
+  mg:
+    - mg
+    - mg.
+    - milligram
+    - milligrams
+    - milligramme
+    - milligrammes
+  kg:
+    - kg
+    - kg.
+    - kilogram
+    - kilograms
+    - kilogramme
+    - kilogrammes
+  l:
+    - l
+    - l.
+    - liter
+    - liters
+    - litre
+    - litres
+  ml:
+    - ml
+    - ml.
+    - milliliter
+    - milliliters
+    - millilitre
+    - millilitres
+  dl:
+    - dl
+    - dl.
+    - deciliter
+    - deciliters
+    - decilitre
+    - decilitres
+  cl:
+    - cl
+    - cl.
+    - centiliter
+    - centiliters
+    - centilitre
+    - centilitres
+  cm:
+    - cm
+    - cm.
+    - centimeter
+    - centimeters
+    - centimetre
+    - centimetres
+  mm:
+    - mm
+    - mm.
+    - millimeter
+    - millimeters
+    - millimetre
+    - millimetres
+
+  # culinary units
+  tsp:
+    - tsp.
+    - tsp
+    - t
+    - t.
+    - teaspoon
+    - teaspoons
+    - tsps
+    - tspn
+  tbsp:
     - tbsp.
     - tbsp
     - T
@@ -53,90 +134,19 @@ units:
     - tbspn
     - tblsp
     - tbsps
-  teaspoon:
-    - tsp.
-    - tsp
-    - t
-    - t.
-    - teaspoon
-    - teaspoons
-    - tsps
-    - tspn
-  gram:
-    - g
-    - g.
-    - gr
-    - gr.
-    - gram
-    - grams
-    - gramme
-    - grammes
-  kilogram:
-    - kg
-    - kg.
-    - kilogram
-    - kilograms
-    - kilogramme
-    - kilogrammes
-  liter:
-    - l
-    - l.
-    - liter
-    - liters
-    - litre
-    - litres
-  milligram:
-    - mg
-    - mg.
-    - milligram
-    - milligrams
-    - milligramme
-    - milligrammes
-  milliliter:
-    - ml
-    - ml.
-    - milliliter
-    - milliliters
-    - millilitre
-    - millilitres
-  pinch:
-    - pinch
-    - pinches
-  dash:
-    - dash
-    - dashes
-  touch:
-    - touch
-    - touches
-  handful:
-    - handful
-    - handfuls
-  stick:
-    - stick
-    - sticks
-  clove:
-    - cloves
-    - clove
-  can:
-    - cans
-    - can
-    - canned
-  bunch:
-    - bunch
-    - bunches
-  bottle:
-    - bottle
-    - bottles
-  glass:
-    - glass
-    - glasses
-  slice:
-    - slice
-    - slices
-  bulb:
-    - bulb
-    - bulbs
-  pack:
+  cup:
+    - cups
+    - cup
+    - c.
+    - c
+  pc:
+    - piece
+    - pieces
+    - pc
+    - pc.
+    - pcs
+    - pcs.
+  pkg:
     - pack
     - package
     - packet
@@ -144,39 +154,70 @@ units:
     - packets
     - pkg
     - pkg.
-  piece:
-    - piece
-    - pieces
-    - pc
-    - pc.
-    - pcs
-    - pcs.
-  drop:
-    - drop
-    - drops
+  bunch:
+    - bunch
+    - bunches
+  pinch:
+    - pinch
+    - pinches
+  can:
+    - can
+    - cans
+    - canned
+  slice:
+    - slice
+    - slices
   sprig:
     - sprig
     - sprigs
-  inch:
-    - in
-    - in.
-    - inches
-    - inch
-    - inches
-  size_suffix:
-    - small
-    - medium
-    - large
-  unconvertible:
+  stick:
+    - stick
+    - sticks
+  clove:
+    - clove
+    - cloves
+  other:
+    - handful
+    - handfuls
     - to taste
+    - glass
+    - glasses
+    - bottle
+    - bottles
+    - head
+    - heads
+    - drop
+    - drops
+    - bulb
+    - bulbs
+    - dash
+    - dashes
     - bag
     - bags
     - box
     - boxes
     - batch
+    - sheet
+    - sheets
+    - knob
+    - loaf
+    - loaves
+    - spoonful
+    - spoonfuls
+
+  size_suffix:
+    - mini
+    - small
+    - medium
+    - large
+    - extra large
+    - xl
+    - xxl
+    - jumbo
 
 quantityBetween:
   - to
+  - or
 
 numbers:
   zero: 0

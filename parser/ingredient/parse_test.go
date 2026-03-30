@@ -42,7 +42,7 @@ func TestParseMergedUnit(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Equal(t, float64(500), ing.Amount)
 	assert.Equal(t, "g", ing.Unit)
-	assert.Equal(t, "gram", ing.UnitCode)
+	assert.Equal(t, "g", ing.UnitCode)
 	assert.Equal(t, "carrots", ing.Name)
 }
 
@@ -93,7 +93,7 @@ func TestParseDecimalAmount(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Equal(t, 1.5, ing.Amount)
 	assert.Equal(t, "tablespoons", ing.Unit)
-	assert.Equal(t, "tablespoon", ing.UnitCode)
+	assert.Equal(t, "tbsp", ing.UnitCode)
 	assert.Equal(t, "olive oil", ing.Name)
 }
 

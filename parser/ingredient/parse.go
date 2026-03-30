@@ -53,7 +53,9 @@ func Parse(str string, lang string) (*model.Ingredient, error) {
 				unit += " "
 			}
 			unit += tok.Lexeme
-			unitCode = tok.Code
+			if tok.Code != "other" {
+				unitCode = tok.Code
+			}
 		case tok.Type == itemComment:
 			ingredient.Description = tok.Lexeme
 		}

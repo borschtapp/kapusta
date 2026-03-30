@@ -1,43 +1,96 @@
 units:
-  cup:
-    - tasse
-    - tassen
-    - c.
-    - c
-    - becher
-    - bechern
-  fluid_ounce:
+  # imperial units
+  fl-oz:
     - fl. oz.
     - fl oz
     - flüssigunze
     - flüssigunzen
-  gallon:
+  gal:
     - gal
     - gal.
     - gallone
     - gallonen
-  ounce:
+  oz:
     - oz
     - oz.
     - unze
     - unzen
-  pint:
+  pt:
     - pt
     - pt.
     - pinte
     - pinten
-  pound:
+  lb:
     - lb
     - lb.
     - lbs
     - pfund
-  quart:
+  qt:
     - qt
     - qt.
     - qts
     - quart
     - quarte
-  tablespoon:
+  ft:
+    - ft
+    - ft.
+    - fuß
+    - fuss
+    - füße
+  in:
+    - in
+    - in.
+    - zoll
+  g:
+    - g
+    - g.
+    - gr
+    - gr.
+    - gramm
+  mg:
+    - mg
+    - mg.
+    - milligramm
+  kg:
+    - kg
+    - kg.
+    - kilogramm
+    - kilo
+  l:
+    - l
+    - l.
+    - liter
+    - litern
+  ml:
+    - ml
+    - ml.
+    - milliliter
+  dl:
+    - dl
+    - dl.
+    - deziliter
+  cl:
+    - cl
+    - cl.
+    - zentiliter
+  cm:
+    - cm
+    - cm.
+    - zentimeter
+  mm:
+    - mm
+    - mm.
+    - millimeter
+
+  # culinary units
+  tsp:
+    - tl.
+    - tl
+    - TL
+    - teelöffel
+    - teeloeffel
+    - teelöffeln
+  tbsp:
     - el.
     - el
     - EL
@@ -46,51 +99,50 @@ units:
     - esslöffeln
     - essl
     - essl.
-  teaspoon:
-    - tl.
-    - tl
-    - TL
-    - teelöffel
-    - teeloeffel
-    - teelöffeln
-  gram:
-    - g
-    - g.
-    - gr
-    - gr.
-    - gramm
-  kilogram:
-    - kg
-    - kg.
-    - kilogramm
-    - kilo
-  liter:
-    - l
-    - l.
-    - liter
-    - litern
-  milligram:
-    - mg
-    - mg.
-    - milligramm
-  milliliter:
-    - ml
-    - ml.
-    - milliliter
+  cup:
+    - tasse
+    - tassen
+    - c.
+    - c
+    - becher
+    - bechern
+  pc:
+    - stück
+    - stücke
+    - stk
+    - stk.
+    - stueck
+    - stc.
+    - stck.
+  pkg:
+    - packung
+    - packungen
+    - pck
+    - pck.
+    - päckchen
+    - paeckchen
+    - pkg
+  bunch:
+    - bund
+    - bunde
+    - bündel
   pinch:
     - prise
     - prisen
     - msp.
     - msp
     - messerspitze
-  dash:
-    - schuss
-    - spritzer
-  touch:
-    - hauch
-    - spur
-  handful:
-    - handvoll
+  can:
+    - dose
+    - dosen
+    - büchse
+    - buechse
+  slice:
+    - scheibe
+    - scheiben
+  sprig:
+    - zweig
+    - zweige
   stick:
     - stange
     - stangen
@@ -99,53 +151,35 @@ units:
     - zehen
     - knoblauchzehe
     - knoblauchzehen
-  can:
-    - dose
-    - dosen
-    - büchse
-    - buechse
-  inch:
-    - in
-    - in.
-    - zoll
-  bunch:
-    - bund
-    - bunde
-    - bündel
-  bottle:
-    - flasche
-    - flaschen
-  glass:
+  other:
+    - nach geschmack
+    - handvoll
     - glas
     - gläser
-  slice:
-    - scheibe
-    - scheiben
-  bulb:
+    - flasche
+    - flaschen
+    - beutel
+    - tüte
+    - tuete
+    - box
+    - schachtel
+    - kopf
+    - köpfe
+    - tropfen
     - knolle
     - knollen
-  pack:
-    - packung
-    - packungen
-    - pck
-    - pck.
-    - päckchen
-    - paeckchen
-    - pkg
-  piece:
-    - stück
-    - stücke
-    - stk
-    - stk.
-    - stueck
-    - stc.
-    - stck.
-  drop:
-    - tropfen
-  sprig:
-    - zweig
-    - zweige
+    - schuss
+    - spritzer
+    - hauch
+    - spur
+    - portion
+    - portionen
+    - tube
+    - tuben
+    - würfel
+
   size_suffix:
+    - mini
     - klein
     - kleiner
     - kleine
@@ -162,21 +196,13 @@ units:
     - grosser
     - grosse
     - grosses
-  unconvertible:
-    - nach geschmack
-    - beutel
-    - tüte
-    - tuete
-    - box
-    - schachtel
-    - portion
-    - portionen
-    - tube
-    - tuben
-    - würfel
+    - xl
+    - xxl
+    - jumbo
 
 quantityBetween:
   - bis
+  - oder
 
 numbers:
   null: 0

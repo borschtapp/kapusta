@@ -1,133 +1,115 @@
 units:
-  cup:
-    - tazza
-    - tazzina
-    - tazze
-  fluid_ounce:
+  # imperial units
+  fl-oz:
     - fl. oz.
     - fl oz
     - oncia liquida
     - once liquide
-  gallon:
+  gal:
     - gal
     - gal.
     - gallone
     - galloni
-  ounce:
+  oz:
     - oz
     - oz.
     - oncia
     - once
-  pint:
+  pt:
     - pt
     - pt.
     - pinta
     - pinte
-  pound:
+  lb:
     - lb
     - lb.
     - libbra
     - libbre
-  quart:
+  qt:
     - qt
     - qt.
     - quarto
     - quarti
-  tablespoon:
-    - cucchiai
-    - cucchiaio
-    - cucchiaiata
-    - cucchiaiate
-  teaspoon:
-    - cucchiaino
-    - cucchiaini
-  gram:
+  ft:
+    - ft
+    - ft.
+    - piede
+    - piedi
+  in:
+    - pollice
+    - pollici
+    - in
+    - in.
+  g:
     - g
     - g.
     - gr
     - gr.
     - grammi
     - grammo
-  kilogram:
+  mg:
+    - mg.
+    - mg
+    - milligrammo
+    - milligrammi
+  kg:
     - kg.
     - kg
     - kilogrammo
     - chilogrammo
     - chilogrammi
     - kilo
-  liter:
+  l:
     - l.
     - l
     - lt
     - litro
     - litri
-  milligram:
-    - mg.
-    - mg
-    - milligrammo
-    - milligrammi
-  milliliter:
+  ml:
     - ml
     - ml.
     - millilitro
     - millilitri
-  pinch:
-    - pizzico
-    - pizzichi
-  dash:
-    - spruzzo
-    - spruzzi
-    - schizzo
-    - schizzi
-  touch:
-    - tocco
-    - punta
-    - filo
-  handful:
-    - manciata
-    - manciate
-    - pugno
-    - pugni
-  stick:
-    - panetto
-    - panetti
-    - stecca
-    - stecche
-  clove:
-    - spicchio
-    - spicchi
-  can:
-    - lattina
-    - lattine
-    - scatoletta
-    - scatolette
-    - barattolo
-    - barattoli
-  bunch:
-    - mazzo
-    - mazzi
-    - mazzetto
-    - mazzetti
-  bottle:
-    - bottiglia
-    - bottiglie
-    - btl
-  glass:
-    - bicchiere
-    - bicchieri
-    - bicchierino
-    - bicchierini
-  slice:
-    - fetta
-    - fette
-    - fettina
-    - fettine
-  bulb:
-    - bulbo
-    - bulbi
-    - testa
-    - teste
-  pack:
+  dl:
+    - dl
+    - dl.
+    - decilitro
+    - decilitri
+  cl:
+    - cl
+    - cl.
+    - centilitro
+    - centilitri
+  cm:
+    - cm
+    - cm.
+    - centimetro
+    - centimetri
+  mm:
+    - mm
+    - mm.
+    - millimetro
+    - millimetri
+
+  # culinary units
+  tsp:
+    - cucchiaino
+    - cucchiaini
+  tbsp:
+    - cucchiai
+    - cucchiaio
+    - cucchiaiata
+    - cucchiaiate
+  cup:
+    - tazza
+    - tazzina
+    - tazze
+  pc:
+    - pezzo
+    - pezzi
+    - pz
+    - pz.
+  pkg:
     - pacco
     - pacchi
     - pacchetto
@@ -136,38 +118,52 @@ units:
     - confezioni
     - bustina
     - bustine
-  piece:
-    - pezzo
-    - pezzi
-    - pz
-    - pz.
-  drop:
-    - goccia
-    - gocce
+  bunch:
+    - mazzo
+    - mazzi
+    - mazzetto
+    - mazzetti
+  pinch:
+    - pizzico
+    - pizzichi
+  can:
+    - lattina
+    - lattine
+    - scatoletta
+    - scatolette
+    - barattolo
+    - barattoli
+  slice:
+    - fetta
+    - fette
+    - fettina
+    - fettine
   sprig:
     - rametto
     - rametti
     - ciuffo
     - ciuffi
-  inch:
-    - pollice
-    - pollici
-    - in
-    - in.
-  size_suffix:
-    - piccolo
-    - piccola
-    - piccoletti
-    - piccoletta
-    - medio
-    - media
-    - grande
-    - grossa
-    - grosso
-  unconvertible:
+  stick:
+    - stecca
+    - stecche
+  clove:
+    - spicchio
+    - spicchi
+  other:
     - a piacere
     - q.b.
     - quanto basta
+    - manciata
+    - manciate
+    - pugno
+    - pugni
+    - bicchiere
+    - bicchieri
+    - bicchierino
+    - bicchierini
+    - bottiglia
+    - bottiglie
+    - btl
     - cubetto
     - cubetti
     - foglia
@@ -186,10 +182,41 @@ units:
     - scatole
     - vasetto
     - vasetti
+    - spruzzo
+    - spruzzi
+    - schizzo
+    - schizzi
+    - tocco
+    - punta
+    - filo
+    - panetto
+    - panetti
+    - bulbo
+    - bulbi
+    - testa
+    - teste
+    - goccia
+    - gocce
+
+  size_suffix:
+    - mini
+    - piccolo
+    - piccola
+    - piccoletti
+    - piccoletta
+    - medio
+    - media
+    - grande
+    - grossa
+    - grosso
+    - xl
+    - xxl
+    - jumbo
 
 quantityBetween:
   - a
   - al
+  - o
 
 numbers:
   zero: 0

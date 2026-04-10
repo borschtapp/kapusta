@@ -1,0 +1,234 @@
+units:
+  fl-oz:
+    - fl. oz.
+    - fl oz
+    - once liquide
+    - onces liquides
+  gal:
+    - gal
+    - gal.
+    - gallon
+    - gallons
+  oz:
+    - oz
+    - oz.
+    - once
+    - onces
+  pt:
+    - pt
+    - pt.
+    - pinte
+    - pintes
+  lb:
+    - lb
+    - lb.
+    - livre
+    - livres
+  qt:
+    - qt
+    - qt.
+    - quart
+    - quarts
+  ft:
+    - ft
+    - ft.
+    - pied
+    - pieds
+  in:
+    - in
+    - in.
+    - pouce
+    - pouces
+  g:
+    - g
+    - g.
+    - gr
+    - gr.
+    - gramme
+    - grammes
+  mg:
+    - mg
+    - mg.
+    - milligramme
+    - milligrammes
+  kg:
+    - kg
+    - kg.
+    - kilo
+    - kilos
+    - kilogramme
+    - kilogrammes
+  l:
+    - l
+    - l.
+    - litre
+    - litres
+  ml:
+    - ml
+    - ml.
+    - millilitre
+    - millilitres
+  dl:
+    - dl
+    - dl.
+    - décilitre
+    - décilitres
+    - decilitre
+    - decilitres
+  cl:
+    - cl
+    - cl.
+    - centilitre
+    - centilitres
+  cm:
+    - cm
+    - cm.
+    - centimètre
+    - centimètres
+    - centimetre
+    - centimetres
+  mm:
+    - mm
+    - mm.
+    - millimètre
+    - millimètres
+    - millimetre
+    - millimetres
+  tsp:
+    - c.à.c
+    - c. à c.
+    - cuillère à café
+    - cuillères à café
+    - c.a.c
+    - c a c
+  tbsp:
+    - c.à.s
+    - c. à s.
+    - cuillère à soupe
+    - cuillères à soupe
+    - c.a.s
+    - c a s
+  cup:
+    - tasse
+    - tasses
+  pc:
+    - pièce
+    - pièces
+    - piece
+    - pieces
+  pkg:
+    - paquet
+    - paquets
+    - sachet
+    - sachets
+  bunch:
+    - botte
+    - bottes
+    - bouquet
+    - bouquets
+  pinch:
+    - pincée
+    - pincées
+    - pincee
+    - pincees
+  can:
+    - boîte
+    - boîtes
+    - canette
+    - canettes
+    - boite
+    - boites
+  slice:
+    - tranche
+    - tranches
+  sprig:
+    - brin
+    - brins
+    - branche
+    - branches
+  stick:
+    - bâton
+    - bâtons
+    - baton
+    - batons
+  clove:
+    - gousse
+    - gousses
+  other:
+    - à volonté
+    - a volonte
+    - au goût
+    - au gout
+    - poignée
+    - poignées
+    - poignee
+    - poignees
+    - verre
+    - verres
+    - bouteille
+    - bouteilles
+    - goutte
+    - gouttes
+    - noix
+    - noisette
+    - filet
+    - filets
+size_suffix:
+    - mini
+    - petit
+    - petite
+    - petits
+    - petites
+    - moyen
+    - moyenne
+    - moyens
+    - moyennes
+    - grand
+    - grande
+    - grands
+    - grandes
+    - xl
+    - xxl
+    - jumbo
+quantityBetween:
+  - à
+  - a
+  - ou
+numbers:
+  zéro: 0
+  zero: 0
+  demi: 0.5
+  demie: 0.5
+  un: 1
+  une: 1
+  deux: 2
+  trois: 3
+  quatre: 4
+  cinq: 5
+  six: 6
+  sept: 7
+  huit: 8
+  neuf: 9
+  dix: 10
+  onze: 11
+  douze: 12
+  treize: 13
+  quatorze: 14
+  quinze: 15
+  seize: 16
+  dix-sept: 17
+  dix-huit: 18
+  dix-neuf: 19
+  vingt: 20
+  trente: 30
+  quarante: 40
+  cinquante: 50
+  soixante: 60
+  soixante-dix: 70
+  quatre-vingts: 80
+  quatre-vingt: 80
+  quatre-vingt-dix: 90
+  cent: 100
+  mille: 1000
+  million: 1000000
+  milliard: 1000000000

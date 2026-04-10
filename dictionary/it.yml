@@ -198,7 +198,7 @@ units:
     - goccia
     - gocce
 
-  size_suffix:
+size_suffix:
     - mini
     - piccolo
     - piccola

@@ -12,6 +12,7 @@ type Dict struct {
 	Units           map[string][]string `yaml:"units"`
 	QuantityBetween []string            `yaml:"quantityBetween"`
 	Numbers         map[string]float64  `yaml:"numbers"`
+	SizeSuffix      []string            `yaml:"size_suffix"`
 
 	// Internal trie for efficient unit lookup
 	trie *trieNode
@@ -100,6 +101,15 @@ func (d *Dict) FindNumber(str string) (float64, bool) {
 
 func (d *Dict) FindQuantityBetween(str string) (string, bool) {
 	for _, val := range d.QuantityBetween {
+		if strings.EqualFold(val, str) {
+			return val, true
+		}
+	}
+	return "", false
+}
+
+func (d *Dict) FindSizeSuffix(str string) (string, bool) {
+	for _, val := range d.SizeSuffix {
 		if strings.EqualFold(val, str) {
 			return val, true
 		}

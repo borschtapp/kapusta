@@ -27,6 +27,7 @@ import (
 
 type dictYAML struct {
 	Units           map[string][]string `yaml:"units"`
+	SizeSuffix      []string            `yaml:"size_suffix"`
 	QuantityBetween []string            `yaml:"quantityBetween"`
 	Numbers         map[string]float64  `yaml:"numbers"`
 }
@@ -42,7 +43,8 @@ Units: map[string][]string{
 {{range .Units}}{{printf "%q" .Key}}: { {{range .Vals}}{{printf "%q" .}}, {{end}} },
 {{end}}
 },
-{{if .QB}}QuantityBetween: []string{ {{range .QB}}{{printf "%q" .}}, {{end}} },{{end}}
+{{if .SizeSuffix}}SizeSuffix: []string{ {{range .SizeSuffix}}{{printf "%q" .}}, {{end}} },{{end}}
+{{if .QuantityBetween}}QuantityBetween: []string{ {{range .QuantityBetween}}{{printf "%q" .}}, {{end}} },{{end}}
 Numbers: map[string]float64{
 {{range .Numbers}}{{printf "%q" .Key}}: {{.Val}},
 {{end}}
@@ -68,11 +70,12 @@ type numberEntry struct {
 	Val string
 }
 
-type langData struct {
-	Lang    string
-	Units   []unitEntry
-	QB      []string
-	Numbers []numberEntry
+type dictionaryData struct {
+	Lang            string
+	Units           []unitEntry
+	SizeSuffix      []string
+	QuantityBetween []string
+	Numbers         []numberEntry
 }
 
 func formatFloat(f float64) string {
@@ -102,7 +105,7 @@ func main() {
 		panic(err)
 	}
 
-	var langs []langData
+	var langs []dictionaryData
 	for _, e := range entries {
 		if e.IsDir() || !strings.HasSuffix(e.Name(), ".yml") {
 			continue
@@ -138,11 +141,12 @@ func main() {
 			numbers = append(numbers, numberEntry{Key: k, Val: formatFloat(d.Numbers[k])})
 		}
 
-		langs = append(langs, langData{
-			Lang:    lang,
-			Units:   units,
-			QB:      d.QuantityBetween, // nil if omitted in YAML — template guards with {{if .QB}}
-			Numbers: numbers,
+		langs = append(langs, dictionaryData{
+			Lang:            lang,
+			Units:           units,
+			SizeSuffix:      d.SizeSuffix,      // nil if omitted in YAML — template guards with {{if .Size}}
+			QuantityBetween: d.QuantityBetween, // nil if omitted in YAML — template guards with {{if .QB}}
+			Numbers:         numbers,
 		})
 	}
 

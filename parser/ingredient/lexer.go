@@ -47,6 +47,8 @@ func (it tokenType) String() string {
 		return "SEPARATOR"
 	case itemUnit:
 		return "UNIT"
+	case itemSizeSuffix:
+		return "SIZE_SUFFIX"
 	default:
 		return fmt.Sprintf("Unknown [%d]", it)
 	}
@@ -64,6 +66,7 @@ const (
 	itemIdentifierRange
 	itemSep
 	itemUnit
+	itemSizeSuffix
 )
 
 const eof = -1

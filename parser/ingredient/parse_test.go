@@ -161,6 +161,23 @@ func TestParsePlusAsSeparator(t *testing.T) {
 	assert.Equal(t, "salt + pepper to taste", ing.Name)
 }
 
+func TestParseWithSizeSuffix(t *testing.T) {
+	ing, err := Parse("2 large eggs", "en")
+	assert.NoError(t, err)
+	assert.Equal(t, float64(2), ing.Amount)
+	assert.Equal(t, "eggs", ing.Name)
+	assert.Equal(t, "large", ing.Description)
+}
+
+func TestParseWithSizeSuffixAndComma(t *testing.T) {
+	ing, err := Parse("3 medium potatoes, peeled and cut into 1/2\" slices", "en")
+	assert.NoError(t, err)
+	assert.Equal(t, float64(3), ing.Amount)
+	assert.Equal(t, "potatoes", ing.Name)
+	assert.Equal(t, "medium, peeled and cut into 1/2\" slices", ing.Description)
+	assert.NoError(t, err)
+}
+
 func TestParseTestdataIngredients(t *testing.T) {
 	t.Parallel()
 

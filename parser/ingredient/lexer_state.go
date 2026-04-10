@@ -140,6 +140,11 @@ func lexIdentifier(l *Lexer) stateFn {
 	}
 
 	ident := l.input[l.start:l.pos]
+	if _, ok := l.dict.FindSizeSuffix(ident); ok {
+		l.emit(itemSizeSuffix)
+		return lexInsideAction
+	}
+
 	if val, ok := l.dict.FindNumber(ident); ok {
 		l.emitValue(itemNumber, "", val)
 	} else if _, ok := l.dict.FindQuantityBetween(ident); l.prev == itemNumber && ok {

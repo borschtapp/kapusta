@@ -205,15 +205,15 @@ units:
     - spoonful
     - spoonfuls
 
-  size_suffix:
-    - mini
-    - small
-    - medium
-    - large
-    - extra large
-    - xl
-    - xxl
-    - jumbo
+size_suffix:
+  - mini
+  - small
+  - medium
+  - large
+  - extra large
+  - xl
+  - xxl
+  - jumbo
 
 quantityBetween:
   - to

@@ -24,6 +24,7 @@ func TestEnglishIngredients(t *testing.T) {
 		{"1 teaspoon hot paper, optional", model.Ingredient{Amount: 1, Unit: "teaspoon", UnitCode: "tsp", Name: "hot paper", Description: "optional"}},
 		{"2 pcs. cucumbers", model.Ingredient{Amount: 2, Unit: "pcs.", UnitCode: "pc", Name: "cucumbers"}},
 		{"2-3 Pasture-Raised Eggs", model.Ingredient{Amount: 2, MaxAmount: 3, Name: "Pasture-Raised Eggs"}},
+		{"2 medium Eggs", model.Ingredient{Amount: 2, Name: "Eggs", Description: "medium"}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.give, func(t *testing.T) {

@@ -48,6 +48,11 @@ func Parse(str string, lang string) (*model.Ingredient, error) {
 				text += " "
 			}
 			text += tok.Lexeme
+		case tok.Type == itemSizeSuffix:
+			if ingredient.Description != "" {
+				ingredient.Description += " "
+			}
+			ingredient.Description += tok.Lexeme
 		case tok.Type == itemUnit && !secondQuantity:
 			if unit != "" {
 				unit += " "
@@ -64,10 +69,14 @@ func Parse(str string, lang string) (*model.Ingredient, error) {
 	}
 
 	// split text if it contains comma
-	if strings.Contains(text, ",") && ingredient.Description == "" {
+	if strings.Contains(text, ",") {
 		split := strings.SplitN(text, ",", 2)
 		text = strings.TrimSpace(split[0])
-		ingredient.Description = strings.TrimSpace(split[1])
+		if ingredient.Description == "" {
+			ingredient.Description = strings.TrimSpace(split[1])
+		} else {
+			ingredient.Description = ingredient.Description + ", " + strings.TrimSpace(split[1])
+		}
 	}
 
 	ingredient.Unit = unit

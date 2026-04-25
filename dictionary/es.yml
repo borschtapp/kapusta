@@ -159,6 +159,7 @@ units:
     - nuez
     - cabeza
     - cabezas
+
 size_suffix:
     - mini
     - pequeño
@@ -174,10 +175,12 @@ size_suffix:
     - xl
     - xxl
     - jumbo
-quantityBetween:
+
+quantity_between:
   - a
   - al
   - o
+
 numbers:
   cero: 0
   medio: 0.5

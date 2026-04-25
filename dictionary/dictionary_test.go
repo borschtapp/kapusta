@@ -49,14 +49,7 @@ func TestYMLDictionaries(t *testing.T) {
 	enData, err := os.ReadFile("en.yml")
 	require.NoError(t, err)
 
-	type dictYAML struct {
-		Units           map[string][]string `yaml:"units"`
-		SizeSuffix      []string            `yaml:"size_suffix"`
-		QuantityBetween []string            `yaml:"quantityBetween"`
-		Numbers         map[string]float64  `yaml:"numbers"`
-	}
-
-	var enDict dictYAML
+	var enDict Dict
 	err = yaml.Unmarshal(enData, &enDict)
 	require.NoError(t, err)
 
@@ -72,7 +65,7 @@ func TestYMLDictionaries(t *testing.T) {
 		t.Run(e.Name(), func(t *testing.T) {
 			b, err := os.ReadFile(e.Name())
 			require.NoError(t, err)
-			var d dictYAML
+			var d Dict
 			err = yaml.Unmarshal(b, &d)
 			require.NoError(t, err)
 

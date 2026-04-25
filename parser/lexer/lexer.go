@@ -1,4 +1,4 @@
-package ingredient
+package lexer
 
 import (
 	"errors"
@@ -10,7 +10,7 @@ import (
 )
 
 type Token struct {
-	Type        tokenType
+	Type        TokenType
 	Lexeme      string
 	Code        string
 	Value       float64
@@ -19,54 +19,55 @@ type Token struct {
 }
 
 func (i Token) String() string {
-	switch i.Type {
-	case itemEOF:
+	if i.Type == ItemEOF {
 		return "EOF"
-	case itemError:
+	} else if i.Type == ItemError {
 		return i.Lexeme
-	}
-	if len(i.Lexeme) > 10 {
+	} else if len(i.Lexeme) > 10 {
 		return fmt.Sprintf("%.10q...", i.Lexeme)
 	}
 	return fmt.Sprintf("%q", i.Lexeme)
 }
 
-type tokenType int
+type TokenType int
 
-func (it tokenType) String() string {
+func (it TokenType) IsNumber() bool {
+	return it == ItemNumber || it == ItemNumberFraction
+}
+
+func (it TokenType) String() string {
 	switch it {
-	case itemIdentifier:
+	case ItemIdentifier:
 		return "IDENT"
-	case itemComment:
+	case ItemComment:
 		return "COMMENT"
-	case itemNumber:
+	case ItemNumber:
 		return "NUMBER"
-	case itemNumberFraction:
+	case ItemNumberFraction:
 		return "FRACTION"
-	case itemSep:
+	case ItemSep:
 		return "SEPARATOR"
-	case itemUnit:
+	case ItemUnit:
 		return "UNIT"
-	case itemSizeSuffix:
+	case ItemSizeSuffix:
 		return "SIZE_SUFFIX"
 	default:
 		return fmt.Sprintf("Unknown [%d]", it)
 	}
 }
 
-// tokenType identifies the type of lex items
+// TokenType identifies the type of lex items
 const (
-	itemError tokenType = iota // error occurred; value is text of error
-	itemEOF
-	itemIdentifier
-	itemIdentifierSkip
-	itemComment
-	itemNumber
-	itemNumberFraction
-	itemIdentifierRange
-	itemSep
-	itemUnit
-	itemSizeSuffix
+	ItemError TokenType = iota // error occurred; value is text of error
+	ItemEOF
+	ItemIdentifier
+	ItemComment
+	ItemNumber
+	ItemNumberFraction
+	ItemIdentifierRange
+	ItemSep
+	ItemUnit
+	ItemSizeSuffix
 )
 
 const eof = -1
@@ -77,71 +78,79 @@ type Lexer struct {
 	start int              // start position of this Token
 	pos   int              // current position of the input
 	width int              // width of last rune read from input
-	prev  tokenType        // previous token type
+	prev  TokenType        // previous token type
 	items chan Token       // channel of scanned items
+	done  chan struct{}    // closed by Close() to unblock the goroutine
 }
 
 // stateFn represents the state of the scanner as a function that returns the next state.
 type stateFn func(*Lexer) stateFn
 
 // Lex creates a new Lexer
-func Lex(input string, lang string) *Lexer {
+func Lex(input string, lang string) (*Lexer, error) {
 	dict, err := dictionary.ForLang(lang)
-
+	if err != nil {
+		return nil, err
+	}
 	l := &Lexer{
 		input: input,
 		dict:  dict,
 		items: make(chan Token),
+		done:  make(chan struct{}),
 	}
-	go l.run(err)
-	return l
+	go l.run()
+	return l, nil
+}
+
+// Close signals the lexer goroutine to stop if it is blocked sending tokens.
+// Callers that do not drain the lexer to EOF must call Close to prevent a goroutine leak.
+func (l *Lexer) Close() {
+	select {
+	case <-l.done:
+	default:
+		close(l.done)
+	}
 }
 
 // Next returns the next Token from the input. The Lexer has to be drained
-// (all items received until itemEOF or itemError) - otherwise the Lexer goroutine will leak.
-func (l *Lexer) Next() (Token, error, bool) {
+// (all items received until ItemEOF or ItemError) - otherwise the Lexer goroutine will leak.
+func (l *Lexer) Next() (Token, error) {
 	tok, ok := <-l.items
-	if !ok {
-		return Token{Type: itemEOF}, nil, true
+	if !ok || tok.Type == ItemEOF {
+		return Token{Type: ItemEOF}, nil
 	}
-
-	switch tok.Type {
-	case itemEOF:
-		return tok, nil, true
-	case itemError:
-		return tok, errors.New(tok.Lexeme), false
-	default:
-		return tok, nil, false
+	if tok.Type == ItemError {
+		return tok, errors.New(tok.Lexeme)
 	}
+	return tok, nil
 }
 
 // run runs the lexer - should be run in a separate goroutine.
-func (l *Lexer) run(err error) {
+func (l *Lexer) run() {
 	defer close(l.items)
-	if err != nil {
-		l.errorf("%v", err)
-		return
-	}
 	for state := lexInsideAction; state != nil; {
 		state = state(l)
 	}
 }
 
-func (l *Lexer) emit(t tokenType) {
+func (l *Lexer) emit(t TokenType) {
 	l.emitValue(t, "", 0)
 }
 
-func (l *Lexer) emitValue(t tokenType, code string, val float64) {
-	l.items <- Token{
+func (l *Lexer) emitValue(t TokenType, code string, val float64) {
+	select {
+	case l.items <- Token{
 		Type:        t,
 		Lexeme:      l.input[l.start:l.pos],
 		Code:        code,
 		Value:       val,
 		StartColumn: l.start,
 		EndColumn:   l.pos,
+	}:
+		l.start = l.pos
+		l.prev = t
+	case <-l.done:
 	}
-	l.start = l.pos
-	l.prev = t
 }
 
 // scan advances to the scan rune in input and returns it
@@ -173,12 +182,15 @@ func (l *Lexer) peek() rune {
 }
 
 // errorf returns an error token and terminates the scan by passing back a nil pointer that will be the next state.
-func (l *Lexer) errorf(format string, args ...interface{}) stateFn {
-	l.items <- Token{
-		Type:        itemError,
+func (l *Lexer) errorf(format string, args ...any) stateFn {
+	select {
+	case l.items <- Token{
+		Type:        ItemError,
 		Lexeme:      fmt.Sprintf(format, args...),
 		StartColumn: l.start,
 		EndColumn:   l.pos,
+	}:
+	case <-l.done:
 	}
 	return nil
 }

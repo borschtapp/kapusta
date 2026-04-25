@@ -30,54 +30,50 @@ var fractionsMap = map[string]float64{
 	"⅞": 0.875,
 }
 
+func IsFraction(r rune) bool {
+	return strings.ContainsRune(Fractions, r)
+}
+
 func ParseFraction(str string) (float64, error) {
-	var res float64 = 0
-
 	str = strings.TrimSpace(str)
-	if strings.Contains(str, "/") {
-		original := str
-		intSplit := strings.Split(str, " ")
-		str = ""
-		frac := intSplit[0]
-		if len(intSplit) == 2 {
-			str = intSplit[0]
-			frac = intSplit[1]
-		} else if len(intSplit) > 2 {
-			return 0, fmt.Errorf("unable to parse fractions from string `%s`: too many spaces", original)
-		}
+	var res float64
 
-		arr := strings.Split(frac, "/")
-		if len(arr) == 2 {
-			if num, err := strconv.ParseFloat(arr[0], 64); err == nil {
-				if den, err := strconv.ParseFloat(arr[1], 64); err == nil {
-					if den == 0 {
-						return 0, fmt.Errorf("unable to parse fractions from string `%s`: division by zero", original)
-					}
-					res += num / den
-				} else {
-					return 0, fmt.Errorf("unable to parse fractions from string `%s`: %w", str, err)
-				}
-			} else {
-				return 0, fmt.Errorf("unable to parse fractions from string `%s`: %w", str, err)
-			}
-		} else {
-			return 0, fmt.Errorf("unable to parse fractions from string `%s`: too many slashes", str)
-		}
-	} else if strings.ContainsAny(str, Fractions) {
-		for symbol, value := range fractionsMap {
-			if strings.Contains(str, symbol) {
-				str = strings.Replace(str, symbol, "", 1)
-				res += value
-			}
+	// 1. Strip and sum unicode fraction symbols.
+	for symbol, value := range fractionsMap {
+		if strings.Contains(str, symbol) {
+			str = strings.Replace(str, symbol, "", 1)
+			res += value
 		}
 	}
+	str = strings.TrimSpace(str)
 
-	if len(str) > 0 {
-		if val, err := ParseFloat(str); err == nil {
-			res += val
-		} else {
-			return 0, fmt.Errorf("unable to parse fractions from string `%s`: %w", str, err)
+	// 2. Strip and parse a trailing n/m slash fraction.
+	if idx := strings.LastIndex(str, "/"); idx != -1 {
+		start := strings.LastIndex(str[:idx], " ") + 1
+		slashToken := str[start:]
+		arr := strings.SplitN(slashToken, "/", 2)
+		num, err := strconv.ParseFloat(strings.TrimSpace(arr[0]), 64)
+		if err != nil {
+			return 0, fmt.Errorf("unable to parse fraction from %q: %w", str, err)
 		}
+		den, err := strconv.ParseFloat(strings.TrimSpace(arr[1]), 64)
+		if err != nil {
+			return 0, fmt.Errorf("unable to parse fraction from %q: %w", str, err)
+		}
+		if den == 0 {
+			return 0, fmt.Errorf("unable to parse fraction from %q: division by zero", str)
+		}
+		res += num / den
+		str = strings.TrimSpace(str[:start])
+	}
+
+	// 3. Parse remaining integer/float prefix.
+	if str != "" {
+		val, err := ParseFloat(str)
+		if err != nil {
+			return 0, fmt.Errorf("unable to parse fraction from %q: %w", str, err)
+		}
+		res += val
 	}
 
 	return res, nil

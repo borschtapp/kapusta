@@ -200,7 +200,7 @@ size_suffix:
     - xxl
     - jumbo
 
-quantityBetween:
+quantity_between:
   - bis
   - oder
 

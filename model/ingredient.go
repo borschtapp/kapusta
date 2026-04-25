@@ -19,9 +19,7 @@ func (r *Ingredient) String() (s string) {
 		s += "-" + util.FormatFraction(r.MaxAmount)
 	}
 
-	if r.Unit == "" {
-		s += " <unit>"
-	} else {
+	if r.Unit != "" {
 		s += " " + r.Unit
 	}
 

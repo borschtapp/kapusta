@@ -4,16 +4,10 @@ import (
 	"testing"
 
 	"github.com/borschtapp/kapusta/model"
-	"github.com/borschtapp/kapusta/parser/ingredient"
-
-	"github.com/stretchr/testify/assert"
 )
 
 func TestUkrainianIngredients(t *testing.T) {
-	tests := []struct {
-		give string
-		want model.Ingredient
-	}{
+	runIngredientTests(t, "uk", []ingredientTestCase{
 		{"1 пучок цибулі", model.Ingredient{Amount: 1, Unit: "пучок", UnitCode: "bunch", Name: "цибулі"}},
 		{"2 мірних чашки теплої води, окремо", model.Ingredient{Amount: 2, Unit: "мірних чашки", UnitCode: "cup", Name: "теплої води", Description: "окремо"}},
 		{"¼ мірних чашок оливкової олії першого віджиму", model.Ingredient{Amount: 0.25, Unit: "мірних чашок", UnitCode: "cup", Name: "оливкової олії першого віджиму"}},
@@ -24,12 +18,5 @@ func TestUkrainianIngredients(t *testing.T) {
 		{"1 чайна ложка перцю, за бажанням", model.Ingredient{Amount: 1, Unit: "чайна ложка", UnitCode: "tsp", Name: "перцю", Description: "за бажанням"}},
 		{"2 шт. огірки", model.Ingredient{Amount: 2, Unit: "шт.", UnitCode: "pc", Name: "огірки"}},
 		{"2-3 яйця", model.Ingredient{Amount: 2, MaxAmount: 3, Name: "яйця"}},
-	}
-	for _, tt := range tests {
-		t.Run(tt.give, func(t *testing.T) {
-			got, err := ingredient.Parse(tt.give, "uk")
-			assert.NoError(t, err)
-			assert.Equal(t, &tt.want, got)
-		})
-	}
+	})
 }

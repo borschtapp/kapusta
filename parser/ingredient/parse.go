@@ -3,57 +3,78 @@ package ingredient
 import (
 	"fmt"
 	"strings"
+	"unicode"
 
 	"github.com/borschtapp/kapusta/model"
+	"github.com/borschtapp/kapusta/parser/lexer"
 )
 
-func Parse(str string, lang string) (*model.Ingredient, error) {
-	// replace some crazy characters
+// Options holds optional parameters for ingredient parsing.
+type Options struct {
+	Lang string
+}
+
+func Parse(str string, opts Options) (model.Ingredient, error) {
 	str = strings.ReplaceAll(str, "⁄", "/")
 
-	l := Lex(str, lang)
+	l, err := lexer.Lex(str, opts.Lang)
+	if err != nil {
+		return model.Ingredient{}, fmt.Errorf("lex error: %w", err)
+	}
+	defer l.Close()
 
-	var unit, unitCode, text string
-	secondQuantity := false // as of now, we ignore the second quantity
-	var prevTokType tokenType
-	ingredient := model.Ingredient{}
-	for tok, err, eof := l.Next(); !eof; tok, err, eof = l.Next() {
-		if err != nil {
-			return nil, fmt.Errorf("failed to parse ingredient: %v", err)
-		}
+	var (
+		ing                  model.Ingredient
+		unit, name, unitCode string
+		prefix               string // fallback name if a unit follows
+		secondQty, skipSpace bool
+		prev                 lexer.Token
+	)
 
-		switch tok.Type {
-		case itemNumber, itemNumberFraction:
-			if ingredient.Amount == 0 {
-				// First number: primary amount
-				ingredient.Amount = tok.Value
-			} else if tok.Type == itemNumberFraction && prevTokType == itemNumber {
-				// Mixed number: e.g. "5 ½" → 5 + 0.5
-				ingredient.Amount += tok.Value
-			} else if prevTokType == itemIdentifierRange {
-				// Range upper bound: e.g. "1-2 cups"
-				ingredient.MaxAmount = tok.Value
-			} else if prevTokType == itemSep {
-				// Second measurement after separator: e.g. "2 cups / 480 ml" — ignore
-				secondQuantity = true
-			} else {
-				// Extra number with no clear role — treat as text
-				tok.Type = itemIdentifierSkip
+	// Fetch first token
+	tok, _ := l.Next()
+
+	for tok.Type != lexer.ItemEOF {
+		next, _ := l.Next()
+
+		// 1. Identify context
+		isHyphenated := next.Type == lexer.ItemIdentifier && strings.HasPrefix(next.Lexeme, "-")
+		isRange := prev.Type == lexer.ItemIdentifierRange
+		isMixed := tok.Type == lexer.ItemNumberFraction && prev.Type == lexer.ItemNumber
+		isAmount := tok.Type.IsNumber() && !isHyphenated && (ing.Amount == 0 || isRange || isMixed)
+
+		isTextUnit := tok.Type == lexer.ItemUnit && name != "" && (unit != "" || next.Type == lexer.ItemEOF)
+		if !isTextUnit && tok.Type == lexer.ItemUnit && name != "" {
+			if idx := strings.Index(name, ","); idx > 0 && strings.TrimSpace(name[:idx]) != "" {
+				isTextUnit = true
 			}
 		}
 
+		// 2. Handle token
 		switch {
-		case tok.Type == itemIdentifier || tok.Type == itemIdentifierSkip || (tok.Type == itemUnit && text != ""):
-			if text != "" && prevTokType != itemIdentifierSkip {
-				text += " "
+		case isAmount:
+			if isRange {
+				ing.MaxAmount = tok.Value
+			} else {
+				ing.Amount += tok.Value
 			}
-			text += tok.Lexeme
-		case tok.Type == itemSizeSuffix:
-			if ingredient.Description != "" {
-				ingredient.Description += " "
+			skipSpace = false
+
+		case tok.Type == lexer.ItemSep || (tok.Type.IsNumber() && prev.Type == lexer.ItemSep):
+			secondQty, skipSpace = true, false
+
+		case tok.Type == lexer.ItemSizeSuffix:
+			ing.Description = addDescription(ing.Description, tok.Lexeme)
+			skipSpace = false
+
+		case tok.Type == lexer.ItemComment:
+			ing.Description = addDescription(ing.Description, lexer.StripParens(tok.Lexeme))
+			skipSpace = false
+
+		case tok.Type == lexer.ItemUnit && !secondQty && !isTextUnit:
+			if unit == "" && name != "" {
+				prefix, name = name, ""
 			}
-			ingredient.Description += tok.Lexeme
-		case tok.Type == itemUnit && !secondQuantity:
 			if unit != "" {
 				unit += " "
 			}
@@ -61,26 +82,60 @@ func Parse(str string, lang string) (*model.Ingredient, error) {
 			if tok.Code != "other" {
 				unitCode = tok.Code
 			}
-		case tok.Type == itemComment:
-			ingredient.Description = tok.Lexeme
+			skipSpace = false
+
+		case tok.Type == lexer.ItemIdentifier || isTextUnit || tok.Type.IsNumber():
+			name = appendWithSpacing(name, tok.Lexeme, skipSpace, tok.Type)
+			skipSpace = tok.Type.IsNumber()
 		}
 
-		prevTokType = tok.Type
+		prev, tok = tok, next
 	}
 
-	// split text if it contains comma
-	if strings.Contains(text, ",") {
-		split := strings.SplitN(text, ",", 2)
-		text = strings.TrimSpace(split[0])
-		if ingredient.Description == "" {
-			ingredient.Description = strings.TrimSpace(split[1])
-		} else {
-			ingredient.Description = ingredient.Description + ", " + strings.TrimSpace(split[1])
+	return finalize(ing, unit, unitCode, name, prefix), nil
+}
+
+func finalize(ing model.Ingredient, unit, unitCode, name, prefix string) model.Ingredient {
+	// Move trailing descriptions (after commas) from name to description
+	if idx := strings.Index(name, ","); idx != -1 {
+		ing.Description = addDescription(ing.Description, strings.TrimSpace(name[idx+1:]))
+		name = strings.TrimSpace(name[:idx])
+	}
+
+	// Resolve name vs prefix fallback (e.g. "1 garlic clove" -> name="garlic")
+	if name == "" {
+		name = prefix
+	} else if prefix != "" {
+		ing.Description = addDescription(prefix, ing.Description)
+	}
+
+	ing.Unit, ing.UnitCode, ing.Name = unit, unitCode, name
+	return ing
+}
+
+func appendWithSpacing(text, lexeme string, skipSpace bool, tokType lexer.TokenType) string {
+	if text == "" {
+		return lexeme
+	}
+	shouldAddSpace := !skipSpace
+	if skipSpace {
+		// Add space after an extra number if the current token is a unit or a non-hyphenated identifier
+		if tokType == lexer.ItemUnit || (len(lexeme) > 0 && unicode.IsLetter(rune(lexeme[0])) && !strings.HasPrefix(lexeme, "-")) {
+			shouldAddSpace = true
 		}
 	}
+	if shouldAddSpace {
+		return text + " " + lexeme
+	}
+	return text + lexeme
+}
 
-	ingredient.Unit = unit
-	ingredient.UnitCode = unitCode
-	ingredient.Name = text
-	return &ingredient, nil
+func addDescription(existing, new string) string {
+	if new == "" {
+		return existing
+	}
+	if existing == "" {
+		return new
+	}
+	return existing + ", " + new
 }

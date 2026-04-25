@@ -213,7 +213,7 @@ size_suffix:
     - xxl
     - jumbo
 
-quantityBetween:
+quantity_between:
   - a
   - al
   - o

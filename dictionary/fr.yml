@@ -190,10 +190,12 @@ size_suffix:
     - xl
     - xxl
     - jumbo
-quantityBetween:
+
+quantity_between:
   - à
   - a
   - ou
+
 numbers:
   zéro: 0
   zero: 0

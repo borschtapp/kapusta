@@ -218,7 +218,7 @@ size_suffix:
     - xxl
     - джамбо
 
-quantityBetween:
+quantity_between:
   - до
   - або
 

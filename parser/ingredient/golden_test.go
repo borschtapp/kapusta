@@ -22,9 +22,9 @@ func TestParseTestdataIngredientsSnapshot(t *testing.T) {
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		line := scanner.Text()
-		ing, err := Parse(line, "en")
+		ing, err := Parse(line, Options{Lang: "en"})
 		assert.NoError(t, err)
-		results = append(results, *ing)
+		results = append(results, ing)
 	}
 	if err := scanner.Err(); err != nil {
 		t.Fatalf("scanner error: %v", err)
@@ -74,7 +74,7 @@ func BenchmarkParseTestdataIngredients(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		for _, line := range lines {
-			_, _ = Parse(line, "en")
+			_, _ = Parse(line, Options{Lang: "en"})
 		}
 	}
 }

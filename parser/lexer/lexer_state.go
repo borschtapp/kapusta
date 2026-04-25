@@ -1,4 +1,4 @@
-package ingredient
+package lexer
 
 import (
 	"strings"
@@ -6,11 +6,6 @@ import (
 
 	"github.com/borschtapp/kapusta/parser/util"
 )
-
-// isFraction reports whether r is a fraction number.
-func isFraction(r rune) bool {
-	return strings.ContainsRune(util.Fractions, r)
-}
 
 // isAlphaNumeric reports whether r is a letter, digit, mark, punctuation, or symbol character.
 func isAlphaNumeric(r rune) bool {
@@ -24,13 +19,20 @@ func lexInsideAction(l *Lexer) stateFn {
 	for {
 		switch r := l.scan(); {
 		case r == eof || r == '\n':
-			l.emit(itemEOF)
+			l.emit(ItemEOF)
+			return nil
 		case unicode.IsSpace(r):
 			l.ignore()
 		case r == '/' || r == '|':
-			l.emit(itemSep)
+			l.emit(ItemSep)
 		case r == '(':
 			return lexBracket
+		case r == '–' || r == '—': // en dash / em dash as range separator
+			if l.prev.IsNumber() {
+				l.emit(ItemIdentifierRange)
+			} else {
+				l.ignore()
+			}
 		case r == '+' || r == '-':
 			n := l.peek()
 			if (n >= '0' && n <= '9') || n == '.' {
@@ -42,7 +44,7 @@ func lexInsideAction(l *Lexer) stateFn {
 		case '0' <= r && r <= '9':
 			l.backup()
 			return lexNumber
-		case isFraction(r):
+		case util.IsFraction(r):
 			l.backup()
 			return lexFractions
 		case isAlphaNumeric(r):
@@ -69,17 +71,21 @@ func lexNumber(l *Lexer) stateFn {
 	if l.accept("/") || l.accept(util.Fractions) {
 		return lexFractions
 	}
-	if l.accept("-") { // range, like :from-:to
-		l.backup()
-		val, _ := util.ParseFloat(l.input[l.start:l.pos])
-		l.emitValue(itemNumber, "", val)
+	if l.peek() == '-' {
 		l.scan()
-		l.emit(itemIdentifierRange)
-		return lexInsideAction
+		isRange := unicode.IsDigit(l.peek())
+		l.backup()
+		if isRange {
+			val, _ := util.ParseFloat(l.input[l.start:l.pos])
+			l.emitValue(ItemNumber, "", val)
+			l.accept("-")
+			l.emit(ItemIdentifierRange)
+			return lexInsideAction
+		}
 	}
 
 	val, _ := util.ParseFloat(l.input[l.start:l.pos])
-	l.emitValue(itemNumber, "", val)
+	l.emitValue(ItemNumber, "", val)
 	return lexInsideAction
 }
 
@@ -93,33 +99,50 @@ func lexFractions(l *Lexer) stateFn {
 	}
 
 	val, _ := util.ParseFraction(l.input[l.start:l.pos])
-	l.emitValue(itemNumberFraction, "", val)
+	l.emitValue(ItemNumberFraction, "", val)
 	return lexInsideAction
 }
 
-// lexBracket scans a string in bracket.
+// lexBracket scans a parenthesised comment, handling arbitrary nesting.
 func lexBracket(l *Lexer) stateFn {
-	numBrackets := 1
-
-	l.ignore()
-	for {
+	depth := 1
+	for depth > 0 {
 		switch l.scan() {
 		case eof:
 			return l.errorf("unterminated string in bracket")
 		case '(':
-			numBrackets++
-			l.ignore()
+			depth++
 		case ')':
-			l.backup()
-			l.emit(itemComment)
-			for l.scan() == ')' {
-				numBrackets--
-				if numBrackets == 0 {
-					break
-				}
-			}
-			return lexInsideAction
+			depth--
 		}
+	}
+
+	l.emitValue(ItemComment, "", 0)
+	return lexInsideAction
+}
+
+// StripParens recursively removes matching outer parentheses and trims whitespace.
+func StripParens(s string) string {
+	for {
+		s = strings.TrimSpace(s)
+		if len(s) < 2 || s[0] != '(' || s[len(s)-1] != ')' {
+			return s
+		}
+
+		// Verify the outer parentheses are a matching pair
+		depth := 0
+		for i, r := range s {
+			if r == '(' {
+				depth++
+			} else if r == ')' {
+				depth--
+			}
+			// If depth reaches zero before the end of the string, the outer parens aren't a pair
+			if depth == 0 && i < len(s)-1 {
+				return s
+			}
+		}
+		s = s[1 : len(s)-1]
 	}
 }
 
@@ -135,22 +158,23 @@ func lexIdentifier(l *Lexer) stateFn {
 
 	if variant, code, ok := l.dict.FindUnit(l.input[l.start:]); ok {
 		l.pos = l.start + len(variant)
-		l.emitValue(itemUnit, code, 0)
+		l.emitValue(ItemUnit, code, 0)
 		return lexInsideAction
 	}
 
 	ident := l.input[l.start:l.pos]
-	if _, ok := l.dict.FindSizeSuffix(ident); ok {
-		l.emit(itemSizeSuffix)
+	lower := strings.ToLower(ident)
+	if _, ok := l.dict.FindSizeSuffix(lower); ok {
+		l.emit(ItemSizeSuffix)
 		return lexInsideAction
 	}
 
-	if val, ok := l.dict.FindNumber(ident); ok {
-		l.emitValue(itemNumber, "", val)
-	} else if _, ok := l.dict.FindQuantityBetween(ident); l.prev == itemNumber && ok {
-		l.emit(itemIdentifierRange)
+	if val, ok := l.dict.FindNumber(lower); ok {
+		l.emitValue(ItemNumber, "", val)
+	} else if _, ok := l.dict.FindQuantityBetween(lower); l.prev.IsNumber() && ok {
+		l.emit(ItemIdentifierRange)
 	} else {
-		l.emit(itemIdentifier)
+		l.emit(ItemIdentifier)
 	}
 	return lexInsideAction
 }

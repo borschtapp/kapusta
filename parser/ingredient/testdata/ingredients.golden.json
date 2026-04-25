@@ -97,7 +97,7 @@
     "unit": "pound",
     "unitCode": "lb",
     "name": "shrimp",
-    "description": "peeled or unpeeled, deveined"
+    "description": "large, peeled or unpeeled, deveined"
   },
   {
     "amount": 3,
@@ -669,7 +669,7 @@
     "amount": 25,
     "unit": "cl",
     "unitCode": "cl",
-    "name": "Lait 1/2écrémé"
+    "name": "Lait 1/2 écrémé"
   },
   {
     "amount": 60,
@@ -789,12 +789,12 @@
   {
     "amount": 2,
     "name": "eggs",
-    "description": "room temperature"
+    "description": "large, room temperature"
   },
   {
     "amount": 2,
     "name": "yolks",
-    "description": "room temperature"
+    "description": "large, room temperature"
   },
   {
     "amount": 1,
@@ -872,8 +872,10 @@
   {
     "amount": 1,
     "maxAmount": 3,
-    "name": "boneless 2 pound chuck roast",
-    "description": " trimmed and cut into fist-size chunks"
+    "unit": "pound",
+    "unitCode": "lb",
+    "name": "chuck roast",
+    "description": "boneless 2, trimmed and cut into fist-size chunks"
   },
   {
     "name": "Salt and pepper"
@@ -948,7 +950,10 @@
   },
   {
     "amount": 2,
-    "name": "Scant cups chicken broth"
+    "unit": "cups",
+    "unitCode": "cup",
+    "name": "chicken broth",
+    "description": "Scant"
   },
   {
     "amount": 1,
@@ -966,7 +971,7 @@
     "unit": "tablespoon",
     "unitCode": "tbsp",
     "name": "butter",
-    "description": "salted or unsalted is fine"
+    "description": "14g, salted or unsalted is fine"
   },
   {
     "amount": 0.25,
@@ -983,14 +988,17 @@
   },
   {
     "amount": 1,
-    "name": "15 ounce can black beans",
-    "description": "rinsed, drained, and warmed"
+    "unit": "can",
+    "unitCode": "can",
+    "name": "black beans",
+    "description": "15-ounce, rinsed, drained, and warmed"
   },
   {
     "amount": 1,
-    "maxAmount": 15,
-    "name": "15 ounce can corn",
-    "description": "drained and warmed"
+    "unit": "can",
+    "unitCode": "can",
+    "name": "corn",
+    "description": "15- 15-ounce, drained and warmed"
   },
   {
     "amount": 0.5,
@@ -1034,7 +1042,7 @@
     "amount": 600,
     "unit": "g",
     "unitCode": "g",
-    "name": "5oz cream cheese"
+    "name": "5 oz cream cheese"
   },
   {
     "amount": 25,
@@ -1265,7 +1273,10 @@
   },
   {
     "amount": 1,
-    "name": "15.5-Ounce Can Chickpeas"
+    "unit": "Can",
+    "unitCode": "can",
+    "name": "Chickpeas",
+    "description": "15.5-Ounce"
   },
   {
     "amount": 0.5,
@@ -1339,7 +1350,7 @@
   {
     "amount": 1,
     "name": "stalk",
-    "description": "7-1/2\" - 8\" long, celery, peeled and chopped"
+    "description": "medium, 7-1/2\" - 8\" long, celery, peeled and chopped"
   },
   {
     "amount": 1,
@@ -1350,7 +1361,10 @@
   },
   {
     "amount": 1,
-    "name": "15oz. can red kidney beans"
+    "unit": "oz. can",
+    "unitCode": "can",
+    "name": "red kidney beans",
+    "description": "15"
   },
   {
     "amount": 1,
@@ -1413,8 +1427,8 @@
     "name": "unseasoned rice vinegar"
   },
   {
-    "amount": 3.5,
-    "name": "-inch-thick bone-in pork rib chops )",
+    "amount": 2,
+    "name": "1½-inch-thick bone-in pork rib chops",
     "description": "about 1 pound each, patted dry"
   },
   {
@@ -1435,7 +1449,9 @@
   },
   {
     "amount": 3,
-    "name": "garlic cloves",
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
     "description": "smashed"
   },
   {
@@ -1453,7 +1469,7 @@
   {
     "amount": 6,
     "name": "or 8 celery stalks",
-    "description": "large medium, thinly sliced on adiagonal"
+    "description": "large, medium, thinly sliced on a diagonal"
   },
   {
     "amount": 0.5,
@@ -1478,7 +1494,7 @@
   {
     "amount": 2,
     "name": "ahi tuna steaks",
-    "description": "about 4 oz. each, 1\" thick - see notes for thinner or thicker"
+    "description": "yellowfin tuna, about 4 oz. each, 1\" thick - see notes for thinner or thicker"
   },
   {
     "amount": 2,
@@ -1529,7 +1545,7 @@
   },
   {
     "name": "green onions",
-    "description": "optional, toasted sesame seeds, and lime wedges"
+    "description": "for serving (optional), toasted sesame seeds, and lime wedges"
   },
   {
     "amount": 2,
@@ -1555,7 +1571,7 @@
   {
     "amount": 1,
     "name": "yellow onion",
-    "description": "$0.21"
+    "description": "small, $0.21"
   },
   {
     "amount": 1,
@@ -1569,7 +1585,7 @@
     "unit": "cup",
     "unitCode": "cup",
     "name": "brown lentils",
-    "description": "$0.67"
+    "description": "dry, $0.67"
   },
   {
     "amount": 2,
@@ -1580,8 +1596,10 @@
   },
   {
     "amount": 1,
-    "name": "13oz. can coconut milk",
-    "description": "$1.99"
+    "unit": "oz. can",
+    "unitCode": "can",
+    "name": "coconut milk",
+    "description": "13, $1.99"
   },
   {
     "amount": 3,
@@ -1655,7 +1673,7 @@
   {
     "amount": 5,
     "name": "jalapeno peppers",
-    "description": "ribs removed if you like less spice"
+    "description": "halved (ribs removed if you like less spice)"
   },
   {
     "amount": 1,
@@ -1718,17 +1736,17 @@
   {
     "amount": 2,
     "name": "veal shoulder arm or blade steaks",
-    "description": "cut 1inch thick"
+    "description": "cut 1 inch thick"
   },
   {
     "amount": 2,
     "name": "baking potatoes",
-    "description": "cut lengthwise into 8wedges"
+    "description": "cut lengthwise into 8 wedges"
   },
   {
     "amount": 1,
     "name": "lemon",
-    "description": "cut lengthwise into 8wedges"
+    "description": "cut lengthwise into 8 wedges"
   },
   {
     "amount": 0.5,
@@ -1855,7 +1873,7 @@
   {
     "amount": 1,
     "name": "colher de ketchup",
-    "description": "ou catchup"
+    "description": "sopa, ou catchup"
   },
   {
     "amount": 1,
@@ -2014,7 +2032,10 @@
   },
   {
     "amount": 1,
-    "name": "env. dry onion soup mix or possibly 1can cream of onion soup"
+    "unit": "can",
+    "unitCode": "can",
+    "name": "cream of onion soup",
+    "description": "env. dry onion soup mix or possibly 1"
   },
   {
     "amount": 2,
@@ -2034,8 +2055,10 @@
   },
   {
     "amount": 2,
-    "name": "small-to-medium cloves garlic",
-    "description": "pressed or minced"
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
+    "description": "small-to-medium, pressed or minced"
   },
   {
     "amount": 0.5,
@@ -2120,14 +2143,14 @@
     "amount": 1.5,
     "unit": "cups",
     "unitCode": "cup",
-    "name": "plus 1/3cup granulated sugar",
+    "name": "plus 1/3 cup granulated sugar",
     "description": "divided"
   },
   {
-    "amount": 14,
+    "amount": 14.75,
     "unit": "tablespoons",
     "unitCode": "tbsp",
-    "name": "13/4sticks unsalted butter",
+    "name": "1 sticks unsalted butter",
     "description": "softened"
   },
   {
@@ -2213,7 +2236,7 @@
     "amount": 0.25,
     "unit": "cup",
     "unitCode": "cup",
-    "name": "finely ground Pecorino Romano cheese )",
+    "name": "finely ground Pecorino Romano cheese",
     "description": "or Parmigiano-Reggiano or more Asiago, for sprinkling"
   },
   {
@@ -2292,7 +2315,7 @@
   {
     "amount": 6,
     "name": "carrots",
-    "description": "cut into 1 inch chunks"
+    "description": "cut into 1-inch chunks"
   },
   {
     "amount": 1,
@@ -2301,7 +2324,9 @@
   },
   {
     "amount": 4,
-    "name": "garlic cloves",
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
     "description": "smashed and thinly sliced"
   },
   {
@@ -2425,8 +2450,8 @@
     "amount": 1,
     "unit": "lb.",
     "unitCode": "lb",
-    "name": "mixed mushrooms )",
-    "description": "such as cremini, beech, or shiitake, roughly chopped 4slices bacon, sliced"
+    "name": "mixed mushrooms",
+    "description": "such as cremini, beech, or shiitake, roughly chopped 4 slices bacon, sliced"
   },
   {
     "amount": 4,
@@ -2561,7 +2586,10 @@
   },
   {
     "amount": 4,
-    "name": "fette di pesce spada di circa 200g l 'una"
+    "unit": "g l",
+    "unitCode": "l",
+    "name": "'una",
+    "description": "fette di pesce spada di circa 200"
   },
   {
     "amount": 20,
@@ -2757,7 +2785,7 @@
   {
     "amount": 1,
     "name": "onion",
-    "description": "peeled and diced"
+    "description": "small, peeled and diced"
   },
   {
     "amount": 2,
@@ -2813,7 +2841,10 @@
   },
   {
     "amount": 2,
-    "name": "optional: teaspoons Cognac or brandy"
+    "unit": "teaspoons",
+    "unitCode": "tsp",
+    "name": "Cognac or brandy",
+    "description": "optional:"
   },
   {
     "amount": 1,
@@ -3134,7 +3165,7 @@
   {
     "amount": 0.5,
     "name": "yellow onion",
-    "description": "minced"
+    "description": "medium, minced"
   },
   {
     "amount": 0.5,
@@ -3183,7 +3214,7 @@
   {
     "amount": 3,
     "name": "scallions",
-    "description": "optional"
+    "description": "thinly sliced (optional)"
   },
   {
     "name": "For the Yogurt Ranch:"
@@ -3199,7 +3230,7 @@
     "unit": "teaspoon",
     "unitCode": "tsp",
     "name": "dried parsley",
-    "description": "Just use your fingers to crush the flakes."
+    "description": "crushed (Just use your fingers to crush the flakes.)"
   },
   {
     "amount": 0.5,
@@ -3251,7 +3282,9 @@
   },
   {
     "amount": 3,
-    "name": "garlic cloves",
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
     "description": "minced"
   },
   {
@@ -3378,7 +3411,7 @@
   {
     "amount": 1,
     "name": "onion",
-    "description": "chopped"
+    "description": "large, chopped"
   },
   {
     "amount": 1,
@@ -3591,7 +3624,10 @@
     "description": "thinly sliced"
   },
   {
-    "name": "Few sprigs of spring onion"
+    "unit": "sprigs",
+    "unitCode": "sprig",
+    "name": "of spring onion",
+    "description": "Few"
   },
   {
     "amount": 0.5,
@@ -3743,7 +3779,7 @@
     "amount": 0.5,
     "unit": "cup",
     "unitCode": "cup",
-    "name": "sugar +1tsp for each crème brûlée"
+    "name": "sugar +1 tsp for each crème brûlée"
   },
   {
     "amount": 1,
@@ -3840,8 +3876,10 @@
   },
   {
     "amount": 1,
-    "name": "Seasonings tablespoon chili powder 2teaspoons smoked paprika 2teaspoons cumin 1/2teaspoon cinnamon 2teaspoons oregano",
-    "description": "Mexican"
+    "unit": "tablespoon",
+    "unitCode": "tbsp",
+    "name": "chili powder 2 teaspoons smoked paprika 2 teaspoons cumin 1/2 teaspoon cinnamon 2 teaspoons oregano",
+    "description": "Seasonings, Mexican"
   },
   {
     "amount": 1,
@@ -3896,8 +3934,8 @@
   },
   {
     "amount": 1,
-    "name": "ripe plantain )",
-    "description": "~200g, cut into 1 inch pieces"
+    "name": "ripe plantain",
+    "description": "~200g, cut into 1-inch pieces"
   },
   {
     "name": "sea salt \u0026 pepper to taste"
@@ -3939,8 +3977,8 @@
   },
   {
     "amount": 1,
-    "name": "Condimentos cucharada de chile en polvo 2cucharaditas de pimentón ahumado 2cucharaditas de comino 1/2cucharadita de canela 2cucharaditas de orégano 2tazas de caldo de res bajo en sodio 4cucharadas de pasta de tomate 1lata de tomates cortados en cubitos",
-    "description": "13.5 oz"
+    "name": "Condimentos cucharada de chile en polvo 2 cucharaditas de pimentón ahumado 2 cucharaditas de comino 1/2 cucharadita de canela 2 cucharaditas de orégano 2 tazas de caldo de res bajo en sodio 4 cucharadas de pasta de tomate 1 lata de tomates cortados en cubitos",
+    "description": "mexicano, NO salsa, 13.5 oz"
   },
   {
     "amount": 1,
@@ -3980,7 +4018,7 @@
   {
     "amount": 1,
     "name": "plátano maduro grande",
-    "description": "cortado en trozos de 1pulgada"
+    "description": "cortado en trozos de 1 pulgada"
   },
   {
     "name": "sal marina y pimienta al gusto"
@@ -4008,12 +4046,12 @@
   {
     "amount": 4,
     "name": "carrots",
-    "description": "halved lengthwise and cut crosswise into 1 inch pieces"
+    "description": "halved lengthwise and cut crosswise into 1-inch pieces"
   },
   {
     "amount": 4,
     "name": "parsnips",
-    "description": "halved lengthwise and cut crosswise into 1 inch pieces"
+    "description": "halved lengthwise and cut crosswise into 1-inch pieces"
   },
   {
     "amount": 1.5,
@@ -4229,7 +4267,9 @@
   },
   {
     "amount": 5,
-    "name": "garlic cloves",
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
     "description": "large, minced"
   },
   {
@@ -4298,7 +4338,7 @@
   {
     "amount": 2,
     "maxAmount": 3,
-    "name": "turns of apepper grinder"
+    "name": "turns of a pepper grinder"
   },
   {
     "amount": 4,
@@ -4418,7 +4458,7 @@
   {
     "amount": 1,
     "name": "butternut squash",
-    "description": "1¾ lb."
+    "description": "medium, 1¾ lb."
   },
   {
     "amount": 1,
@@ -4523,7 +4563,10 @@
   },
   {
     "amount": 9,
-    "name": "thin slices ham"
+    "unit": "slices",
+    "unitCode": "slice",
+    "name": "ham",
+    "description": "thin"
   },
   {
     "amount": 9,
@@ -4602,7 +4645,7 @@
   {
     "amount": 4,
     "name": "chicken breasts",
-    "description": "pounded thin"
+    "description": "medium, pounded thin"
   },
   {
     "amount": 2,
@@ -4668,7 +4711,7 @@
   {
     "amount": 2,
     "name": "oranges",
-    "description": "onejuiced and onediced"
+    "description": "one juiced and one diced"
   },
   {
     "amount": 1,
@@ -4761,7 +4804,9 @@
   },
   {
     "amount": 2,
-    "name": "garlic cloves",
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
     "description": "sliced"
   },
   {
@@ -5197,7 +5242,7 @@
     "unit": "pound",
     "unitCode": "lb",
     "name": "boneless",
-    "description": "about 4"
+    "description": "skinless Chicken Thighs (about 4)"
   },
   {
     "amount": 16,
@@ -5361,7 +5406,10 @@
   },
   {
     "amount": 6,
-    "name": "Info oz. Linguine"
+    "unit": "oz.",
+    "unitCode": "oz",
+    "name": "Linguine",
+    "description": "Info"
   },
   {
     "amount": 1,
@@ -5387,15 +5435,24 @@
   },
   {
     "amount": 2,
-    "name": "Info oz. Sour Cream"
+    "unit": "oz.",
+    "unitCode": "oz",
+    "name": "Sour Cream",
+    "description": "Info"
   },
   {
     "amount": 1,
-    "name": "Info oz. Shredded Asiago Cheese"
+    "unit": "oz.",
+    "unitCode": "oz",
+    "name": "Shredded Asiago Cheese",
+    "description": "Info"
   },
   {
     "amount": 0.3333333333333333,
-    "name": "Info oz. Butter"
+    "unit": "oz.",
+    "unitCode": "oz",
+    "name": "Butter",
+    "description": "Info"
   },
   {
     "amount": 2,
@@ -5589,14 +5646,17 @@
   },
   {
     "amount": 1,
-    "name": "9inch deep dish pie shell"
+    "unit": "inch",
+    "unitCode": "in",
+    "name": "deep dish pie shell",
+    "description": "9"
   },
   {
     "amount": 2,
     "unit": "cups",
     "unitCode": "cup",
     "name": "wheat flour",
-    "description": "refer notes"
+    "description": "or all-purpose (refer notes)"
   },
   {
     "amount": 2.5,
@@ -5622,8 +5682,8 @@
     "amount": 100,
     "unit": "grams",
     "unitCode": "g",
-    "name": "unsalted butter ))",
-    "description": "around ½ cup"
+    "name": "unsalted butter",
+    "description": "(soft \u0026 cold) (around ½ cup)"
   },
   {
     "amount": 2,
@@ -5776,7 +5836,7 @@
   {
     "amount": 1,
     "name": "apple",
-    "description": "Blade D"
+    "description": "medium, Blade D"
   },
   {
     "amount": 0.25,
@@ -6049,7 +6109,10 @@
   },
   {
     "amount": 2,
-    "name": "rice cooker cups uncooked Japanese short-grain rice"
+    "unit": "cups",
+    "unitCode": "cup",
+    "name": "uncooked Japanese short-grain rice",
+    "description": "rice cooker"
   },
   {
     "amount": 400,
@@ -6062,7 +6125,7 @@
     "unit": "Tbsp",
     "unitCode": "tbsp",
     "name": "kosher salt",
-    "description": "you do not need to use all of it"
+    "description": "Diamond Crystal; use half for table salt, you do not need to use all of it"
   },
   {
     "amount": 1,
@@ -6316,7 +6379,7 @@
     "unit": "cup",
     "unitCode": "cup",
     "name": "mozzarella cheese",
-    "description": "plus optional: grated or sliced topping"
+    "description": "cubed (plus optional: grated or sliced topping)"
   },
   {
     "amount": 1,
@@ -6334,7 +6397,10 @@
   },
   {
     "amount": 0.75,
-    "name": "to 1cup water lukewarm*",
+    "maxAmount": 1,
+    "unit": "cup",
+    "unitCode": "cup",
+    "name": "water lukewarm*",
     "description": "170g to 227g"
   },
   {
@@ -6378,8 +6444,10 @@
   },
   {
     "amount": 1,
-    "name": "egg white whisked with 2tablespoons cold water*",
-    "description": "large"
+    "unit": "tablespoons",
+    "unitCode": "tbsp",
+    "name": "cold water*",
+    "description": "egg white whisked with 2, large"
   },
   {
     "name": "sesame seeds or the seeds of your choice"
@@ -6674,7 +6742,7 @@
     "amount": 600,
     "unit": "g",
     "unitCode": "g",
-    "name": "świeżych ogórków gruntowych )*",
+    "name": "świeżych ogórków gruntowych *",
     "description": "lub długich, szklarniowych"
   },
   {
@@ -6749,7 +6817,7 @@
     "amount": 3,
     "maxAmount": 4,
     "name": "to boneless skinless chicken breasts",
-    "description": "medium large"
+    "description": "medium, large"
   },
   {
     "amount": 1,
@@ -6784,7 +6852,10 @@
   },
   {
     "amount": 1,
-    "name": "15 ounce can fire roasted tomatoes"
+    "unit": "can",
+    "unitCode": "can",
+    "name": "fire roasted tomatoes",
+    "description": "15-ounce"
   },
   {
     "name": "corn or flour taco-size tortillas"
@@ -6992,13 +7063,13 @@
     "amount": 1.25,
     "unit": "cups",
     "unitCode": "cup",
-    "name": "Soy Milk ) or Almond Milk)",
-    "description": "300ml"
+    "name": "Soy Milk",
+    "description": "(300ml) or Almond Milk"
   },
   {
     "amount": 2,
-    "name": "Frozen Bananas ) previously peeled",
-    "description": "200g, broken into quarters and frozen for at least 12hours)"
+    "name": "Frozen Bananas",
+    "description": "(200g) previously peeled, broken into quarters and frozen for at least 12 hours"
   },
   {
     "amount": 0.5,
@@ -7011,8 +7082,8 @@
     "amount": 2,
     "unit": "cups",
     "unitCode": "cup",
-    "name": "Kale ) Torn up",
-    "description": "56g, packed)"
+    "name": "Kale",
+    "description": "(56g) Torn up, packed"
   },
   {
     "amount": 4,
@@ -7049,12 +7120,12 @@
     "unit": "pound",
     "unitCode": "lb",
     "name": "shrimp",
-    "description": "peeled, deveined "
+    "description": "Jumbo, peeled, deveined"
   },
   {
     "amount": 6,
     "name": "Scallions",
-    "description": "cut into 1 1/2-inch pieces"
+    "description": "medium, cut into 1 1/2-inch pieces"
   },
   {
     "amount": 2,
@@ -7145,11 +7216,17 @@
   },
   {
     "amount": 2,
-    "description": "5 deciliter sødmælk"
+    "unit": "deciliter",
+    "unitCode": "dl",
+    "name": "sødmælk",
+    "description": ",5"
   },
   {
     "amount": 2,
-    "description": "5 deciliter piskefløde"
+    "unit": "deciliter",
+    "unitCode": "dl",
+    "name": "piskefløde",
+    "description": ",5"
   },
   {
     "amount": 100,
@@ -7516,8 +7593,10 @@
   },
   {
     "amount": 0.25,
-    "name": "-1/2tsp sea salt",
-    "description": "plus more to taste"
+    "unit": "tsp",
+    "unitCode": "tsp",
+    "name": "sea salt",
+    "description": "-1/2, plus more to taste"
   },
   {
     "amount": 4,
@@ -7990,7 +8069,7 @@
     "unit": "ounces",
     "unitCode": "oz",
     "name": "pecorino Romano",
-    "description": "about 3/4 cups, grated ), plus more for garnish"
+    "description": "about 3/4 cups, grated , plus more for garnish"
   },
   {
     "amount": 2,
@@ -8073,7 +8152,9 @@
   },
   {
     "amount": 2,
-    "name": "garlic cloves",
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
     "description": "finely chopped"
   },
   {
@@ -8141,7 +8222,7 @@
     "unit": "ml",
     "unitCode": "ml",
     "name": "non dairy milk",
-    "description": "1tsp apple cider vinegar, 60ml olive oil, 100g caster sugar, 96g gluten free self raising flour, 1tsp baking powder, 50g oat flour, 1zest from lemon, 120g icing sugar, 112g vegan stick butter, 1/4tsp blue spirulina, 1/2tsp pink pitaya powder"
+    "description": "1 tsp apple cider vinegar, 60 ml olive oil, 100 g caster sugar, 96 g gluten free self raising flour, 1 tsp baking powder, 50 g oat flour, 1 zest from lemon, 120 g icing sugar, 112 g vegan stick butter, 1/4 tsp blue spirulina, 1/2 tsp pink pitaya powder"
   },
   {
     "amount": 0.5,
@@ -8173,7 +8254,7 @@
   {
     "amount": 2,
     "name": "carrots",
-    "description": "peeled and finely sliced"
+    "description": "medium, peeled and finely sliced"
   },
   {
     "amount": 1,
@@ -8187,7 +8268,7 @@
     "unit": "cup",
     "unitCode": "cup",
     "name": "roasted and salted macadamia nuts",
-    "description": " roughly chopped"
+    "description": "roughly chopped"
   },
   {
     "amount": 2,
@@ -8307,8 +8388,10 @@
   },
   {
     "amount": 0.25,
-    "name": "+ 1/8teaspoon fine sea salt",
-    "description": "or to taste"
+    "unit": "teaspoon",
+    "unitCode": "tsp",
+    "name": "fine sea salt",
+    "description": "+ 1/8, or to taste"
   },
   {
     "amount": 2,
@@ -8361,8 +8444,10 @@
   },
   {
     "amount": 1,
-    "name": "14oz. g block firm",
-    "description": "or extra firm tofu"
+    "unit": "oz.",
+    "unitCode": "oz",
+    "name": "block firm",
+    "description": "14, or extra firm tofu"
   },
   {
     "amount": 0.25,
@@ -8475,7 +8560,7 @@
   {
     "amount": 1,
     "name": "onion",
-    "description": "thinly sliced"
+    "description": "large, thinly sliced"
   },
   {
     "name": "Sea salt and black pepper to taste"
@@ -8514,7 +8599,9 @@
     "description": "or tapioca"
   },
   {
-    "name": "Salt to taste and black pepper to taste"
+    "unit": "to taste",
+    "name": "and black pepper to taste",
+    "description": "Salt"
   },
   {
     "amount": 1,
@@ -8734,7 +8821,7 @@
     "amount": 1.25,
     "unit": "cups",
     "unitCode": "cup",
-    "name": "halfand half"
+    "name": "half and half"
   },
   {
     "amount": 1,
@@ -8903,7 +8990,7 @@
     "amount": 0.3333333333333333,
     "unit": "cup",
     "unitCode": "cup",
-    "name": "+ 2tablespoons cacao powder"
+    "name": "+ 2 tablespoons cacao powder"
   },
   {
     "amount": 1,
@@ -8954,7 +9041,10 @@
   },
   {
     "amount": 0.5,
-    "name": "Scant teaspoon ground ginger"
+    "unit": "teaspoon",
+    "unitCode": "tsp",
+    "name": "ground ginger",
+    "description": "Scant"
   },
   {
     "amount": 2,
@@ -8979,8 +9069,10 @@
   },
   {
     "amount": 0.6666666666666666,
-    "name": "Scant cup",
-    "description": "old-fashioned rolled oats"
+    "unit": "cup",
+    "unitCode": "cup",
+    "name": "Scant",
+    "description": "60g, old-fashioned rolled oats"
   },
   {
     "amount": 1,
@@ -8990,8 +9082,11 @@
     "description": "200g"
   },
   {
-    "amount": 0.25,
-    "name": "- 1/2teaspoon kosher salt"
+    "amount": 0.5,
+    "unit": "teaspoon",
+    "unitCode": "tsp",
+    "name": "kosher salt",
+    "description": "1/4-"
   },
   {
     "amount": 2,
@@ -9048,12 +9143,14 @@
     "amount": 1,
     "unit": "cup",
     "unitCode": "cup",
-    "name": "plus 4tablespoons sugar"
+    "name": "plus 4 tablespoons sugar"
   },
   {
     "amount": 3,
-    "name": "8 ounce packages cream cheese",
-    "description": "at room temperature"
+    "unit": "packages",
+    "unitCode": "pkg",
+    "name": "cream cheese",
+    "description": "8-ounce, at room temperature"
   },
   {
     "amount": 2,
@@ -9078,7 +9175,9 @@
   },
   {
     "amount": 1,
-    "name": "10 ounce bag frozen cherries"
+    "unit": "bag",
+    "name": "frozen cherries",
+    "description": "10-ounce"
   },
   {
     "amount": 0.5,
@@ -9208,8 +9307,8 @@
     "amount": 1,
     "unit": "kg",
     "unitCode": "kg",
-    "name": "pork shoulder ) or boneless skinless pork belly",
-    "description": "Note 1a, cut into 3cm \" pieces ))"
+    "name": "pork shoulder",
+    "description": "(butt) or boneless skinless pork belly, cut into 3 cm / 1.2\" pieces (Note 1a)"
   },
   {
     "amount": 1.5,
@@ -9221,11 +9320,13 @@
   {
     "amount": 1,
     "name": "eschallot shallot",
-    "description": "Note 2"
+    "description": ", very finely sliced (Note 2)"
   },
   {
     "amount": 2,
-    "name": "garlic cloves",
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
     "description": ", minced"
   },
   {
@@ -9246,7 +9347,7 @@
   {
     "amount": 2,
     "name": "pork shoulder steaks",
-    "description": "about 350g/12oz, see note 1"
+    "description": "aka pork butt, about 350g/12oz, see note 1"
   },
   {
     "amount": 4,
@@ -9442,7 +9543,7 @@
   },
   {
     "amount": 1,
-    "name": "Zucchero velo 30g"
+    "name": "Zucchero velo 30 g"
   },
   {
     "amount": 6,
@@ -9519,8 +9620,10 @@
   },
   {
     "amount": 2,
-    "name": "and 1/3cups all-purpose flour )",
-    "description": "spoon \u0026 leveled, plus more as needed*"
+    "unit": "cups",
+    "unitCode": "cup",
+    "name": "all-purpose flour",
+    "description": "and 1/3, 291g, spoon \u0026 leveled, plus more as needed*"
   },
   {
     "amount": 1,
@@ -9546,7 +9649,7 @@
     "unit": "Tablespoons",
     "unitCode": "tbsp",
     "name": "unsalted butter",
-    "description": "see note, extra soft"
+    "description": "75g, see note, extra soft"
   },
   {
     "amount": 1,
@@ -9564,8 +9667,10 @@
   },
   {
     "amount": 2,
-    "name": "garlic cloves",
-    "description": "minced or 1/2teaspoon garlic powder"
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
+    "description": "minced or 1/2 teaspoon garlic powder"
   },
   {
     "amount": 0.25,
@@ -9578,7 +9683,7 @@
     "unit": "cup",
     "unitCode": "cup",
     "name": "shredded parmesan",
-    "description": "or your favorite shredded cheese, mozzarella, or white cheddar cheese"
+    "description": "95g, or your favorite shredded cheese, mozzarella, or white cheddar cheese"
   },
   {
     "amount": 1,
@@ -9601,7 +9706,7 @@
     "amount": 0.25,
     "unit": "cup",
     "unitCode": "cup",
-    "name": "plus 2Tbsp. kosher salt",
+    "name": "plus 2 Tbsp. kosher salt",
     "description": "divided, plus more as needed"
   },
   {
@@ -9624,13 +9729,15 @@
   },
   {
     "amount": 4,
-    "name": "garlic cloves",
-    "description": "1 Tbsp., finely chopped"
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
+    "description": "medium, 1 Tbsp., finely chopped"
   },
   {
     "amount": 10,
     "name": "boneless",
-    "description": "2 lb. 3 oz., skinless chicken thighs ), halved"
+    "description": "2 lb. 3 oz., skinless chicken thighs , halved"
   },
   {
     "amount": 0.25,
@@ -9673,7 +9780,7 @@
     "unit": "cup",
     "unitCode": "cup",
     "name": "dried barberries",
-    "description": "or substitute finely chopped dried cranberries, picked, soaked in cold water for 15minutes, then drained"
+    "description": "or substitute finely chopped dried cranberries, picked, soaked in cold water for 15 minutes, then drained"
   },
   {
     "amount": 1,
@@ -9740,16 +9847,18 @@
     "name": "Peanut or other frying oil"
   },
   {
-    "amount": 1,
-    "name": "- 11/2cups white cheddar cheese curds",
-    "description": "Or torn chunks of mozzarella cheese would be the closest substitution"
+    "amount": 1.5,
+    "unit": "cups",
+    "unitCode": "cup",
+    "name": "white cheddar cheese curds",
+    "description": "1-, Or torn chunks of mozzarella cheese would be the closest substitution"
   },
   {
     "amount": 8,
     "unit": "ounces",
     "unitCode": "oz",
     "name": "low-protein all-purpose flour",
-    "description": "1 2/3 cups; 225g, such as Gold Medal Blue Label ), plus more for dusting"
+    "description": "1 2/3 cups; 225g, such as Gold Medal Blue Label , plus more for dusting"
   },
   {
     "amount": 0.5,
@@ -9763,14 +9872,14 @@
     "unit": "teaspoon",
     "unitCode": "tsp",
     "name": "Diamond Crystal kosher salt; for table salt",
-    "description": "4g, use halfas much by volume or use the same weight"
+    "description": "4g, use half as much by volume or use the same weight"
   },
   {
     "amount": 8,
     "unit": "ounces",
     "unitCode": "oz",
     "name": "unsalted",
-    "description": "2 sticks; 225g, American-style butter, straight from the fridge ), cold"
+    "description": "2 sticks; 225g, American-style butter, straight from the fridge , cold"
   },
   {
     "amount": 4,
@@ -9807,7 +9916,7 @@
   {
     "amount": 2,
     "name": "eggs",
-    "description": "or flax eggs"
+    "description": "large, or flax eggs"
   },
   {
     "amount": 2,
@@ -9866,7 +9975,7 @@
   {
     "amount": 2,
     "name": "carrots",
-    "description": "medium small, peeled and diced"
+    "description": "medium, small, peeled and diced"
   },
   {
     "amount": 1,
@@ -9917,7 +10026,7 @@
   {
     "amount": 1,
     "name": "onion",
-    "description": "about 1 cup, chopped"
+    "description": "small, about 1 cup, chopped"
   },
   {
     "amount": 2,
@@ -9926,12 +10035,17 @@
   },
   {
     "amount": 6,
-    "name": "garlic cloves",
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
     "description": "minced"
   },
   {
     "amount": 1.5,
-    "name": "– 2pounds ground chicken"
+    "maxAmount": 2,
+    "unit": "pounds",
+    "unitCode": "lb",
+    "name": "ground chicken"
   },
   {
     "amount": 1,
@@ -9942,12 +10056,17 @@
   },
   {
     "amount": 1,
-    "name": "15 ounce can petite diced tomatoes"
+    "unit": "can",
+    "unitCode": "can",
+    "name": "petite diced tomatoes",
+    "description": "15-ounce"
   },
   {
     "amount": 2,
-    "name": "15 ounce cans chili beans",
-    "description": "with sauce"
+    "unit": "cans",
+    "unitCode": "can",
+    "name": "chili beans",
+    "description": "15-ounce, with sauce"
   },
   {
     "amount": 2,
@@ -9991,7 +10110,7 @@
     "amount": 24,
     "unit": "oz",
     "unitCode": "oz",
-    "name": "3 chicken breasts sliced in halflengthwise to make 6",
+    "name": "3 chicken breasts sliced in half lengthwise to make 6",
     "description": "large"
   },
   {
@@ -10028,7 +10147,7 @@
     "unit": "cup",
     "unitCode": "cup",
     "name": "roasted red pepper",
-    "description": "packed in water"
+    "description": "sliced in strips (packed in water)"
   },
   {
     "name": "olive oil spray"
@@ -10062,7 +10181,7 @@
     "amount": 0.3333333333333333,
     "unit": "cup",
     "unitCode": "cup",
-    "name": "plus 1tsp. granulated sugar",
+    "name": "plus 1 tsp. granulated sugar",
     "description": "divided"
   },
   {
@@ -10077,9 +10196,11 @@
     "name": "salt"
   },
   {
-    "amount": 5.25,
-    "name": "- 6cups bread flour",
-    "description": "divided, plus more for dusting"
+    "amount": 5,
+    "unit": "cups",
+    "unitCode": "cup",
+    "name": "bread flour",
+    "description": "1/4- 6, divided, plus more for dusting"
   },
   {
     "amount": 1.25,
@@ -10229,7 +10350,10 @@
   },
   {
     "amount": 3,
-    "name": "whole cloves garlic"
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "garlic",
+    "description": "whole"
   },
   {
     "amount": 3,
@@ -10262,8 +10386,10 @@
     "description": "chopped"
   },
   {
-    "name": "few sprigs of Thai basil",
-    "description": "or regular basil"
+    "unit": "sprigs",
+    "unitCode": "sprig",
+    "name": "of Thai basil",
+    "description": "few, or regular basil"
   },
   {
     "amount": 1,
@@ -10417,8 +10543,10 @@
   },
   {
     "amount": 3,
-    "name": "Instant Pot or 4 cups water",
-    "description": "slow cooker, stove-top"
+    "unit": "cups",
+    "unitCode": "cup",
+    "name": "water",
+    "description": "Instant Pot or 4, slow cooker, stove-top"
   },
   {
     "amount": 1,
@@ -10445,7 +10573,7 @@
   {
     "amount": 1,
     "name": "apple",
-    "description": "peeled and cut into small pieces"
+    "description": "large, peeled and cut into small pieces"
   },
   {
     "amount": 1,
@@ -10555,7 +10683,7 @@
     "unit": "cups",
     "unitCode": "cup",
     "name": "strawberries",
-    "description": "to top"
+    "description": "kiwis or pineapple (to top)"
   },
   {
     "amount": 0.25,
@@ -10723,7 +10851,7 @@
     "unit": "pound",
     "unitCode": "lb",
     "name": "boneless beef top round steak",
-    "description": "cut into 1 inch cubes"
+    "description": "cut into 1-inch cubes"
   },
   {
     "amount": 3,
@@ -10762,7 +10890,7 @@
     "amount": 1.75,
     "unit": "cup",
     "unitCode": "cup",
-    "name": "+ 2Tablespoons all-purpose flour"
+    "name": "+ 2 Tablespoons all-purpose flour"
   },
   {
     "amount": 0.75,
@@ -10926,7 +11054,7 @@
     "unit": "lb",
     "unitCode": "lb",
     "name": "bone in beef short ribs",
-    "description": "cut into 2 inch pieces"
+    "description": "cut into 2-inch pieces"
   },
   {
     "amount": 1,
@@ -10956,12 +11084,12 @@
   {
     "amount": 1,
     "name": "white onion",
-    "description": "2.5 cm, cut into 1inch pieces"
+    "description": "large, 2.5 cm, cut into 1 inch pieces"
   },
   {
     "amount": 4,
     "name": "celery stalks",
-    "description": "1 1/4 cm, cut into 1/2inch diagonal pieces"
+    "description": "1 1/4 cm, cut into 1/2 inch diagonal pieces"
   },
   {
     "amount": 2,
@@ -11094,7 +11222,7 @@
   {
     "amount": 1,
     "name": "onion",
-    "description": "diced"
+    "description": "medium, diced"
   },
   {
     "amount": 4,
@@ -11163,21 +11291,21 @@
     "amount": 2.5,
     "unit": "cups",
     "unitCode": "cup",
-    "name": "halfand half"
+    "name": "half and half"
   },
   {
     "amount": 4,
     "unit": "cups",
     "unitCode": "cup",
     "name": "shredded sharp cheddar cheese",
-    "description": "measured after shredding"
+    "description": "medium, divided (measured after shredding)"
   },
   {
     "amount": 2,
     "unit": "cups",
     "unitCode": "cup",
     "name": "shredded Gruyere cheese",
-    "description": "measured after shredding"
+    "description": "divided (measured after shredding)"
   },
   {
     "amount": 0.5,
@@ -11209,7 +11337,7 @@
     "unit": "g",
     "unitCode": "g",
     "name": "unsalted butter",
-    "description": "see notes below for variation, melted"
+    "description": "2 tbsp, see notes below for variation, melted"
   },
   {
     "amount": 1,
@@ -11253,7 +11381,7 @@
     "unit": "g",
     "unitCode": "g",
     "name": "unsalted butter",
-    "description": "see notes below for variation"
+    "description": "2 tbsp, see notes below for variation"
   },
   {
     "amount": 100,
@@ -11270,7 +11398,10 @@
   },
   {
     "amount": 1,
-    "name": "level tbsp. flour"
+    "unit": "tbsp.",
+    "unitCode": "tbsp",
+    "name": "flour",
+    "description": "level"
   },
   {
     "amount": 2,
@@ -11287,9 +11418,11 @@
     "description": "room temperature"
   },
   {
-    "amount": 0.25,
-    "name": "- 1/2cup powdered sugar",
-    "description": "add more if you like it sweet!, sifted"
+    "amount": 0.5,
+    "unit": "cup",
+    "unitCode": "cup",
+    "name": "powdered sugar",
+    "description": "¼-, add more if you like it sweet!, sifted"
   },
   {
     "amount": 1,
@@ -11301,16 +11434,16 @@
   {
     "amount": 1,
     "name": "For richer dough",
-    "description": "3 cups, increase the butter to 115 and use 360g flour total. The texture is incredible."
+    "description": "8 tbsp, 3 cups, increase the butter to 115 and use 360 g flour total. The texture is incredible."
   },
   {
     "name": "Make sure the melted butter and milk mixture has cooled slightly before making the dough. If it’s too hot",
-    "description": "I’ve experienced this many times, the dough will become incredibly sticky like cake batter ). If this happens to you, don’t worry- wait for the dough to cool down before adding more flour, if needed."
+    "description": "I’ve experienced this many times, the dough will become incredibly sticky like cake batter . If this happens to you, don’t worry- wait for the dough to cool down before adding more flour, if needed."
   },
   {
     "amount": 28,
     "name": "Recent recipe update: to prevent the cinnamon sugar filling from leaking while the rolls bake",
-    "description": "6 tbsp, instead of using g of melted butter, combine 84g softened butter with the rest of the cinnamon-sugar filling ingredients listed above."
+    "description": "2 tbsp, 6 tbsp, instead of using g of melted butter, combine 84 g softened butter with the rest of the cinnamon-sugar filling ingredients listed above."
   },
   {
     "name": "Chicken"
@@ -11350,7 +11483,7 @@
   {
     "amount": 2,
     "name": "eggs",
-    "description": "beaten"
+    "description": "large, beaten"
   },
   {
     "amount": 1,
@@ -11488,7 +11621,10 @@
   },
   {
     "amount": 1,
-    "name": "Optional: tbsp. maple syrup"
+    "unit": "tbsp.",
+    "unitCode": "tbsp",
+    "name": "maple syrup",
+    "description": "Optional:"
   },
   {
     "unit": "Handful",
@@ -11534,17 +11670,19 @@
   },
   {
     "amount": 1.25,
-    "name": "-1/2lb. Brussels sprouts",
-    "description": "may use pre-shredded, about 2 – 9 oz. bags, ends trimmed and shredded, about 8cups"
+    "unit": "lb.",
+    "unitCode": "lb",
+    "name": "Brussels sprouts",
+    "description": "-1/2, may use pre-shredded, about 2 – 9 oz. bags, ends trimmed and shredded, about 8 cups"
   },
   {
     "amount": 1,
     "name": "shallot",
-    "description": "about ¼ cup; may substitute red onion, thinly sliced"
+    "description": "medium, about ¼ cup; may substitute red onion, thinly sliced"
   },
   {
     "amount": 6,
-    "name": "thin strips bacon or 4thick",
+    "name": "thin strips bacon or 4 thick",
     "description": "crisp-cooked and chopped"
   },
   {
@@ -11576,7 +11714,9 @@
   },
   {
     "amount": 1,
-    "name": "garlic clove",
+    "unit": "clove",
+    "unitCode": "clove",
+    "name": "garlic",
     "description": "peeled"
   },
   {
@@ -11679,7 +11819,7 @@
   {
     "amount": 1,
     "name": "tomato",
-    "description": "sliced"
+    "description": "large, sliced"
   },
   {
     "amount": 0.5,
@@ -11689,7 +11829,7 @@
   {
     "amount": 0.25,
     "name": "red onion",
-    "description": "peeled and sliced"
+    "description": "large, peeled and sliced"
   },
   {
     "name": "Tzatziki sauce or tahini sauce"
@@ -11746,7 +11886,7 @@
     "unit": "tablespoons",
     "unitCode": "tbsp",
     "name": "coconut flour",
-    "description": "+1 teaspoon, "
+    "description": "+1 teaspoon"
   },
   {
     "amount": 0.25,
@@ -11775,26 +11915,26 @@
   {
     "amount": 1,
     "name": "ripe banana",
-    "description": "about 1/2 cup, "
+    "description": "about 1/2 cup"
   },
   {
     "amount": 2,
     "unit": "tablespoons",
     "unitCode": "tbsp",
     "name": "coconut oil",
-    "description": "room temp, "
+    "description": "room temp"
   },
   {
     "amount": 2,
     "unit": "tablespoons",
     "unitCode": "tbsp",
     "name": "almond butter",
-    "description": "room temp, "
+    "description": "room temp"
   },
   {
     "amount": 1,
     "name": "egg",
-    "description": "beaten , "
+    "description": "large, beaten"
   },
   {
     "amount": 1,
@@ -11813,7 +11953,7 @@
     "unit": "cup",
     "unitCode": "cup",
     "name": "cherries",
-    "description": "pitted and chopped, "
+    "description": "pitted and chopped"
   },
   {
     "amount": 1.6666666666666667,
@@ -11845,7 +11985,10 @@
   },
   {
     "amount": 1.25,
-    "name": "to 1½cups whole wheat flour",
+    "maxAmount": 1.5,
+    "unit": "cups",
+    "unitCode": "cup",
+    "name": "whole wheat flour",
     "description": "about 170-200 grams; how much you’ll need is dependent on the humidity in your kitchen"
   },
   {
@@ -11966,7 +12109,7 @@
     "unit": "cups",
     "unitCode": "cup",
     "name": "shredded chicken",
-    "description": "we use rotisserie chicken, "
+    "description": "we use rotisserie chicken"
   },
   {
     "amount": 0.5,
@@ -12074,28 +12217,28 @@
     "unit": "C",
     "unitCode": "cup",
     "name": "Whole Rolled Oats",
-    "description": "plus 2 Tbs for the top"
+    "description": "100g, plus 2 Tbs for the top"
   },
   {
     "amount": 0.5,
     "unit": "C",
     "unitCode": "cup",
     "name": "Water",
-    "description": "room temperature"
+    "description": "105g, room temperature"
   },
   {
     "amount": 0.75,
     "unit": "C",
     "unitCode": "cup",
     "name": "Sourdough Starter",
-    "description": "100% hydration, previously feed and bubbly"
+    "description": "150g, 100% hydration, previously feed and bubbly"
   },
   {
     "amount": 1,
     "unit": "C",
     "unitCode": "cup",
-    "name": "Milk ) I use 1/2diluted unsweetened cashew milk - 80F ))",
-    "description": "26C"
+    "name": "Milk",
+    "description": "230g, (nut milk or whole dairy milk) I use 1/2 diluted unsweetened cashew milk - 80F (26C)"
   },
   {
     "amount": 0.25,
@@ -12109,20 +12252,20 @@
     "unit": "Tbs",
     "unitCode": "tbsp",
     "name": "Olive Oil",
-    "description": " + more for oiling the pan"
+    "description": "14g, + more for oiling the pan"
   },
   {
     "amount": 0.5,
     "unit": "C",
     "unitCode": "cup",
-    "name": "+ 1Tbs Whole Wheat Bread Flour ) or whole wheat flour)",
-    "description": "see note**"
+    "name": "+ 1 Tbs Whole Wheat Bread Flour",
+    "description": "100g, (see note**) or whole wheat flour"
   },
   {
-    "amount": 2,
+    "amount": 2.5,
     "unit": "C",
     "unitCode": "cup",
-    "name": "+ 31/2Tbs Bread Flour",
+    "name": "+ 3 Tbs Bread Flour",
     "description": "300g"
   },
   {
@@ -12220,7 +12363,7 @@
     "unit": "cup",
     "unitCode": "cup",
     "name": "chopped radish leaves",
-    "description": "mooli ke patte"
+    "description": "- use tender leaves, (mooli ke patte)"
   },
   {
     "amount": 3,
@@ -12280,7 +12423,7 @@
     "unit": "pinches",
     "unitCode": "pinch",
     "name": "asafoetida",
-    "description": "hing"
+    "description": "or ⅛ teaspoon asafoetida powder (hing)"
   },
   {
     "amount": 2,
@@ -12331,7 +12474,10 @@
   {
     "amount": 3,
     "maxAmount": 4,
-    "name": "garlic cloves finely chopped"
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "finely chopped",
+    "description": "garlic"
   },
   {
     "amount": 1,
@@ -12381,7 +12527,10 @@
   {
     "amount": 2,
     "maxAmount": 3,
-    "name": "garlic cloves whole"
+    "unit": "cloves",
+    "unitCode": "clove",
+    "name": "whole",
+    "description": "garlic"
   },
   {
     "amount": 1.5,
@@ -12444,7 +12593,10 @@
   },
   {
     "amount": 1,
-    "name": "4.5 ounce can chopped green chiles"
+    "unit": "can",
+    "unitCode": "can",
+    "name": "chopped green chiles",
+    "description": "4.5-ounce"
   },
   {
     "amount": 1.5,
@@ -12616,13 +12768,13 @@
     "unit": "cup",
     "unitCode": "cup",
     "name": "shredded mozzarella cheese or shredded pizza blend cheese",
-    "description": "1cup is 4oz."
+    "description": "1 cup is 4 oz."
   },
   {
     "amount": 4,
     "unit": "ounces",
     "unitCode": "oz",
-    "name": "ricotta cheese 4oz. is 1scant cup"
+    "name": "ricotta cheese 4 oz. is 1 scant cup"
   },
   {
     "amount": 1.5,

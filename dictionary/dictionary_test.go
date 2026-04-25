@@ -44,6 +44,36 @@ func TestFindLongestMatch(t *testing.T) {
 	}
 }
 
+func TestFindTimeUnit(t *testing.T) {
+	dict, err := ForLang("en")
+	require.NoError(t, err)
+
+	tests := []struct {
+		input   string
+		variant string
+		code    string
+		ok      bool
+	}{
+		{"seconds remaining", "seconds", "second", true},
+		{"sec remaining", "sec", "second", true},
+		{"minute remaining", "minute", "minute", true},
+		{"mins remaining", "mins", "minute", true},
+		{"hour remaining", "hour", "hour", true},
+		{"hrs remaining", "hrs", "hour", true},
+		{"day remaining", "day", "day", true},
+		{"tablespoon remaining", "", "", false},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.input, func(t *testing.T) {
+			variant, code, ok := dict.FindTimeUnit(tt.input)
+			assert.Equal(t, tt.variant, variant)
+			assert.Equal(t, tt.code, code)
+			assert.Equal(t, tt.ok, ok)
+		})
+	}
+}
+
 func TestYMLDictionaries(t *testing.T) {
 	// Read en.yml as baseline
 	enData, err := os.ReadFile("en.yml")
@@ -80,6 +110,12 @@ func TestYMLDictionaries(t *testing.T) {
 				_, ok := enDict.Units[key]
 				assert.True(t, ok, "key %q should not be in %s, missing from en.yml", key, e.Name())
 			}
+
+			for key := range enDict.TimeUnits {
+				vals, ok := d.TimeUnits[key]
+				assert.True(t, ok, "time_units key %q is missing in %s", key, e.Name())
+				assert.Greater(t, len(vals), 0, "time_units key %q has no values in %s", key, e.Name())
+			}
 		})
 	}
 }
@@ -105,4 +141,28 @@ func TestDataGenUpdated(t *testing.T) {
 	expectedStr := string(bytes.ReplaceAll(expected, []byte("\r\n"), []byte("\n")))
 
 	assert.Equal(t, actualStr, expectedStr, "data_gen.go is not up to date. Run 'go generate ./...'")
+}
+
+func TestForLangFallback(t *testing.T) {
+	tests := []struct {
+		lang string
+		want string
+	}{
+		{"en", "en"},
+		{"en-US", "en"},
+		{"en-GB", "en"},
+		{"de-DE", "de"},
+		{"uk-UA", "uk"},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.lang, func(t *testing.T) {
+			dict, err := ForLang(tt.lang)
+			assert.NoError(t, err)
+			assert.NotNil(t, dict)
+		})
+	}
+
+	_, err := ForLang("xx")
+	assert.Error(t, err)
 }

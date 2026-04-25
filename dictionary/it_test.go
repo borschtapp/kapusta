@@ -20,3 +20,45 @@ func TestItalianIngredients(t *testing.T) {
 		{"2-3 uova", model.Ingredient{Amount: 2, MaxAmount: 3, Name: "uova"}},
 	})
 }
+
+func TestItalianInstructions(t *testing.T) {
+	runInstructionTests(t, "it", []instructionTestCase{
+		{
+			"Cuocere in forno per 15 minuti.",
+			nil,
+			model.Instruction{
+				Text:     "Cuocere in forno per 15 minuti.",
+				Markdown: `Cuocere in forno per [15 minuti](timer:900).`,
+				Timers:   []model.Timer{{Value: 900, Raw: "15 minuti"}},
+			},
+		},
+		{
+			"Aggiungere sale e pepe.",
+			[]string{"sale", "pepe"},
+			model.Instruction{
+				Text:        "Aggiungere sale e pepe.",
+				Markdown:    "Aggiungere [sale](ingredient:kap0) e [pepe](ingredient:kap1).",
+				Ingredients: []model.IngredientRef{{ID: "kap0", Name: "sale"}, {ID: "kap1", Name: "pepe"}},
+			},
+		},
+		{
+			"Cuocere a 180°C.",
+			nil,
+			model.Instruction{
+				Text:         "Cuocere a 180°C.",
+				Markdown:     "Cuocere a [180°C](temp:180?unit=C).",
+				Temperatures: []model.Temperature{{Value: 180, Unit: "C", Raw: "180°C"}},
+			},
+		},
+		{
+			"Aggiungere 250g di farina.",
+			nil,
+			model.Instruction{
+				Text:        "Aggiungere 250g di farina.",
+				Markdown:    "Aggiungere [250g](amount:250?unit=g) [di](ingredient:kap0) farina.",
+				Amounts:     []model.Amount{{Value: 250, Unit: "g", Raw: "250g"}},
+				Ingredients: []model.IngredientRef{{ID: "kap0", Name: "di"}},
+			},
+		},
+	})
+}

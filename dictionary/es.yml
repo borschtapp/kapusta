@@ -222,3 +222,14 @@ numbers:
   millon: 1000000
   billón: 1000000000000
   billon: 1000000000000
+
+time_units:
+  day: [d, día, días]
+  hour: [h, horas, hora]
+  minute: [min, minutos, minuto]
+  second: [s, segundos, segundo]
+
+temperature_units:
+  C: ["°C", "C", "Celsius", "Grados"]
+  F: ["°F", "F", "Fahrenheit"]
+  K: ["°K", "K", "Kelvin"]

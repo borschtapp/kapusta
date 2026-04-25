@@ -142,7 +142,7 @@ func TestParseIngredient(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := Parse(tt.input, Options{Lang: "en"})
+			got, err := ParseIngredient(tt.input, Options{Lang: "en"})
 			assert.NoError(t, err)
 			assert.Equal(t, tt.want, got)
 		})
@@ -151,6 +151,6 @@ func TestParseIngredient(t *testing.T) {
 
 func BenchmarkParseIngredient(b *testing.B) {
 	for b.Loop() {
-		_, _ = Parse("1 ½ cups diced tomatoes, divided", Options{Lang: "en"})
+		_, _ = ParseIngredient("1 ½ cups diced tomatoes, divided", Options{Lang: "en"})
 	}
 }

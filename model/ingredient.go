@@ -1,6 +1,8 @@
 package model
 
 import (
+	"strings"
+
 	"github.com/borschtapp/kapusta/parser/util"
 )
 
@@ -13,20 +15,25 @@ type Ingredient struct {
 	Description string  `json:"description,omitempty"`
 }
 
-func (r *Ingredient) String() (s string) {
-	s += util.FormatFraction(r.Amount)
+func (r *Ingredient) String() string {
+	var b strings.Builder
+	b.WriteString(util.FormatFraction(r.Amount))
 	if r.MaxAmount > 0 {
-		s += "-" + util.FormatFraction(r.MaxAmount)
+		b.WriteByte('-')
+		b.WriteString(util.FormatFraction(r.MaxAmount))
 	}
-
 	if r.Unit != "" {
-		s += " " + r.Unit
+		b.WriteByte(' ')
+		b.WriteString(r.Unit)
 	}
-
-	s += " " + r.Name
-
+	if r.Name != "" {
+		b.WriteByte(' ')
+		b.WriteString(r.Name)
+	}
 	if r.Description != "" {
-		s += " (" + r.Description + ")"
+		b.WriteString(" (")
+		b.WriteString(r.Description)
+		b.WriteByte(')')
 	}
-	return s
+	return b.String()
 }

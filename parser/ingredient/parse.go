@@ -14,7 +14,7 @@ type Options struct {
 	Lang string
 }
 
-func Parse(str string, opts Options) (model.Ingredient, error) {
+func ParseIngredient(str string, opts Options) (model.Ingredient, error) {
 	str = strings.ReplaceAll(str, "⁄", "/")
 
 	l, err := lexer.Lex(str, opts.Lang)
@@ -84,7 +84,7 @@ func Parse(str string, opts Options) (model.Ingredient, error) {
 			}
 			skipSpace = false
 
-		case tok.Type == lexer.ItemIdentifier || isTextUnit || tok.Type.IsNumber():
+		case tok.Type == lexer.ItemIdentifier || tok.Type == lexer.ItemTimeUnit || tok.Type == lexer.ItemIngredient || isTextUnit || tok.Type.IsNumber():
 			name = appendWithSpacing(name, tok.Lexeme, skipSpace, tok.Type)
 			skipSpace = tok.Type.IsNumber()
 		}
@@ -97,9 +97,9 @@ func Parse(str string, opts Options) (model.Ingredient, error) {
 
 func finalize(ing model.Ingredient, unit, unitCode, name, prefix string) model.Ingredient {
 	// Move trailing descriptions (after commas) from name to description
-	if idx := strings.Index(name, ","); idx != -1 {
-		ing.Description = addDescription(ing.Description, strings.TrimSpace(name[idx+1:]))
-		name = strings.TrimSpace(name[:idx])
+	if parts := strings.SplitN(name, ",", 2); len(parts) > 1 {
+		ing.Description = addDescription(ing.Description, strings.TrimSpace(parts[1]))
+		name = strings.TrimSpace(parts[0])
 	}
 
 	// Resolve name vs prefix fallback (e.g. "1 garlic clove" -> name="garlic")
@@ -124,6 +124,14 @@ func appendWithSpacing(text, lexeme string, skipSpace bool, tokType lexer.TokenT
 			shouldAddSpace = true
 		}
 	}
+
+	if shouldAddSpace && len(lexeme) > 0 {
+		switch lexeme[0] {
+		case ',', '.', ';', ':', '!', '?', ')', ']':
+			shouldAddSpace = false
+		}
+	}
+
 	if shouldAddSpace {
 		return text + " " + lexeme
 	}

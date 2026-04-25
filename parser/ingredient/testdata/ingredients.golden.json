@@ -2586,9 +2586,9 @@
   },
   {
     "amount": 4,
-    "unit": "g l",
-    "unitCode": "l",
-    "name": "'una",
+    "unit": "g",
+    "unitCode": "g",
+    "name": "l'una",
     "description": "fette di pesce spada di circa 200"
   },
   {
@@ -4303,7 +4303,7 @@
     "amount": 3,
     "unit": "pounds",
     "unitCode": "lb",
-    "name": "unpeeled head -on raw shrimp",
+    "name": "unpeeled head-on raw shrimp",
     "description": "large, deveined"
   },
   {
@@ -8069,7 +8069,7 @@
     "unit": "ounces",
     "unitCode": "oz",
     "name": "pecorino Romano",
-    "description": "about 3/4 cups, grated , plus more for garnish"
+    "description": "about 3/4 cups, grated, plus more for garnish"
   },
   {
     "amount": 2,
@@ -9737,7 +9737,7 @@
   {
     "amount": 10,
     "name": "boneless",
-    "description": "2 lb. 3 oz., skinless chicken thighs , halved"
+    "description": "2 lb. 3 oz., skinless chicken thighs, halved"
   },
   {
     "amount": 0.25,
@@ -9858,7 +9858,7 @@
     "unit": "ounces",
     "unitCode": "oz",
     "name": "low-protein all-purpose flour",
-    "description": "1 2/3 cups; 225g, such as Gold Medal Blue Label , plus more for dusting"
+    "description": "1 2/3 cups; 225g, such as Gold Medal Blue Label, plus more for dusting"
   },
   {
     "amount": 0.5,
@@ -9879,7 +9879,7 @@
     "unit": "ounces",
     "unitCode": "oz",
     "name": "unsalted",
-    "description": "2 sticks; 225g, American-style butter, straight from the fridge , cold"
+    "description": "2 sticks; 225g, American-style butter, straight from the fridge, cold"
   },
   {
     "amount": 4,
@@ -11438,7 +11438,7 @@
   },
   {
     "name": "Make sure the melted butter and milk mixture has cooled slightly before making the dough. If it’s too hot",
-    "description": "I’ve experienced this many times, the dough will become incredibly sticky like cake batter . If this happens to you, don’t worry- wait for the dough to cool down before adding more flour, if needed."
+    "description": "I’ve experienced this many times, the dough will become incredibly sticky like cake batter. If this happens to you, don’t worry- wait for the dough to cool down before adding more flour, if needed."
   },
   {
     "amount": 28,

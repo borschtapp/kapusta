@@ -9,78 +9,18 @@ import (
 	"github.com/borschtapp/kapusta/dictionary"
 )
 
-type Token struct {
-	Type        TokenType
-	Lexeme      string
-	Code        string
-	Value       float64
-	StartColumn int
-	EndColumn   int
-}
-
-func (i Token) String() string {
-	if i.Type == ItemEOF {
-		return "EOF"
-	} else if i.Type == ItemError {
-		return i.Lexeme
-	} else if len(i.Lexeme) > 10 {
-		return fmt.Sprintf("%.10q...", i.Lexeme)
-	}
-	return fmt.Sprintf("%q", i.Lexeme)
-}
-
-type TokenType int
-
-func (it TokenType) IsNumber() bool {
-	return it == ItemNumber || it == ItemNumberFraction
-}
-
-func (it TokenType) String() string {
-	switch it {
-	case ItemIdentifier:
-		return "IDENT"
-	case ItemComment:
-		return "COMMENT"
-	case ItemNumber:
-		return "NUMBER"
-	case ItemNumberFraction:
-		return "FRACTION"
-	case ItemSep:
-		return "SEPARATOR"
-	case ItemUnit:
-		return "UNIT"
-	case ItemSizeSuffix:
-		return "SIZE_SUFFIX"
-	default:
-		return fmt.Sprintf("Unknown [%d]", it)
-	}
-}
-
-// TokenType identifies the type of lex items
-const (
-	ItemError TokenType = iota // error occurred; value is text of error
-	ItemEOF
-	ItemIdentifier
-	ItemComment
-	ItemNumber
-	ItemNumberFraction
-	ItemIdentifierRange
-	ItemSep
-	ItemUnit
-	ItemSizeSuffix
-)
-
 const eof = -1
 
 type Lexer struct {
-	input string           // the string being scanned
-	dict  *dictionary.Dict // the language of the string
-	start int              // start position of this Token
-	pos   int              // current position of the input
-	width int              // width of last rune read from input
-	prev  TokenType        // previous token type
-	items chan Token       // channel of scanned items
-	done  chan struct{}    // closed by Close() to unblock the goroutine
+	input             string              // the string being scanned
+	dict              *dictionary.Dict    // the language of the string
+	start             int                 // start position of this Token
+	pos               int                 // current position of the input
+	width             int                 // width of last rune read from input
+	prev              TokenType           // previous token type
+	items             chan Token          // channel of scanned items
+	done              chan struct{}       // closed by Close() to unblock the goroutine
+	ingredientMatcher *dictionary.Matcher // optional matcher for known ingredient names
 }
 
 // stateFn represents the state of the scanner as a function that returns the next state.
@@ -88,15 +28,26 @@ type stateFn func(*Lexer) stateFn
 
 // Lex creates a new Lexer
 func Lex(input string, lang string) (*Lexer, error) {
+	return LexWithOptions(input, lang, nil)
+}
+
+// LexWithOptions creates a new Lexer with an optional list of known ingredient names.
+// The lexer will emit ItemIngredient tokens when any of them are matched in the input.
+func LexWithOptions(input string, lang string, knownIngredients []string) (*Lexer, error) {
 	dict, err := dictionary.ForLang(lang)
 	if err != nil {
 		return nil, err
 	}
+	var matcher *dictionary.Matcher
+	if len(knownIngredients) > 0 {
+		matcher = dictionary.NewMatcher(knownIngredients)
+	}
 	l := &Lexer{
-		input: input,
-		dict:  dict,
-		items: make(chan Token),
-		done:  make(chan struct{}),
+		input:             input,
+		dict:              dict,
+		items:             make(chan Token),
+		done:              make(chan struct{}),
+		ingredientMatcher: matcher,
 	}
 	go l.run()
 	return l, nil
@@ -140,12 +91,12 @@ func (l *Lexer) emit(t TokenType) {
 func (l *Lexer) emitValue(t TokenType, code string, val float64) {
 	select {
 	case l.items <- Token{
-		Type:        t,
-		Lexeme:      l.input[l.start:l.pos],
-		Code:        code,
-		Value:       val,
-		StartColumn: l.start,
-		EndColumn:   l.pos,
+		Type:       t,
+		Lexeme:     l.input[l.start:l.pos],
+		Code:       code,
+		Value:      val,
+		StartIndex: l.start,
+		EndIndex:   l.pos,
 	}:
 		l.start = l.pos
 		l.prev = t
@@ -185,10 +136,10 @@ func (l *Lexer) peek() rune {
 func (l *Lexer) errorf(format string, args ...any) stateFn {
 	select {
 	case l.items <- Token{
-		Type:        ItemError,
-		Lexeme:      fmt.Sprintf(format, args...),
-		StartColumn: l.start,
-		EndColumn:   l.pos,
+		Type:       ItemError,
+		Lexeme:     fmt.Sprintf(format, args...),
+		StartIndex: l.start,
+		EndIndex:   l.pos,
 	}:
 	case <-l.done:
 	}

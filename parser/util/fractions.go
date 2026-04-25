@@ -41,8 +41,8 @@ func ParseFraction(str string) (float64, error) {
 	// 1. Strip and sum unicode fraction symbols.
 	for symbol, value := range fractionsMap {
 		if strings.Contains(str, symbol) {
-			str = strings.Replace(str, symbol, "", 1)
 			res += value
+			str = strings.ReplaceAll(str, symbol, "")
 		}
 	}
 	str = strings.TrimSpace(str)
@@ -52,19 +52,14 @@ func ParseFraction(str string) (float64, error) {
 		start := strings.LastIndex(str[:idx], " ") + 1
 		slashToken := str[start:]
 		arr := strings.SplitN(slashToken, "/", 2)
-		num, err := strconv.ParseFloat(strings.TrimSpace(arr[0]), 64)
-		if err != nil {
-			return 0, fmt.Errorf("unable to parse fraction from %q: %w", str, err)
+		if len(arr) == 2 {
+			num, err1 := strconv.ParseFloat(strings.TrimSpace(arr[0]), 64)
+			den, err2 := strconv.ParseFloat(strings.TrimSpace(arr[1]), 64)
+			if err1 == nil && err2 == nil && den != 0 {
+				res += num / den
+				str = strings.TrimSpace(str[:start])
+			}
 		}
-		den, err := strconv.ParseFloat(strings.TrimSpace(arr[1]), 64)
-		if err != nil {
-			return 0, fmt.Errorf("unable to parse fraction from %q: %w", str, err)
-		}
-		if den == 0 {
-			return 0, fmt.Errorf("unable to parse fraction from %q: division by zero", str)
-		}
-		res += num / den
-		str = strings.TrimSpace(str[:start])
 	}
 
 	// 3. Parse remaining integer/float prefix.
@@ -90,10 +85,9 @@ func FormatFraction(f float64) string {
 			if integer == 0 {
 				return key
 			}
-
-			return strconv.FormatInt(int64(integer), 10) + " " + key
+			return fmt.Sprintf("%d %s", int64(integer), key)
 		}
 	}
 
-	return fmt.Sprintf("%v", f)
+	return strconv.FormatFloat(f, 'g', -1, 64)
 }

@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestParseTestdataIngredientsSnapshot(t *testing.T) {
+func TestParseIngredientsTestdataSnapshot(t *testing.T) {
 	file, err := os.Open("testdata/ingredients.txt")
 	if err != nil {
 		t.Fatalf("failed to open test data file: %v", err)
@@ -22,7 +22,7 @@ func TestParseTestdataIngredientsSnapshot(t *testing.T) {
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		line := scanner.Text()
-		ing, err := Parse(line, Options{Lang: "en"})
+		ing, err := ParseIngredient(line, Options{Lang: "en"})
 		assert.NoError(t, err)
 		results = append(results, ing)
 	}
@@ -61,10 +61,10 @@ func TestParseTestdataIngredientsSnapshot(t *testing.T) {
 	}
 }
 
-// go test -bench=. -benchmem -count=6 ./parser/ingredient/ > benchmarks.txt
-// go test -bench=. -benchmem -count=6 ./parser/ingredient/ > new.txt
+// go test -bench=. -benchmem -count=6 ./... > benchmarks.txt
+// go test -bench=. -benchmem -count=6 ./... > new.txt
 // benchstat benchmarks.txt new.txt
-func BenchmarkParseTestdataIngredients(b *testing.B) {
+func BenchmarkParseIngredientsTestdata(b *testing.B) {
 	data, err := os.ReadFile("testdata/ingredients.txt")
 	if err != nil {
 		b.Fatalf("failed to open test data file: %v", err)
@@ -74,7 +74,7 @@ func BenchmarkParseTestdataIngredients(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		for _, line := range lines {
-			_, _ = Parse(line, Options{Lang: "en"})
+			_, _ = ParseIngredient(line, Options{Lang: "en"})
 		}
 	}
 }

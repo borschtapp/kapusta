@@ -38,6 +38,14 @@ Units: map[string][]string{
 {{range .Units}}{{printf "%q" .Key}}: { {{range .Vals}}{{printf "%q" .}}, {{end}} },
 {{end}}
 },
+{{if .TimeUnits}}TimeUnits: map[string][]string{
+{{range .TimeUnits}}{{printf "%q" .Key}}: { {{range .Vals}}{{printf "%q" .}}, {{end}} },
+{{end}}
+},{{end}}
+{{if .TemperatureUnits}}TemperatureUnits: map[string][]string{
+{{range .TemperatureUnits}}{{printf "%q" .Key}}: { {{range .Vals}}{{printf "%q" .}}, {{end}} },
+{{end}}
+},{{end}}
 {{if .SizeSuffix}}SizeSuffix: []string{ {{range .SizeSuffix}}{{printf "%q" .}}, {{end}} },{{end}}
 {{if .QuantityBetween}}QuantityBetween: []string{ {{range .QuantityBetween}}{{printf "%q" .}}, {{end}} },{{end}}
 Numbers: map[string]float64{
@@ -66,11 +74,13 @@ type numberEntry struct {
 }
 
 type dictionaryData struct {
-	Lang            string
-	Units           []unitEntry
-	SizeSuffix      []string
-	QuantityBetween []string
-	Numbers         []numberEntry
+	Lang             string
+	Units            []unitEntry
+	TimeUnits        []unitEntry
+	TemperatureUnits []unitEntry
+	SizeSuffix       []string
+	QuantityBetween  []string
+	Numbers          []numberEntry
 }
 
 func sortedUnitEntries(m map[string][]string) []unitEntry {
@@ -143,14 +153,18 @@ func main() {
 		lang := strings.TrimSuffix(e.Name(), ".yml")
 
 		units := sortedUnitEntries(d.Units)
+		timeUnits := sortedUnitEntries(d.TimeUnits)
+		tempUnits := sortedUnitEntries(d.TemperatureUnits)
 		numbers := sortedNumberEntries(d.Numbers)
 
 		langs = append(langs, dictionaryData{
-			Lang:            lang,
-			Units:           units,
-			SizeSuffix:      d.SizeSuffix,
-			QuantityBetween: d.QuantityBetween,
-			Numbers:         numbers,
+			Lang:             lang,
+			Units:            units,
+			TimeUnits:        timeUnits,
+			TemperatureUnits: tempUnits,
+			SizeSuffix:       d.SizeSuffix,
+			QuantityBetween:  d.QuantityBetween,
+			Numbers:          numbers,
 		})
 	}
 

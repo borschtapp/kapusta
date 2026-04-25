@@ -258,3 +258,14 @@ numbers:
   million: 1000000
   milliarde: 1000000000
   billion: 1000000000000
+
+time_units:
+  day: [d, t, tg, tag, tage, tagen]
+  hour: [h, std, stunden, stunde]
+  minute: [m, min, minuten, minute]
+  second: [s, sek, sekunden, sekunde]
+
+temperature_units:
+  C: ["°C", "C", "Celsius", "Grad"]
+  F: ["°F", "F", "Fahrenheit"]
+  K: ["°K", "K", "Kelvin"]

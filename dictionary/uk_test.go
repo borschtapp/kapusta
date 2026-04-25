@@ -20,3 +20,54 @@ func TestUkrainianIngredients(t *testing.T) {
 		{"2-3 яйця", model.Ingredient{Amount: 2, MaxAmount: 3, Name: "яйця"}},
 	})
 }
+
+func TestUkrainianInstructions(t *testing.T) {
+	runInstructionTests(t, "uk", []instructionTestCase{
+		{
+			"Варіть 15 хвилин.",
+			nil,
+			model.Instruction{
+				Text:     "Варіть 15 хвилин.",
+				Markdown: `Варіть [15 хвилин](timer:900).`,
+				Timers:   []model.Timer{{Value: 900, Raw: "15 хвилин"}},
+			},
+		},
+		{
+			"Смажте 2-3 хв.",
+			nil,
+			model.Instruction{
+				Text:     "Смажте 2-3 хв.",
+				Markdown: `Смажте [2-3 хв](timer:120?max=180).`,
+				Timers:   []model.Timer{{Value: 120, MaxValue: 180, Raw: "2-3 хв"}},
+			},
+		},
+		{
+			"Додайте сіль та перець.",
+			[]string{"сіль", "перець"},
+			model.Instruction{
+				Text:        "Додайте сіль та перець.",
+				Markdown:    "Додайте [сіль](ingredient:kap0) та [перець](ingredient:kap1).",
+				Ingredients: []model.IngredientRef{{ID: "kap0", Name: "сіль"}, {ID: "kap1", Name: "перець"}},
+			},
+		},
+		{
+			"Випікати при 180°C.",
+			nil,
+			model.Instruction{
+				Text:         "Випікати при 180°C.",
+				Markdown:     "Випікати при [180°C](temp:180?unit=C).",
+				Temperatures: []model.Temperature{{Value: 180, Unit: "C", Raw: "180°C"}},
+			},
+		},
+		{
+			"Додайте 250г борошна.",
+			nil,
+			model.Instruction{
+				Text:        "Додайте 250г борошна.",
+				Markdown:    "Додайте [250г](amount:250?unit=g) [борошна](ingredient:kap0).",
+				Amounts:     []model.Amount{{Value: 250, Unit: "g", Raw: "250г"}},
+				Ingredients: []model.IngredientRef{{ID: "kap0", Name: "борошна"}},
+			},
+		},
+	})
+}

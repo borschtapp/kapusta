@@ -36,6 +36,17 @@ var dictMap = map[string]*Dict{
 			"tbsp":  {"el.", "el", "EL", "esslöffel", "essloeffel", "esslöffeln", "essl", "essl."},
 			"tsp":   {"tl.", "tl", "TL", "teelöffel", "teeloeffel", "teelöffeln"},
 		},
+		TimeUnits: map[string][]string{
+			"day":    {"d", "t", "tg", "tag", "tage", "tagen"},
+			"hour":   {"h", "std", "stunden", "stunde"},
+			"minute": {"m", "min", "minuten", "minute"},
+			"second": {"s", "sek", "sekunden", "sekunde"},
+		},
+		TemperatureUnits: map[string][]string{
+			"C": {"°C", "C", "Celsius", "Grad"},
+			"F": {"°F", "F", "Fahrenheit"},
+			"K": {"°K", "K", "Kelvin"},
+		},
 		SizeSuffix:      []string{"mini", "klein", "kleiner", "kleine", "kleines", "mittel", "mittlerer", "mittlere", "mittleres", "groß", "gross", "großer", "große", "großes", "grosser", "grosse", "grosses", "xl", "xxl", "jumbo"},
 		QuantityBetween: []string{"bis", "oder"},
 		Numbers: map[string]float64{
@@ -127,6 +138,17 @@ var dictMap = map[string]*Dict{
 			"tbsp":  {"tbsp.", "tbsp", "T", "T.", "tablespoon", "tablespoons", "tbs.", "tbs", "tbl", "tbls", "tbspn", "tblsp", "tbsps"},
 			"tsp":   {"tsp.", "tsp", "t", "t.", "teaspoon", "teaspoons", "tsps", "tspn"},
 		},
+		TimeUnits: map[string][]string{
+			"day":    {"d", "day", "days"},
+			"hour":   {"h", "hr", "hrs", "hour", "hours"},
+			"minute": {"min", "mins", "minute", "minutes"},
+			"second": {"s", "sec", "secs", "second", "seconds"},
+		},
+		TemperatureUnits: map[string][]string{
+			"C": {"°C", "C", "Celsius", "Grad"},
+			"F": {"°F", "F", "Fahrenheit"},
+			"K": {"°K", "K", "Kelvin"},
+		},
 		SizeSuffix:      []string{"mini", "small", "medium", "large", "extra large", "xl", "xxl", "jumbo"},
 		QuantityBetween: []string{"to", "or"},
 		Numbers: map[string]float64{
@@ -201,6 +223,17 @@ var dictMap = map[string]*Dict{
 			"stick": {"palo", "palos", "rama", "ramas"},
 			"tbsp":  {"cdas.", "cdas", "cucharada", "cucharadas"},
 			"tsp":   {"cda.", "cda", "cucharadita", "cucharaditas"},
+		},
+		TimeUnits: map[string][]string{
+			"day":    {"d", "día", "días"},
+			"hour":   {"h", "horas", "hora"},
+			"minute": {"min", "minutos", "minuto"},
+			"second": {"s", "segundos", "segundo"},
+		},
+		TemperatureUnits: map[string][]string{
+			"C": {"°C", "C", "Celsius", "Grados"},
+			"F": {"°F", "F", "Fahrenheit"},
+			"K": {"°K", "K", "Kelvin"},
 		},
 		SizeSuffix:      []string{"mini", "pequeño", "pequeña", "pequeños", "pequeñas", "mediano", "mediana", "medianos", "medianas", "grande", "grandes", "xl", "xxl", "jumbo"},
 		QuantityBetween: []string{"a", "al", "o"},
@@ -281,6 +314,17 @@ var dictMap = map[string]*Dict{
 			"tbsp":  {"c.à.s", "c. à s.", "cuillère à soupe", "cuillères à soupe", "c.a.s", "c a s"},
 			"tsp":   {"c.à.c", "c. à c.", "cuillère à café", "cuillères à café", "c.a.c", "c a c"},
 		},
+		TimeUnits: map[string][]string{
+			"day":    {"j", "jour", "jours"},
+			"hour":   {"h", "heure", "heures"},
+			"minute": {"min", "min.", "minute", "minutes"},
+			"second": {"s", "seconde", "secondes"},
+		},
+		TemperatureUnits: map[string][]string{
+			"C": {"°C", "C", "Celsius", "Degrés"},
+			"F": {"°F", "F", "Fahrenheit"},
+			"K": {"°K", "K", "Kelvin"},
+		},
 		SizeSuffix:      []string{"mini", "petit", "petite", "petits", "petites", "moyen", "moyenne", "moyens", "moyennes", "grand", "grande", "grands", "grandes", "xl", "xxl", "jumbo"},
 		QuantityBetween: []string{"à", "a", "ou"},
 		Numbers: map[string]float64{
@@ -356,6 +400,17 @@ var dictMap = map[string]*Dict{
 			"stick": {"stecca", "stecche"},
 			"tbsp":  {"cucchiai", "cucchiaio", "cucchiaiata", "cucchiaiate"},
 			"tsp":   {"cucchiaino", "cucchiaini"},
+		},
+		TimeUnits: map[string][]string{
+			"day":    {"d", "g", "giorno", "giorni"},
+			"hour":   {"h", "ore", "ora"},
+			"minute": {"min", "minuti", "minuto"},
+			"second": {"s", "secondi", "secondo"},
+		},
+		TemperatureUnits: map[string][]string{
+			"C": {"°C", "C", "Celsius", "Gradi"},
+			"F": {"°F", "F", "Fahrenheit"},
+			"K": {"°K", "K", "Kelvin"},
 		},
 		SizeSuffix:      []string{"mini", "piccolo", "piccola", "piccoletti", "piccoletta", "medio", "media", "grande", "grossa", "grosso", "xl", "xxl", "jumbo"},
 		QuantityBetween: []string{"a", "al", "o"},
@@ -445,6 +500,17 @@ var dictMap = map[string]*Dict{
 			"stick": {"паличка", "палички", "паличок"},
 			"tbsp":  {"ст. л.", "ст.л.", "столова ложка", "столові ложки", "столових ложок"},
 			"tsp":   {"ч. л.", "ч.л.", "чайна ложка", "чайні ложки", "чайних ложок"},
+		},
+		TimeUnits: map[string][]string{
+			"day":    {"дн", "день", "дня", "днів", "доба", "доби", "добу"},
+			"hour":   {"г", "год", "годин", "години", "година"},
+			"minute": {"хв", "хвилин", "хвилини", "хвилина"},
+			"second": {"сек", "секунд", "секунди", "секунда"},
+		},
+		TemperatureUnits: map[string][]string{
+			"C": {"°C", "C", "Цельсія", "Градусів"},
+			"F": {"°F", "F", "Фаренгейта"},
+			"K": {"°K", "K", "Кельвіна"},
 		},
 		SizeSuffix:      []string{"міні", "маленький", "маленька", "маленьке", "малий", "мала", "мале", "середній", "середня", "середнє", "великий", "велика", "велике", "xl", "xxl", "джамбо"},
 		QuantityBetween: []string{"до", "або"},

@@ -10,12 +10,16 @@ import (
 
 // Dict is a per-language lookup table for units, numbers, quantity-range words, and time expressions.
 type Dict struct {
-	Units           map[string][]string `yaml:"units"`
-	QuantityBetween []string            `yaml:"quantity_between"`
-	Numbers         map[string]float64  `yaml:"numbers"`
-	SizeSuffix      []string            `yaml:"size_suffix"`
+	Units            map[string][]string `yaml:"units"`
+	QuantityBetween  []string            `yaml:"quantity_between"`
+	Numbers          map[string]float64  `yaml:"numbers"`
+	SizeSuffix       []string            `yaml:"size_suffix"`
+	TimeUnits        map[string][]string `yaml:"time_units"`
+	TemperatureUnits map[string][]string `yaml:"temperature_units"`
 
 	unitsTrie *trieNode
+	timeTrie  *trieNode
+	tempTrie  *trieNode
 
 	numbersIdx    map[string]float64
 	quantityIdx   map[string]struct{}
@@ -62,8 +66,8 @@ func (n *trieNode) find(input string) (variant string, code string, ok bool) {
 		pos += w
 
 		if node.isEnd {
-			r, _ := utf8.DecodeRuneInString(input[pos:])
-			if pos == len(input) || (!unicode.IsLetter(r) && !unicode.IsDigit(r)) {
+			nextR, _ := utf8.DecodeRuneInString(input[pos:])
+			if pos == len(input) || !isAlphaNumeric(nextR) {
 				matchLen = pos
 				code = node.code
 				ok = true
@@ -77,6 +81,10 @@ func (n *trieNode) find(input string) (variant string, code string, ok bool) {
 	return
 }
 
+func isAlphaNumeric(r rune) bool {
+	return unicode.IsLetter(r) || unicode.IsDigit(r) || r == '-' || r == '\'' || r == '’'
+}
+
 // Matcher provides O(n) prefix matching for a word set using a trie.
 type Matcher struct {
 	root *trieNode
@@ -84,11 +92,7 @@ type Matcher struct {
 
 // NewMatcher builds a trie-backed matcher from a word list.
 func NewMatcher(words []string) *Matcher {
-	m := &Matcher{root: &trieNode{children: make(map[rune]*trieNode)}}
-	for _, w := range words {
-		m.root.add(w, "")
-	}
-	return m
+	return &Matcher{root: newTrie(map[string][]string{"": words})}
 }
 
 // Find returns the longest word from the set that prefixes input (with word-boundary check).
@@ -97,32 +101,58 @@ func (m *Matcher) Find(input string) (string, bool) {
 	return v, ok
 }
 
-func (d *Dict) buildTrie() {
-	d.unitsTrie = &trieNode{children: make(map[rune]*trieNode)}
-	for code, variants := range d.Units {
+func newTrie(data map[string][]string) *trieNode {
+	if len(data) == 0 {
+		return nil
+	}
+	root := &trieNode{children: make(map[rune]*trieNode)}
+	for code, variants := range data {
 		for _, v := range variants {
-			d.unitsTrie.add(v, code)
+			root.add(v, code)
 		}
 	}
+	return root
+}
+
+func (d *Dict) buildTrie() {
+	d.unitsTrie = newTrie(d.Units)
+	d.timeTrie = newTrie(d.TimeUnits)
+	d.tempTrie = newTrie(d.TemperatureUnits)
 
 	d.numbersIdx = make(map[string]float64, len(d.Numbers))
 	for k, v := range d.Numbers {
 		d.numbersIdx[strings.ToLower(k)] = v
 	}
 
-	d.quantityIdx = make(map[string]struct{}, len(d.QuantityBetween))
-	for _, v := range d.QuantityBetween {
-		d.quantityIdx[strings.ToLower(v)] = struct{}{}
-	}
+	d.quantityIdx = buildIdx(d.QuantityBetween)
+	d.sizeSuffixIdx = buildIdx(d.SizeSuffix)
+}
 
-	d.sizeSuffixIdx = make(map[string]struct{}, len(d.SizeSuffix))
-	for _, v := range d.SizeSuffix {
-		d.sizeSuffixIdx[strings.ToLower(v)] = struct{}{}
+func buildIdx(items []string) map[string]struct{} {
+	idx := make(map[string]struct{}, len(items))
+	for _, v := range items {
+		idx[strings.ToLower(v)] = struct{}{}
 	}
+	return idx
 }
 
 func (d *Dict) FindUnit(input string) (string, string, bool) {
-	return d.unitsTrie.find(input)
+	return d.FindTrie(input, d.unitsTrie)
+}
+
+func (d *Dict) FindTimeUnit(input string) (string, string, bool) {
+	return d.FindTrie(input, d.timeTrie)
+}
+
+func (d *Dict) FindTemperatureUnit(input string) (string, string, bool) {
+	return d.FindTrie(input, d.tempTrie)
+}
+
+func (d *Dict) FindTrie(input string, trie *trieNode) (string, string, bool) {
+	if trie == nil {
+		return "", "", false
+	}
+	return trie.find(input)
 }
 
 func (d *Dict) FindNumber(str string) (float64, bool) {
@@ -142,6 +172,18 @@ func (d *Dict) FindSizeSuffix(str string) (string, bool) {
 		return str, true
 	}
 	return "", false
+}
+
+var timeUnitSeconds = map[string]int{
+	"second": 1,
+	"minute": 60,
+	"hour":   3600,
+	"day":    86400,
+}
+
+// TimeUnitSeconds returns the number of seconds for a given time unit code.
+func TimeUnitSeconds(code string) int {
+	return timeUnitSeconds[code]
 }
 
 func ForLang(lang string) (*Dict, error) {

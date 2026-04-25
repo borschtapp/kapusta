@@ -256,3 +256,14 @@ numbers:
   million: 1000000
   billion: 1000000000
   trillion: 1000000000000
+
+time_units:
+  day: [d, day, days]
+  hour: [h, hr, hrs, hour, hours]
+  minute: [min, mins, minute, minutes]
+  second: [s, sec, secs, second, seconds]
+
+temperature_units:
+  C: ["°C", "C", "Celsius", "Grad"]
+  F: ["°F", "F", "Fahrenheit"]
+  K: ["°K", "K", "Kelvin"]

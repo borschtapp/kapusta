@@ -269,3 +269,14 @@ numbers:
   milione: 1000000
   miliardo: 1000000000
   trilione: 1000000000000
+
+time_units:
+  day: [d, g, giorno, giorni]
+  hour: [h, ore, ora]
+  minute: [min, minuti, minuto]
+  second: [s, secondi, secondo]
+
+temperature_units:
+  C: ["°C", "C", "Celsius", "Gradi"]
+  F: ["°F", "F", "Fahrenheit"]
+  K: ["°K", "K", "Kelvin"]

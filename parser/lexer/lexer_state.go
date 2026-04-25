@@ -18,16 +18,16 @@ func lexInsideAction(l *Lexer) stateFn {
 	// Pipe symbols separate and are emitted.
 	for {
 		switch r := l.scan(); {
-		case r == eof || r == '\n':
+		case r == eof:
 			l.emit(ItemEOF)
 			return nil
-		case unicode.IsSpace(r):
+		case unicode.IsSpace(r) || r == '\n':
 			l.ignore()
 		case r == '/' || r == '|':
 			l.emit(ItemSep)
 		case r == '(':
 			return lexBracket
-		case r == '–' || r == '—': // en dash / em dash as range separator
+		case r == '–' || r == '—': // non-standard dashes as range separator
 			if l.prev.IsNumber() {
 				l.emit(ItemIdentifierRange)
 			} else {
@@ -160,6 +160,23 @@ func lexIdentifier(l *Lexer) stateFn {
 		l.pos = l.start + len(variant)
 		l.emitValue(ItemUnit, code, 0)
 		return lexInsideAction
+	}
+	if variant, code, ok := l.dict.FindTimeUnit(l.input[l.start:]); ok {
+		l.pos = l.start + len(variant)
+		l.emitValue(ItemTimeUnit, code, 0)
+		return lexInsideAction
+	}
+	if variant, code, ok := l.dict.FindTemperatureUnit(l.input[l.start:]); ok {
+		l.pos = l.start + len(variant)
+		l.emitValue(ItemTemperatureUnit, code, 0)
+		return lexInsideAction
+	}
+	if l.ingredientMatcher != nil {
+		if matched, ok := l.ingredientMatcher.Find(l.input[l.start:]); ok {
+			l.pos = l.start + len(matched)
+			l.emit(ItemIngredient)
+			return lexInsideAction
+		}
 	}
 
 	ident := l.input[l.start:l.pos]

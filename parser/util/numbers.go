@@ -1,16 +1,17 @@
 package util
 
 import (
-	"errors"
+	"fmt"
 	"strconv"
 	"strings"
 )
 
 func ParseFloat(str string) (float64, error) {
-	str = strings.Replace(strings.TrimSpace(str), ",", ".", 1)
-	if i, err := strconv.ParseFloat(str, 64); err == nil {
-		return i, nil
+	str = strings.TrimSpace(str)
+	str = strings.Replace(str, ",", ".", 1)
+	val, err := strconv.ParseFloat(str, 64)
+	if err != nil {
+		return 0, fmt.Errorf("unable to parse float from %q: %w", str, err)
 	}
-
-	return 0, errors.New("unable to parse float from string: " + str)
+	return val, nil
 }

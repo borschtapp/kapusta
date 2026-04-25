@@ -1,0 +1,12 @@
+goos: windows
+goarch: amd64
+pkg: github.com/borschtapp/kapusta/parser/ingredient
+cpu: AMD Ryzen 7 5800X 8-Core Processor             
+BenchmarkParseTestdataIngredients-16    	      56	  23663189 ns/op	 2365689 B/op	   23322 allocs/op
+BenchmarkParseTestdataIngredients-16    	      60	  22268497 ns/op	 2370246 B/op	   23322 allocs/op
+BenchmarkParseTestdataIngredients-16    	      62	  21297516 ns/op	 2381812 B/op	   23322 allocs/op
+BenchmarkParseTestdataIngredients-16    	      61	  21399954 ns/op	 2350261 B/op	   23322 allocs/op
+BenchmarkParseTestdataIngredients-16    	      60	  21105123 ns/op	 2370935 B/op	   23322 allocs/op
+BenchmarkParseTestdataIngredients-16    	      60	  21383717 ns/op	 2395223 B/op	   23322 allocs/op
+PASS
+ok  	github.com/borschtapp/kapusta/parser/ingredient	11.459s

@@ -23,7 +23,7 @@ go get github.com/borschtapp/kapusta
 ### Parsing an ingredient
 
 ```go
-ing, err := kapusta.ParseIngredient("1 1/2 cups diced tomatoes, drained", kapusta.IngredientOptions{Lang: "en"})
+ing, err := kapusta.ParseIngredient("1 1/2 cups diced tomatoes, drained")
 if err != nil {
     log.Fatal(err)
 }

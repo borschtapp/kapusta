@@ -1,0 +1,10 @@
+.gitattributes export-ignore
+.gitignore export-ignore
+benchmarks.txt export-ignore
+
+testdata export-ignore
+testdata/** export-ignore
+parser/ingredient/testdata export-ignore
+parser/ingredient/testdata/** export-ignore
+parser/instruction/testdata export-ignore
+parser/instruction/testdata/** export-ignore

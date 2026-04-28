@@ -101,8 +101,15 @@ type Options struct {
 	IDPrefix           string                // prefix for auto-generated ingredient IDs (e.g. "kap"); defaults to defaultIDPrefix
 }
 
-// ParseInstruction extracts timers, temperatures, amounts, and ingredients from an instruction text.
 func ParseInstruction(text string, opts Options) (model.Instruction, error) {
+	return lexer.Detect(opts.Lang, func(l string) (model.Instruction, int, error) {
+		o := opts
+		o.Lang = l
+		return parseInstruction(text, o)
+	})
+}
+
+func parseInstruction(text string, opts Options) (model.Instruction, int, error) {
 	inst := model.Instruction{
 		Text:     text,
 		Markdown: text,
@@ -117,11 +124,11 @@ func ParseInstruction(text string, opts Options) (model.Instruction, error) {
 
 	l, err := lexer.LexWithOptions(text, opts.Lang, knownNames)
 	if err != nil {
-		return inst, err
+		return inst, 0, err
 	}
 	tokens, err := collectTokens(l)
 	if err != nil {
-		return inst, err
+		return inst, 0, err
 	}
 
 	var reps []replacement
@@ -164,7 +171,7 @@ func ParseInstruction(text string, opts Options) (model.Instruction, error) {
 	}
 
 	inst.Markdown = applyReplacements(text, reps)
-	return inst, nil
+	return inst, l.Score(), nil
 }
 
 // parseQuantity extracts a numeric value or range from tokens starting at i.
@@ -209,6 +216,16 @@ func collectTokens(l *lexer.Lexer) ([]lexer.Token, error) {
 		if err != nil {
 			return nil, err
 		}
+
+		if tok.Type == lexer.ItemComment && len(tokens) > 0 {
+			prev := &tokens[len(tokens)-1]
+			if prev.ShouldMerge(tok) {
+				prev.Lexeme += tok.Lexeme
+				prev.EndIndex = tok.EndIndex
+				continue
+			}
+		}
+
 		tokens = append(tokens, tok)
 	}
 	return tokens, nil

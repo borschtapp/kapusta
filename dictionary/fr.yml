@@ -35,7 +35,6 @@ units:
     - pied
     - pieds
   in:
-    - in
     - in.
     - pouce
     - pouces

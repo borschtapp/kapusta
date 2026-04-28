@@ -1,50 +1,54 @@
+# To compare the performance of the current code with the previous version, you can run the following commands:
+# go test -bench=. -benchmem -count=6 ./... > new.txt
+# benchstat benchmarks.txt new.txt
+# This will show you the difference in performance, memory and allocations between the two versions of the code.
 PASS
-ok  	github.com/borschtapp/kapusta	0.362s
+ok  	github.com/borschtapp/kapusta	0.403s
 PASS
-ok  	github.com/borschtapp/kapusta/dictionary	1.563s
+ok  	github.com/borschtapp/kapusta/dictionary	2.499s
 ?   	github.com/borschtapp/kapusta/dictionary/cmd/gen	[no test files]
 ?   	github.com/borschtapp/kapusta/model	[no test files]
 goos: windows
 goarch: amd64
 pkg: github.com/borschtapp/kapusta/parser/ingredient
 cpu: AMD Ryzen 7 5800X 8-Core Processor
-BenchmarkParseIngredientsTestdata-16    	     126	  10943720 ns/op	  965554 B/op	   17041 allocs/op
-BenchmarkParseIngredientsTestdata-16    	     122	   9633601 ns/op	  959913 B/op	   17010 allocs/op
-BenchmarkParseIngredientsTestdata-16    	     127	   9430689 ns/op	  960193 B/op	   17012 allocs/op
-BenchmarkParseIngredientsTestdata-16    	     126	   9490311 ns/op	  960252 B/op	   17013 allocs/op
-BenchmarkParseIngredientsTestdata-16    	     126	   9504626 ns/op	  959884 B/op	   17010 allocs/op
-BenchmarkParseIngredientsTestdata-16    	     127	   9729861 ns/op	  960128 B/op	   17012 allocs/op
-BenchmarkParseIngredient-16             	  208796	      5603 ns/op	     392 B/op	       7 allocs/op
-BenchmarkParseIngredient-16             	  205807	      5426 ns/op	     392 B/op	       7 allocs/op
-BenchmarkParseIngredient-16             	  234999	      5447 ns/op	     392 B/op	       7 allocs/op
-BenchmarkParseIngredient-16             	  219950	      5498 ns/op	     392 B/op	       7 allocs/op
-BenchmarkParseIngredient-16             	  212929	      5690 ns/op	     392 B/op	       7 allocs/op
-BenchmarkParseIngredient-16             	  202408	      5657 ns/op	     392 B/op	       7 allocs/op
+BenchmarkParseIngredientsTestdata-16    	     123	   9719116 ns/op	 1107581 B/op	   19331 allocs/op
+BenchmarkParseIngredientsTestdata-16    	     124	   9996599 ns/op	 1107458 B/op	   19329 allocs/op
+BenchmarkParseIngredientsTestdata-16    	     100	  10305793 ns/op	 1107149 B/op	   19327 allocs/op
+BenchmarkParseIngredientsTestdata-16    	     100	  11234240 ns/op	 1108817 B/op	   19336 allocs/op
+BenchmarkParseIngredientsTestdata-16    	     100	  10620469 ns/op	 1108041 B/op	   19335 allocs/op
+BenchmarkParseIngredientsTestdata-16    	     100	  11270157 ns/op	 1107853 B/op	   19333 allocs/op
+BenchmarkParseIngredient-16             	  189400	      6413 ns/op	     456 B/op	       8 allocs/op
+BenchmarkParseIngredient-16             	  176542	      6365 ns/op	     456 B/op	       8 allocs/op
+BenchmarkParseIngredient-16             	  184630	      6206 ns/op	     456 B/op	       8 allocs/op
+BenchmarkParseIngredient-16             	  197269	      6366 ns/op	     456 B/op	       8 allocs/op
+BenchmarkParseIngredient-16             	  205440	      6114 ns/op	     456 B/op	       8 allocs/op
+BenchmarkParseIngredient-16             	  188882	      6610 ns/op	     456 B/op	       8 allocs/op
 PASS
-ok  	github.com/borschtapp/kapusta/parser/ingredient	20.781s
+ok  	github.com/borschtapp/kapusta/parser/ingredient	16.582s
 goos: windows
 goarch: amd64
 pkg: github.com/borschtapp/kapusta/parser/instruction
 cpu: AMD Ryzen 7 5800X 8-Core Processor
-BenchmarkParseInstruction-16    	  142369	      8227 ns/op	    1661 B/op	      20 allocs/op
-BenchmarkParseInstruction-16    	  142132	      8702 ns/op	    1659 B/op	      20 allocs/op
-BenchmarkParseInstruction-16    	  142172	      8522 ns/op	    1659 B/op	      20 allocs/op
-BenchmarkParseInstruction-16    	  144646	      8167 ns/op	    1659 B/op	      20 allocs/op
-BenchmarkParseInstruction-16    	  146677	      8107 ns/op	    1659 B/op	      20 allocs/op
-BenchmarkParseInstruction-16    	  150090	      8068 ns/op	    1659 B/op	      20 allocs/op
+BenchmarkParseInstruction-16    	  120417	      9232 ns/op	    1772 B/op	      21 allocs/op
+BenchmarkParseInstruction-16    	  127068	      9347 ns/op	    1771 B/op	      21 allocs/op
+BenchmarkParseInstruction-16    	  133971	      8941 ns/op	    1771 B/op	      21 allocs/op
+BenchmarkParseInstruction-16    	  139147	     14674 ns/op	    1771 B/op	      21 allocs/op
+BenchmarkParseInstruction-16    	   82525	     14707 ns/op	    1771 B/op	      21 allocs/op
+BenchmarkParseInstruction-16    	   79539	     15507 ns/op	    1771 B/op	      21 allocs/op
 PASS
-ok  	github.com/borschtapp/kapusta/parser/instruction	7.398s
+ok  	github.com/borschtapp/kapusta/parser/instruction	8.212s
 goos: windows
 goarch: amd64
 pkg: github.com/borschtapp/kapusta/parser/lexer
 cpu: AMD Ryzen 7 5800X 8-Core Processor
-BenchmarkLex-16    	  235705	      4911 ns/op	     321 B/op	       4 allocs/op
-BenchmarkLex-16    	  242720	      5358 ns/op	     320 B/op	       4 allocs/op
-BenchmarkLex-16    	  205498	      5562 ns/op	     320 B/op	       4 allocs/op
-BenchmarkLex-16    	  226312	      5147 ns/op	     320 B/op	       4 allocs/op
-BenchmarkLex-16    	  203774	      5393 ns/op	     320 B/op	       4 allocs/op
-BenchmarkLex-16    	  236025	      5112 ns/op	     320 B/op	       4 allocs/op
+BenchmarkLex-16    	  220262	      5418 ns/op	     337 B/op	       4 allocs/op
+BenchmarkLex-16    	  220534	      5039 ns/op	     336 B/op	       4 allocs/op
+BenchmarkLex-16    	  241188	      6318 ns/op	     336 B/op	       4 allocs/op
+BenchmarkLex-16    	  133792	      8463 ns/op	     336 B/op	       4 allocs/op
+BenchmarkLex-16    	  143234	      8196 ns/op	     336 B/op	       4 allocs/op
+BenchmarkLex-16    	  146791	      8058 ns/op	     336 B/op	       4 allocs/op
 PASS
-ok  	github.com/borschtapp/kapusta/parser/lexer	7.261s
+ok  	github.com/borschtapp/kapusta/parser/lexer	7.523s
 PASS
-ok  	github.com/borschtapp/kapusta/parser/util	0.197s
+ok  	github.com/borschtapp/kapusta/parser/util	0.189s

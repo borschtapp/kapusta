@@ -22,7 +22,7 @@ func TestParseIngredientsTestdataSnapshot(t *testing.T) {
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		line := scanner.Text()
-		ing, err := ParseIngredient(line, Options{Lang: "en"})
+		ing, err := ParseIngredient(line, Options{})
 		assert.NoError(t, err)
 		results = append(results, ing)
 	}
@@ -61,9 +61,6 @@ func TestParseIngredientsTestdataSnapshot(t *testing.T) {
 	}
 }
 
-// go test -bench=. -benchmem -count=6 ./... > benchmarks.txt
-// go test -bench=. -benchmem -count=6 ./... > new.txt
-// benchstat benchmarks.txt new.txt
 func BenchmarkParseIngredientsTestdata(b *testing.B) {
 	data, err := os.ReadFile("testdata/ingredients.txt")
 	if err != nil {

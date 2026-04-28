@@ -45,7 +45,7 @@ func TestFindLongestMatch(t *testing.T) {
 }
 
 func TestFindTimeUnit(t *testing.T) {
-	dict, err := ForLang("en")
+	dict, err := ForLanguage("en")
 	require.NoError(t, err)
 
 	tests := []struct {
@@ -157,12 +157,12 @@ func TestForLangFallback(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.lang, func(t *testing.T) {
-			dict, err := ForLang(tt.lang)
+			dict, err := ForLanguage(tt.lang)
 			assert.NoError(t, err)
 			assert.NotNil(t, dict)
 		})
 	}
 
-	_, err := ForLang("xx")
+	_, err := ForLanguage("xx")
 	assert.Error(t, err)
 }

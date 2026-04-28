@@ -15,11 +15,19 @@ type Options struct {
 }
 
 func ParseIngredient(str string, opts Options) (model.Ingredient, error) {
+	return lexer.Detect(opts.Lang, func(l string) (model.Ingredient, int, error) {
+		o := opts
+		o.Lang = l
+		return parseIngredient(str, o)
+	})
+}
+
+func parseIngredient(str string, opts Options) (model.Ingredient, int, error) {
 	str = strings.ReplaceAll(str, "⁄", "/")
 
 	l, err := lexer.Lex(str, opts.Lang)
 	if err != nil {
-		return model.Ingredient{}, fmt.Errorf("lex error: %w", err)
+		return model.Ingredient{}, 0, fmt.Errorf("lex error: %w", err)
 	}
 	defer l.Close()
 
@@ -43,9 +51,12 @@ func ParseIngredient(str string, opts Options) (model.Ingredient, error) {
 		isMixed := tok.Type == lexer.ItemNumberFraction && prev.Type == lexer.ItemNumber
 		isAmount := tok.Type.IsNumber() && !isHyphenated && (ing.Amount == 0 || isRange || isMixed)
 
-		isTextUnit := tok.Type == lexer.ItemUnit && name != "" && (unit != "" || next.Type == lexer.ItemEOF)
+		isTextUnit := tok.Type == lexer.ItemUnit && name != "" && (unit != "" || (next.Type == lexer.ItemEOF && !prev.Type.IsNumber()))
 		if !isTextUnit && tok.Type == lexer.ItemUnit && name != "" {
 			if idx := strings.Index(name, ","); idx > 0 && strings.TrimSpace(name[:idx]) != "" {
+				isTextUnit = true
+			}
+			if !isTextUnit && !prev.Type.IsNumber() && next.Type.IsNumber() && ing.Amount == 0 {
 				isTextUnit = true
 			}
 		}
@@ -68,7 +79,15 @@ func ParseIngredient(str string, opts Options) (model.Ingredient, error) {
 			skipSpace = false
 
 		case tok.Type == lexer.ItemComment:
-			ing.Description = addDescription(ing.Description, lexer.StripParens(tok.Lexeme))
+			if prev.ShouldMerge(tok) {
+				if prev.Type == lexer.ItemUnit || prev.Type == lexer.ItemTimeUnit {
+					unit += tok.Lexeme
+				} else {
+					name += tok.Lexeme
+				}
+			} else {
+				ing.Description = addDescription(ing.Description, lexer.StripParens(tok.Lexeme))
+			}
 			skipSpace = false
 
 		case tok.Type == lexer.ItemUnit && !secondQty && !isTextUnit:
@@ -92,7 +111,7 @@ func ParseIngredient(str string, opts Options) (model.Ingredient, error) {
 		prev, tok = tok, next
 	}
 
-	return finalize(ing, unit, unitCode, name, prefix), nil
+	return finalize(ing, unit, unitCode, name, prefix), l.Score(), nil
 }
 
 func finalize(ing model.Ingredient, unit, unitCode, name, prefix string) model.Ingredient {

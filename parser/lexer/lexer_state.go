@@ -7,8 +7,11 @@ import (
 	"github.com/borschtapp/kapusta/parser/util"
 )
 
-// isAlphaNumeric reports whether r is a letter, digit, mark, punctuation, or symbol character.
+// isAlphaNumeric reports whether r is a letter, digit, or a character that can be part of a word.
 func isAlphaNumeric(r rune) bool {
+	if r == '(' || r == ')' {
+		return false
+	}
 	return unicode.IsLetter(r) || unicode.IsDigit(r) || unicode.IsMark(r) || unicode.IsPunct(r) || unicode.IsSymbol(r)
 }
 

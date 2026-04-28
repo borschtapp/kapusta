@@ -3,6 +3,7 @@ package dictionary
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 	"unicode"
 	"unicode/utf8"
@@ -186,7 +187,7 @@ func TimeUnitSeconds(code string) int {
 	return timeUnitSeconds[code]
 }
 
-func ForLang(lang string) (*Dict, error) {
+func ForLanguage(lang string) (*Dict, error) {
 	dict := dictMap[lang]
 	if dict == nil && len(lang) > 2 {
 		dict = dictMap[lang[:2]]
@@ -197,4 +198,16 @@ func ForLang(lang string) (*Dict, error) {
 	}
 
 	return dict, nil
+}
+
+var (
+	SupportedLanguages []string
+)
+
+func init() {
+	SupportedLanguages = make([]string, 0, len(dictMap))
+	for l := range dictMap {
+		SupportedLanguages = append(SupportedLanguages, l)
+	}
+	sort.Strings(SupportedLanguages)
 }

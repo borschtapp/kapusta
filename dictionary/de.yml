@@ -38,7 +38,6 @@ units:
     - fuss
     - füße
   in:
-    - in
     - in.
     - zoll
   g:
@@ -149,8 +148,6 @@ units:
   clove:
     - zehe
     - zehen
-    - knoblauchzehe
-    - knoblauchzehen
   other:
     - nach geschmack
     - handvoll

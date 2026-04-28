@@ -21,6 +21,7 @@ type Lexer struct {
 	items             chan Token          // channel of scanned items
 	done              chan struct{}       // closed by Close() to unblock the goroutine
 	ingredientMatcher *dictionary.Matcher // optional matcher for known ingredient names
+	score             int                 // total confidence score based on recognized tokens
 }
 
 // stateFn represents the state of the scanner as a function that returns the next state.
@@ -34,7 +35,7 @@ func Lex(input string, lang string) (*Lexer, error) {
 // LexWithOptions creates a new Lexer with an optional list of known ingredient names.
 // The lexer will emit ItemIngredient tokens when any of them are matched in the input.
 func LexWithOptions(input string, lang string, knownIngredients []string) (*Lexer, error) {
-	dict, err := dictionary.ForLang(lang)
+	dict, err := dictionary.ForLanguage(lang)
 	if err != nil {
 		return nil, err
 	}
@@ -85,23 +86,37 @@ func (l *Lexer) run() {
 }
 
 func (l *Lexer) emit(t TokenType) {
-	l.emitValue(t, "", 0)
+	l.emitToken(Token{
+		Type: t,
+	})
 }
 
 func (l *Lexer) emitValue(t TokenType, code string, val float64) {
+	l.emitToken(Token{
+		Type:  t,
+		Code:  code,
+		Value: val,
+	})
+}
+
+func (l *Lexer) emitToken(tok Token) {
+	tok.StartIndex = l.start
+	tok.EndIndex = l.pos
+	tok.Lexeme = l.input[l.start:l.pos]
+
+	l.score += len(tok.Lexeme) * tok.Type.Weight()
+
 	select {
-	case l.items <- Token{
-		Type:       t,
-		Lexeme:     l.input[l.start:l.pos],
-		Code:       code,
-		Value:      val,
-		StartIndex: l.start,
-		EndIndex:   l.pos,
-	}:
+	case l.items <- tok:
 		l.start = l.pos
-		l.prev = t
+		l.prev = tok.Type
 	case <-l.done:
 	}
+}
+
+// Score returns the total confidence score calculated during lexing.
+func (l *Lexer) Score() int {
+	return l.score
 }
 
 // scan advances to the scan rune in input and returns it

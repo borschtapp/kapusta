@@ -54,7 +54,9 @@
   },
   {
     "amount": 1,
-    "name": "branche de thym"
+    "unit": "branche",
+    "unitCode": "sprig",
+    "name": "de thym"
   },
   {
     "amount": 30,
@@ -84,7 +86,10 @@
   },
   {
     "amount": 0.25,
-    "name": "de botte de coriandre hachée"
+    "unit": "botte",
+    "unitCode": "bunch",
+    "name": "de coriandre hachée",
+    "description": "de"
   },
   {
     "name": "Sel"
@@ -679,7 +684,9 @@
   },
   {
     "amount": 1,
-    "name": "pièce(s) Oeuf(s)"
+    "unit": "pièce(s)",
+    "unitCode": "pc",
+    "name": "Oeuf(s)"
   },
   {
     "amount": 70,
@@ -696,7 +703,9 @@
   },
   {
     "amount": 2,
-    "name": "pincée(s) Sel fin"
+    "unit": "pincée(s)",
+    "unitCode": "pinch",
+    "name": "Sel fin"
   },
   {
     "amount": 300,
@@ -730,7 +739,9 @@
   },
   {
     "amount": 6,
-    "name": "pincée(s) Sel fin"
+    "unit": "pincée(s)",
+    "unitCode": "pinch",
+    "name": "Sel fin"
   },
   {
     "amount": 6,
@@ -1794,15 +1805,21 @@
   },
   {
     "amount": 2,
-    "name": "kleine Zwiebel(n)"
+    "name": "Zwiebel(n)",
+    "description": "kleine"
   },
   {
     "amount": 1,
-    "name": "kl. Bund Petersilie"
+    "unit": "Bund",
+    "unitCode": "bunch",
+    "name": "Petersilie",
+    "description": "kl."
   },
   {
     "amount": 2,
-    "name": "EL Zitronensaft"
+    "unit": "EL",
+    "unitCode": "tbsp",
+    "name": "Zitronensaft"
   },
   {
     "amount": 50,
@@ -1819,7 +1836,8 @@
   },
   {
     "amount": 2,
-    "name": "kleine Ei(er)"
+    "name": "Ei(er)",
+    "description": "kleine"
   },
   {
     "amount": 125,
@@ -1835,11 +1853,15 @@
   },
   {
     "amount": 1,
-    "name": "EL Crème fraîche"
+    "unit": "EL",
+    "unitCode": "tbsp",
+    "name": "Crème fraîche"
   },
   {
     "amount": 1,
-    "name": "TL Paprikapulver",
+    "unit": "TL",
+    "unitCode": "tsp",
+    "name": "Paprikapulver",
     "description": "edelsüßes"
   },
   {
@@ -1890,7 +1912,9 @@
   },
   {
     "amount": 1,
-    "name": "lata de creme de leite"
+    "unit": "lata",
+    "unitCode": "can",
+    "name": "de creme de leite"
   },
   {
     "amount": 1,
@@ -2597,7 +2621,9 @@
   },
   {
     "amount": 1,
-    "name": "spicchio d'aglio"
+    "unit": "spicchio",
+    "unitCode": "clove",
+    "name": "d'aglio"
   },
   {
     "amount": 1,
@@ -2605,19 +2631,25 @@
   },
   {
     "amount": 2,
-    "name": "cucchiai di pinoli tostati"
+    "unit": "cucchiai",
+    "unitCode": "tbsp",
+    "name": "di pinoli tostati"
   },
   {
     "amount": 4,
     "maxAmount": 5,
-    "name": "cucchiaini di miele millefiori"
+    "unit": "cucchiaini",
+    "unitCode": "tsp",
+    "name": "di miele millefiori"
   },
   {
     "amount": 1,
-    "name": "bicchiere di aceto di vino"
+    "unit": "bicchiere",
+    "name": "di aceto di vino"
   },
   {
-    "name": "foglioline di mirto"
+    "unit": "foglioline",
+    "name": "di mirto"
   },
   {
     "name": "prezzemolo"
@@ -2655,11 +2687,15 @@
   },
   {
     "amount": 1,
-    "name": "pincée(s) Sel"
+    "unit": "pincée(s)",
+    "unitCode": "pinch",
+    "name": "Sel"
   },
   {
     "amount": 1,
-    "name": "pincée(s) Poivre"
+    "unit": "pincée(s)",
+    "unitCode": "pinch",
+    "name": "Poivre"
   },
   {
     "amount": 200,
@@ -2675,7 +2711,9 @@
   },
   {
     "amount": 1,
-    "name": "Creme de Leite lata"
+    "unit": "lata",
+    "unitCode": "can",
+    "name": "Creme de Leite"
   },
   {
     "amount": 600,
@@ -2949,11 +2987,14 @@
   },
   {
     "amount": 1,
-    "name": "großer Brokkoli"
+    "name": "Brokkoli",
+    "description": "großer"
   },
   {
     "amount": 1,
-    "name": "Packung Hähnchenschenkelfilet"
+    "unit": "Packung",
+    "unitCode": "pkg",
+    "name": "Hähnchenschenkelfilet"
   },
   {
     "amount": 50,
@@ -2970,7 +3011,9 @@
   },
   {
     "amount": 1,
-    "name": "Päckchen Hühnerbrühgewürz"
+    "unit": "Päckchen",
+    "unitCode": "pkg",
+    "name": "Hühnerbrühgewürz"
   },
   {
     "amount": 1,
@@ -2978,7 +3021,9 @@
   },
   {
     "amount": 1,
-    "name": "TL Weizenmehl"
+    "unit": "TL",
+    "unitCode": "tsp",
+    "name": "Weizenmehl"
   },
   {
     "name": "Salz und Pfeffer"
@@ -3951,16 +3996,22 @@
   },
   {
     "amount": 1,
-    "name": "cucharada de aceite de aguacate",
+    "unit": "cucharada",
+    "unitCode": "tbsp",
+    "name": "de aceite de aguacate",
     "description": "o aceite de oliva"
   },
   {
     "amount": 1,
-    "name": "cucharada de ajo picado"
+    "unit": "cucharada",
+    "unitCode": "tbsp",
+    "name": "de ajo picado"
   },
   {
     "amount": 0.6666666666666666,
-    "name": "taza de cebolla",
+    "unit": "taza",
+    "unitCode": "cup",
+    "name": "de cebolla",
     "description": "cortada en cubitos"
   },
   {
@@ -3982,37 +4033,53 @@
   },
   {
     "amount": 1,
-    "name": "cucharada de chile en polvo"
+    "unit": "cucharada",
+    "unitCode": "tbsp",
+    "name": "de chile en polvo"
   },
   {
     "amount": 2,
-    "name": "cucharaditas de pimentón ahumado"
+    "unit": "cucharaditas",
+    "unitCode": "tsp",
+    "name": "de pimentón ahumado"
   },
   {
     "amount": 2,
-    "name": "cucharaditas de comino"
+    "unit": "cucharaditas",
+    "unitCode": "tsp",
+    "name": "de comino"
   },
   {
     "amount": 0.5,
-    "name": "cucharadita de canela"
+    "unit": "cucharadita",
+    "unitCode": "tsp",
+    "name": "de canela"
   },
   {
     "amount": 2,
-    "name": "cucharaditas de orégano",
+    "unit": "cucharaditas",
+    "unitCode": "tsp",
+    "name": "de orégano",
     "description": "mexicano"
   },
   {
     "amount": 2,
-    "name": "tazas de caldo de res bajo en sodio"
+    "unit": "tazas",
+    "unitCode": "cup",
+    "name": "de caldo de res bajo en sodio"
   },
   {
     "amount": 4,
-    "name": "cucharadas de pasta de tomate",
+    "unit": "cucharadas",
+    "unitCode": "tbsp",
+    "name": "de pasta de tomate",
     "description": "NO salsa"
   },
   {
     "amount": 1,
-    "name": "lata de tomates cortados en cubitos",
+    "unit": "lata",
+    "unitCode": "can",
+    "name": "de tomates cortados en cubitos",
     "description": "13.5 oz"
   },
   {
@@ -4610,7 +4677,9 @@
   },
   {
     "amount": 1,
-    "name": "TL Kastanien Honig"
+    "unit": "TL",
+    "unitCode": "tsp",
+    "name": "Kastanien Honig"
   },
   {
     "amount": 150,
@@ -5386,10 +5455,9 @@
   },
   {
     "amount": 25,
-    "unit": "milliliter",
+    "unit": "milliliter(s)",
     "unitCode": "ml",
-    "name": "Soy Sauce",
-    "description": "s"
+    "name": "Soy Sauce"
   },
   {
     "amount": 6,
@@ -5399,10 +5467,9 @@
   },
   {
     "amount": 300,
-    "unit": "milliliter",
+    "unit": "milliliter(s)",
     "unitCode": "ml",
-    "name": "Water for the Rice",
-    "description": "s"
+    "name": "Water for the Rice"
   },
   {
     "amount": 6,
@@ -6488,27 +6555,39 @@
   },
   {
     "amount": 100,
-    "name": "г руколи"
+    "unit": "г",
+    "unitCode": "g",
+    "name": "руколи"
   },
   {
     "amount": 150,
-    "name": "г сиру фета"
+    "unit": "г",
+    "unitCode": "g",
+    "name": "сиру фета"
   },
   {
     "amount": 1,
-    "name": "ст. л. оливкової олії"
+    "unit": "ст. л.",
+    "unitCode": "tbsp",
+    "name": "оливкової олії"
   },
   {
     "amount": 30,
-    "name": "г волоських горіхів"
+    "unit": "г",
+    "unitCode": "g",
+    "name": "волоських горіхів"
   },
   {
     "amount": 30,
-    "name": "г цукру"
+    "unit": "г",
+    "unitCode": "g",
+    "name": "цукру"
   },
   {
     "amount": 1,
-    "name": "паличка кориці"
+    "unit": "паличка",
+    "unitCode": "stick",
+    "name": "кориці"
   },
   {
     "name": "сіль та перець до смаку"
@@ -6521,7 +6600,9 @@
   },
   {
     "amount": 0.5,
-    "name": "Bund glatte Petersilie"
+    "unit": "Bund",
+    "unitCode": "bunch",
+    "name": "glatte Petersilie"
   },
   {
     "amount": 2,
@@ -6552,14 +6633,18 @@
   },
   {
     "amount": 3,
-    "name": "EL Oliven- oder Pflanzenöl"
+    "unit": "EL",
+    "unitCode": "tbsp",
+    "name": "Oliven- oder Pflanzenöl"
   },
   {
     "name": "Pfeffer"
   },
   {
     "amount": 1,
-    "name": "Packung KNORR Sauce Hollandaise",
+    "unit": "Packung",
+    "unitCode": "pkg",
+    "name": "KNORR Sauce Hollandaise",
     "description": "250 ml"
   },
   {
@@ -6579,22 +6664,28 @@
   },
   {
     "amount": 2,
-    "name": "TL Zitronensaft"
+    "unit": "TL",
+    "unitCode": "tsp",
+    "name": "Zitronensaft"
   },
   {
     "amount": 2,
-    "name": "EL Olivenöl",
+    "unit": "EL",
+    "unitCode": "tbsp",
+    "name": "Olivenöl",
     "description": "extra vergine"
   },
   {
     "amount": 1,
-    "name": "TL Oregano",
+    "unit": "TL",
+    "unitCode": "tsp",
+    "name": "Oregano",
     "description": "frisch oder TK"
   },
   {
     "amount": 4,
-    "name": "kleine Zwiebelchen",
-    "description": "rot"
+    "name": "Zwiebelchen",
+    "description": "kleine, rot"
   },
   {
     "amount": 2,
@@ -6626,21 +6717,27 @@
   },
   {
     "amount": 2,
-    "name": "EL Schnittsellerie-Stängel",
+    "unit": "EL",
+    "unitCode": "tbsp",
+    "name": "Schnittsellerie-Stängel",
     "description": "frisch oder TK"
   },
   {
     "amount": 1,
-    "name": "kleine Peperoni",
-    "description": "rot, mittelscharf"
+    "name": "Peperoni",
+    "description": "kleine, rot, mittelscharf"
   },
   {
     "amount": 3,
-    "name": "EL Olivenöl"
+    "unit": "EL",
+    "unitCode": "tbsp",
+    "name": "Olivenöl"
   },
   {
     "amount": 2,
-    "name": "TL Rosmarin",
+    "unit": "TL",
+    "unitCode": "tsp",
+    "name": "Rosmarin",
     "description": "frisch oder TK"
   },
   {
@@ -6650,12 +6747,16 @@
   },
   {
     "amount": 2,
-    "name": "Prise Pfeffer",
+    "unit": "Prise",
+    "unitCode": "pinch",
+    "name": "Pfeffer",
     "description": "schwarz, frisch aus der Mühle"
   },
   {
     "amount": 2,
-    "name": "EL Schnittsellerie-Blätter",
+    "unit": "EL",
+    "unitCode": "tbsp",
+    "name": "Schnittsellerie-Blätter",
     "description": "frisch oder TK"
   },
   {
@@ -6673,11 +6774,15 @@
   },
   {
     "amount": 1,
-    "name": "TL Zucker"
+    "unit": "TL",
+    "unitCode": "tsp",
+    "name": "Zucker"
   },
   {
     "amount": 2,
-    "name": "TL Hühnerbrühe",
+    "unit": "TL",
+    "unitCode": "tsp",
+    "name": "Hühnerbrühe",
     "description": "gestrichen, Kraftbouillon"
   },
   {
@@ -6788,16 +6893,20 @@
   },
   {
     "amount": 4,
-    "name": "kleine Hähnchenbrustfilets",
-    "description": "à ca. 140 g"
+    "name": "Hähnchenbrustfilets",
+    "description": "kleine, à ca. 140 g"
   },
   {
     "amount": 2,
-    "name": "EL Sonnenblumenöl"
+    "unit": "EL",
+    "unitCode": "tbsp",
+    "name": "Sonnenblumenöl"
   },
   {
     "amount": 4,
-    "name": "EL Sojasoße"
+    "unit": "EL",
+    "unitCode": "tbsp",
+    "name": "Sojasoße"
   },
   {
     "amount": 50,
@@ -6811,7 +6920,9 @@
   },
   {
     "amount": 1,
-    "name": "EL Sesamsaat"
+    "unit": "EL",
+    "unitCode": "tbsp",
+    "name": "Sesamsaat"
   },
   {
     "amount": 3,
@@ -6866,7 +6977,9 @@
   },
   {
     "amount": 200,
-    "name": "gr sushi rijst"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "sushi rijst"
   },
   {
     "amount": 2,
@@ -6883,7 +6996,9 @@
   },
   {
     "amount": 100,
-    "name": "gr peen julienne"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "peen julienne"
   },
   {
     "amount": 0.5,
@@ -6891,7 +7006,9 @@
   },
   {
     "amount": 2,
-    "name": "el gebakken uitjes"
+    "unit": "el",
+    "unitCode": "tbsp",
+    "name": "gebakken uitjes"
   },
   {
     "name": "Japanse mayonaise"
@@ -7242,7 +7359,9 @@
   },
   {
     "amount": 1,
-    "name": "Packung festkochende Kartoffeln"
+    "unit": "Packung",
+    "unitCode": "pkg",
+    "name": "festkochende Kartoffeln"
   },
   {
     "amount": 1,
@@ -7264,7 +7383,9 @@
   },
   {
     "amount": 1,
-    "name": "Päckchen Sriracha-Sauce"
+    "unit": "Päckchen",
+    "unitCode": "pkg",
+    "name": "Sriracha-Sauce"
   },
   {
     "amount": 2,
@@ -7283,15 +7404,21 @@
   },
   {
     "amount": 2,
-    "name": "EL Mayonnaise"
+    "unit": "EL",
+    "unitCode": "tbsp",
+    "name": "Mayonnaise"
   },
   {
     "amount": 2.5,
-    "name": "TL Honig"
+    "unit": "TL",
+    "unitCode": "tsp",
+    "name": "Honig"
   },
   {
     "amount": 0.5,
-    "name": "TL Senf"
+    "unit": "TL",
+    "unitCode": "tsp",
+    "name": "Senf"
   },
   {
     "name": "Salz"
@@ -7337,13 +7464,15 @@
   },
   {
     "amount": 6,
-    "unit": "c",
-    "unitCode": "cup",
-    "name": ".à.s d'huile d'olive"
+    "unit": "c.à.s",
+    "unitCode": "tbsp",
+    "name": "d'huile d'olive"
   },
   {
     "amount": 1,
-    "name": "brin de thym"
+    "unit": "brin",
+    "unitCode": "sprig",
+    "name": "de thym"
   },
   {
     "amount": 1,
@@ -7357,7 +7486,9 @@
   },
   {
     "amount": 3,
-    "name": "gousses d'ail"
+    "unit": "gousses",
+    "unitCode": "clove",
+    "name": "d'ail"
   },
   {
     "amount": 3,
@@ -7396,7 +7527,9 @@
   },
   {
     "amount": 1,
-    "name": "stk. kylling",
+    "unit": "stk.",
+    "unitCode": "pc",
+    "name": "kylling",
     "description": "ca. 1300 g"
   },
   {
@@ -7435,7 +7568,9 @@
   },
   {
     "amount": 8,
-    "name": "stk. tomat"
+    "unit": "stk.",
+    "unitCode": "pc",
+    "name": "tomat"
   },
   {
     "amount": 2,
@@ -7453,7 +7588,9 @@
   },
   {
     "amount": 2,
-    "name": "stk. hel kardemomme"
+    "unit": "stk.",
+    "unitCode": "pc",
+    "name": "hel kardemomme"
   },
   {
     "amount": 2,
@@ -7465,7 +7602,9 @@
   },
   {
     "amount": 1,
-    "name": "stk. grønn chili"
+    "unit": "stk.",
+    "unitCode": "pc",
+    "name": "grønn chili"
   },
   {
     "amount": 2,
@@ -7621,31 +7760,45 @@
   },
   {
     "amount": 100,
-    "name": "gr di zucchero"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "di zucchero"
   },
   {
     "amount": 110,
-    "name": "gr di cioccolato bianco"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "di cioccolato bianco"
   },
   {
     "amount": 110,
-    "name": "gr di burro"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "di burro"
   },
   {
     "amount": 50,
-    "name": "gr di farina"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "di farina"
   },
   {
     "amount": 6,
-    "name": "gr di cacao"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "di cacao"
   },
   {
     "amount": 1,
-    "name": "cucchiaino di essenza di vaniglia"
+    "unit": "cucchiaino",
+    "unitCode": "tsp",
+    "name": "di essenza di vaniglia"
   },
   {
     "amount": 1,
-    "name": "cucchiaino di colorante rosso"
+    "unit": "cucchiaino",
+    "unitCode": "tsp",
+    "name": "di colorante rosso"
   },
   {
     "amount": 1,
@@ -8739,7 +8892,8 @@
   },
   {
     "amount": 1,
-    "name": "q.b. hortelã"
+    "unit": "q.b.",
+    "name": "hortelã"
   },
   {
     "amount": 1,
@@ -8755,7 +8909,8 @@
   },
   {
     "amount": 2,
-    "name": "unid. cebola grande"
+    "name": "unid. cebola",
+    "description": "grande"
   },
   {
     "amount": 5,
@@ -8763,7 +8918,8 @@
   },
   {
     "amount": 1,
-    "name": "q.b. coentros"
+    "unit": "q.b.",
+    "name": "coentros"
   },
   {
     "amount": 1,
@@ -8797,7 +8953,8 @@
   },
   {
     "amount": 1,
-    "name": "q.b. pimenta branca"
+    "unit": "q.b.",
+    "name": "pimenta branca"
   },
   {
     "amount": 400,
@@ -9233,7 +9390,9 @@
   },
   {
     "amount": 1,
-    "name": "lata de creme de leite sem soro"
+    "unit": "lata",
+    "unitCode": "can",
+    "name": "de creme de leite sem soro"
   },
   {
     "amount": 500,
@@ -9402,7 +9561,9 @@
   },
   {
     "amount": 200,
-    "name": "gr Bio Basmati Reis"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "Bio Basmati Reis"
   },
   {
     "amount": 50,
@@ -9412,7 +9573,9 @@
   },
   {
     "amount": 200,
-    "name": "gr Tofu"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "Tofu"
   },
   {
     "name": "etwas Paniermehl"
@@ -9426,7 +9589,9 @@
   },
   {
     "amount": 100,
-    "name": "gr Edamame"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "Edamame"
   },
   {
     "amount": 1,
@@ -9438,7 +9603,9 @@
   },
   {
     "amount": 50,
-    "name": "gr Zuckerschoten"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "Zuckerschoten"
   },
   {
     "amount": 5,
@@ -9446,10 +9613,14 @@
   },
   {
     "amount": 30,
-    "name": "gr Sprossen"
+    "unit": "gr",
+    "unitCode": "g",
+    "name": "Sprossen"
   },
   {
-    "name": "eine Handvoll Cashew Kerne"
+    "amount": 1,
+    "unit": "Handvoll",
+    "name": "Cashew Kerne"
   },
   {
     "amount": 100,
@@ -9502,7 +9673,9 @@
   },
   {
     "amount": 200,
-    "name": "Latte intero ml"
+    "unit": "ml",
+    "unitCode": "ml",
+    "name": "Latte intero"
   },
   {
     "amount": 3,
@@ -9510,7 +9683,9 @@
   },
   {
     "amount": 105,
-    "name": "Zucchero g"
+    "unit": "g",
+    "unitCode": "g",
+    "name": "Zucchero"
   },
   {
     "amount": 0.5,
@@ -9522,7 +9697,9 @@
   },
   {
     "amount": 1,
-    "name": "Sale fino pizzico"
+    "unit": "pizzico",
+    "unitCode": "pinch",
+    "name": "Sale fino"
   },
   {
     "amount": 1,
@@ -9531,19 +9708,27 @@
   },
   {
     "amount": 18,
-    "name": "Gelatina in fogli g"
+    "unit": "g",
+    "unitCode": "g",
+    "name": "Gelatina in fogli"
   },
   {
     "amount": 500,
-    "name": "Panna fresca liquida ml"
+    "unit": "ml",
+    "unitCode": "ml",
+    "name": "Panna fresca liquida"
   },
   {
     "amount": 150,
-    "name": "Panna fresca liquida ml"
+    "unit": "ml",
+    "unitCode": "ml",
+    "name": "Panna fresca liquida"
   },
   {
     "amount": 1,
-    "name": "Zucchero velo 30 g"
+    "unit": "g",
+    "unitCode": "g",
+    "name": "Zucchero velo 30"
   },
   {
     "amount": 6,
@@ -12009,7 +12194,9 @@
   },
   {
     "amount": 1,
-    "name": "stk paprika"
+    "unit": "stk",
+    "unitCode": "pc",
+    "name": "paprika"
   },
   {
     "amount": 0.5,
@@ -12019,7 +12206,9 @@
   },
   {
     "amount": 3,
-    "name": "stk vårløk"
+    "unit": "stk",
+    "unitCode": "pc",
+    "name": "vårløk"
   },
   {
     "amount": 1,
@@ -12091,7 +12280,8 @@
   },
   {
     "amount": 1,
-    "name": "limão grande"
+    "name": "limão",
+    "description": "grande"
   },
   {
     "amount": 2,
@@ -12332,7 +12522,9 @@
   },
   {
     "amount": 1,
-    "name": "bustina zafferano in polvere"
+    "unit": "bustina",
+    "unitCode": "pkg",
+    "name": "zafferano in polvere"
   },
   {
     "name": "Sale"

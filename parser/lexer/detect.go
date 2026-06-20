@@ -43,16 +43,13 @@ func Detect[T any](lang string, parse func(string) (T, int, error)) (T, error) {
 	}
 	wg.Wait()
 
+	isBetter := func(a, b result) bool {
+		return (a.err == nil && b.err != nil) || (a.err == nil && b.err == nil && a.score > b.score)
+	}
+
 	best := result{enRes, enScore, enErr}
-
-	for i, res := range results {
-		l := langs[i]
-		if l == "en" {
-			continue
-		}
-
-		isBetter := (res.err == nil && best.err != nil) || (res.err == nil && best.err == nil && res.score > best.score)
-		if isBetter {
+	for _, res := range results {
+		if isBetter(res, best) {
 			best = res
 		}
 	}

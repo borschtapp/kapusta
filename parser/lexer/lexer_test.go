@@ -3,6 +3,7 @@ package lexer
 import (
 	"testing"
 
+	"github.com/borschtapp/kapusta/dictionary"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -16,6 +17,24 @@ func TestLex(t *testing.T) {
 			break
 		}
 	}
+}
+
+func TestLexWithMatcher(t *testing.T) {
+	matcher := dictionary.NewMatcher([]string{"water", "tomatoes"})
+	l, err := LexWithMatcher("2 cups warm water divided", "en", matcher)
+	assert.NoError(t, err)
+	var foundWater bool
+	for {
+		tok, err := l.Next()
+		assert.NoError(t, err)
+		if tok.Type == ItemEOF {
+			break
+		}
+		if tok.Type == ItemIngredient && tok.Lexeme == "water" {
+			foundWater = true
+		}
+	}
+	assert.True(t, foundWater, "Should have recognized 'water' as an ingredient")
 }
 
 func TestLexUnknownLanguage(t *testing.T) {

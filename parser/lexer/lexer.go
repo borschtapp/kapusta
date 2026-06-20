@@ -29,19 +29,15 @@ type stateFn func(*Lexer) stateFn
 
 // Lex creates a new Lexer
 func Lex(input string, lang string) (*Lexer, error) {
-	return LexWithOptions(input, lang, nil)
+	return LexWithMatcher(input, lang, nil)
 }
 
-// LexWithOptions creates a new Lexer with an optional list of known ingredient names.
+// LexWithMatcher creates a new Lexer with an optional pre-built matcher for known ingredient names.
 // The lexer will emit ItemIngredient tokens when any of them are matched in the input.
-func LexWithOptions(input string, lang string, knownIngredients []string) (*Lexer, error) {
+func LexWithMatcher(input string, lang string, matcher *dictionary.Matcher) (*Lexer, error) {
 	dict, err := dictionary.ForLanguage(lang)
 	if err != nil {
 		return nil, err
-	}
-	var matcher *dictionary.Matcher
-	if len(knownIngredients) > 0 {
-		matcher = dictionary.NewMatcher(knownIngredients)
 	}
 	l := &Lexer{
 		input:             input,

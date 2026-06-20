@@ -200,9 +200,7 @@ func ForLanguage(lang string) (*Dict, error) {
 	return dict, nil
 }
 
-var (
-	SupportedLanguages []string
-)
+var SupportedLanguages []string
 
 func init() {
 	SupportedLanguages = make([]string, 0, len(dictMap))

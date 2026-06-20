@@ -5,6 +5,7 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/borschtapp/kapusta/dictionary"
 	"github.com/borschtapp/kapusta/model"
 	"github.com/borschtapp/kapusta/parser/lexer"
 )
@@ -102,27 +103,35 @@ type Options struct {
 }
 
 func ParseInstruction(text string, opts Options) (model.Instruction, error) {
+	// Build the language-independent ingredient lookups once, not per detected language.
+	var matcher *dictionary.Matcher
+	if len(opts.Ingredients) > 0 {
+		knownNames := make([]string, len(opts.Ingredients))
+		for i, ref := range opts.Ingredients {
+			knownNames[i] = ref.Name
+		}
+		matcher = dictionary.NewMatcher(knownNames)
+	}
+
+	refMap := make(map[string]model.IngredientRef)
+	for _, ref := range opts.Ingredients {
+		refMap[strings.ToLower(ref.Name)] = ref
+	}
+
 	return lexer.Detect(opts.Lang, func(l string) (model.Instruction, int, error) {
 		o := opts
 		o.Lang = l
-		return parseInstruction(text, o)
+		return parseInstruction(text, o, matcher, refMap)
 	})
 }
 
-func parseInstruction(text string, opts Options) (model.Instruction, int, error) {
+func parseInstruction(text string, opts Options, matcher *dictionary.Matcher, refMap map[string]model.IngredientRef) (model.Instruction, int, error) {
 	inst := model.Instruction{
 		Text:     text,
 		Markdown: text,
 	}
 
-	knownNames := make([]string, len(opts.Ingredients))
-	refMap := make(map[string]model.IngredientRef)
-	for i, ref := range opts.Ingredients {
-		knownNames[i] = ref.Name
-		refMap[strings.ToLower(ref.Name)] = ref
-	}
-
-	l, err := lexer.LexWithOptions(text, opts.Lang, knownNames)
+	l, err := lexer.LexWithMatcher(text, opts.Lang, matcher)
 	if err != nil {
 		return inst, 0, err
 	}

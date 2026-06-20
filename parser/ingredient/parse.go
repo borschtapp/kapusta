@@ -15,6 +15,7 @@ type Options struct {
 }
 
 func ParseIngredient(str string, opts Options) (model.Ingredient, error) {
+	str = strings.ReplaceAll(str, "⁄", "/")
 	return lexer.Detect(opts.Lang, func(l string) (model.Ingredient, int, error) {
 		o := opts
 		o.Lang = l
@@ -23,8 +24,6 @@ func ParseIngredient(str string, opts Options) (model.Ingredient, error) {
 }
 
 func parseIngredient(str string, opts Options) (model.Ingredient, int, error) {
-	str = strings.ReplaceAll(str, "⁄", "/")
-
 	l, err := lexer.Lex(str, opts.Lang)
 	if err != nil {
 		return model.Ingredient{}, 0, fmt.Errorf("lex error: %w", err)

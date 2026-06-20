@@ -18,5 +18,8 @@ func ParseInstruction(str string, opts ...InstructionOptions) (model.Instruction
 type IngredientOptions = ingredient.Options
 type InstructionOptions = instruction.Options
 type Ingredient = model.Ingredient
+type IngredientRef = model.IngredientRef
 type Instruction = model.Instruction
 type Timer = model.Timer
+type Temperature = model.Temperature
+type Amount = model.Amount

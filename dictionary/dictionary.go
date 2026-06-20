@@ -68,7 +68,7 @@ func (n *trieNode) find(input string) (variant string, code string, ok bool) {
 
 		if node.isEnd {
 			nextR, _ := utf8.DecodeRuneInString(input[pos:])
-			if pos == len(input) || !isAlphaNumeric(nextR) {
+			if pos == len(input) || !isWordBoundaryRune(nextR) {
 				matchLen = pos
 				code = node.code
 				ok = true
@@ -82,7 +82,7 @@ func (n *trieNode) find(input string) (variant string, code string, ok bool) {
 	return
 }
 
-func isAlphaNumeric(r rune) bool {
+func isWordBoundaryRune(r rune) bool {
 	return unicode.IsLetter(r) || unicode.IsDigit(r) || r == '-' || r == '\'' || r == '’'
 }
 
@@ -138,18 +138,19 @@ func buildIdx(items []string) map[string]struct{} {
 }
 
 func (d *Dict) FindUnit(input string) (string, string, bool) {
-	return d.FindTrie(input, d.unitsTrie)
+
+	return d.findTrie(input, d.unitsTrie)
 }
 
 func (d *Dict) FindTimeUnit(input string) (string, string, bool) {
-	return d.FindTrie(input, d.timeTrie)
+	return d.findTrie(input, d.timeTrie)
 }
 
 func (d *Dict) FindTemperatureUnit(input string) (string, string, bool) {
-	return d.FindTrie(input, d.tempTrie)
+	return d.findTrie(input, d.tempTrie)
 }
 
-func (d *Dict) FindTrie(input string, trie *trieNode) (string, string, bool) {
+func (d *Dict) findTrie(input string, trie *trieNode) (string, string, bool) {
 	if trie == nil {
 		return "", "", false
 	}
@@ -157,22 +158,18 @@ func (d *Dict) FindTrie(input string, trie *trieNode) (string, string, bool) {
 }
 
 func (d *Dict) FindNumber(str string) (float64, bool) {
-	v, ok := d.numbersIdx[strings.ToLower(str)]
+	v, ok := d.numbersIdx[str]
 	return v, ok
 }
 
-func (d *Dict) FindQuantityBetween(str string) (string, bool) {
-	if _, ok := d.quantityIdx[strings.ToLower(str)]; ok {
-		return str, true
-	}
-	return "", false
+func (d *Dict) FindQuantityBetween(str string) bool {
+	_, ok := d.quantityIdx[str]
+	return ok
 }
 
-func (d *Dict) FindSizeSuffix(str string) (string, bool) {
-	if _, ok := d.sizeSuffixIdx[strings.ToLower(str)]; ok {
-		return str, true
-	}
-	return "", false
+func (d *Dict) FindSizeSuffix(str string) bool {
+	_, ok := d.sizeSuffixIdx[str]
+	return ok
 }
 
 var timeUnitSeconds = map[string]int{

@@ -7,8 +7,8 @@ import (
 	"github.com/borschtapp/kapusta/parser/util"
 )
 
-// isAlphaNumeric reports whether r is a letter, digit, or a character that can be part of a word.
-func isAlphaNumeric(r rune) bool {
+// isIdentifierRune reports whether r is a letter, digit, or a character that can be part of a word.
+func isIdentifierRune(r rune) bool {
 	if r == '(' || r == ')' {
 		return false
 	}
@@ -50,7 +50,7 @@ func lexInsideAction(l *Lexer) stateFn {
 		case util.IsFraction(r):
 			l.backup()
 			return lexFractions
-		case isAlphaNumeric(r):
+		case isIdentifierRune(r):
 			l.backup()
 			return lexIdentifier
 		default:
@@ -152,7 +152,7 @@ func StripParens(s string) string {
 // lexIdentifier scans an alphanumeric word and classifies it as a unit, number, range keyword, or plain identifier.
 func lexIdentifier(l *Lexer) stateFn {
 	// Advance as long as the current rune is alphanumeric
-	for isAlphaNumeric(l.scan()) {
+	for isIdentifierRune(l.scan()) {
 	}
 
 	// Now the current rune is no longer alphanumeric,
@@ -184,14 +184,14 @@ func lexIdentifier(l *Lexer) stateFn {
 
 	ident := l.input[l.start:l.pos]
 	lower := strings.ToLower(ident)
-	if _, ok := l.dict.FindSizeSuffix(lower); ok {
+	if ok := l.dict.FindSizeSuffix(lower); ok {
 		l.emit(ItemSizeSuffix)
 		return lexInsideAction
 	}
 
 	if val, ok := l.dict.FindNumber(lower); ok {
 		l.emitValue(ItemNumber, "", val)
-	} else if _, ok := l.dict.FindQuantityBetween(lower); l.prev.IsNumber() && ok {
+	} else if ok := l.dict.FindQuantityBetween(lower); l.prev.IsNumber() && ok {
 		l.emit(ItemIdentifierRange)
 	} else {
 		l.emit(ItemIdentifier)

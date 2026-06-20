@@ -1,11 +1,30 @@
 package instruction
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/borschtapp/kapusta/model"
 	"github.com/stretchr/testify/assert"
 )
+
+func ExampleParseInstruction() {
+	inst, _ := ParseInstruction("Bake potatoes for 30 minutes.", Options{
+		Lang:        "en",
+		Ingredients: []model.IngredientRef{{Name: "potatoes"}},
+	})
+
+	fmt.Println("Text:", inst.Text)
+	fmt.Println("Markdown:", inst.Markdown)
+	fmt.Printf("Timer Value: %d, Raw: %s\n", inst.Timers[0].Value, inst.Timers[0].Raw)
+	fmt.Printf("Ingredient ID: %s, Name: %s\n", inst.Ingredients[0].ID, inst.Ingredients[0].Name)
+
+	// Output:
+	// Text: Bake potatoes for 30 minutes.
+	// Markdown: Bake [potatoes](ingredient:kap0) for [30 minutes](timer:1800).
+	// Timer Value: 1800, Raw: 30 minutes
+	// Ingredient ID: kap0, Name: potatoes
+}
 
 func TestParseInstruction(t *testing.T) {
 	tests := []struct {

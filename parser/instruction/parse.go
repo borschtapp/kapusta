@@ -63,8 +63,8 @@ func scanQuantities(tokens []lexer.Token, unitType lexer.TokenType) []extractedQ
 		} else if unitType == lexer.ItemTemperatureUnit && next.Type == lexer.ItemUnit {
 			// Handle ambiguity: "C" might be lexed as ItemUnit (cup) but we want ItemTemperatureUnit
 			l := strings.TrimSuffix(strings.ToLower(next.Lexeme), ".")
-			// Heuristic: if value > 20, it's more likely to be Celsius than cups.
-			if (l == "c" && minV > 20) || l == "f" || l == "k" {
+			// Heuristic: if 0 <= value > 10, it's more likely to be Celsius than cups.
+			if (l == "c" && (minV <= 0 || minV > 10)) || l == "f" || l == "k" {
 				matched = true
 				overrideCode = strings.ToUpper(l)
 			}

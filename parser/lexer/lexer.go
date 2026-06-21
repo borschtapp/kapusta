@@ -18,8 +18,8 @@ type Lexer struct {
 	pos               int                 // current position of the input
 	width             int                 // width of last rune read from input
 	prev              TokenType           // previous token type
-	items             chan Token          // channel of scanned items
-	done              chan struct{}       // closed by Close() to unblock the goroutine
+	tokens            []Token             // slice of scanned items
+	cursor            int                 // current position in tokens slice
 	ingredientMatcher *dictionary.Matcher // optional matcher for known ingredient names
 	score             int                 // total confidence score based on recognized tokens
 }
@@ -42,40 +42,28 @@ func LexWithMatcher(input string, lang string, matcher *dictionary.Matcher) (*Le
 	l := &Lexer{
 		input:             input,
 		dict:              dict,
-		items:             make(chan Token),
-		done:              make(chan struct{}),
+		tokens:            make([]Token, 0, 16),
 		ingredientMatcher: matcher,
 	}
-	go l.run()
+	l.run()
 	return l, nil
 }
 
-// Close signals the lexer goroutine to stop if it is blocked sending tokens.
-// Callers that do not drain the lexer to EOF must call Close to prevent a goroutine leak.
-func (l *Lexer) Close() {
-	select {
-	case <-l.done:
-	default:
-		close(l.done)
-	}
-}
-
-// Next returns the next Token from the input. The Lexer has to be drained
-// (all items received until ItemEOF or ItemError) - otherwise the Lexer goroutine will leak.
+// Next returns the next Token from the input.
 func (l *Lexer) Next() (Token, error) {
-	tok, ok := <-l.items
-	if !ok || tok.Type == ItemEOF {
+	if l.cursor >= len(l.tokens) {
 		return Token{Type: ItemEOF}, nil
 	}
+	tok := l.tokens[l.cursor]
+	l.cursor++
 	if tok.Type == ItemError {
 		return tok, errors.New(tok.Lexeme)
 	}
 	return tok, nil
 }
 
-// run runs the lexer - should be run in a separate goroutine.
+// run runs the lexer.
 func (l *Lexer) run() {
-	defer close(l.items)
 	for state := lexInsideAction; state != nil; {
 		state = state(l)
 	}
@@ -102,12 +90,9 @@ func (l *Lexer) emitToken(tok Token) {
 
 	l.score += len(tok.Lexeme) * tok.Type.Weight()
 
-	select {
-	case l.items <- tok:
-		l.start = l.pos
-		l.prev = tok.Type
-	case <-l.done:
-	}
+	l.tokens = append(l.tokens, tok)
+	l.start = l.pos
+	l.prev = tok.Type
 }
 
 // Score returns the total confidence score calculated during lexing.
@@ -145,15 +130,12 @@ func (l *Lexer) peek() rune {
 
 // errorf returns an error token and terminates the scan by passing back a nil pointer that will be the next state.
 func (l *Lexer) errorf(format string, args ...any) stateFn {
-	select {
-	case l.items <- Token{
+	l.tokens = append(l.tokens, Token{
 		Type:       ItemError,
 		Lexeme:     fmt.Sprintf(format, args...),
 		StartIndex: l.start,
 		EndIndex:   l.pos,
-	}:
-	case <-l.done:
-	}
+	})
 	return nil
 }
 

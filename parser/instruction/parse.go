@@ -215,7 +215,6 @@ func parseQuantity(c *lexer.TokenCursor) (min, max float64) {
 }
 
 func collectTokens(l *lexer.Lexer) ([]lexer.Token, error) {
-	defer l.Close()
 	var tokens []lexer.Token
 	for {
 		tok, err := l.Next()

@@ -28,7 +28,6 @@ func parseIngredient(str string, opts Options) (model.Ingredient, int, error) {
 	if err != nil {
 		return model.Ingredient{}, 0, fmt.Errorf("lex error: %w", err)
 	}
-	defer l.Close()
 
 	var (
 		ing                  model.Ingredient

@@ -9,6 +9,14 @@ import (
 	"github.com/borschtapp/kapusta/parser/lexer"
 )
 
+func buildTimerTarget(s, ms int) string {
+	target := fmt.Sprintf("%d", s)
+	if ms > 0 {
+		target += fmt.Sprintf("?max=%d", ms)
+	}
+	return target
+}
+
 // extractTimers scans tokens for the pattern: number [range-sep number] time-unit
 // and returns the extracted timers with their markdown replacements.
 func extractTimers(tokens []lexer.Token, text string) ([]model.Timer, []replacement) {
@@ -42,11 +50,7 @@ func extractTimers(tokens []lexer.Token, text string) ([]model.Timer, []replacem
 			}
 
 			t.Raw = text[r.startIdx:m.endIdx]
-			target := fmt.Sprintf("%d", t.Value)
-			if t.MaxValue > 0 {
-				target += fmt.Sprintf("?max=%d", t.MaxValue)
-			}
-			r.endIdx, r.markdown = m.endIdx, markdownLink(t.Raw, schemeTimer, target)
+			r.endIdx, r.markdown = m.endIdx, markdownLink(t.Raw, schemeTimer, buildTimerTarget(t.Value, t.MaxValue))
 			continue
 		}
 
@@ -55,16 +59,10 @@ func extractTimers(tokens []lexer.Token, text string) ([]model.Timer, []replacem
 		}
 		orig := text[m.startIdx:m.endIdx]
 		timers = append(timers, model.Timer{Value: s, MaxValue: ms, Raw: orig})
-
-		target := fmt.Sprintf("%d", s)
-		if ms > 0 {
-			target += fmt.Sprintf("?max=%d", ms)
-		}
-
 		reps = append(reps, replacement{
 			startIdx: m.startIdx,
 			endIdx:   m.endIdx,
-			markdown: markdownLink(orig, schemeTimer, target),
+			markdown: markdownLink(orig, schemeTimer, buildTimerTarget(s, ms)),
 		})
 	}
 	return timers, reps
